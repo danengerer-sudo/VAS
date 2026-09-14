@@ -15,24 +15,28 @@ helicopter. Published dimensions and what the model uses:
 | Main rotor diameter | 7.67 m | 7.67 m |
 | Tail rotor diameter | 1.07 m | 1.07 m |
 | Overall height (to rotor head) | 2.72 m | 2.72 m |
-| Cabin width | 0.91 m | 1.09 m (bubble outer) |
+| Cabin width | 0.91 m | 1.18 m (bubble outer) |
 | Skid track | ~1.90 m | 1.90 m |
 
 ## Asset facts
 
-- 488 triangles, 1464 vertices, ~41 KB, single self-contained `.glb`.
+- 938 triangles, ~76 KB, single self-contained `.glb`.
+- The fuselage is **one lofted surface** — bubble, tailcone and fin sweep are
+  stations of a single profile table (`SECTIONS` in the generator), so there
+  are no seams where parts butt together. Edit that table to reshape the body.
 - Units are **metres**, **+Y up**, **nose toward −Z**, origin on the ground
   centred between the skids — so it drops straight onto a ground plane at y=0.
 - Flat shaded (per-face normals), no UVs or textures. Recolour by editing the
-  three `baseColorFactor` values in `tools/make_helicopter.py`.
+  four `baseColorFactor` values in `tools/make_helicopter.py`.
 
 ### Materials
 
 | Name | Used for |
 |---|---|
-| `Paint` | fuselage, boom, fin, stabiliser |
-| `Glass` | wraparound windshield (opaque dark tint, no alpha blending) |
-| `Metal` | rotors, mast, skids, gearbox fairing |
+| `Paint` | upper fuselage, boom, fin, stabiliser |
+| `Glass` | wraparound windscreen and door windows (opaque tint, no alpha blending) |
+| `Metal` | rotors, mast pylon, skids, gearbox fairing |
+| `Accent` | white lower half of the cabin pod |
 
 ### Nodes
 

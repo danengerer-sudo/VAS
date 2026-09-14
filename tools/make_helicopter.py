@@ -9,12 +9,16 @@ bubble cabin). Real dimensions used as the basis for this model:
     tail rotor diameter    1.07 m
     overall height         2.72 m
     cabin width            0.91 m
-    cabin height           1.07 m
     skid track             1.90 m
+
+The fuselage is ONE lofted surface -- bubble, tailcone and fin are stations of
+a single sweep, so there are no seams where parts butt together. Everything
+else (skids, struts, blades, mast) is a swept tube or a lofted slab built by
+the same stitching routine, which keeps the winding rule in exactly one place.
 
 Model conventions:
     +Y up, nose points toward -Z, origin on the ground between the skids.
-    Flat shaded (per-face normals), no UVs, three materials.
+    Flat shaded (per-face normals), no UVs, four materials.
     MainRotor / TailRotor are separate nodes that both spin about local +Y.
 
 Writes a self-contained binary glTF (.glb) with no external dependencies.
@@ -33,33 +37,78 @@ FUSELAGE_LEN = 6.30
 MAIN_ROTOR_D = 7.67
 TAIL_ROTOR_D = 1.07
 OVERALL_H = 2.72
-CABIN_W = 0.91
 SKID_TRACK = 1.90
 
-NOSE_Z = -1.60                      # nose tip
-TAIL_Z = NOSE_Z + FUSELAGE_LEN      # +4.70, trailing edge of the fin
+NOSE_Z = -1.30
+TAIL_Z = NOSE_Z + FUSELAGE_LEN          # +5.00, fin trailing edge
 
-PAINT, GLASS, METAL = 0, 1, 2
+MAST_Z = 0.22
+HUB_Y = 2.62                            # top of the rotor head == OVERALL_H
+TAIL_HUB = (-0.25, 1.44, 4.25)
+
+PAINT, GLASS, METAL, ACCENT = 0, 1, 2, 3
+
+X_AXIS, Y_AXIS, Z_AXIS = (1.0, 0.0, 0.0), (0.0, 1.0, 0.0), (0.0, 0.0, 1.0)
+
 
 # --------------------------------------------------------------------------
-# tiny mesh builder: flat-shaded, one vertex per face corner
+# vector helpers
 # --------------------------------------------------------------------------
 
+def add(a, b):
+    return (a[0] + b[0], a[1] + b[1], a[2] + b[2])
+
+
+def sub(a, b):
+    return (a[0] - b[0], a[1] - b[1], a[2] - b[2])
+
+
+def mul(a, s):
+    return (a[0] * s, a[1] * s, a[2] * s)
+
+
+def dot(a, b):
+    return a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
+
+
+def cross(a, b):
+    return (a[1] * b[2] - a[2] * b[1],
+            a[2] * b[0] - a[0] * b[2],
+            a[0] * b[1] - a[1] * b[0])
+
+
+def norm(a):
+    ln = math.sqrt(dot(a, a))
+    return (a[0] / ln, a[1] / ln, a[2] / ln)
+
+
+def mid(*pts):
+    n = len(pts)
+    return tuple(sum(p[i] for p in pts) / n for i in range(3))
+
+
+def lerp(a, b, t):
+    return a + (b - a) * t
+
+
+# --------------------------------------------------------------------------
+# flat-shaded mesh builder: one vertex per face corner, faces wound CCW
+# --------------------------------------------------------------------------
 
 class Builder:
     def __init__(self):
-        self.groups = {}  # material -> {"pos": [...], "nrm": [...], "idx": [...]}
+        self.groups = {}
 
     def _g(self, mat):
         return self.groups.setdefault(mat, {"pos": [], "nrm": [], "idx": []})
 
     def tri(self, a, b, c, mat):
-        # authored clockwise for readability; glTF front faces are CCW
-        b, c = c, b
-        g = self._g(mat)
-        n = face_normal(a, b, c)
-        if n is None:
+        n = cross(sub(b, a), sub(c, a))
+        ln = math.sqrt(dot(n, n))
+        if ln < 1e-12:
             return
+        n = (n[0] / ln, n[1] / ln, n[2] / ln)
+        g = self._g(mat)
         base = len(g["pos"])
         for v in (a, b, c):
             g["pos"].append(v)
@@ -78,299 +127,254 @@ class Builder:
             dst["nrm"] += g["nrm"]
             dst["idx"] += [i + off for i in g["idx"]]
 
-
-def sub(a, b):
-    return (a[0] - b[0], a[1] - b[1], a[2] - b[2])
-
-
-def cross(a, b):
-    return (a[1] * b[2] - a[2] * b[1],
-            a[2] * b[0] - a[0] * b[2],
-            a[0] * b[1] - a[1] * b[0])
-
-
-def face_normal(a, b, c):
-    n = cross(sub(b, a), sub(c, a))
-    ln = math.sqrt(n[0] ** 2 + n[1] ** 2 + n[2] ** 2)
-    if ln < 1e-12:
-        return None
-    return (n[0] / ln, n[1] / ln, n[2] / ln)
+    def tris(self):
+        return sum(len(g["idx"]) // 3 for g in self.groups.values())
 
 
 # --------------------------------------------------------------------------
-# primitives
+# the one winding rule: rings are built in a (u, v) frame with
+# cross(u, v) == -sweep_direction, then stitched front-to-back.
 # --------------------------------------------------------------------------
 
-
-def ellipsoid(b, center, radii, segs, rings, mat_for):
-    """UV ellipsoid, flat shaded. mat_for(point) picks the material per face."""
-    cx, cy, cz = center
-    rx, ry, rz = radii
-
-    def p(i, j):
-        phi = math.pi * j / rings          # 0 = top
-        theta = 2.0 * math.pi * i / segs
-        return (cx + rx * math.sin(phi) * math.sin(theta),
-                cy + ry * math.cos(phi),
-                cz + rz * math.sin(phi) * math.cos(theta))
-
-    top = (cx, cy + ry, cz)
-    bot = (cx, cy - ry, cz)
-    for i in range(segs):
-        i2 = (i + 1) % segs
-        for j in range(rings):
-            if j == 0:
-                a, c_, d = top, p(i2, 1), p(i, 1)
-                mat = mat_for(mid(a, c_, d))
-                b.tri(a, c_, d, mat)
-            elif j == rings - 1:
-                a, c_, d = p(i, j), p(i2, j), bot
-                mat = mat_for(mid(a, c_, d))
-                b.tri(a, c_, d, mat)
-            else:
-                v0, v1, v2, v3 = p(i, j), p(i2, j), p(i2, j + 1), p(i, j + 1)
-                mat = mat_for(mid(v0, v1, v2, v3))
-                b.quad(v0, v1, v2, v3, mat)
+def frame(tangent, up=Y_AXIS):
+    """Orthonormal (u, v) across `tangent`, with cross(u, v) == -tangent."""
+    t = norm(tangent)
+    ref = up if abs(dot(t, up)) < 0.95 else Z_AXIS
+    u = norm(sub(ref, mul(t, dot(ref, t))))
+    return u, cross(u, t)
 
 
-def mid(*pts):
-    n = len(pts)
-    return (sum(p[0] for p in pts) / n,
-            sum(p[1] for p in pts) / n,
-            sum(p[2] for p in pts) / n)
+def ring(center, u, v, coords):
+    """coords: (u_amount, v_amount) pairs walking the section anticlockwise."""
+    return [add(center, add(mul(u, a), mul(v, b))) for (a, b) in coords]
 
 
-# right-handed loop bases: cross(u, v) == sweep axis
-TUBE_BASIS = {
-    "x": ((0, 1, 0), (0, 0, 1)),
-    "y": ((0, 0, 1), (1, 0, 0)),
-    "z": ((1, 0, 0), (0, 1, 0)),
-}
+def oval(ru_pos, ru_neg, rv, n, fullness=1.0):
+    """n points round a section; ru_pos/ru_neg allow a different top and bottom."""
+    out = []
+    for i in range(n):
+        t = 2.0 * math.pi * i / n
+        cu, sv = math.cos(t), math.sin(t)
+        a = (ru_pos if cu >= 0 else ru_neg) * math.copysign(abs(cu) ** fullness, cu)
+        b = rv * math.copysign(abs(sv) ** fullness, sv)
+        out.append((a, b))
+    return out
 
 
-def tube(b, rings, sides, mat, cap_start=True, cap_end=True, roll=0.5,
-         axis="z"):
-    """rings: list of (center_xyz, r_u, r_v) swept along +axis."""
-    u, v = TUBE_BASIS[axis]
-    loops = []
-    for (c, ru, rv) in rings:
-        loop = []
-        for i in range(sides):
-            t = 2.0 * math.pi * (i + roll) / sides
-            su, cv = math.sin(t) * ru, math.cos(t) * rv
-            loop.append(tuple(c[k] + u[k] * su + v[k] * cv for k in range(3)))
-        loops.append(loop)
+def rect(half_u, half_v):
+    return [(half_u, half_v), (-half_u, half_v),
+            (-half_u, -half_v), (half_u, -half_v)]
 
-    for k in range(len(loops) - 1):
-        lo, hi = loops[k], loops[k + 1]
-        for i in range(sides):
-            i2 = (i + 1) % sides
-            b.quad(lo[i], lo[i2], hi[i2], hi[i], mat)
 
+def stitch(b, rings, mat_for, cap_start=True, cap_end=True):
+    """rings: list of equal-length point loops, ordered along the sweep."""
+    n = len(rings[0])
+    for k in range(len(rings) - 1):
+        a, c = rings[k], rings[k + 1]
+        for i in range(n):
+            j = (i + 1) % n
+            b.quad(a[i], c[i], c[j], a[j], mat_for(k, i))
     if cap_start:
-        c = mid(*loops[0])
-        for i in range(sides):
-            b.tri(c, loops[0][(i + 1) % sides], loops[0][i], mat)
+        ctr = mid(*rings[0])
+        for i in range(n):
+            b.tri(ctr, rings[0][i], rings[0][(i + 1) % n], mat_for(-1, i))
     if cap_end:
-        c = mid(*loops[-1])
-        last = loops[-1]
-        for i in range(sides):
-            b.tri(c, last[i], last[(i + 1) % sides], mat)
+        ctr = mid(*rings[-1])
+        for i in range(n):
+            b.tri(ctr, rings[-1][(i + 1) % n], rings[-1][i], mat_for(len(rings), i))
 
 
-def box(b, center, size, mat, taper=1.0):
-    """Axis-aligned box; taper scales the +Y face in X and Z."""
-    cx, cy, cz = center
-    hx, hy, hz = size[0] / 2, size[1] / 2, size[2] / 2
-    tx, tz = hx * taper, hz * taper
-    v = [
-        (cx - hx, cy - hy, cz - hz), (cx + hx, cy - hy, cz - hz),
-        (cx + hx, cy - hy, cz + hz), (cx - hx, cy - hy, cz + hz),
-        (cx - tx, cy + hy, cz - tz), (cx + tx, cy + hy, cz - tz),
-        (cx + tx, cy + hy, cz + tz), (cx - tx, cy + hy, cz + tz),
-    ]
-    b.quad(v[0], v[3], v[2], v[1], mat)   # bottom
-    b.quad(v[4], v[5], v[6], v[7], mat)   # top
-    b.quad(v[0], v[1], v[5], v[4], mat)   # -Z
-    b.quad(v[2], v[3], v[7], v[6], mat)   # +Z
-    b.quad(v[1], v[2], v[6], v[5], mat)   # +X
-    b.quad(v[3], v[0], v[4], v[7], mat)   # -X
+def extrude(b, axis, centers, coords_list, mat, cap_start=True, cap_end=True,
+            mat_for=None, up=Y_AXIS):
+    """Loft `coords_list` sections along a straight `axis` through `centers`."""
+    u, v = frame(axis, up)
+    rings = [ring(c, u, v, cd) for c, cd in zip(centers, coords_list)]
+    stitch(b, rings, mat_for or (lambda k, i: mat), cap_start, cap_end)
 
 
-def blade(b, length, root_w, tip_w, thick, mat, x_sign=1):
-    """Flat tapered blade lying in the XZ plane, rooted at the origin."""
-    x0, x1 = 0.18 * x_sign, length * x_sign
-    hz0, hz1 = root_w / 2, tip_w / 2
-    ht = thick / 2
-    v = [
-        (x0, -ht, -hz0), (x1, -ht, -hz1), (x1, -ht, hz1), (x0, -ht, hz0),
-        (x0, ht, -hz0), (x1, ht, -hz1), (x1, ht, hz1), (x0, ht, hz0),
-    ]
-    if x_sign > 0:
-        b.quad(v[0], v[3], v[2], v[1], mat)
-        b.quad(v[4], v[5], v[6], v[7], mat)
-        b.quad(v[0], v[1], v[5], v[4], mat)
-        b.quad(v[2], v[3], v[7], v[6], mat)
-        b.quad(v[1], v[2], v[6], v[5], mat)
-        b.quad(v[3], v[0], v[4], v[7], mat)
-    else:
-        b.quad(v[1], v[2], v[3], v[0], mat)
-        b.quad(v[7], v[6], v[5], v[4], mat)
-        b.quad(v[4], v[5], v[1], v[0], mat)
-        b.quad(v[6], v[7], v[3], v[2], mat)
-        b.quad(v[5], v[6], v[2], v[1], mat)
-        b.quad(v[7], v[4], v[0], v[3], mat)
+def sweep(b, path, radii, sides, mat, roll=0.0, cap=True):
+    """Round tube following a polyline, frames parallel-transported."""
+    tangents = []
+    for k in range(len(path)):
+        if k == 0:
+            tangents.append(norm(sub(path[1], path[0])))
+        elif k == len(path) - 1:
+            tangents.append(norm(sub(path[-1], path[-2])))
+        else:
+            tangents.append(norm(sub(path[k + 1], path[k - 1])))
+
+    rings, u = [], None
+    for k, (p, t) in enumerate(zip(path, tangents)):
+        if u is None:
+            u, _ = frame(t)
+        else:
+            u = norm(sub(u, mul(t, dot(u, t))))   # parallel transport
+        v = cross(u, t)
+        r = radii[k]
+        coords = [(r * math.cos(2 * math.pi * (i + roll) / sides),
+                   r * math.sin(2 * math.pi * (i + roll) / sides))
+                  for i in range(sides)]
+        rings.append(ring(p, u, v, coords))
+    stitch(b, rings, lambda k, i: mat, cap, cap)
 
 
 # --------------------------------------------------------------------------
-# the helicopter
+# fuselage: one loft, nose -> bubble -> tailcone -> fin
+# (z, half_width, height_above_axis, height_below_axis, axis_height)
 # --------------------------------------------------------------------------
 
-CABIN_C = (0.0, 1.08, -0.62)
-CABIN_R = (CABIN_W / 2 + 0.09, 0.64, 1.031)  # faceted nose lands at NOSE_Z
-HUB_Y = 2.62
-BOOM_Y = 1.34
-TAIL_HUB = (-0.30, 1.72, 4.18)
+SECTIONS = [
+    (-1.300, 0.150, 0.150, 0.145, 0.985),   # blunt rounded nose
+    (-1.190, 0.310, 0.300, 0.290, 1.005),
+    (-1.010, 0.440, 0.440, 0.410, 1.030),
+    (-0.760, 0.535, 0.555, 0.510, 1.060),
+    (-0.420, 0.580, 0.640, 0.565, 1.090),
+    (-0.050, 0.590, 0.670, 0.585, 1.100),   # widest and tallest: the seats
+    ( 0.300, 0.555, 0.645, 0.545, 1.130),
+    ( 0.580, 0.495, 0.575, 0.475, 1.165),
+    ( 0.790, 0.435, 0.495, 0.395, 1.245),   # rear of the pod
+    ( 0.890, 0.235, 0.275, 0.215, 1.335),   # hard shoulder: pod ends, boom starts
+    ( 1.070, 0.172, 0.188, 0.162, 1.360),
+    ( 1.900, 0.146, 0.156, 0.136, 1.385),   # slim near-constant tailcone
+    ( 2.800, 0.130, 0.140, 0.122, 1.405),
+    ( 3.650, 0.117, 0.127, 0.109, 1.425),
+    ( 4.350, 0.107, 0.117, 0.101, 1.440),
+    ( 4.700, 0.095, 0.105, 0.091, 1.450),   # cone end; the fin carries on aft
+]
+
+FUSE_N = 10
+LOWER_QUADS = {3, 4, 5, 6}      # lower half of the section
+WINDSCREEN_QUADS = {1, 2, 7, 8}
+DOOR_QUADS = {2, 7}
 
 
-def cabin_material(p):
-    """Glazing wraps the nose and lower front of the bubble, paint on top."""
-    dy = (p[1] - CABIN_C[1]) / CABIN_R[1]
-    dz = (p[2] - CABIN_C[2]) / CABIN_R[2]
-    if dz < -0.30 and dy < 0.40:
-        return GLASS
+def fuselage_material(k, i):
+    if k < 0:
+        return GLASS                        # nose cap
+    if k >= len(SECTIONS):
+        return PAINT                        # tailcone end cap
+    z = SECTIONS[k][0]
+    if z < -0.30 and i in WINDSCREEN_QUADS:
+        return GLASS                        # wraparound windscreen
+    if z < 0.25 and i in DOOR_QUADS:
+        return GLASS                        # door windows
+    if z < 1.00 and i in LOWER_QUADS:
+        return ACCENT                       # white lower half, pod only
     return PAINT
 
 
+def section_at(z):
+    """Interpolate the loft profile, for mounting things onto the body."""
+    for k in range(len(SECTIONS) - 1):
+        z0, z1 = SECTIONS[k][0], SECTIONS[k + 1][0]
+        if z0 <= z <= z1:
+            t = (z - z0) / (z1 - z0)
+            return tuple(lerp(SECTIONS[k][j], SECTIONS[k + 1][j], t)
+                         for j in range(1, 5))
+    raise ValueError(z)
+
+
+def build_fuselage(b):
+    u, v = frame(Z_AXIS)
+    rings = [ring((0.0, cy, z), u, v, oval(ht, hb, w, FUSE_N, 0.9))
+             for (z, w, ht, hb, cy) in SECTIONS]
+    stitch(b, rings, fuselage_material)
+
+
+# --------------------------------------------------------------------------
+# the rest of the airframe
+# --------------------------------------------------------------------------
+
 def build_body():
     b = Builder()
+    build_fuselage(b)
 
-    # round bubble cabin -- 8 segments x 5 rings keeps it chunky
-    ellipsoid(b, CABIN_C, CABIN_R, segs=8, rings=5, mat_for=cabin_material)
+    # main rotor mast, rising out of the transmission deck
+    extrude(b, Y_AXIS,
+            [(0.0, 1.52, MAST_Z), (0.0, 1.92, MAST_Z), (0.0, HUB_Y - 0.10, MAST_Z)],
+            [oval(0.175, 0.175, 0.150, 6), oval(0.105, 0.105, 0.100, 6),
+             oval(0.078, 0.078, 0.078, 6)],
+            METAL, cap_start=False)
 
-    # tapered tail boom, hexagonal
-    tube(b, [
-        ((0.0, 1.26, 0.10), 0.24, 0.24),
-        ((0.0, 1.32, 1.30), 0.17, 0.17),
-        ((0.0, BOOM_Y, 2.90), 0.13, 0.13),
-        ((0.0, 1.44, 3.95), 0.11, 0.11),
-    ], sides=6, mat=PAINT, cap_start=False, cap_end=True)
+    # horizontal stabiliser: tapered slab on the tailcone
+    w, ht, hb, cy = section_at(2.80)
+    extrude(b, X_AXIS,
+            [(-0.62, cy - 0.05, 2.80), (0.0, cy - 0.02, 2.80), (0.62, cy - 0.05, 2.80)],
+            [rect(0.022, 0.110), rect(0.036, 0.165), rect(0.022, 0.110)],
+            PAINT)
 
-    # vertical fin, swept up to carry the tail rotor
-    fin = [
-        (0.0, 1.40, 3.55), (0.0, 1.40, 4.32),
-        (0.0, 2.16, TAIL_Z), (0.0, 2.16, 4.34),
-    ]
-    fin_t = 0.07
-    v_out = [(x + fin_t / 2, y, z) for (x, y, z) in fin]
-    v_in = [(x - fin_t / 2, y, z) for (x, y, z) in fin]
-    b.quad(v_out[0], v_out[1], v_out[2], v_out[3], PAINT)
-    b.quad(v_in[3], v_in[2], v_in[1], v_in[0], PAINT)
-    for i in range(4):
-        j = (i + 1) % 4
-        b.quad(v_in[i], v_in[j], v_out[j], v_out[i], PAINT)
+    # vertical fin: swept tapered plate, root buried in the tailcone.
+    # Extruding along +Y gives (u, v) = (Z, -X), so rect() is (half chord, half thickness).
+    extrude(b, Y_AXIS,
+            [(0.0, 1.300, 4.350), (0.0, 1.760, 4.500), (0.0, 2.200, 4.680)],
+            [rect(0.500, 0.048), rect(0.420, 0.042), rect(0.320, 0.030)],
+            PAINT)
 
-    # lower fin / tail skid guard (overlaps the fin root so it stays attached)
-    box(b, (0.0, 1.22, 4.22), (0.07, 0.46, 0.58), PAINT, taper=1.0)
+    # ventral fin / tail skid under the cone
+    extrude(b, Y_AXIS,
+            [(0.0, 1.050, 4.720), (0.0, 1.380, 4.630)],
+            [rect(0.170, 0.030), rect(0.250, 0.042)],
+            PAINT)
 
-    # horizontal stabiliser
-    box(b, (0.0, 1.40, 3.05), (1.30, 0.07, 0.34), PAINT)
+    # tail rotor gearbox fairing, blended into the left side of the fin
+    extrude(b, X_AXIS,
+            [(-0.06, TAIL_HUB[1], TAIL_HUB[2]), (TAIL_HUB[0] + 0.02, TAIL_HUB[1], TAIL_HUB[2])],
+            [oval(0.150, 0.150, 0.130, 6), oval(0.095, 0.095, 0.090, 6)],
+            METAL)
 
-    # tail rotor gearbox fairing
-    box(b, (-0.16, 1.72, 4.18), (0.30, 0.26, 0.26), METAL)
-
-    # main rotor mast
-    tube(b, [
-        ((0.0, 1.42, -0.10), 0.10, 0.10),
-        ((0.0, HUB_Y - 0.06, -0.10), 0.07, 0.07),
-    ], sides=6, mat=METAL, cap_start=False, cap_end=True, axis="y")
-
-    # engine / transmission hump behind the cabin
-    box(b, (0.0, 1.22, 0.16), (0.74, 0.52, 0.86), PAINT, taper=0.72)
-
-    # skids: tube fore/aft with the front curled up, plus two arched struts
-    for sx in (-1, 1):
+    # skids: one continuous tube per side, front toe curving up
+    for sx in (-1.0, 1.0):
         x = sx * SKID_TRACK / 2
-        tube(b, [
-            ((x, 0.20, -1.42), 0.055, 0.055),
-            ((x, 0.06, -1.12), 0.06, 0.06),
-            ((x, 0.06, 1.18), 0.06, 0.06),
-            ((x, 0.10, 1.34), 0.055, 0.055),
-        ], sides=4, mat=METAL, roll=0.125)
+        path = [(x, 0.290, -1.300), (x, 0.145, -1.120), (x, 0.058, -0.900),
+                (x, 0.052, 0.880), (x, 0.075, 1.060), (x, 0.130, 1.190)]
+        radii = [0.040, 0.052, 0.058, 0.058, 0.050, 0.038]
+        sweep(b, path, radii, 6, METAL, roll=0.5)
 
-        for sz in (-0.58, 0.62):
-            b.merge(strut(x, sz))
+        # two arched cross-struts per side, swept so the bend is smooth
+        for z in (-0.52, 0.56):
+            bw, bht, bhb, bcy = section_at(z)
+            belly = bcy - bhb
+            path = [(sx * 0.20, belly + 0.10, z), (sx * 0.46, belly + 0.02, z),
+                    (sx * 0.72, belly - 0.20, z), (sx * 0.88, belly - 0.38, z),
+                    (x, 0.052, z)]
+            radii = [0.052, 0.048, 0.044, 0.040, 0.038]
+            sweep(b, path, radii, 5, METAL)
 
     return b
 
 
-def strut(skid_x, z):
-    """Arched cross-tube from the belly down to one skid."""
-    b = Builder()
-    inner_x = 0.30 * (1 if skid_x > 0 else -1)
-    pts = [
-        (inner_x, 0.62, z),
-        (skid_x * 0.62, 0.46, z),
-        (skid_x * 0.92, 0.18, z),
-        (skid_x, 0.08, z),
-    ]
-    r = 0.05
-    for k in range(len(pts) - 1):
-        a, c = pts[k], pts[k + 1]
-        quad_link(b, a, c, r, METAL)
-    return b
-
-
-def quad_link(b, a, c, r, mat):
-    """Square-section strut between two points (roughly in the XY plane)."""
-    d = sub(c, a)
-    ln = math.sqrt(d[0] ** 2 + d[1] ** 2 + d[2] ** 2)
-    if ln < 1e-9:
-        return
-    d = (d[0] / ln, d[1] / ln, d[2] / ln)
-    up = (0.0, 0.0, 1.0)
-    side = cross(d, up)
-    sl = math.sqrt(side[0] ** 2 + side[1] ** 2 + side[2] ** 2)
-    side = (side[0] / sl, side[1] / sl, side[2] / sl)
-
-    def corners(p):
-        out = []
-        for (ss, us) in ((1, 1), (-1, 1), (-1, -1), (1, -1)):
-            out.append(tuple(p[k] + side[k] * r * ss + up[k] * r * us
-                             for k in range(3)))
-        return out
-
-    lo, hi = corners(a), corners(c)
-    for i in range(4):
-        j = (i + 1) % 4
-        b.quad(lo[i], lo[j], hi[j], hi[i], mat)
-    b.quad(lo[3], lo[2], lo[1], lo[0], mat)
-    b.quad(hi[0], hi[1], hi[2], hi[3], mat)
+def rotor_blade(b, sign, length, chord_root, chord_tip, thick, cone, mat):
+    """Tapered blade along +/-X with a little coning, rooted near the hub."""
+    axis = (sign, 0.0, 0.0)
+    root, tip = 0.22 * sign, length * sign
+    extrude(b, axis,
+            [(root, 0.0, 0.0), (tip * 0.55, cone * 0.55, 0.0), (tip, cone, 0.0)],
+            [rect(thick / 2, chord_root / 2),
+             rect(thick / 2 * 0.85, (chord_root * 0.55 + chord_tip * 0.45) / 2),
+             rect(thick / 2 * 0.7, chord_tip / 2)],
+            mat)
 
 
 def build_main_rotor():
-    """Authored around the hub origin; spins about local +Y."""
     b = Builder()
-    tube(b, [
-        ((0.0, -0.06, 0.0), 0.11, 0.11),
-        ((0.0, 0.10, 0.0), 0.09, 0.09),
-    ], sides=6, mat=METAL, axis="y")
+    # teetering head: a short drum plus the crossbar the blades hang off
+    extrude(b, Y_AXIS, [(0.0, -0.10, 0.0), (0.0, 0.08, 0.0)],
+            [oval(0.105, 0.105, 0.105, 6), oval(0.088, 0.088, 0.088, 6)], METAL)
+    extrude(b, X_AXIS, [(-0.26, 0.0, 0.0), (0.26, 0.0, 0.0)],
+            [rect(0.050, 0.058), rect(0.050, 0.058)], METAL)
     r = MAIN_ROTOR_D / 2
-    blade(b, r, 0.30, 0.22, 0.05, METAL, x_sign=1)
-    blade(b, r, 0.30, 0.22, 0.05, METAL, x_sign=-1)
+    for sign in (1, -1):
+        rotor_blade(b, sign, r, 0.28, 0.20, 0.045, 0.14, METAL)
     return b
 
 
 def build_tail_rotor():
-    """Authored flat in local XZ so it also spins about local +Y."""
     b = Builder()
-    tube(b, [
-        ((0.0, -0.05, 0.0), 0.07, 0.07),
-        ((0.0, 0.05, 0.0), 0.07, 0.07),
-    ], sides=6, mat=METAL, axis="y")
+    extrude(b, Y_AXIS, [(0.0, -0.055, 0.0), (0.0, 0.055, 0.0)],
+            [oval(0.070, 0.070, 0.070, 5), oval(0.070, 0.070, 0.070, 5)], METAL)
     r = TAIL_ROTOR_D / 2
-    blade(b, r, 0.13, 0.10, 0.03, METAL, x_sign=1)
-    blade(b, r, 0.13, 0.10, 0.03, METAL, x_sign=-1)
+    for sign in (1, -1):
+        rotor_blade(b, sign, r, 0.125, 0.095, 0.028, 0.0, METAL)
     return b
 
 
@@ -379,30 +383,18 @@ def build_tail_rotor():
 # --------------------------------------------------------------------------
 
 MATERIALS = [
-    {
-        "name": "Paint",
-        "pbrMetallicRoughness": {
-            "baseColorFactor": [0.871, 0.259, 0.196, 1.0],
-            "metallicFactor": 0.0,
-            "roughnessFactor": 0.55,
-        },
-    },
-    {
-        "name": "Glass",
-        "pbrMetallicRoughness": {
-            "baseColorFactor": [0.106, 0.149, 0.196, 1.0],
-            "metallicFactor": 0.10,
-            "roughnessFactor": 0.15,
-        },
-    },
-    {
-        "name": "Metal",
-        "pbrMetallicRoughness": {
-            "baseColorFactor": [0.157, 0.161, 0.176, 1.0],
-            "metallicFactor": 0.60,
-            "roughnessFactor": 0.45,
-        },
-    },
+    {"name": "Paint", "pbrMetallicRoughness": {
+        "baseColorFactor": [0.839, 0.263, 0.196, 1.0],
+        "metallicFactor": 0.0, "roughnessFactor": 0.55}},
+    {"name": "Glass", "pbrMetallicRoughness": {
+        "baseColorFactor": [0.094, 0.129, 0.169, 1.0],
+        "metallicFactor": 0.10, "roughnessFactor": 0.15}},
+    {"name": "Metal", "pbrMetallicRoughness": {
+        "baseColorFactor": [0.180, 0.184, 0.204, 1.0],
+        "metallicFactor": 0.60, "roughnessFactor": 0.45}},
+    {"name": "Accent", "pbrMetallicRoughness": {
+        "baseColorFactor": [0.925, 0.918, 0.898, 1.0],
+        "metallicFactor": 0.0, "roughnessFactor": 0.60}},
 ]
 
 
@@ -426,8 +418,7 @@ class Gltf:
         data = bytearray()
         for v in values:
             data += struct.pack("<3f", *v)
-        view = self._view(data, 34962)
-        acc = {"bufferView": view, "componentType": 5126,
+        acc = {"bufferView": self._view(data, 34962), "componentType": 5126,
                "count": len(values), "type": "VEC3"}
         if with_bounds:
             acc["min"] = [min(v[i] for v in values) for i in range(3)]
@@ -439,9 +430,9 @@ class Gltf:
         data = bytearray()
         for i in idx:
             data += struct.pack("<H", i)
-        view = self._view(data, 34963)
-        self.accessors.append({"bufferView": view, "componentType": 5123,
-                               "count": len(idx), "type": "SCALAR"})
+        self.accessors.append({"bufferView": self._view(data, 34963),
+                               "componentType": 5123, "count": len(idx),
+                               "type": "SCALAR"})
         return len(self.accessors) - 1
 
     def mesh(self, name, builder):
@@ -464,7 +455,6 @@ class Gltf:
 def write_glb(path, gltf, nodes, scene_nodes):
     while len(gltf.bin) % 4:
         gltf.bin.append(0)
-
     doc = {
         "asset": {"version": "2.0",
                   "generator": "make_helicopter.py (low-poly R22)"},
@@ -477,12 +467,11 @@ def write_glb(path, gltf, nodes, scene_nodes):
         "bufferViews": gltf.views,
         "buffers": [{"byteLength": len(gltf.bin)}],
     }
-
     js = json.dumps(doc, separators=(",", ":")).encode("utf-8")
     js += b" " * ((4 - len(js) % 4) % 4)
-
     out = bytearray()
-    out += struct.pack("<III", 0x46546C67, 2, 12 + 8 + len(js) + 8 + len(gltf.bin))
+    out += struct.pack("<III", 0x46546C67, 2,
+                       12 + 8 + len(js) + 8 + len(gltf.bin))
     out += struct.pack("<II", len(js), 0x4E4F534A) + js
     out += struct.pack("<II", len(gltf.bin), 0x004E4942) + bytes(gltf.bin)
     Path(path).parent.mkdir(parents=True, exist_ok=True)
@@ -492,36 +481,22 @@ def write_glb(path, gltf, nodes, scene_nodes):
 
 def main():
     out = sys.argv[1] if len(sys.argv) > 1 else "assets/models/helicopter_lowpoly.glb"
-
     g = Gltf()
-    body = build_body()
-    main_rotor = build_main_rotor()
-    tail_rotor = build_tail_rotor()
-
-    body_mesh = g.mesh("Body", body)
-    main_mesh = g.mesh("MainRotorBlades", main_rotor)
-    tail_mesh = g.mesh("TailRotorBlades", tail_rotor)
+    body, main_rotor, tail_rotor = build_body(), build_main_rotor(), build_tail_rotor()
 
     s = math.sin(math.pi / 4)
     nodes = [
         {"name": "Helicopter", "children": [1, 2, 3]},
-        {"name": "Body", "mesh": body_mesh},
-        {"name": "MainRotor", "mesh": main_mesh,
-         "translation": [0.0, HUB_Y, -0.10]},
-        {"name": "TailRotor", "mesh": tail_mesh,
+        {"name": "Body", "mesh": g.mesh("Body", body)},
+        {"name": "MainRotor", "mesh": g.mesh("MainRotorHead", main_rotor),
+         "translation": [0.0, HUB_Y - 0.08, MAST_Z]},
+        {"name": "TailRotor", "mesh": g.mesh("TailRotorHead", tail_rotor),
          "translation": list(TAIL_HUB),
-         "rotation": [0.0, 0.0, s, s]},   # local +Y -> world +X
+         "rotation": [0.0, 0.0, s, s]},          # local +Y -> world +X
     ]
-
     size = write_glb(out, g, nodes, [0])
-
-    tris = sum(len(gr["idx"]) // 3
-               for m in (body, main_rotor, tail_rotor)
-               for gr in m.groups.values())
-    verts = sum(len(gr["pos"])
-                for m in (body, main_rotor, tail_rotor)
-                for gr in m.groups.values())
-    print(f"{out}: {tris} triangles, {verts} vertices, {size} bytes")
+    tris = body.tris() + main_rotor.tris() + tail_rotor.tris()
+    print(f"{out}: {tris} triangles, {size} bytes")
 
 
 if __name__ == "__main__":

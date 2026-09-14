@@ -53,6 +53,32 @@ def read_accessor(gltf, blob, index):
     return out
 
 
+def ground_and_shadow(tris, extent=7.0, tiles=14):
+    """A tiled floor plus the model flattened onto it.
+
+    Without a ground the car reads as floating and it is impossible to judge
+    ride height or stance. The shadow is a straight vertical projection rather
+    than a light-direction one -- it lands where contact shadow belongs and
+    needs no extra machinery."""
+    out = []
+    step = 2.0 * extent / tiles
+    for i in range(tiles):
+        for j in range(tiles):
+            x0, z0 = -extent + i * step, -extent + j * step
+            x1, z1 = x0 + step, z0 + step
+            shade = 0.62 if (i + j) % 2 else 0.58
+            col = [shade * 0.97, shade, shade * 1.06]
+            quad = [(x0, 0.0, z0), (x1, 0.0, z0), (x1, 0.0, z1), (x0, 0.0, z1)]
+            up = (0.0, 1.0, 0.0)
+            out.append((quad[0], quad[1], quad[2], up, col, [0, 0, 0]))
+            out.append((quad[0], quad[2], quad[3], up, col, [0, 0, 0]))
+    for a, b, c, _n, _col, _e in tris:
+        flat = [(v[0], 0.006, v[2]) for v in (a, b, c)]
+        out.append((flat[0], flat[1], flat[2], (0.0, 1.0, 0.0),
+                    [0.30, 0.31, 0.34], [0, 0, 0]))
+    return out
+
+
 def collect_triangles(gltf, blob):
     """-> list of (v0, v1, v2, normal, base_color, emissive)"""
     tris = []
@@ -108,8 +134,9 @@ def render(tris, width, height, eye, target, fov_deg=32.0, up=(0.0, 1.0, 0.0)):
         fb.append([c] * width)
     zbuf = [[1e30] * width for _ in range(height)]
 
-    key = unit((-0.45, 0.82, -0.36))
-    fill = unit((0.65, 0.25, 0.55))
+    key = unit((-0.50, 0.78, -0.38))
+    fill = unit((0.72, 0.22, 0.30))
+    rim = unit((0.15, 0.30, 0.94))
 
     for a, b, c, n, col, emi in tris:
         pts, depths = [], []
@@ -132,11 +159,15 @@ def render(tris, width, height, eye, target, fov_deg=32.0, up=(0.0, 1.0, 0.0)):
         if area >= 0:  # back face (screen y is flipped)
             continue
 
-        lam = max(0.0, dot(n, key)) * 0.85 + max(0.0, dot(n, fill)) * 0.22
-        sky = 0.18 + 0.16 * (n[1] * 0.5 + 0.5)
-        shade = [min(1.0, (col[i] ** (1 / 2.2)) * (lam + sky) + emi[i] * 0.8)
+        lam = (max(0.0, dot(n, key)) * 0.95
+               + max(0.0, dot(n, fill)) * 0.30
+               + max(0.0, dot(n, rim)) * 0.16)
+        sky = 0.20 + 0.20 * (n[1] * 0.5 + 0.5)   # hemisphere ambient
+        shade = [(col[i] ** (1 / 2.2)) * (lam + sky) + emi[i] * 0.85
                  for i in range(3)]
-        rgb = tuple(int(255 * min(1.0, max(0.0, v))) for v in shade)
+        # gentle shoulder so bright panels roll off instead of clipping flat
+        rgb = tuple(int(255 * min(1.0, max(0.0, v / (1.0 + v * 0.22))))
+                    for v in shade)
 
         minx = max(0, int(math.floor(min(x0, x1, x2))))
         maxx = min(width - 1, int(math.ceil(max(x0, x1, x2))))
@@ -184,11 +215,12 @@ def write_png(path, fb):
 
 
 VIEWS = {
-    "hero": ((5.6, 3.0, -6.2), (0.0, 0.72, -0.1)),
-    "side": ((9.5, 1.35, 0.0), (0.0, 0.78, 0.0)),
-    "front": ((0.9, 1.6, -8.4), (0.0, 0.80, -0.6)),
-    "rear": ((-1.2, 1.9, 8.2), (0.0, 0.80, 0.6)),
+    "hero": ((5.2, 2.05, -6.0), (0.0, 0.62, -0.05)),
+    "side": ((10.5, 0.95, 0.0), (0.0, 0.68, 0.0)),
+    "front": ((0.7, 1.15, -8.6), (0.0, 0.66, -0.6)),
+    "rear": ((-1.0, 1.35, 8.4), (0.0, 0.68, 0.6)),
     "top": ((0.02, 13.5, 0.6), (0.0, 0.7, 0.0)),
+    "low": ((3.4, 0.55, -5.2), (0.0, 0.70, 0.1)),
 }
 
 
@@ -199,12 +231,15 @@ def main():
     ap.add_argument("-v", "--view", default="hero", choices=sorted(VIEWS))
     ap.add_argument("-w", "--width", type=int, default=640)
     ap.add_argument("-t", "--height", type=int, default=400)
+    ap.add_argument("--no-ground", dest="ground", action="store_false",
+                    help="drop the floor and contact shadow")
     args = ap.parse_args()
 
     gltf, blob = load_glb(args.glb)
     tris = collect_triangles(gltf, blob)
+    scene = ground_and_shadow(tris) + tris if args.ground else tris
     eye, target = VIEWS[args.view]
-    fb = render(tris, args.width, args.height, eye, target)
+    fb = render(scene, args.width, args.height, eye, target)
     write_png(args.out, fb)
     print("%s  (%d triangles, view=%s)" % (args.out, len(tris), args.view))
 

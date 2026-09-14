@@ -46,7 +46,23 @@ MAST_Z = 0.22
 HUB_Y = 2.62                            # top of the rotor head == OVERALL_H
 TAIL_HUB = (-0.25, 1.44, 4.25)
 
-PAINT, GLASS, METAL, ACCENT = 0, 1, 2, 3
+PAINT, GLASS, METAL, ACCENT, INTERIOR, SEAT = 0, 1, 2, 3, 4, 5
+
+# Two detail levels off the same geometry. "minimal" keeps every silhouette
+# station (the nose, the widest point and the shoulder especially) and drops
+# only resolution and bolt-on detail, so the two read identically at distance.
+MINIMAL_STATIONS = (0, 2, 4, 5, 7, 8, 9, 11, 13, 15)
+LOD = {
+    "full": dict(fuse_n=12, stations=None, skid_sides=6, strut_sides=5,
+                 coarse_path=False, driveshaft=True, rotor_head=True,
+                 interior_scale=0.92),
+    # a coarser hull cuts further inside the section, so the interior shell
+    # has to shrink with it to stay buried
+    "minimal": dict(fuse_n=8, stations=MINIMAL_STATIONS, skid_sides=4,
+                    strut_sides=4, coarse_path=True, driveshaft=False,
+                    rotor_head=False, interior_scale=0.84),
+}
+D = LOD["full"]
 
 X_AXIS, Y_AXIS, Z_AXIS = (1.0, 0.0, 0.0), (0.0, 1.0, 0.0), (0.0, 0.0, 1.0)
 
@@ -96,13 +112,18 @@ def lerp(a, b, t):
 # --------------------------------------------------------------------------
 
 class Builder:
-    def __init__(self):
+    def __init__(self, accept=None):
         self.groups = {}
+        self.accept = accept          # keep only faces whose material passes
 
     def _g(self, mat):
         return self.groups.setdefault(mat, {"pos": [], "nrm": [], "idx": []})
 
     def tri(self, a, b, c, mat):
+        if mat is None:
+            return                    # face suppressed (e.g. open cabin top)
+        if self.accept is not None and not self.accept(mat):
+            return
         n = cross(sub(b, a), sub(c, a))
         ln = math.sqrt(dot(n, n))
         if ln < 1e-12:
@@ -167,21 +188,29 @@ def rect(half_u, half_v):
 
 
 def stitch(b, rings, mat_for, cap_start=True, cap_end=True):
-    """rings: list of equal-length point loops, ordered along the sweep."""
+    """rings: list of equal-length point loops, ordered along the sweep.
+
+    mat_for(station, quad_index, face_centre) picks the material per face, so
+    a region like the canopy can be described by where it actually is rather
+    than by which vertex indices happen to fall inside it.
+    """
     n = len(rings[0])
     for k in range(len(rings) - 1):
         a, c = rings[k], rings[k + 1]
         for i in range(n):
             j = (i + 1) % n
-            b.quad(a[i], c[i], c[j], a[j], mat_for(k, i))
+            b.quad(a[i], c[i], c[j], a[j],
+                   mat_for(k, i, mid(a[i], c[i], c[j], a[j])))
     if cap_start:
         ctr = mid(*rings[0])
         for i in range(n):
-            b.tri(ctr, rings[0][i], rings[0][(i + 1) % n], mat_for(-1, i))
+            q, r = rings[0][i], rings[0][(i + 1) % n]
+            b.tri(ctr, q, r, mat_for(-1, i, mid(ctr, q, r)))
     if cap_end:
         ctr = mid(*rings[-1])
         for i in range(n):
-            b.tri(ctr, rings[-1][(i + 1) % n], rings[-1][i], mat_for(len(rings), i))
+            q, r = rings[-1][(i + 1) % n], rings[-1][i]
+            b.tri(ctr, q, r, mat_for(len(rings), i, mid(ctr, q, r)))
 
 
 def extrude(b, axis, centers, coords_list, mat, cap_start=True, cap_end=True,
@@ -189,11 +218,21 @@ def extrude(b, axis, centers, coords_list, mat, cap_start=True, cap_end=True,
     """Loft `coords_list` sections along a straight `axis` through `centers`."""
     u, v = frame(axis, up)
     rings = [ring(c, u, v, cd) for c, cd in zip(centers, coords_list)]
-    stitch(b, rings, mat_for or (lambda k, i: mat), cap_start, cap_end)
+    stitch(b, rings, mat_for or (lambda k, i, c: mat), cap_start, cap_end)
+
+
+def decimate(path, radii):
+    """Halve a swept path, always keeping the last point exactly once."""
+    idx = list(range(0, len(path), 2))
+    if idx[-1] != len(path) - 1:
+        idx.append(len(path) - 1)
+    return [path[i] for i in idx], [radii[i] for i in idx]
 
 
 def sweep(b, path, radii, sides, mat, roll=0.0, cap=True):
     """Round tube following a polyline, frames parallel-transported."""
+    assert all(dot(sub(path[k + 1], path[k]), sub(path[k + 1], path[k])) > 1e-12
+               for k in range(len(path) - 1)), "repeated point in swept path"
     tangents = []
     for k in range(len(path)):
         if k == 0:
@@ -215,7 +254,7 @@ def sweep(b, path, radii, sides, mat, roll=0.0, cap=True):
                    r * math.sin(2 * math.pi * (i + roll) / sides))
                   for i in range(sides)]
         rings.append(ring(p, u, v, coords))
-    stitch(b, rings, lambda k, i: mat, cap, cap)
+    stitch(b, rings, lambda k, i, c: mat, cap, cap)
 
 
 # --------------------------------------------------------------------------
@@ -242,24 +281,31 @@ SECTIONS = [
     ( 4.700, 0.095, 0.105, 0.091, 1.450),   # cone end; the fin carries on aft
 ]
 
-FUSE_N = 10
-LOWER_QUADS = {3, 4, 5, 6}      # lower half of the section
-WINDSCREEN_QUADS = {1, 2, 7, 8}
-DOOR_QUADS = {2, 7}
+# Canopy: an ellipse in the side view, wrapped around whatever section the
+# body happens to have there. Glazing therefore follows the hull instead of
+# stair-stepping along vertex indices.
+CANOPY_Z, CANOPY_Y = -0.72, 1.26
+CANOPY_A, CANOPY_B = 0.94, 0.34
+CANOPY_ROOF = 0.62      # glazing stops this far up the section, leaving a spine
+SILL_DROP = 0.06        # glazing, and the cabin tub rim, start here
+ACCENT_DROP = 0.46      # white belly: a stripe, not half the flank
+ACCENT_AFT = 1.00       # ...and stops where the pod does
 
 
-def fuselage_material(k, i):
-    if k < 0:
-        return GLASS                        # nose cap
-    if k >= len(SECTIONS):
+def fuselage_material(k, i, c, n_stations):
+    if k >= n_stations:
         return PAINT                        # tailcone end cap
-    z = SECTIONS[k][0]
-    if z < -0.30 and i in WINDSCREEN_QUADS:
-        return GLASS                        # wraparound windscreen
-    if z < 0.25 and i in DOOR_QUADS:
-        return GLASS                        # door windows
-    if z < 1.00 and i in LOWER_QUADS:
-        return ACCENT                       # white lower half, pod only
+    if k < 0:
+        return PAINT                        # nose cap: nothing behind it to see
+    _, y, z = c
+    w, ht, hb, cy = section_at(z)
+    # The waterline doubles as the bottom edge of the glazing, so paint never
+    # gets trapped as a sliver between the canopy and the white belly.
+    if z < ACCENT_AFT and y < cy - ACCENT_DROP:
+        return ACCENT
+    inside = ((z - CANOPY_Z) / CANOPY_A) ** 2 + ((y - CANOPY_Y) / CANOPY_B) ** 2
+    if inside < 1.0 and cy - SILL_DROP < y < cy + CANOPY_ROOF * ht:
+        return GLASS
     return PAINT
 
 
@@ -276,18 +322,146 @@ def section_at(z):
 
 def build_fuselage(b):
     u, v = frame(Z_AXIS)
-    rings = [ring((0.0, cy, z), u, v, oval(ht, hb, w, FUSE_N, 0.9))
-             for (z, w, ht, hb, cy) in SECTIONS]
-    stitch(b, rings, fuselage_material)
+    picked = (SECTIONS if D["stations"] is None
+              else [SECTIONS[i] for i in D["stations"]])
+    n = D["fuse_n"]
+    rings = [ring((0.0, cy, z), u, v, oval(ht, hb, w, n, 0.9))
+             for (z, w, ht, hb, cy) in picked]
+    stitch(b, rings, lambda k, i, c: fuselage_material(k, i, c, len(picked)))
 
 
 # --------------------------------------------------------------------------
 # the rest of the airframe
 # --------------------------------------------------------------------------
 
-def build_body():
-    b = Builder()
+INTERIOR_NOSE = -1.28       # just inside the nose cap
+CABIN_AFT = 0.62            # rear bulkhead, behind the seats
+SILL_LIFT = 0.04            # tub rim overlaps the glazing's lower edge
+
+
+def box(b, lo, hi, mat):
+    """Axis-aligned box between two opposite corners."""
+    cy = (lo[1] + hi[1]) / 2
+    cz = (lo[2] + hi[2]) / 2
+    extrude(b, X_AXIS, [(lo[0], cy, cz), (hi[0], cy, cz)],
+            [rect((hi[1] - lo[1]) / 2, (hi[2] - lo[2]) / 2)] * 2, mat)
+
+
+def _hull_rings():
+    picked = (SECTIONS if D["stations"] is None
+              else [SECTIONS[i] for i in D["stations"]])
+    u, v = frame(Z_AXIS)
+    return [(z, ring((0.0, cy, z), u, v, oval(ht, hb, w, D["fuse_n"], 0.9)))
+            for (z, w, ht, hb, cy) in picked]
+
+
+def _section_polygon(z, rings):
+    """The hull's cross-section at z -- a linear blend of the two it lies between."""
+    for k in range(len(rings) - 1):
+        z0, z1 = rings[k][0], rings[k + 1][0]
+        if z0 <= z <= z1:
+            t = (z - z0) / (z1 - z0) if z1 > z0 else 0.0
+            return [(a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t)
+                    for a, b in zip(rings[k][1], rings[k + 1][1])]
+    return None
+
+
+def hull_half_width(y, z, rings):
+    """How wide the hull is at height y, station z. Zero outside the section."""
+    poly = _section_polygon(z, rings)
+    if poly is None:
+        return 0.0
+    xs = []
+    n = len(poly)
+    for i in range(n):
+        x0, y0 = poly[i]
+        x1, y1 = poly[(i + 1) % n]
+        if (y0 > y) != (y1 > y):
+            xs.append(x0 + (x1 - x0) * (y - y0) / (y1 - y0))
+    return max(xs) if xs else 0.0
+
+
+def fit_half_width(y0, y1, z0, z1, margin=0.92):
+    """Widest half-width that still fits everywhere in a y/z box.
+
+    Interior parts are sized from this rather than by hand: the pod is widest
+    at its waist and much narrower at floor height, so a number picked off the
+    section's maximum puts furniture through the skin.
+    """
+    rings = _hull_rings()
+    zs = [z0 + (z1 - z0) * i / 4.0 for i in range(5)]
+    return margin * min(hull_half_width(y, z, rings) for y in (y0, y1) for z in zs)
+
+
+def assert_inside_hull(builder, what):
+    """Fitting interior parts by eye is how you get furniture sticking out of
+    the fuselage: a box wide enough at the pod's waist is far too wide at floor
+    height. Check every vertex against the hull section at its own z."""
+    rings = _hull_rings()
+    for g in builder.groups.values():
+        for (x, y, z) in g["pos"]:
+            poly = _section_polygon(z, rings)
+            assert poly is not None, f"{what}: z={z:.3f} is beyond the lofted body"
+            hit, n = False, len(poly)
+            for i in range(n):
+                x0, y0 = poly[i]
+                x1, y1 = poly[(i + 1) % n]
+                if (y0 > y) != (y1 > y) and x < x0 + (x1 - x0) * (y - y0) / (y1 - y0):
+                    hit = not hit
+            assert hit, (f"{what}: vertex ({x:+.2f},{y:+.2f},{z:+.2f}) pokes "
+                         f"through the hull")
+
+
+def build_cabin(b):
+    """A real cabin compartment, visible through the glazing.
+
+    The tub is the hull's own sections shrunk about their axis and wound
+    inside-out, so the faces that survive are the ones you see when looking
+    in from outside. Faces above the window sill return None and are dropped,
+    which is what opens the top. Because tub and hull share stations and the
+    shrink is about each section axis, the tub cannot poke through.
+    """
+    picked = (SECTIONS if D["stations"] is None
+              else [SECTIONS[i] for i in D["stations"]])
+    zs = ([INTERIOR_NOSE]
+          + [t[0] for t in picked if INTERIOR_NOSE < t[0] < CABIN_AFT]
+          + [CABIN_AFT])
+    u, v = frame(Z_AXIS)
+    k = D["interior_scale"]
+    rings = []
+    for z in zs:
+        w, ht, hb, cy = section_at(z)
+        r = ring((0.0, cy, z), u, v, oval(ht * k, hb * k, w * k, 8, 0.9))
+        rings.append(r[::-1])          # inside-out: this is seen from within
+
+    def tub(_k, _i, c):
+        sill = section_at(c[2])[3] - SILL_DROP + SILL_LIFT
+        return None if c[1] > sill else INTERIOR
+
+    stitch(b, rings, tub)
+
+    fw = fit_half_width(0.78, 0.84, -0.52, 0.42)
+    box(b, (-fw, 0.78, -0.52), (fw, 0.84, 0.42), INTERIOR)       # floor
+    cw = fit_half_width(0.84, 0.99, 0.02, 0.42)
+    box(b, (-cw, 0.84, 0.02), (cw, 0.99, 0.42), SEAT)            # bench cushion
+    sw = fit_half_width(0.97, 1.46, 0.36, 0.52)
+    for sx in (-1, 1):                                           # seat backs
+        box(b, (sx * 0.045, 0.97, 0.36), (sx * sw, 1.46, 0.52), SEAT)
+    # rear bulkhead: without it you see daylight straight out the back of the
+    # cabin through the windscreen
+    bw = fit_half_width(0.88, 1.50, 0.58, 0.64)
+    box(b, (-bw, 0.88, 0.58), (bw, 1.50, 0.64), INTERIOR)
+    box(b, (-0.26, 1.02, -0.46), (0.26, 1.34, -0.38), INTERIOR)  # panel
+    box(b, (-0.035, 0.84, -0.10), (0.035, 1.16, -0.02), METAL)   # cyclic post
+    box(b, (-0.30, 1.16, -0.09), (0.30, 1.22, -0.03), METAL)     # T-bar cyclic
+
+
+def build_body(b):
     build_fuselage(b)
+    cabin = Builder()
+    build_cabin(cabin)
+    assert_inside_hull(cabin, "cabin")
+    b.merge(cabin)
 
     # main rotor mast, rising out of the transmission deck
     extrude(b, Y_AXIS,
@@ -316,6 +490,16 @@ def build_body():
             [rect(0.170, 0.030), rect(0.250, 0.042)],
             PAINT)
 
+    # tail rotor driveshaft cover, riding the spine of the tailcone.
+    # Extruding along +Z gives (u, v) = (Y, X), so rect() is (half height, half width).
+    spine_z = (0.95, 1.90, 2.80, 3.70, 4.30)
+    spine_w = (0.058, 0.054, 0.050, 0.046, 0.042)
+    if D["driveshaft"]:
+        extrude(b, Z_AXIS,
+                [(0.0, section_at(z)[3] + section_at(z)[1] - 0.030, z) for z in spine_z],
+                [rect(0.044, w) for w in spine_w],
+                METAL, cap_start=False)
+
     # tail rotor gearbox fairing, blended into the left side of the fin
     extrude(b, X_AXIS,
             [(-0.06, TAIL_HUB[1], TAIL_HUB[2]), (TAIL_HUB[0] + 0.02, TAIL_HUB[1], TAIL_HUB[2])],
@@ -328,7 +512,9 @@ def build_body():
         path = [(x, 0.290, -1.300), (x, 0.145, -1.120), (x, 0.058, -0.900),
                 (x, 0.052, 0.880), (x, 0.075, 1.060), (x, 0.130, 1.190)]
         radii = [0.040, 0.052, 0.058, 0.058, 0.050, 0.038]
-        sweep(b, path, radii, 6, METAL, roll=0.5)
+        if D["coarse_path"]:
+            path, radii = decimate(path, radii)
+        sweep(b, path, radii, D["skid_sides"], METAL, roll=0.5)
 
         # two arched cross-struts per side, swept so the bend is smooth
         for z in (-0.52, 0.56):
@@ -337,22 +523,33 @@ def build_body():
             path = [(sx * 0.20, belly + 0.10, z), (sx * 0.46, belly + 0.02, z),
                     (sx * 0.72, belly - 0.20, z), (sx * 0.88, belly - 0.38, z),
                     (x, 0.052, z)]
-            radii = [0.052, 0.048, 0.044, 0.040, 0.038]
-            sweep(b, path, radii, 5, METAL)
+            radii = [0.062, 0.058, 0.053, 0.048, 0.044]
+            if D["coarse_path"]:
+                path, radii = decimate(path, radii)
+            sweep(b, path, radii, D["strut_sides"], METAL)
 
-    return b
 
+def rotor_blade(b, sign, length, chord_root, chord_tip, thick, cone, mat,
+                root=0.22, sweep_back=0.0):
+    """Blade along +/-X: coned up, tapered in chord and closed with a tip.
 
-def rotor_blade(b, sign, length, chord_root, chord_tip, thick, cone, mat):
-    """Tapered blade along +/-X with a little coning, rooted near the hub."""
+    Stations ride outboard at 0 / 55 / 92 / 100 % span; the outer two drift aft
+    by `sweep_back` so the tip has a little sweep instead of ending square.
+    """
     axis = (sign, 0.0, 0.0)
-    root, tip = 0.22 * sign, length * sign
-    extrude(b, axis,
-            [(root, 0.0, 0.0), (tip * 0.55, cone * 0.55, 0.0), (tip, cone, 0.0)],
-            [rect(thick / 2, chord_root / 2),
-             rect(thick / 2 * 0.85, (chord_root * 0.55 + chord_tip * 0.45) / 2),
-             rect(thick / 2 * 0.7, chord_tip / 2)],
-            mat)
+    tip = length * sign
+    spans = (0.0, 0.55, 0.92, 1.0)
+    chords = (chord_root,
+              chord_root * 0.55 + chord_tip * 0.45,
+              chord_tip,
+              chord_tip * 0.55)
+    thicks = (1.0, 0.88, 0.72, 0.40)
+    centers, sections = [], []
+    for t, chord, tk in zip(spans, chords, thicks):
+        x = root * sign + (tip - root * sign) * t
+        centers.append((x, cone * t, sweep_back * max(0.0, (t - 0.5) / 0.5)))
+        sections.append(rect(thick / 2 * tk, chord / 2))
+    extrude(b, axis, centers, sections, mat)
 
 
 def build_main_rotor():
@@ -362,9 +559,17 @@ def build_main_rotor():
             [oval(0.105, 0.105, 0.105, 6), oval(0.088, 0.088, 0.088, 6)], METAL)
     extrude(b, X_AXIS, [(-0.26, 0.0, 0.0), (0.26, 0.0, 0.0)],
             [rect(0.050, 0.058), rect(0.050, 0.058)], METAL)
+    # swashplate below the head, and a pitch link up to each blade root
+    if D["rotor_head"]:
+        extrude(b, Y_AXIS, [(0.0, -0.30, 0.0), (0.0, -0.24, 0.0)],
+                [oval(0.150, 0.150, 0.150, 6), oval(0.160, 0.160, 0.160, 6)], METAL)
+        for sign in (1, -1):
+            extrude(b, Y_AXIS,
+                    [(sign * 0.135, -0.27, 0.115), (sign * 0.150, 0.02, 0.085)],
+                    [rect(0.024, 0.024), rect(0.024, 0.024)], METAL)
     r = MAIN_ROTOR_D / 2
     for sign in (1, -1):
-        rotor_blade(b, sign, r, 0.28, 0.20, 0.045, 0.14, METAL)
+        rotor_blade(b, sign, r, 0.215, 0.165, 0.042, 0.14, METAL, sweep_back=0.05)
     return b
 
 
@@ -374,7 +579,7 @@ def build_tail_rotor():
             [oval(0.070, 0.070, 0.070, 5), oval(0.070, 0.070, 0.070, 5)], METAL)
     r = TAIL_ROTOR_D / 2
     for sign in (1, -1):
-        rotor_blade(b, sign, r, 0.125, 0.095, 0.028, 0.0, METAL)
+        rotor_blade(b, sign, r, 0.145, 0.115, 0.030, 0.0, METAL, root=0.105)
     return b
 
 
@@ -386,15 +591,24 @@ MATERIALS = [
     {"name": "Paint", "pbrMetallicRoughness": {
         "baseColorFactor": [0.839, 0.263, 0.196, 1.0],
         "metallicFactor": 0.0, "roughnessFactor": 0.55}},
-    {"name": "Glass", "pbrMetallicRoughness": {
-        "baseColorFactor": [0.094, 0.129, 0.169, 1.0],
-        "metallicFactor": 0.10, "roughnessFactor": 0.15}},
+    {"name": "Glass",
+     "alphaMode": "BLEND",
+     "doubleSided": True,
+     "pbrMetallicRoughness": {
+        "baseColorFactor": [0.502, 0.624, 0.690, 0.220],
+        "metallicFactor": 0.0, "roughnessFactor": 0.06}},
     {"name": "Metal", "pbrMetallicRoughness": {
         "baseColorFactor": [0.180, 0.184, 0.204, 1.0],
         "metallicFactor": 0.60, "roughnessFactor": 0.45}},
     {"name": "Accent", "pbrMetallicRoughness": {
         "baseColorFactor": [0.925, 0.918, 0.898, 1.0],
         "metallicFactor": 0.0, "roughnessFactor": 0.60}},
+    {"name": "Interior", "doubleSided": True, "pbrMetallicRoughness": {
+        "baseColorFactor": [0.286, 0.298, 0.325, 1.0],
+        "metallicFactor": 0.0, "roughnessFactor": 0.85}},
+    {"name": "Seat", "pbrMetallicRoughness": {
+        "baseColorFactor": [0.478, 0.443, 0.408, 1.0],
+        "metallicFactor": 0.0, "roughnessFactor": 0.90}},
 ]
 
 
@@ -479,15 +693,21 @@ def write_glb(path, gltf, nodes, scene_nodes):
     return len(out)
 
 
-def main():
-    out = sys.argv[1] if len(sys.argv) > 1 else "assets/models/helicopter_lowpoly.glb"
+def build_file(out, lod):
+    global D
+    D = LOD[lod]
     g = Gltf()
-    body, main_rotor, tail_rotor = build_body(), build_main_rotor(), build_tail_rotor()
+    body = Builder(accept=lambda m: m != GLASS)
+    canopy = Builder(accept=lambda m: m == GLASS)
+    build_body(body)
+    build_fuselage(canopy)          # same loft, glazed faces only
+    main_rotor, tail_rotor = build_main_rotor(), build_tail_rotor()
 
     s = math.sin(math.pi / 4)
     nodes = [
-        {"name": "Helicopter", "children": [1, 2, 3]},
+        {"name": "Helicopter", "children": [1, 2, 3, 4]},
         {"name": "Body", "mesh": g.mesh("Body", body)},
+        {"name": "Canopy", "mesh": g.mesh("Canopy", canopy)},
         {"name": "MainRotor", "mesh": g.mesh("MainRotorHead", main_rotor),
          "translation": [0.0, HUB_Y - 0.08, MAST_Z]},
         {"name": "TailRotor", "mesh": g.mesh("TailRotorHead", tail_rotor),
@@ -495,8 +715,16 @@ def main():
          "rotation": [0.0, 0.0, s, s]},          # local +Y -> world +X
     ]
     size = write_glb(out, g, nodes, [0])
-    tris = body.tris() + main_rotor.tris() + tail_rotor.tris()
-    print(f"{out}: {tris} triangles, {size} bytes")
+    tris = body.tris() + canopy.tris() + main_rotor.tris() + tail_rotor.tris()
+    print(f"{out}: {lod:8s} {tris:5d} triangles "
+          f"({canopy.tris()} glazed), {size / 1024:.1f} KB")
+
+
+def main():
+    out = Path(sys.argv[1] if len(sys.argv) > 1
+               else "assets/models/helicopter_lowpoly.glb")
+    build_file(out, "full")
+    build_file(out.with_name(out.stem + "_min" + out.suffix), "minimal")
 
 
 if __name__ == "__main__":

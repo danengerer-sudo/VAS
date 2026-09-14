@@ -1,0 +1,566 @@
+<title>Work Zone Intrusion Alert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#F4F5F3; --surface:#FFFFFF; --surface-2:#E9ECE8; --surface-3:#DFE3DE;
+  --ink:#1A2026; --ink-2:#5C666F; --ink-3:#8A939B;
+  --rule:#D2D7D9; --rule-2:#BFC6C8;
+  --accent:#C77400; --accent-soft:#F6E6CB; --accent-line:#C77400;
+  --display:'Barlow Condensed',Haettenschweiler,'Arial Narrow',sans-serif;
+  --body:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#13171A; --surface:#1B2024; --surface-2:#232A2F; --surface-3:#2B343A;
+    --ink:#E7EAEA; --ink-2:#99A3AA; --ink-3:#737D85;
+    --rule:#2C343A; --rule-2:#3A444B;
+    --accent:#F2A33C; --accent-soft:#3B2E19; --accent-line:#F2A33C;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#13171A; --surface:#1B2024; --surface-2:#232A2F; --surface-3:#2B343A;
+  --ink:#E7EAEA; --ink-2:#99A3AA; --ink-3:#737D85;
+  --rule:#2C343A; --rule-2:#3A444B;
+  --accent:#F2A33C; --accent-soft:#3B2E19; --accent-line:#F2A33C;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding-block:48px 72px;padding-left:20px;padding-right:20px}
+.prose{max-width:66ch}
+
+/* ---- masthead ---- */
+.mast{border-top:3px solid var(--ink);padding-top:14px;margin-bottom:40px}
+.mast .kicker{font-family:var(--display);text-transform:uppercase;letter-spacing:.14em;
+  font-size:13px;font-weight:600;color:var(--ink-2);margin:0 0 6px}
+.mast h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,6vw,54px);
+  line-height:1.02;letter-spacing:-.005em;margin:0 0 14px;text-wrap:balance}
+.meta{display:flex;flex-wrap:wrap;gap:0 28px;font-family:var(--mono);font-size:12px;
+  color:var(--ink-2);border-top:1px solid var(--rule);padding-top:10px}
+.meta b{font-weight:500;color:var(--ink-3);font-style:normal}
+.status{display:inline-block;margin-top:18px;font-family:var(--mono);font-size:12px;
+  color:var(--accent);border:1px solid var(--accent);border-radius:2px;padding:4px 9px}
+
+h2{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.08em;
+  font-size:19px;margin:56px 0 10px;padding-bottom:7px;border-bottom:1px solid var(--rule)}
+h2 .num{color:var(--ink-3);margin-right:10px;font-family:var(--mono);font-size:13px;letter-spacing:0}
+p{margin:0 0 15px}
+.lead{font-size:17.5px;color:var(--ink-2)}
+strong{font-weight:600;color:var(--ink)}
+em{font-style:normal;color:var(--accent);font-weight:500}
+code{font-family:var(--mono);font-size:.9em;background:var(--surface-2);
+  padding:1px 5px;border-radius:2px}
+
+/* ---- figures ---- */
+figure{margin:26px 0 30px}
+.plate{background:var(--surface);border:1px solid var(--rule);border-radius:3px;
+  padding:18px 18px 14px;overflow-x:auto}
+.plate svg{display:block;width:100%;min-width:660px;height:auto;color:var(--ink-2)}
+figcaption{display:flex;gap:14px;margin-top:11px;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+figcaption .fignum{flex:0 0 auto;font-family:var(--mono);font-size:11.5px;font-weight:500;
+  color:var(--accent);letter-spacing:.04em;padding-top:2px}
+
+/* svg primitives */
+.b{fill:var(--surface);stroke:currentColor;stroke-width:1.25}
+.b2{fill:var(--surface-2);stroke:currentColor;stroke-width:1.25}
+.b3{fill:var(--surface-3);stroke:none}
+.acc{fill:var(--accent-soft);stroke:var(--accent-line);stroke-width:1.6}
+.ln{stroke:currentColor;stroke-width:1.25;fill:none}
+.lna{stroke:var(--accent-line);stroke-width:2;fill:none}
+.lnb{stroke:var(--accent-line);stroke-width:4.5;fill:none;stroke-linecap:round}
+.dsh{stroke:currentColor;stroke-width:1.2;fill:none;stroke-dasharray:5 4}
+.dsha{stroke:var(--accent-line);stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.hair{stroke:var(--rule-2);stroke-width:1;fill:none}
+.t{fill:var(--ink);font:600 12.5px var(--display);letter-spacing:.06em}
+.ts{fill:var(--ink-2);font:400 11.5px var(--body)}
+.tm{fill:var(--ink-2);font:400 10.5px var(--mono);letter-spacing:.01em}
+.ta{fill:var(--accent);font:600 12.5px var(--display);letter-spacing:.06em}
+.tam{fill:var(--accent);font:500 10.5px var(--mono)}
+.mid{text-anchor:middle} .end{text-anchor:end}
+
+/* ---- open questions ---- */
+.gaps{margin-top:18px;border:1px solid var(--rule);border-left:3px solid var(--accent);
+  border-radius:3px;background:var(--surface)}
+.gaps h3{font-family:var(--display);text-transform:uppercase;letter-spacing:.1em;font-size:14px;
+  margin:0;padding:14px 20px 12px;border-bottom:1px solid var(--rule);color:var(--ink)}
+.gaps dl{margin:0;padding:6px 20px 18px}
+.gaps dt{font-family:var(--mono);font-size:11.5px;color:var(--accent);margin-top:14px;letter-spacing:.02em}
+.gaps dd{margin:2px 0 0;font-size:14.5px;color:var(--ink-2);line-height:1.55}
+
+.foot{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);
+  font-family:var(--mono);font-size:11.5px;color:var(--ink-3);line-height:1.8}
+@media (max-width:560px){
+  .wrap{padding-block:32px 52px}
+  .meta{gap:0 18px;font-size:11px}
+}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="kicker">Brainchild Engineering &middot; Concept Layouts</p>
+  <h1>Work Zone Intrusion Alert</h1>
+  <div class="meta">
+    <span><b>CLIENT</b> Kevin Bryant</span>
+    <span><b>PHASE</b> 1 &mdash; approach</span>
+    <span><b>DATE</b> 14 SEP 2026</span>
+    <span><b>REV</b> A</span>
+  </div>
+  <span class="status">CONCEPT &mdash; FOR DISCUSSION, NOT A DELIVERABLE</span>
+</header>
+
+<div class="prose">
+<p class="lead">Seven block layouts covering the deployment, the control architecture decision,
+what a sensing node actually does, how a hit is discriminated from a footstep, and the two
+findings that reshape the product &mdash; siren coverage and latency.</p>
+<p>Numbers shown are first-cut engineering estimates, not calculated results. They exist to
+size the boxes and to show which quantities the design turns on. Several depend on Section 3
+inputs Kevin has not supplied yet; those are listed at the end.</p>
+</div>
+
+<h2><span class="num">01</span>Deployment</h2>
+<div class="prose"><p>The line runs longitudinally along the work zone boundary, so an intruding
+vehicle crosses it at a shallow angle rather than perpendicular. Segmenting it is what makes the
+length open-ended: a longer zone is more segments, not a redesign.</p></div>
+
+<figure>
+<div class="plate">
+<svg viewBox="0 0 900 352" role="img" aria-label="Plan view of the work zone: a segmented sensing line along the lane boundary, nodes at each segment end, a two-wire bus running back to a head end unit and out to distributed alert stacks.">
+<defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker>
+<marker id="a1a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--accent-line)"/></marker></defs>
+
+<rect x="40" y="28" width="820" height="54" rx="2" class="b2"/>
+<text x="52" y="50" class="t">TRAVEL LANE</text>
+<text x="706" y="46" class="tm">TRAFFIC</text>
+<line x1="706" y1="62" x2="836" y2="62" class="ln" marker-end="url(#a1)"/>
+<rect x="300" y="38" width="58" height="30" rx="4" class="b"/>
+<text x="329" y="58" class="tm mid">VEH</text>
+<path d="M358 56 L424 104" class="lna" marker-end="url(#a1a)"/>
+<text x="436" y="68" class="tam">INTRUSION</text>
+
+<line x1="40" y1="86" x2="860" y2="86" class="dsh"/>
+<text x="44" y="102" class="tm">LANE DIVIDER</text>
+
+<line x1="60" y1="112" x2="240" y2="112" class="lnb"/>
+<line x1="262" y1="112" x2="442" y2="112" class="lnb"/>
+<line x1="464" y1="112" x2="644" y2="112" class="lnb"/>
+<line x1="666" y1="112" x2="844" y2="112" class="lnb"/>
+<rect x="240" y="104" width="16" height="16" class="acc"/>
+<rect x="442" y="104" width="16" height="16" class="acc"/>
+<rect x="644" y="104" width="16" height="16" class="acc"/>
+<rect x="844" y="104" width="16" height="16" class="acc"/>
+<text x="248" y="100" class="tam mid">N1</text>
+<text x="450" y="100" class="tam mid">N2</text>
+<text x="652" y="100" class="tam mid">N3</text>
+<text x="852" y="100" class="tam mid">N4</text>
+<text x="150" y="134" class="tm mid">SENSING HOSE &mdash; 100 FT SEGMENT</text>
+
+<line x1="248" y1="120" x2="248" y2="155" class="ln"/>
+<line x1="450" y1="120" x2="450" y2="155" class="ln"/>
+<line x1="652" y1="120" x2="652" y2="155" class="ln"/>
+<line x1="852" y1="120" x2="852" y2="155" class="ln"/>
+<line x1="100" y1="155" x2="860" y2="155" class="ln"/>
+<line x1="100" y1="161" x2="860" y2="161" class="ln"/>
+<text x="106" y="178" class="tm">2-WIRE SUPERVISED BUS + POWER</text>
+
+<rect x="40" y="192" width="820" height="120" rx="2" class="b2"/>
+<text x="52" y="212" class="t">WORK ZONE</text>
+<rect x="60" y="228" width="150" height="66" class="b"/>
+<text x="135" y="250" class="t mid">HEAD END</text>
+<text x="135" y="266" class="ts mid">battery &middot; keyswitch</text>
+<text x="135" y="282" class="ts mid">loop watcher &middot; relay</text>
+<line x1="135" y1="228" x2="135" y2="161" class="ln"/>
+
+<g>
+<circle cx="300" cy="240" r="7" class="acc"/><rect x="290" y="252" width="20" height="13" class="b"/><line x1="300" y1="265" x2="300" y2="292" class="ln"/><line x1="300" y1="233" x2="300" y2="161" class="ln"/>
+<circle cx="480" cy="240" r="7" class="acc"/><rect x="470" y="252" width="20" height="13" class="b"/><line x1="480" y1="265" x2="480" y2="292" class="ln"/><line x1="480" y1="233" x2="480" y2="161" class="ln"/>
+<circle cx="660" cy="240" r="7" class="acc"/><rect x="650" y="252" width="20" height="13" class="b"/><line x1="660" y1="265" x2="660" y2="292" class="ln"/><line x1="660" y1="233" x2="660" y2="161" class="ln"/>
+<circle cx="820" cy="240" r="7" class="acc"/><rect x="810" y="252" width="20" height="13" class="b"/><line x1="820" y1="265" x2="820" y2="292" class="ln"/><line x1="820" y1="233" x2="820" y2="161" class="ln"/>
+</g>
+<text x="300" y="308" class="tm mid">ALERT STACK</text>
+<circle cx="392" cy="284" r="5" class="b"/><circle cx="412" cy="290" r="5" class="b"/><circle cx="566" cy="282" r="5" class="b"/>
+<text x="412" y="308" class="tm mid">CREW</text>
+
+<line x1="60" y1="328" x2="860" y2="328" class="hair"/>
+<line x1="60" y1="323" x2="60" y2="333" class="hair"/>
+<line x1="860" y1="323" x2="860" y2="333" class="hair"/>
+<text x="460" y="346" class="tm mid">&asymp; 400 FT SHOWN &mdash; EXTEND BY ADDING SEGMENTS</text>
+</svg>
+</div>
+<figcaption><span class="fignum">FIG. 1</span><span>Deployment plan view. The sensing line sits at the lane boundary; each 100 ft segment terminates in a node, and every node and alert stack hangs off the same two-wire bus back to the head end.</span></figcaption>
+</figure>
+
+<h2><span class="num">02</span>The architecture decision</h2>
+<div class="prose"><p>Same four segments, same alert hardware, two ways to wire the middle. The
+difference is the cable plant and where the thinking happens.</p></div>
+
+<figure>
+<div class="plate">
+<svg viewBox="0 0 900 612" role="img" aria-label="Comparison of two control architectures: option A runs a home-run cable from every segment back to one central control panel; option B puts a smart node at each segment and connects them all with a single two-wire supervised bus.">
+<defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker>
+<marker id="a2a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--accent-line)"/></marker></defs>
+
+<text x="40" y="36" class="t">A &mdash; CENTRAL CONTROLLER</text>
+<text x="40" y="54" class="ts">every segment runs its own pair the full length back to one panel</text>
+<rect x="260" y="76" width="110" height="42" class="b"/><text x="315" y="102" class="t mid">SEG 1</text>
+<rect x="400" y="76" width="110" height="42" class="b"/><text x="455" y="102" class="t mid">SEG 2</text>
+<rect x="540" y="76" width="110" height="42" class="b"/><text x="595" y="102" class="t mid">SEG 3</text>
+<rect x="680" y="76" width="110" height="42" class="b"/><text x="735" y="102" class="t mid">SEG 4</text>
+<path d="M315 118 V148 H202 V185" class="ln"/>
+<path d="M455 118 V156 H202" class="ln"/>
+<path d="M595 118 V164 H202" class="ln"/>
+<path d="M735 118 V172 H202" class="ln"/>
+<text x="806" y="146" class="tm">4 HOME RUNS</text>
+<text x="806" y="162" class="tm">full length</text>
+<rect x="90" y="185" width="225" height="95" class="b"/>
+<text x="202" y="206" class="t mid">CONTROL PANEL</text>
+<rect x="104" y="214" width="197" height="19" class="b2"/><text x="112" y="228" class="tm">8&times; ANALOG IN</text>
+<rect x="104" y="236" width="197" height="19" class="b2"/><text x="112" y="250" class="tm">CPU &middot; SCAN CYCLE</text>
+<rect x="104" y="258" width="197" height="19" class="b2"/><text x="112" y="272" class="tm">RELAY OUT</text>
+<text x="90" y="299" class="tm">2&ndash;6 W IDLE &middot; 0&ndash;55 &deg;C TYP &middot; $800&ndash;1500 BOM</text>
+<line x1="315" y1="232" x2="414" y2="232" class="ln" marker-end="url(#a2)"/>
+<rect x="420" y="202" width="160" height="60" class="b"/>
+<text x="500" y="228" class="t mid">SIREN + BEACONS</text>
+<text x="500" y="245" class="ts mid">one location</text>
+
+<line x1="40" y1="312" x2="860" y2="312" class="hair"/>
+
+<text x="40" y="348" class="ta">B &mdash; SMART NODES + SUPERVISED BUS</text>
+<text x="40" y="366" class="ts">discrimination happens at the segment; one pair serves any length</text>
+<rect x="260" y="388" width="110" height="50" class="b"/><text x="315" y="410" class="t mid">SEG 1</text><text x="315" y="427" class="tam mid">NODE</text>
+<rect x="400" y="388" width="110" height="50" class="b"/><text x="455" y="410" class="t mid">SEG 2</text><text x="455" y="427" class="tam mid">NODE</text>
+<rect x="540" y="388" width="110" height="50" class="b"/><text x="595" y="410" class="t mid">SEG 3</text><text x="595" y="427" class="tam mid">NODE</text>
+<rect x="680" y="388" width="110" height="50" class="b"/><text x="735" y="410" class="t mid">SEG 4</text><text x="735" y="427" class="tam mid">NODE</text>
+<line x1="315" y1="438" x2="315" y2="470" class="lna"/>
+<line x1="455" y1="438" x2="455" y2="470" class="lna"/>
+<line x1="595" y1="438" x2="595" y2="470" class="lna"/>
+<line x1="735" y1="438" x2="735" y2="470" class="lna"/>
+<line x1="90" y1="470" x2="792" y2="470" class="lna"/>
+<line x1="90" y1="478" x2="792" y2="478" class="lna"/>
+<rect x="792" y="462" width="48" height="24" class="b"/><text x="816" y="479" class="tm mid">EOL</text>
+<text x="330" y="500" class="tm">ONE PAIR &mdash; LENGTH-INDEPENDENT</text>
+<line x1="185" y1="474" x2="185" y2="512" class="lna"/>
+<rect x="90" y="512" width="190" height="72" class="b"/>
+<text x="185" y="534" class="t mid">HEAD END</text>
+<text x="185" y="551" class="ts mid">loop watcher &middot; relay</text>
+<text x="185" y="568" class="ts mid">battery &middot; keyswitch</text>
+<line x1="280" y1="548" x2="414" y2="548" class="ln" marker-end="url(#a2)"/>
+<rect x="420" y="518" width="160" height="60" class="acc"/>
+<text x="500" y="544" class="t mid">ALERT STACKS</text>
+<text x="500" y="561" class="ts mid">distributed &mdash; see Fig. 6</text>
+<text x="620" y="540" class="tm">mA IDLE</text>
+<text x="620" y="556" class="tm">nodes field-swappable</text>
+<text x="620" y="572" class="tm">tens of $ per node at volume</text>
+</svg>
+</div>
+<figcaption><span class="fignum">FIG. 2</span><span>The cable plant is the difference. Option A's conductor count and run length grow with every segment added and the panel sets the power floor; option B adds segments without touching the head end or the wire count.</span></figcaption>
+</figure>
+
+<h2><span class="num">03</span>Inside a node</h2>
+<div class="prose"><p>Two transducers per segment, one at each end of the hose. Firing on first arrival
+keeps latency down; the second arrival confirms the hit, locates it along the segment, and
+proves the hose is still intact.</p></div>
+
+<figure>
+<div class="plate">
+<svg viewBox="0 0 900 272" role="img" aria-label="Signal chain inside a sensing node: two pressure transducers at opposite ends of the hose plus a MEMS accelerometer feed a low-power microcontroller that performs pulse-shape discrimination and arrival-time comparison, driving a two-wire bus.">
+<defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+<rect x="40" y="34" width="170" height="54" class="b"/>
+<text x="125" y="58" class="t mid">PRESSURE XDCR A</text><text x="125" y="75" class="ts mid">near end of hose</text>
+<rect x="40" y="100" width="170" height="54" class="b"/>
+<text x="125" y="124" class="t mid">PRESSURE XDCR B</text><text x="125" y="141" class="ts mid">far end of hose</text>
+<rect x="40" y="166" width="170" height="54" class="b"/>
+<text x="125" y="190" class="t mid">MEMS ACCEL</text><text x="125" y="207" class="ts mid">ground-vibration ref</text>
+
+<text x="242" y="54" class="tm mid">4&ndash;20 mA</text>
+<line x1="210" y1="61" x2="274" y2="61" class="ln" marker-end="url(#a3)"/>
+<text x="242" y="120" class="tm mid">4&ndash;20 mA</text>
+<line x1="210" y1="127" x2="274" y2="127" class="ln" marker-end="url(#a3)"/>
+<text x="242" y="186" class="tm mid">&plusmn;2 g</text>
+<line x1="210" y1="193" x2="274" y2="193" class="ln" marker-end="url(#a3)"/>
+
+<rect x="280" y="34" width="220" height="186" class="b"/>
+<text x="390" y="57" class="t mid">NODE MCU</text>
+<rect x="294" y="66" width="192" height="22" class="b2"/><text x="302" y="81" class="tm">ADC &middot; 4 kHz / CH</text>
+<rect x="294" y="94" width="192" height="22" class="b2"/><text x="302" y="109" class="tm">PULSE-SHAPE DISCRIM</text>
+<rect x="294" y="122" width="192" height="22" class="b2"/><text x="302" y="137" class="tm">ARRIVAL-TIME COMPARE</text>
+<rect x="294" y="150" width="192" height="22" class="b2"/><text x="302" y="165" class="tm">NOISE-FLOOR TRACKER</text>
+<rect x="294" y="178" width="192" height="22" class="b2"/><text x="302" y="193" class="tm">LINE-INTEGRITY CHECK</text>
+
+<text x="549" y="120" class="tm mid">alarm / trouble</text>
+<line x1="500" y1="127" x2="594" y2="127" class="ln" marker-end="url(#a3)"/>
+<rect x="600" y="100" width="150" height="54" class="acc"/>
+<text x="675" y="124" class="t mid">BUS DRIVER</text><text x="675" y="141" class="ts mid">current sink</text>
+<line x1="750" y1="127" x2="784" y2="127" class="ln" marker-end="url(#a3)"/>
+<rect x="790" y="100" width="70" height="54" class="b"/>
+<text x="825" y="131" class="t mid">BUS</text>
+
+<text x="280" y="250" class="tm">SLEEPS BETWEEN SAMPLES &mdash; &micro;A IDLE &middot; ALL DISCRIMINATION LOCAL, NOTHING POLLED</text>
+</svg>
+</div>
+<figcaption><span class="fignum">FIG. 3</span><span>Node signal chain. Two transducers per hose give confirmation, strike location and hose supervision from one sensing element; the accelerometer is a reference channel, not a detector.</span></figcaption>
+</figure>
+
+<h2><span class="num">04</span>Detection logic</h2>
+<div class="prose"><p>A single threshold forces one failure mode or the other. Three tiers separate the
+unambiguous case &mdash; fire now, no confirmation &mdash; from the band where a second opinion is
+worth the milliseconds it costs.</p></div>
+
+<figure>
+<div class="plate">
+<svg viewBox="0 0 900 384" role="img" aria-label="Three-tier detection logic: a high-amplitude pulse with tire shape fires immediately, a mid-band pulse fires only if the second hose end confirms within a time window, a low pulse is logged only; correlated ground vibration vetoes any alarm.">
+<defs><marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+<rect x="40" y="136" width="130" height="58" class="b"/>
+<text x="105" y="162" class="t mid">PULSE</text><text x="105" y="179" class="ts mid">on the line</text>
+<path d="M170 165 H190" class="ln"/>
+<path d="M190 73 V257" class="ln"/>
+<line x1="190" y1="73" x2="204" y2="73" class="ln" marker-end="url(#a4)"/>
+<line x1="190" y1="165" x2="204" y2="165" class="ln" marker-end="url(#a4)"/>
+<line x1="190" y1="257" x2="204" y2="257" class="ln" marker-end="url(#a4)"/>
+
+<rect x="210" y="44" width="215" height="58" class="b"/>
+<text x="317" y="70" class="t mid">HIGH AMPLITUDE</text><text x="317" y="87" class="ts mid">+ tire pulse shape</text>
+<rect x="210" y="136" width="215" height="58" class="b"/>
+<text x="317" y="162" class="t mid">MID BAND</text><text x="317" y="179" class="ts mid">ambiguous</text>
+<rect x="210" y="228" width="215" height="58" class="b"/>
+<text x="317" y="254" class="t mid">BELOW FLOOR</text><text x="317" y="271" class="ts mid">tracked, not trusted</text>
+
+<line x1="425" y1="73" x2="454" y2="73" class="ln" marker-end="url(#a4)"/>
+<line x1="425" y1="165" x2="454" y2="165" class="ln" marker-end="url(#a4)"/>
+<line x1="425" y1="257" x2="454" y2="257" class="ln" marker-end="url(#a4)"/>
+
+<rect x="460" y="44" width="215" height="58" class="dsh"/>
+<text x="567" y="70" class="t mid">NO CONFIRMATION</text><text x="567" y="87" class="ts mid">fire now</text>
+<rect x="460" y="136" width="215" height="58" class="b"/>
+<text x="567" y="162" class="t mid">2ND-END ARRIVAL</text><text x="567" y="179" class="ts mid">inside plausibility window</text>
+<rect x="460" y="228" width="215" height="58" class="b"/>
+<text x="567" y="254" class="t mid">NO TEST</text><text x="567" y="271" class="ts mid">&mdash;</text>
+
+<line x1="675" y1="73" x2="704" y2="73" class="ln" marker-end="url(#a4)"/>
+<line x1="675" y1="165" x2="704" y2="165" class="ln" marker-end="url(#a4)"/>
+<line x1="675" y1="257" x2="704" y2="257" class="ln" marker-end="url(#a4)"/>
+
+<rect x="710" y="44" width="140" height="58" class="acc"/><text x="780" y="79" class="t mid">ALARM</text>
+<rect x="710" y="136" width="140" height="58" class="acc"/><text x="780" y="171" class="t mid">ALARM</text>
+<rect x="710" y="228" width="140" height="58" class="b2"/><text x="780" y="263" class="t mid">LOG ONLY</text>
+
+<rect x="210" y="314" width="640" height="52" class="b2"/>
+<text x="226" y="336" class="t">ACCEL VETO</text>
+<text x="312" y="336" class="ts">ground vibration correlates with the pulse &rarr; adjacent-lane pass, suppress</text>
+<text x="226" y="355" class="tm">the dominant false-trigger source becomes the discriminator</text>
+<path d="M850 340 H876 V73" class="dsh"/>
+<line x1="876" y1="73" x2="856" y2="73" class="dsh" marker-end="url(#a4)"/>
+<path d="M876 165 H856" class="dsh" marker-end="url(#a4)"/>
+</svg>
+</div>
+<figcaption><span class="fignum">FIG. 4</span><span>Three-tier discrimination. Only the ambiguous middle band pays the confirmation delay, so the clear-cut vehicle strike is never slowed down by the logic that exists to reject debris.</span></figcaption>
+</figure>
+
+<h2><span class="num">05</span>Head end and the output path</h2>
+<div class="prose"><p>One pair of conductors carries three states, the way a fire alarm initiating circuit
+has for decades. The output it drives contains no processor &mdash; which is a better safety
+argument than any amount of controller pedigree.</p></div>
+
+<figure>
+<div class="plate">
+<svg viewBox="0 0 900 432" role="img" aria-label="A supervised two-wire loop with an end-of-line resistor carries normal, alarm and trouble states by current level; loop current drives a window comparator and relay directly to the siren, while the microcontroller only monitors and drives nothing.">
+<defs><marker id="a5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+<text x="40" y="34" class="t">ONE PAIR CARRIES ALARM AND FAULT</text>
+<rect x="40" y="70" width="120" height="80" class="b"/>
+<text x="100" y="98" class="t mid">HEAD END</text><text x="100" y="115" class="ts mid">source</text><text x="100" y="131" class="ts mid">+ sense</text>
+<line x1="160" y1="88" x2="700" y2="88" class="ln"/>
+<line x1="160" y1="132" x2="700" y2="132" class="ln"/>
+<text x="172" y="82" class="tm">LOOP +</text>
+<text x="172" y="147" class="tm">LOOP &minus;</text>
+<g>
+<rect x="262" y="96" width="36" height="28" class="acc"/><text x="280" y="115" class="tm mid">N1</text>
+<line x1="280" y1="88" x2="280" y2="96" class="ln"/><line x1="280" y1="124" x2="280" y2="132" class="ln"/>
+<rect x="382" y="96" width="36" height="28" class="acc"/><text x="400" y="115" class="tm mid">N2</text>
+<line x1="400" y1="88" x2="400" y2="96" class="ln"/><line x1="400" y1="124" x2="400" y2="132" class="ln"/>
+<rect x="502" y="96" width="36" height="28" class="acc"/><text x="520" y="115" class="tm mid">N3</text>
+<line x1="520" y1="88" x2="520" y2="96" class="ln"/><line x1="520" y1="124" x2="520" y2="132" class="ln"/>
+<rect x="622" y="96" width="36" height="28" class="acc"/><text x="640" y="115" class="tm mid">N4</text>
+<line x1="640" y1="88" x2="640" y2="96" class="ln"/><line x1="640" y1="124" x2="640" y2="132" class="ln"/>
+</g>
+<rect x="676" y="96" width="48" height="28" class="b"/><text x="700" y="115" class="tm mid">EOL</text>
+<line x1="700" y1="88" x2="700" y2="96" class="ln"/><line x1="700" y1="124" x2="700" y2="132" class="ln"/>
+<text x="760" y="108" class="tm">END-OF-LINE</text><text x="760" y="124" class="tm">RESISTOR</text>
+
+<rect x="40" y="168" width="14" height="14" class="b2"/>
+<text x="62" y="180" class="ts">NORMAL &mdash; 5 mA</text>
+<rect x="280" y="168" width="14" height="14" class="acc"/>
+<text x="302" y="180" class="ts">ALARM &mdash; 20 mA</text>
+<rect x="520" y="168" width="14" height="14" class="dsh"/>
+<text x="542" y="180" class="ts">TROUBLE &mdash; 0 mA open / 40 mA short</text>
+
+<line x1="40" y1="212" x2="860" y2="212" class="hair"/>
+
+<text x="40" y="250" class="t">NO SOFTWARE IN THE OUTPUT PATH</text>
+<rect x="40" y="280" width="150" height="56" class="b"/><text x="115" y="313" class="t mid">LOOP CURRENT</text>
+<line x1="190" y1="308" x2="224" y2="308" class="ln" marker-end="url(#a5)"/>
+<rect x="230" y="280" width="170" height="56" class="b"/><text x="315" y="305" class="t mid">WINDOW</text><text x="315" y="322" class="t mid">COMPARATOR</text>
+<line x1="400" y1="308" x2="434" y2="308" class="ln" marker-end="url(#a5)"/>
+<rect x="440" y="280" width="140" height="56" class="b"/><text x="510" y="313" class="t mid">RELAY</text>
+<line x1="580" y1="308" x2="614" y2="308" class="ln" marker-end="url(#a5)"/>
+<rect x="620" y="280" width="180" height="56" class="acc"/><text x="710" y="313" class="t mid">SIREN + BEACONS</text>
+
+<path d="M115 336 V384 H224" class="dsh" marker-end="url(#a5)"/>
+<rect x="230" y="358" width="350" height="52" class="dsh"/>
+<text x="405" y="380" class="t mid">MCU &mdash; LOGGING, KEYSWITCH, INDICATORS</text>
+<text x="405" y="398" class="ts mid">reads the loop &middot; drives nothing</text>
+<text x="600" y="382" class="tm">no return path &mdash; the siren</text>
+<text x="600" y="398" class="tm">rings if this box is dead</text>
+</svg>
+</div>
+<figcaption><span class="fignum">FIG. 5</span><span>Supervised loop and output path. A severed line reads as trouble rather than silence, and the alarm reaches the siren through a comparator and a relay contact with no firmware in between.</span></figcaption>
+</figure>
+
+<h2><span class="num">06</span>Alert coverage</h2>
+<div class="prose"><p>This is the finding most likely to change the product. A 120 dB @ 1 m siren &mdash;
+already a large horn &mdash; delivers roughly 90 dBA at 100 ft and 84 dBA at 200 ft in free field.
+Work zone background is 80&ndash;90 dBA, and the crew is in hearing protection.</p></div>
+
+<figure>
+<div class="plate">
+<svg viewBox="0 0 900 428" role="img" aria-label="Coverage comparison: a single central siren delivers usable sound pressure only within about 100 feet and falls below work zone background noise beyond 200 feet, while alert stacks distributed every 200 feet give continuous coverage across the whole zone.">
+<text x="40" y="44" class="t">A &mdash; SINGLE CENTRAL SIREN</text>
+<rect x="50" y="60" width="800" height="44" class="b2"/>
+<circle cx="450" cy="82" r="9" class="acc"/><line x1="450" y1="91" x2="450" y2="104" class="ln"/>
+<rect x="50" y="116" width="200" height="12" class="b2"/>
+<rect x="250" y="116" width="100" height="12" class="dsha" fill="var(--accent-soft)"/>
+<rect x="350" y="116" width="200" height="12" class="acc"/>
+<rect x="550" y="116" width="100" height="12" class="dsha" fill="var(--accent-soft)"/>
+<rect x="650" y="116" width="200" height="12" class="b2"/>
+<text x="450" y="146" class="tam mid">&ge;90 dBA</text>
+<text x="300" y="146" class="tm mid">84&ndash;90</text>
+<text x="600" y="146" class="tm mid">84&ndash;90</text>
+<text x="150" y="146" class="ts mid">below background</text>
+<text x="750" y="146" class="ts mid">below background</text>
+<text x="50" y="176" class="ts">Roughly half the zone gets an alert the crew cannot pick out of 80&ndash;90 dBA of ambient noise.</text>
+
+<line x1="40" y1="200" x2="860" y2="200" class="hair"/>
+
+<text x="40" y="236" class="ta">B &mdash; DISTRIBUTED STACKS ON THE BUS</text>
+<rect x="50" y="252" width="800" height="44" class="b2"/>
+<g>
+<circle cx="150" cy="274" r="8" class="acc"/><line x1="150" y1="282" x2="150" y2="296" class="ln"/>
+<circle cx="350" cy="274" r="8" class="acc"/><line x1="350" y1="282" x2="350" y2="296" class="ln"/>
+<circle cx="550" cy="274" r="8" class="acc"/><line x1="550" y1="282" x2="550" y2="296" class="ln"/>
+<circle cx="750" cy="274" r="8" class="acc"/><line x1="750" y1="282" x2="750" y2="296" class="ln"/>
+</g>
+<rect x="50" y="308" width="198" height="12" class="acc"/>
+<rect x="251" y="308" width="198" height="12" class="acc"/>
+<rect x="452" y="308" width="198" height="12" class="acc"/>
+<rect x="653" y="308" width="197" height="12" class="acc"/>
+<text x="450" y="338" class="tam mid">CONTINUOUS &ge;90 dBA ACROSS THE ZONE</text>
+<text x="50" y="366" class="ts">Four stacks at 200 ft spacing, each tapping the bus that already runs the length of the line.</text>
+
+<line x1="50" y1="392" x2="850" y2="392" class="hair"/>
+<g class="hair">
+<line x1="50" y1="388" x2="50" y2="398"/><line x1="250" y1="388" x2="250" y2="398"/>
+<line x1="450" y1="388" x2="450" y2="398"/><line x1="650" y1="388" x2="650" y2="398"/>
+<line x1="850" y1="388" x2="850" y2="398"/>
+</g>
+<text x="50" y="414" class="tm mid">0</text><text x="250" y="414" class="tm mid">200</text>
+<text x="450" y="414" class="tm mid">400</text><text x="650" y="414" class="tm mid">600</text>
+<text x="850" y="414" class="tm mid">800 ft</text>
+</svg>
+</div>
+<figcaption><span class="fignum">FIG. 6</span><span>Free-field estimate at 1 px = 1 ft. One siren cannot cover a long work zone; distributing the stacks along the bus that already exists is the cheap fix, and it needs no additional cable.</span></figcaption>
+</figure>
+
+<h2><span class="num">07</span>Latency budget</h2>
+<div class="prose"><p>Transducers at both ends halve the worst case: a strike at the segment midpoint is
+50 ft from a sensor, not 100. The siren's own rise time turns out to be the largest single term
+in the chain.</p></div>
+
+<figure>
+<div class="plate">
+<svg viewBox="0 0 900 312" role="img" aria-label="Latency budget from tire contact to full siren output, totalling about 176 milliseconds against a 250 millisecond target: 44 ms hose propagation, 12 ms sense and decide, 5 ms bus and comparator, 15 ms relay pull-in, 100 ms siren rise.">
+<text x="40" y="34" class="t">TIRE CONTACT &rarr; FULL SIREN OUTPUT</text>
+<line x1="703" y1="52" x2="703" y2="124" class="dsha"/>
+<text x="703" y="46" class="tam mid">250 ms TARGET</text>
+<rect x="120" y="64" width="103" height="44" class="b2"/>
+<rect x="223" y="64" width="28" height="44" class="b2"/>
+<rect x="251" y="64" width="11" height="44" class="b2"/>
+<rect x="262" y="64" width="35" height="44" class="b2"/>
+<rect x="297" y="64" width="234" height="44" class="acc"/>
+<line x1="531" y1="60" x2="531" y2="112" class="lna"/>
+<text x="539" y="90" class="tam">176 ms</text>
+<g class="hair">
+<line x1="120" y1="112" x2="120" y2="126"/><line x1="237" y1="112" x2="237" y2="126"/>
+<line x1="353" y1="112" x2="353" y2="126"/><line x1="470" y1="112" x2="470" y2="126"/>
+<line x1="587" y1="112" x2="587" y2="126"/><line x1="703" y1="112" x2="703" y2="126"/>
+<line x1="820" y1="112" x2="820" y2="126"/>
+</g>
+<text x="120" y="142" class="tm mid">0</text><text x="237" y="142" class="tm mid">50</text>
+<text x="353" y="142" class="tm mid">100</text><text x="470" y="142" class="tm mid">150</text>
+<text x="587" y="142" class="tm mid">200</text><text x="703" y="142" class="tm mid">250</text>
+<text x="820" y="142" class="tm mid">300 ms</text>
+
+<g>
+<rect x="120" y="168" width="10" height="10" class="b2"/>
+<text x="144" y="178" class="tm">44 ms</text>
+<text x="212" y="178" class="ts">Hose propagation &mdash; 50 ft worst case, transducers at both ends</text>
+<rect x="120" y="190" width="10" height="10" class="b2"/>
+<text x="144" y="200" class="tm">12 ms</text>
+<text x="212" y="200" class="ts">Transduce, sample, pulse-shape decision</text>
+<rect x="120" y="212" width="10" height="10" class="b2"/>
+<text x="144" y="222" class="tm">5 ms</text>
+<text x="212" y="222" class="ts">Bus assert and window comparator</text>
+<rect x="120" y="234" width="10" height="10" class="b2"/>
+<text x="144" y="244" class="tm">15 ms</text>
+<text x="212" y="244" class="ts">Relay pull-in</text>
+<rect x="120" y="256" width="10" height="10" class="acc"/>
+<text x="144" y="266" class="tm">100 ms</text>
+<text x="212" y="266" class="ts">Siren rise to rated SPL &mdash; the largest single term</text>
+</g>
+<line x1="120" y1="280" x2="620" y2="280" class="hair"/>
+<text x="144" y="298" class="tam">176 ms</text>
+<text x="212" y="298" class="ts">Total. A vehicle at 60 mph covers 15 ft in that time; total warning at 12 ft offset and 10&deg; drift is about 0.8 s.</text>
+</svg>
+</div>
+<figcaption><span class="fignum">FIG. 7</span><span>First-cut budget, unvalidated. Crew reaction dominates the warning interval, so the honest claim is that this system buys roughly a second &mdash; which is worth having, and worth stating plainly rather than overselling.</span></figcaption>
+</figure>
+
+<h2><span class="num">08</span>What these drawings assume</h2>
+<div class="prose"><p>Each figure rests on a Section 3 input the client owes us. Until they land, the boxes
+are right and the numbers are placeholders.</p></div>
+
+<div class="gaps">
+  <h3>Open inputs, by figure</h3>
+  <dl>
+    <dt>FIG. 1 &mdash; FIG. 2</dt>
+    <dd>Maximum deployment length of the sensing line, and the range of lane and work zone
+    configurations it must cover. Segment count, bus loading and setup time all follow from it.</dd>
+    <dt>FIG. 3 &mdash; FIG. 4</dt>
+    <dd>Vehicle types and speeds that must trigger the system, and everything that must not.
+    This list is the Validation Specification in draft form.</dd>
+    <dt>FIG. 4</dt>
+    <dd>The detection priority: miss-avoidance versus false-alarm-avoidance. The tier boundaries
+    cannot be set without it, and it should be the client's call in writing.</dd>
+    <dt>FIG. 5</dt>
+    <dd>Expected service environment and product life, including the low-temperature limit.
+    It decides component grade throughout.</dd>
+    <dt>FIG. 6</dt>
+    <dd>Required alert distance &mdash; how far from the line the crew must hear and see the alert.
+    This one likely decides whether the product ships with one alert stack or several.</dd>
+    <dt>FIG. 7</dt>
+    <dd>Intended power source and any runtime requirement. Siren selection drives both the
+    largest latency term and the peak current.</dd>
+    <dt>All figures</dt>
+    <dd>Target unit cost and annual volume, which decide how much of this collapses onto a
+    custom node board in a later phase.</dd>
+  </dl>
+</div>
+
+<p class="foot">
+BRAINCHILD ENGINEERING, INC. &middot; 22759 HESLIP DRIVE, NOVI, MICHIGAN 48375<br>
+CONCEPT LAYOUTS FOR INTERNAL DISCUSSION &mdash; NOT AN ENGINEERING DELIVERABLE UNDER THE SERVICE AGREEMENT.<br>
+NO FIGURE HERE CONSTITUTES A SAFETY CERTIFICATION, A REGULATORY CONFORMANCE REVIEW, OR A FUNCTIONAL SAFETY ASSESSMENT.
+</p>
+
+</div>

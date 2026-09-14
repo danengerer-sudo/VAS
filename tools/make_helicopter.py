@@ -281,14 +281,19 @@ SECTIONS = [
     ( 4.700, 0.095, 0.105, 0.091, 1.450),   # cone end; the fin carries on aft
 ]
 
-# Canopy: an ellipse in the side view, wrapped around whatever section the
-# body happens to have there. Glazing therefore follows the hull instead of
-# stair-stepping along vertex indices.
-CANOPY_Z, CANOPY_Y = -0.72, 1.26
-CANOPY_A, CANOPY_B = 0.94, 0.34
-CANOPY_ROOF = 0.62      # glazing stops this far up the section, leaving a spine
-SILL_DROP = 0.06        # glazing, and the cabin tub rim, start here
-ACCENT_DROP = 0.46      # white belly: a stripe, not half the flank
+# Glazing, in two regions.
+#
+# Forward of WINDSCREEN_AFT the nose is a BUBBLE: the whole dome is glass, all
+# the way round and up over the top, down to the chin. That is the view a pilot
+# actually flies on -- forward and down through the nose -- so nothing opaque
+# may cross it. Aft of that the doors carry a window band with painted skin
+# below, and the roof goes solid from there back.
+WINDSCREEN_AFT = -0.10  # where the bubble ends and the doors begin
+DOOR_AFT = 0.38         # back of the door glass
+CHIN_DROP = 0.46        # bubble glazing reaches this far below the section axis
+SILL_DROP = 0.06        # door window sill, and the cabin tub rim
+DOOR_HEADER = 0.62      # door glass stops this far up the section
+ACCENT_DROP = 0.46      # belly stripe; flush with CHIN_DROP, so no paint sliver
 ACCENT_AFT = 1.00       # ...and stops where the pod does
 
 
@@ -296,16 +301,16 @@ def fuselage_material(k, i, c, n_stations):
     if k >= n_stations:
         return PAINT                        # tailcone end cap
     if k < 0:
-        return PAINT                        # nose cap: nothing behind it to see
+        return GLASS                        # nose cap: straight through the tip
     _, y, z = c
     w, ht, hb, cy = section_at(z)
-    # The waterline doubles as the bottom edge of the glazing, so paint never
-    # gets trapped as a sliver between the canopy and the white belly.
+    if z < WINDSCREEN_AFT:
+        if y > cy - CHIN_DROP:
+            return GLASS                    # the whole nose dome
+    elif z < DOOR_AFT and cy - SILL_DROP < y < cy + DOOR_HEADER * ht:
+        return GLASS                        # door window
     if z < ACCENT_AFT and y < cy - ACCENT_DROP:
         return ACCENT
-    inside = ((z - CANOPY_Z) / CANOPY_A) ** 2 + ((y - CANOPY_Y) / CANOPY_B) ** 2
-    if inside < 1.0 and cy - SILL_DROP < y < cy + CANOPY_ROOF * ht:
-        return GLASS
     return PAINT
 
 

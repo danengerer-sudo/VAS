@@ -44,6 +44,15 @@ BLEND` at 22% opacity, which every engine honours (no extension required). It
 lives on its own `Canopy` node so you can hide, swap or re-sort it
 independently of the body.
 
+Glazing comes in two regions, set by `WINDSCREEN_AFT`:
+
+- **The nose is a bubble.** Forward of `WINDSCREEN_AFT` the *entire* dome is
+  glass — all the way round and up over the top, down to the chin. That is the
+  view a pilot actually flies on, forward and down through the nose, so nothing
+  opaque may cross it. The build asserts this.
+- **Aft of that the doors carry a window band**, with painted skin below and a
+  solid roof from there back.
+
 Behind it is an actual cabin compartment — floor, bench cushion, two seat
 backs, instrument panel, rear bulkhead and the R22's T-bar cyclic, inside an
 open-topped tub. The tub is the hull's own sections shrunk about their axis and
@@ -58,8 +67,8 @@ anything pokes through the skin.
 
 | Name | Used for |
 |---|---|
-| `Paint` | upper fuselage, boom, fin, stabiliser |
-| `Glass` | windscreen and door windows — alpha blended, own node |
+| `Paint` | roof aft of the bubble, door skin, boom, fin, stabiliser |
+| `Glass` | the whole nose bubble plus door windows — alpha blended, own node |
 | `Metal` | rotors, mast pylon, skids, driveshaft cover, cyclic |
 | `Accent` | belly stripe |
 | `Interior` | cabin tub, floor, bulkhead, instrument panel |

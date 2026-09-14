@@ -7,8 +7,8 @@ modelled cabin behind it. Regenerate both detail levels with:
 
 | File | Triangles | Size | Use |
 |---|---|---|---|
-| `helicopter_lowpoly.glb` | 1326 | 107 KB | hero / close-up |
-| `helicopter_lowpoly_min.glb` | 802 | 67 KB | distance LOD |
+| `helicopter_lowpoly.glb` | 1600 | 128 KB | hero / close-up |
+| `helicopter_lowpoly_min.glb` | 936 | 77 KB | distance LOD |
 
 Both come off the same geometry — `minimal` drops resolution and bolt-on detail
 (driveshaft cover, swashplate, pitch links) but keeps every silhouette station,
@@ -37,27 +37,48 @@ helicopter.
   stations of a single profile table (`SECTIONS`), so there are no seams where
   parts butt together. Edit that table to reshape the body.
 
+### Solid geometry
+
+**Every mesh is a watertight, outward-wound solid** — no zero-thickness
+surfaces anywhere. The fuselage carries a real wall: an outer skin, an inner
+skin offset inward by `SKIN` (50 mm), and a rim stitched through every window
+opening joining the two. That rim is the window frame you can see round the
+glazing. The inner skin doubles as the cabin wall, so it is exactly the right
+shape and cannot intersect the body.
+
+The glazing is a second closed solid — a 34 mm pane with its own rim — bedded
+into the frame rather than a single plane you could see the paper edge of.
+
+`assert_watertight()` fails the build if any mesh has an edge that is not
+shared by exactly two faces.
+
 ### Glazing and cabin
 
 The windscreen is **real transparency**: the `Glass` material is `alphaMode:
-BLEND` at 22% opacity, which every engine honours (no extension required). It
-lives on its own `Canopy` node so you can hide, swap or re-sort it
-independently of the body.
+BLEND`, which every engine honours (no extension required). It lives on its own
+`Canopy` node so you can hide, swap or re-sort it independently of the body.
+Per-surface alpha is low (0.10) because a solid pane puts two surfaces in the
+line of sight, and the far pane two more — at a single-plane value the canopy
+turns milky.
 
 Glazing comes in two regions, set by `WINDSCREEN_AFT`:
 
 - **The nose is a bubble.** Forward of `WINDSCREEN_AFT` the *entire* dome is
   glass — all the way round and up over the top, down to the chin. That is the
   view a pilot actually flies on, forward and down through the nose, so nothing
-  opaque may cross it. The build asserts this.
+  opaque may cross it. `assert_forward_view()` casts rays from the pilot's eye
+  through the forward cone and fails the build if any of them meets fuselage
+  before glazing. It stops at the cabin floor line, where the real aircraft's
+  painted lower nose begins — glazing below that just lets you see under the
+  cabin and out the far side.
 - **Aft of that the doors carry a window band**, with painted skin below and a
   solid roof from there back.
 
 Behind it is an actual cabin compartment — floor, bench cushion, two seat
-backs, instrument panel, rear bulkhead and the R22's T-bar cyclic, inside an
-open-topped tub. The tub is the hull's own sections shrunk about their axis and
-wound inside-out, so what you see through the glass is its interior. Without
-it, transparent glazing would show daylight straight through the fuselage.
+backs, instrument panel, rear bulkhead and the R22's T-bar cyclic. The
+compartment itself is the hull's inner skin, so there is no separate shell to
+keep from intersecting the body. Without it, transparent glazing would show
+daylight straight through the fuselage.
 
 Interior parts size themselves from `fit_half_width()`, which measures the hull
 at the part's own height, and `assert_inside_hull()` fails the build if
@@ -71,7 +92,7 @@ anything pokes through the skin.
 | `Glass` | the whole nose bubble plus door windows — alpha blended, own node |
 | `Metal` | rotors, mast pylon, skids, driveshaft cover, cyclic |
 | `Accent` | belly stripe |
-| `Interior` | cabin tub, floor, bulkhead, instrument panel |
+| `Interior` | cabin wall (the hull's inner skin), floor, bulkhead, panel |
 | `Seat` | bench cushion and seat backs |
 
 ### Nodes

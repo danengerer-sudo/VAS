@@ -290,19 +290,20 @@ SECTIONS = [
 # below, and the roof goes solid from there back.
 WINDSCREEN_AFT = -0.10  # where the bubble ends and the doors begin
 DOOR_AFT = 0.38         # back of the door glass
-CHIN_DROP = 0.46        # bubble glazing reaches this far below the section axis
+CHIN_DROP = 0.28        # bubble glazing stops at cabin floor level, like the
+                        # real aircraft's painted lower nose. Below the floor
+                        # there is nothing to see, and glazing there just lets
+                        # you look straight under the cabin and out the far side.
 SILL_DROP = 0.06        # door window sill, and the cabin tub rim
 DOOR_HEADER = 0.62      # door glass stops this far up the section
-ACCENT_DROP = 0.46      # belly stripe; flush with CHIN_DROP, so no paint sliver
+ACCENT_DROP = 0.46      # belly stripe, below the painted lower nose
 ACCENT_AFT = 1.00       # ...and stops where the pod does
 
 
-def fuselage_material(k, i, c, n_stations):
-    if k >= n_stations:
-        return PAINT                        # tailcone end cap
-    if k < 0:
-        return GLASS                        # nose cap: straight through the tip
+def skin_material(c):
+    """Material for a hull face, from where its centre sits on the body."""
     _, y, z = c
+    z = min(max(z, SECTIONS[0][0]), SECTIONS[-1][0])
     w, ht, hb, cy = section_at(z)
     if z < WINDSCREEN_AFT:
         if y > cy - CHIN_DROP:
@@ -325,24 +326,154 @@ def section_at(z):
     raise ValueError(z)
 
 
-def build_fuselage(b):
+SKIN = 0.050            # fuselage wall thickness
+GLASS_INSET = 0.008     # glazing sits this far inside the outer skin
+GLASS_T = 0.034         # glazing thickness
+POD_END_Z = SECTIONS[9][0]      # 0.890: the wall, and the cabin, stop here
+
+
+def _loft_indexed(stations):
+    """The outer loft as an INDEXED mesh: vertices, then faces as index tuples.
+
+    The flat-shaded Builder duplicates every face corner, which throws away
+    edge sharing. Giving the hull real wall thickness needs to know which edges
+    lie on the boundary of an opening, so the loft is built indexed first and
+    only flattened into the Builder once the solid is complete.
+    """
     u, v = frame(Z_AXIS)
-    picked = (SECTIONS if D["stations"] is None
-              else [SECTIONS[i] for i in D["stations"]])
     n = D["fuse_n"]
-    rings = [ring((0.0, cy, z), u, v, oval(ht, hb, w, n, 0.9))
-             for (z, w, ht, hb, cy) in picked]
-    stitch(b, rings, lambda k, i, c: fuselage_material(k, i, c, len(picked)))
+    verts, rings = [], []
+    for (z, w, ht, hb, cy) in stations:
+        base = len(verts)
+        verts.extend(ring((0.0, cy, z), u, v, oval(ht, hb, w, n, 0.9)))
+        rings.append(list(range(base, base + n)))
+    faces = []
+    for k in range(len(rings) - 1):
+        a, c = rings[k], rings[k + 1]
+        for i in range(n):
+            j = (i + 1) % n
+            faces.append((a[i], c[i], c[j], a[j]))
+    nose = len(verts)
+    verts.append(mid(*(verts[i] for i in rings[0])))
+    faces += [(nose, rings[0][i], rings[0][(i + 1) % n]) for i in range(n)]
+    tail = len(verts)
+    verts.append(mid(*(verts[i] for i in rings[-1])))
+    faces += [(tail, rings[-1][(i + 1) % n], rings[-1][i]) for i in range(n)]
+    return verts, faces, rings, nose
+
+
+def _vertex_normals(verts, faces):
+    acc = [(0.0, 0.0, 0.0)] * len(verts)
+    for f in faces:
+        nf = cross(sub(verts[f[1]], verts[f[0]]), sub(verts[f[2]], verts[f[0]]))
+        ln = math.sqrt(dot(nf, nf))
+        if ln < 1e-12:
+            continue
+        nf = mul(nf, 1.0 / ln)
+        for i in f:
+            acc[i] = add(acc[i], nf)
+    out = []
+    for a in acc:
+        ln = math.sqrt(dot(a, a))
+        out.append(mul(a, 1.0 / ln) if ln > 1e-12 else (0.0, 0.0, 0.0))
+    return out
+
+
+def _poly(b, pts, mat):
+    for k in range(1, len(pts) - 1):
+        b.tri(pts[0], pts[k], pts[k + 1], mat)
+
+
+def hull_surfaces():
+    """Outer and inner ring sets, for fitting things inside the cabin."""
+    stations = (SECTIONS if D["stations"] is None
+                else [SECTIONS[i] for i in D["stations"]])
+    verts, faces, rings, _ = _loft_indexed(stations)
+    nrm = _vertex_normals(verts, faces)
+    inner = [sub(p, mul(nv, SKIN)) for p, nv in zip(verts, nrm)]
+    outer_r = [(stations[k][0], [verts[i] for i in r]) for k, r in enumerate(rings)]
+    inner_r = [(stations[k][0], [inner[i] for i in r]) for k, r in enumerate(rings)]
+    return outer_r, inner_r
+
+
+def build_hull(body, canopy):
+    """The fuselage as a watertight solid with a real wall.
+
+    Cutting windows out of a single-surface shell leaves an open edge you can
+    see straight through -- a paper-thin skin, which is no use in a game. So
+    the hull carries an outer skin, an inner skin offset inward by SKIN, and a
+    rim stitched through every opening joining the two. The inner skin doubles
+    as the cabin wall, so it is exactly the right shape and cannot intersect
+    the body. The glazing is a second closed solid that fills each opening.
+    """
+    stations = (SECTIONS if D["stations"] is None
+                else [SECTIONS[i] for i in D["stations"]])
+    verts, faces, rings, nose = _loft_indexed(stations)
+    mats = [skin_material(mid(*(verts[i] for i in f))) for f in faces]
+    nrm = _vertex_normals(verts, faces)
+
+    inner = [sub(p, mul(nv, SKIN)) for p, nv in zip(verts, nrm)]
+    g_out = [sub(p, mul(nv, GLASS_INSET)) for p, nv in zip(verts, nrm)]
+    g_in = [sub(p, mul(nv, GLASS_INSET + GLASS_T)) for p, nv in zip(verts, nrm)]
+
+    pod_last = next(k for k, st in enumerate(stations) if st[0] == POD_END_Z)
+    pod_v = {nose}
+    for r in rings[:pod_last + 1]:
+        pod_v.update(r)
+    in_pod = [all(i in pod_v for i in f) for f in faces]
+    glass = [m == GLASS for m in mats]
+
+    edge = {}
+    for fi, f in enumerate(faces):
+        for k in range(len(f)):
+            a, c = f[k], f[(k + 1) % len(f)]
+            edge.setdefault((min(a, c), max(a, c)), []).append(fi)
+
+    def neighbour(fi, a, c):
+        other = [g for g in edge[(min(a, c), max(a, c))] if g != fi]
+        return other[0] if other else None
+
+    # opaque skin, inside and out
+    for fi, f in enumerate(faces):
+        if glass[fi]:
+            continue
+        _poly(body, [verts[i] for i in f], mats[fi])
+        if in_pod[fi]:
+            _poly(body, [inner[i] for i in reversed(f)], INTERIOR)
+
+    # bulkhead closing the inner skin where the pod ends
+    r = rings[pod_last]
+    n = len(r)
+    ctr = mid(*(inner[i] for i in r))
+    for i in range(n):
+        body.tri(ctr, inner[r[(i + 1) % n]], inner[r[i]], INTERIOR)
+
+    # window frames: rim from outer skin through to inner skin
+    for fi, f in enumerate(faces):
+        if glass[fi] or not in_pod[fi]:
+            continue
+        for k in range(len(f)):
+            a, c = f[k], f[(k + 1) % len(f)]
+            o = neighbour(fi, a, c)
+            if o is not None and glass[o]:
+                body.quad(verts[a], inner[a], inner[c], verts[c], PAINT)
+
+    # glazing: its own closed solid, inset so it beds into the frame
+    for fi, f in enumerate(faces):
+        if not glass[fi]:
+            continue
+        _poly(canopy, [g_out[i] for i in f], GLASS)
+        _poly(canopy, [g_in[i] for i in reversed(f)], GLASS)
+        for k in range(len(f)):
+            a, c = f[k], f[(k + 1) % len(f)]
+            o = neighbour(fi, a, c)
+            if o is None or not glass[o]:
+                canopy.quad(g_out[a], g_in[a], g_in[c], g_out[c], GLASS)
 
 
 # --------------------------------------------------------------------------
 # the rest of the airframe
 # --------------------------------------------------------------------------
-
-INTERIOR_NOSE = -1.28       # just inside the nose cap
-CABIN_AFT = 0.62            # rear bulkhead, behind the seats
-SILL_LIFT = 0.04            # tub rim overlaps the glazing's lower edge
-
 
 def box(b, lo, hi, mat):
     """Axis-aligned box between two opposite corners."""
@@ -353,11 +484,8 @@ def box(b, lo, hi, mat):
 
 
 def _hull_rings():
-    picked = (SECTIONS if D["stations"] is None
-              else [SECTIONS[i] for i in D["stations"]])
-    u, v = frame(Z_AXIS)
-    return [(z, ring((0.0, cy, z), u, v, oval(ht, hb, w, D["fuse_n"], 0.9)))
-            for (z, w, ht, hb, cy) in picked]
+    """Inner skin rings -- the cabin wall, which is what furniture must clear."""
+    return hull_surfaces()[1]
 
 
 def _section_polygon(z, rings):
@@ -389,24 +517,105 @@ def hull_half_width(y, z, rings):
 def fit_half_width(y0, y1, z0, z1, margin=0.92):
     """Widest half-width that still fits everywhere in a y/z box.
 
-    Interior parts are sized from this rather than by hand: the pod is widest
+    Interior parts are sized from this rather than by hand: the cabin is widest
     at its waist and much narrower at floor height, so a number picked off the
-    section's maximum puts furniture through the skin.
+    section's maximum puts furniture through the wall.
     """
     rings = _hull_rings()
     zs = [z0 + (z1 - z0) * i / 4.0 for i in range(5)]
     return margin * min(hull_half_width(y, z, rings) for y in (y0, y1) for z in zs)
 
 
-def assert_inside_hull(builder, what):
+PILOT_EYE = (0.26, 1.32, 0.22)      # right seat, eye height
+
+
+def _ray_tri(o, d, a, b, c):
+    """Moller-Trumbore. Returns the hit distance along d, or None."""
+    e1, e2 = sub(b, a), sub(c, a)
+    pv = cross(d, e2)
+    det = dot(e1, pv)
+    if abs(det) < 1e-12:
+        return None
+    inv = 1.0 / det
+    tv = sub(o, a)
+    u = dot(tv, pv) * inv
+    if u < 0.0 or u > 1.0:
+        return None
+    qv = cross(tv, e1)
+    v = dot(d, qv) * inv
+    if v < 0.0 or u + v > 1.0:
+        return None
+    t = dot(e2, qv) * inv
+    return t if t > 1e-4 else None
+
+
+def assert_forward_view(hull, canopy):
+    """Nothing opaque in the fuselage may stand between pilot and view ahead.
+
+    Cast through the forward cone rather than inspecting face positions: a
+    positional test cannot tell a window frame (opaque, and correct) from a
+    painted panel across the windscreen (opaque, and wrong).
+
+    `hull` must be the fuselage ALONE. An earlier version of this check took
+    the whole body, which let the cabin's inner skin -- part of the fuselage --
+    be mistaken for a fitting and absorb every ray, so the check passed even
+    with the nose painted solid. Cabin fittings are deliberately excluded: an
+    instrument panel in the way is correct, a painted windscreen is not.
+    """
+    def faces_of(builder):
+        out = []
+        for g in builder.groups.values():
+            pos, idx = g["pos"], g["idx"]
+            out += [(pos[idx[k]], pos[idx[k + 1]], pos[idx[k + 2]])
+                    for k in range(0, len(idx), 3)]
+        return out
+
+    solid, glazing = faces_of(hull), faces_of(canopy)
+    blocked = 0
+    for az in range(-45, 46, 9):
+        for el in range(-15, 16, 6):
+            a, e = math.radians(az), math.radians(el)
+            d = (math.sin(a) * math.cos(e), math.sin(e), -math.cos(a) * math.cos(e))
+            near_solid = min((t for t in (_ray_tri(PILOT_EYE, d, *f) for f in solid)
+                              if t is not None), default=1e9)
+            near_glass = min((t for t in (_ray_tri(PILOT_EYE, d, *f) for f in glazing)
+                              if t is not None), default=1e9)
+            blocked += near_solid < near_glass
+    assert blocked == 0, (f"{blocked} rays from the pilot's eye hit opaque hull "
+                          f"before any glazing: the forward view is blocked")
+
+
+def assert_watertight(builder, what):
+    """Every edge must be used by exactly two faces.
+
+    This is the check that keeps paper-thin surfaces out of the asset: an open
+    surface has edges used once, and those are the edges you can see straight
+    through in game. Welding is by position because the flat-shaded Builder
+    duplicates every face corner.
+    """
+    edges = {}
+    for g in builder.groups.values():
+        pos, idx = g["pos"], g["idx"]
+        for k in range(0, len(idx), 3):
+            tri = [tuple(round(v, 5) for v in pos[idx[k + j]]) for j in range(3)]
+            for j in range(3):
+                a, c = tri[j], tri[(j + 1) % 3]
+                key = (a, c) if a < c else (c, a)
+                edges[key] = edges.get(key, 0) + 1
+    open_edges = [e for e, n in edges.items() if n != 2]
+    assert not open_edges, (f"{what} is not watertight: {len(open_edges)} edges "
+                            f"not shared by exactly two faces, e.g. {open_edges[0]}")
+
+
+def assert_inside_cabin(builder, what):
     """Fitting interior parts by eye is how you get furniture sticking out of
     the fuselage: a box wide enough at the pod's waist is far too wide at floor
-    height. Check every vertex against the hull section at its own z."""
+    height. Check every vertex against the cabin wall at its own z."""
     rings = _hull_rings()
     for g in builder.groups.values():
         for (x, y, z) in g["pos"]:
             poly = _section_polygon(z, rings)
-            assert poly is not None, f"{what}: z={z:.3f} is beyond the lofted body"
+            assert poly is not None, f"{what}: z={z:.3f} is beyond the cabin"
             hit, n = False, len(poly)
             for i in range(n):
                 x0, y0 = poly[i]
@@ -414,37 +623,12 @@ def assert_inside_hull(builder, what):
                 if (y0 > y) != (y1 > y) and x < x0 + (x1 - x0) * (y - y0) / (y1 - y0):
                     hit = not hit
             assert hit, (f"{what}: vertex ({x:+.2f},{y:+.2f},{z:+.2f}) pokes "
-                         f"through the hull")
+                         f"through the cabin wall")
 
 
 def build_cabin(b):
-    """A real cabin compartment, visible through the glazing.
-
-    The tub is the hull's own sections shrunk about their axis and wound
-    inside-out, so the faces that survive are the ones you see when looking
-    in from outside. Faces above the window sill return None and are dropped,
-    which is what opens the top. Because tub and hull share stations and the
-    shrink is about each section axis, the tub cannot poke through.
-    """
-    picked = (SECTIONS if D["stations"] is None
-              else [SECTIONS[i] for i in D["stations"]])
-    zs = ([INTERIOR_NOSE]
-          + [t[0] for t in picked if INTERIOR_NOSE < t[0] < CABIN_AFT]
-          + [CABIN_AFT])
-    u, v = frame(Z_AXIS)
-    k = D["interior_scale"]
-    rings = []
-    for z in zs:
-        w, ht, hb, cy = section_at(z)
-        r = ring((0.0, cy, z), u, v, oval(ht * k, hb * k, w * k, 8, 0.9))
-        rings.append(r[::-1])          # inside-out: this is seen from within
-
-    def tub(_k, _i, c):
-        sill = section_at(c[2])[3] - SILL_DROP + SILL_LIFT
-        return None if c[1] > sill else INTERIOR
-
-    stitch(b, rings, tub)
-
+    """Cabin fittings. The compartment itself is the hull's inner skin, so
+    there is no separate tub to keep from intersecting the body."""
     fw = fit_half_width(0.78, 0.84, -0.52, 0.42)
     box(b, (-fw, 0.78, -0.52), (fw, 0.84, 0.42), INTERIOR)       # floor
     cw = fit_half_width(0.84, 0.99, 0.02, 0.42)
@@ -461,11 +645,14 @@ def build_cabin(b):
     box(b, (-0.30, 1.16, -0.09), (0.30, 1.22, -0.03), METAL)     # T-bar cyclic
 
 
-def build_body(b):
-    build_fuselage(b)
+def build_body(b, canopy):
+    hull = Builder()
+    build_hull(hull, canopy)
+    assert_forward_view(hull, canopy)
+    b.merge(hull)
     cabin = Builder()
     build_cabin(cabin)
-    assert_inside_hull(cabin, "cabin")
+    assert_inside_cabin(cabin, "cabin")
     b.merge(cabin)
 
     # main rotor mast, rising out of the transmission deck
@@ -473,7 +660,7 @@ def build_body(b):
             [(0.0, 1.52, MAST_Z), (0.0, 1.92, MAST_Z), (0.0, HUB_Y - 0.10, MAST_Z)],
             [oval(0.175, 0.175, 0.150, 6), oval(0.105, 0.105, 0.100, 6),
              oval(0.078, 0.078, 0.078, 6)],
-            METAL, cap_start=False)
+            METAL)
 
     # horizontal stabiliser: tapered slab on the tailcone
     w, ht, hb, cy = section_at(2.80)
@@ -503,7 +690,7 @@ def build_body(b):
         extrude(b, Z_AXIS,
                 [(0.0, section_at(z)[3] + section_at(z)[1] - 0.030, z) for z in spine_z],
                 [rect(0.044, w) for w in spine_w],
-                METAL, cap_start=False)
+                METAL)
 
     # tail rotor gearbox fairing, blended into the left side of the fin
     extrude(b, X_AXIS,
@@ -598,9 +785,9 @@ MATERIALS = [
         "metallicFactor": 0.0, "roughnessFactor": 0.55}},
     {"name": "Glass",
      "alphaMode": "BLEND",
-     "doubleSided": True,
+     "doubleSided": False,
      "pbrMetallicRoughness": {
-        "baseColorFactor": [0.502, 0.624, 0.690, 0.220],
+        "baseColorFactor": [0.502, 0.624, 0.690, 0.100],
         "metallicFactor": 0.0, "roughnessFactor": 0.06}},
     {"name": "Metal", "pbrMetallicRoughness": {
         "baseColorFactor": [0.180, 0.184, 0.204, 1.0],
@@ -702,10 +889,8 @@ def build_file(out, lod):
     global D
     D = LOD[lod]
     g = Gltf()
-    body = Builder(accept=lambda m: m != GLASS)
-    canopy = Builder(accept=lambda m: m == GLASS)
-    build_body(body)
-    build_fuselage(canopy)          # same loft, glazed faces only
+    body, canopy = Builder(), Builder()
+    build_body(body, canopy)
     main_rotor, tail_rotor = build_main_rotor(), build_tail_rotor()
 
     s = math.sin(math.pi / 4)
@@ -719,6 +904,9 @@ def build_file(out, lod):
          "translation": list(TAIL_HUB),
          "rotation": [0.0, 0.0, s, s]},          # local +Y -> world +X
     ]
+    for name, bl in (("Body", body), ("Canopy", canopy),
+                     ("MainRotor", main_rotor), ("TailRotor", tail_rotor)):
+        assert_watertight(bl, name)
     size = write_glb(out, g, nodes, [0])
     tris = body.tris() + canopy.tris() + main_rotor.tris() + tail_rotor.tris()
     print(f"{out}: {lod:8s} {tris:5d} triangles "

@@ -441,12 +441,16 @@ def build_hull(body, canopy):
         if in_pod[fi]:
             _poly(body, [inner[i] for i in reversed(f)], INTERIOR)
 
-    # bulkhead closing the inner skin where the pod ends
+    # Bulkhead closing the inner skin where the pod ends. Wound to face into
+    # the cabin, the same way the inner skin it closes does: wound the other
+    # way it still seals the hole, and leaves a ring of twelve edges that two
+    # faces walk the same way round, which is a solid turned inside out along
+    # that ring.
     r = rings[pod_last]
     n = len(r)
     ctr = mid(*(inner[i] for i in r))
     for i in range(n):
-        body.tri(ctr, inner[r[(i + 1) % n]], inner[r[i]], INTERIOR)
+        body.tri(ctr, inner[r[i]], inner[r[(i + 1) % n]], INTERIOR)
 
     # window frames: rim from outer skin through to inner skin
     for fi, f in enumerate(faces):
@@ -586,12 +590,21 @@ def assert_forward_view(hull, canopy):
 
 
 def assert_watertight(builder, what):
-    """Every edge must be used by exactly two faces.
+    """Every edge must be walked by exactly two faces, once each way round.
 
     This is the check that keeps paper-thin surfaces out of the asset: an open
     surface has edges used once, and those are the edges you can see straight
     through in game. Welding is by position because the flat-shaded Builder
     duplicates every face corner.
+
+    Once each way round is the part that matters, and it is the part this used
+    to miss. Counting an edge without caring which way each face walked it
+    passes a lid put on back to front just as happily as a lid put on
+    properly: both faces are there, both use the edge, the count is two. What
+    you get is a surface that is closed and inside out in one patch, which
+    looks right, weighs right, and is not a solid. A ring of twelve such edges
+    sat in this model until a CAD exporter, which cannot be fooled by that,
+    refused to write the body out.
     """
     edges = {}
     for g in builder.groups.values():
@@ -600,11 +613,12 @@ def assert_watertight(builder, what):
             tri = [tuple(round(v, 5) for v in pos[idx[k + j]]) for j in range(3)]
             for j in range(3):
                 a, c = tri[j], tri[(j + 1) % 3]
-                key = (a, c) if a < c else (c, a)
-                edges[key] = edges.get(key, 0) + 1
-    open_edges = [e for e, n in edges.items() if n != 2]
-    assert not open_edges, (f"{what} is not watertight: {len(open_edges)} edges "
-                            f"not shared by exactly two faces, e.g. {open_edges[0]}")
+                edges[(a, c)] = edges.get((a, c), 0) + 1
+    open_edges = [e for e, n in edges.items() if edges.get((e[1], e[0]), 0) != n]
+    assert not open_edges, (f"{what} is not watertight: {len(open_edges)} edge(s) "
+                            f"are not walked by two faces once each way, so it "
+                            f"is closed but inside out somewhere, e.g. "
+                            f"{open_edges[0]}")
 
 
 def assert_inside_cabin(builder, what):

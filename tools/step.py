@@ -227,42 +227,75 @@ def _ekey(a, b):
     return (a, b) if a <= b else (b, a)
 
 
-def _walk_ring(k0, e0, quads, edge_faces):
-    """Step from quad to quad across opposite edges until the ring closes.
+def _across(k, e, quads, edge_faces):
+    """Out of this quad by this edge and into the next one, if there is one.
 
-    A cylinder's wall is a ring of quadrilaterals joined along the edges that
-    run the length of it. Leaving a quad by one edge and coming out of the next
-    one by the edge opposite is what goes round the cylinder rather than up it,
-    so a walk that started up the cylinder runs into the flat end and stops,
-    which is how the wrong pair of edges rules itself out.
+    Leaving a quad by one edge and coming out of the next by the edge opposite
+    is what goes round a cylinder rather than up it, so a walk that started up
+    the cylinder runs into the flat end and stops, which is how the wrong pair
+    of edges rules itself out.
     """
-    seq, rails = [], []
+    pts = quads[k]
+    key = _ekey(pts[e], pts[(e + 1) % 4])
+    nxt = [q for q in edge_faces.get(key, ()) if q != k]
+    if len(nxt) != 1 or nxt[0] not in quads:
+        return None, key
+    k2 = nxt[0]
+    p2 = quads[k2]
+    for a in range(4):
+        if _ekey(p2[a], p2[(a + 1) % 4]) == key:
+            return (k2, (a + 2) % 4), key
+    return None, key
+
+
+def _quad_chain(k0, e0, quads, edge_faces):
+    """Every quad joined to this one along the edges that run the wall's
+    length. Returns (faces, rails, closed), or None if it doubles back.
+
+    Closed is a ring all the way round something. Open is a run that stops,
+    which is what a bore with a slot or a cross hole through it leaves behind.
+    """
+    seq, rails, closed = [k0], [], False
     k, e = k0, e0
-    for _ in range(4096):
-        pts = quads[k]
-        key = _ekey(pts[e], pts[(e + 1) % 4])
-        seq.append(k)
-        rails.append((pts[e], pts[(e + 1) % 4]))
-        nxt = [q for q in edge_faces.get(key, ()) if q != k]
-        if len(nxt) != 1 or nxt[0] not in quads:
-            return None
-        k2 = nxt[0]
+    while True:
+        rails.append((quads[k][e], quads[k][(e + 1) % 4]))
+        nxt, key = _across(k, e, quads, edge_faces)
+        if nxt is None:
+            break
+        k2, e2 = nxt
         if k2 == k0:
             if key != _ekey(quads[k0][(e0 + 2) % 4], quads[k0][(e0 + 3) % 4]):
                 return None               # came back in by the wrong side
-            return seq, rails
+            closed = True
+            break
         if k2 in seq:
             return None                   # a figure of eight, not a ring
-        p2 = quads[k2]
-        at = None
-        for a in range(4):
-            if _ekey(p2[a], p2[(a + 1) % 4]) == key:
-                at = a
-                break
-        if at is None:
+        seq.append(k2)
+        k, e = k2, e2
+        if len(seq) > 4096:
             return None
-        k, e = k2, (at + 2) % 4
-    return None
+    if closed:
+        return seq, rails, True
+    # It ran into the end of the wall. Go the other way from where it started.
+    k, e = k0, (e0 + 2) % 4
+    while True:
+        rails.insert(0, (quads[k][e], quads[k][(e + 1) % 4]))
+        nxt, _key = _across(k, e, quads, edge_faces)
+        if nxt is None:
+            return seq, rails, False
+        k2, e2 = nxt
+        if k2 in seq:
+            return None
+        seq.insert(0, k2)
+        k, e = k2, e2
+        if len(seq) > 4096:
+            return None
+
+
+def _walk_ring(k0, e0, quads, edge_faces):
+    """The chain from this quad, but only when it goes all the way round."""
+    got = _quad_chain(k0, e0, quads, edge_faces)
+    return (got[0], got[1]) if got and got[2] else None
 
 
 def _fit_circle(flat):
@@ -441,43 +474,7 @@ def _span(faces):
 
 def _as_cylinder(faces, seq, rails, close):
     """A ring of quads measured against being a cylinder. None if it is not."""
-    axis = S.normalise(S.sub(rails[0][1], rails[0][0]))
-    height = S.length(S.sub(rails[0][1], rails[0][0]))
-    if height <= 0:
-        return None
-    for a, b in rails[1:]:
-        d = S.sub(b, a)
-        if abs(S.length(d) - height) > close:
-            return None                   # not the same length: not a cylinder
-        if abs(abs(S.dot(S.normalise(d), axis)) - 1.0) > 1e-9:
-            return None                   # not parallel: a cone or a twist
-
-    pts = []
-    for k in seq:
-        pts += faces[k].loops[0].pts
-    i, j = S._frame(axis)
-    fit = _fit_circle([(p[i], p[j]) for p in pts])
-    if fit is None:
-        return None
-    cx, cy, radius = fit
-    if radius <= close:
-        return None
-    for p in pts:
-        if abs(math.hypot(p[i] - cx, p[j] - cy) - radius) > close:
-            return None                   # the corners are not on one circle
-
-    levels = _same_level(pts, axis, close)
-    if len(levels) != 2 or any(len(L[1]) != 2 * len(seq) for L in levels):
-        return None                       # not two flat ends, or not a ring
-    ends = [_ring_order(L[1], axis, cx, cy, i, j) for L in levels]
-    if any(e is None or len(e) != len(seq) for e in ends):
-        return None
-    for e in ends:
-        sides = [S.length(S.sub(e[(k + 1) % len(e)], e[k])) for k in range(len(e))]
-        if max(sides) - min(sides) > close:
-            return None                   # a circle's sides are all the same
-    centre = _on_axis(ends[0][0], _at(cx, cy, 0.0, i, j, axis), axis)
-    return centre, axis, radius, abs(levels[1][0] - levels[0][0]), ends
+    return _fit_cylinder(faces, seq, rails, close, True)
 
 
 def _at(u, v, t, i, j, axis):
@@ -501,7 +498,15 @@ def _on_axis(p, anywhere, axis):
 
 
 def _ring_order(pts, axis, cx, cy, i, j):
-    """One end's corners, deduplicated and put in order round the circle."""
+    """One end's corners, deduplicated and put in order round the circle.
+
+    Turned so that the widest gap between neighbours comes last. A ring all
+    the way round has no gap worth the name and this only picks a different
+    corner to start at, which nothing downstream minds. An arc that does not
+    go all the way round has exactly one gap, where it stops, and putting it
+    last is what makes its corners a run rather than a run with the gap
+    somewhere in the middle of it.
+    """
     seen, out = set(), []
     for p in pts:
         k = S.snap(p)
@@ -509,8 +514,14 @@ def _ring_order(pts, axis, cx, cy, i, j):
             continue
         seen.add(k)
         out.append(p)
+    if not out:
+        return None
     out.sort(key=lambda p: math.atan2(p[j] - cy, p[i] - cx))
-    return out or None
+    n = len(out)
+    gaps = [(math.hypot(out[(k + 1) % n][i] - out[k][i],
+                        out[(k + 1) % n][j] - out[k][j]), k) for k in range(n)]
+    at = max(gaps)[1]
+    return out[at + 1:] + out[:at + 1]
 
 
 def _outward(quad, centre, axis):
@@ -1054,6 +1065,192 @@ def volume_of(path):
     return Back(Path(path).read_text(encoding="utf-8")).volume()
 
 
+# ---------------------------------------------- walls that are part of a bore
+
+def arcs(faces, least_sides=SIDES, tol=1e-6):
+    """Walls that sit on a cylinder without going all the way round it.
+
+    A bore with a slot or a cross hole through it leaves an arc rather than a
+    ring, and the STEP writer leaves that as facets: a cylindrical face
+    bounded by arcs rather than by two whole circles is a bigger piece of work
+    and it is not built yet.
+
+    For pointing at, the arc is enough, and the difference is the difference
+    between a useful answer and a useless one. He taps the wall of the
+    bearing bore and hears "the 26 mm bore, 12 deep", which is what it is,
+    rather than "a flat face 1.4 by 12", which is true and no help to anybody.
+
+    The same tests as a full ring, minus the ones about capping, plus one that
+    replaces counting sides: a facet has to turn through a small enough angle
+    that a whole circle of them would take at least `least_sides`. That is
+    what stops the two flats either side of a hexagon's corner reading as a
+    piece of a very large bore.
+    """
+    close = (_span(faces) or 1.0) * tol
+    taken, out = set(), []
+    for seq, rails, closed in chains(faces):
+            for run, fit in _arc_runs(faces, seq, rails, close, closed):
+                if any(k in taken for k in run):
+                    continue
+                centre, axis, radius, _height, ends = fit
+                step = S.length(S.sub(ends[0][1], ends[0][0]))
+                if step >= 2.0 * radius:
+                    continue              # a chord that long is not an arc
+                per = 2.0 * math.asin(min(1.0, step / (2.0 * radius)))
+                if per <= 0 or 2.0 * math.pi / per < least_sides:
+                    continue              # too coarse to mean a circle
+                rail = S.length(S.sub(rails[0][1], rails[0][0]))
+                out.append({"faces": set(run), "centre": centre, "axis": axis,
+                            "radius": radius, "height": rail,
+                            "same_sense": _outward(faces[run[0]], centre, axis),
+                            "sweep": math.degrees(per * len(run))})
+                taken.update(run)
+    return out
+
+
+def chains(faces):
+    """Every run of quads joined along the edges that run their length.
+
+    Handed out rather than kept private because it is the thing worth testing
+    on its own: whether a run that happens to start halfway along an arc is
+    still found whole depends on nothing else, and going through a part to
+    reach it makes it a matter of which quad the walk happened to begin at.
+    """
+    quads, edge_faces = {}, {}
+    for k, f in enumerate(faces):
+        for L, _flip in f.bounds:
+            pts = L.pts
+            for a in range(len(pts)):
+                edge_faces.setdefault(
+                    _ekey(pts[a], pts[(a + 1) % len(pts)]), []).append(k)
+        if isinstance(f, Flat) and len(f.loops) == 1 and len(f.loops[0].pts) == 4:
+            quads[k] = f.loops[0].pts
+    seen, out = set(), []
+    for k0 in sorted(quads):
+        for e0 in (0, 1):
+            got = _quad_chain(k0, e0, quads, edge_faces)
+            if not got or len(got[0]) < LEAST_ARC:
+                continue
+            if frozenset(got[0]) in seen:
+                continue
+            seen.add(frozenset(got[0]))
+            out.append(got)
+    return out
+
+
+LEAST_ARC = 4           # fewer facets than this is not enough of a curve
+
+
+def _fit_cylinder(faces, seq, rails, close, closed):
+    """A chain of quads measured against sitting on one cylinder.
+
+    Shared by the writer, which wants rings it can turn into real cylindrical
+    faces, and by the pointing, which will take an arc. A closed chain has as
+    many corners at each end as it has faces; an open one has one more,
+    because it has two loose ends.
+    """
+    axis = S.normalise(S.sub(rails[0][1], rails[0][0]))
+    height = S.length(S.sub(rails[0][1], rails[0][0]))
+    if height <= 0:
+        return None
+    for a, b in rails[1:]:
+        d = S.sub(b, a)
+        if abs(S.length(d) - height) > close:
+            return None                   # not the same length: not a cylinder
+        if abs(abs(S.dot(S.normalise(d), axis)) - 1.0) > 1e-9:
+            return None                   # not parallel: a cone or a twist
+
+    pts = []
+    for k in seq:
+        pts += faces[k].loops[0].pts
+    i, j = S._frame(axis)
+    fit = _fit_circle([(p[i], p[j]) for p in pts])
+    if fit is None:
+        return None
+    cx, cy, radius = fit
+    if radius <= close:
+        return None
+    for p in pts:
+        if abs(math.hypot(p[i] - cx, p[j] - cy) - radius) > close:
+            return None                   # the corners are not on one circle
+
+    levels = _same_level(pts, axis, close)
+    if len(levels) != 2 or any(len(L[1]) != 2 * len(seq) for L in levels):
+        return None                       # not two flat ends, or not a ring
+    want = len(seq) if closed else len(seq) + 1
+    ends = [_ring_order(L[1], axis, cx, cy, i, j) for L in levels]
+    if any(e is None or len(e) != want for e in ends):
+        return None
+    for e in ends:
+        n = len(e)
+        sides = [S.length(S.sub(e[(k + 1) % n], e[k]))
+                 for k in range(n if closed else n - 1)]
+        if max(sides) - min(sides) > close:
+            return None                   # a circle's sides are all the same
+    centre = _on_axis(ends[0][0], _at(cx, cy, 0.0, i, j, axis), axis)
+    return centre, axis, radius, abs(levels[1][0] - levels[0][0]), ends
+
+
+def _arc_runs(faces, seq, rails, close, closed, least=LEAST_ARC):
+    """The longest runs of this chain whose corners sit on one circle.
+
+    A chain does not have to be all one thing, and on a real part it usually
+    is not. The bearing bore's wall and the walls of the slot cut through it
+    are all twelve millimetre quads joined along their long edges, so the walk
+    goes round the bore, into the slot, across it and back round the other
+    side, and closes. Asking whether the whole of that is a cylinder gets the
+    answer no, which is true and throws the bore away with it.
+
+    So: every run that fits one circle and cannot be made longer at either
+    end. Turning a closed chain to start somewhere convenient is not good
+    enough, and the selftest says why: a start chosen for not beginning an arc
+    can still be a few facets into one, and the arc before it comes out short.
+    What he is told he is pointing at cannot depend on which quad a walk
+    happened to begin at, so every start is tried and the answer is the same
+    from all of them.
+    """
+    n = len(seq)
+    if n < least:
+        return []
+    # A ring that goes all the way round and was not written as a cylinder,
+    # because its ends are not whole loops of anything, is still a bore to
+    # point at. It is one arc of three hundred and sixty degrees, not n of
+    # them overlapping.
+    if closed:
+        whole = _fit_cylinder(faces, seq, rails, close, True)
+        if whole is not None:
+            return [(list(seq), whole)]
+
+    def fit(k, m):
+        if m > n or (not closed and k + m > n):
+            return None
+        idx = [(k + i) % n for i in range(m)]
+        return _fit_cylinder(faces, [seq[i] for i in idx],
+                             [rails[i] for i in idx], close, False)
+
+    def longest(k):
+        best, m = None, least
+        while True:
+            got = fit(k, m)
+            if got is None:
+                return best
+            best, m = (m, got), m + 1
+
+    grown = {}
+    for k in range(n if closed else n - least + 1):
+        got = longest(k)
+        if got:
+            grown[k] = got
+    out = []
+    for k in sorted(grown):
+        m, got = grown[k]
+        back = grown.get((k - 1) % n) if closed else grown.get(k - 1)
+        if back and back[0] >= m + 1:
+            continue                      # the run starting before this covers it
+        out.append(([seq[(k + i) % n] for i in range(m)], got))
+    return out
+
+
 # ------------------------------------------------- pointing at a feature
 
 # Which way is which, in the words the viewer uses for its own standard
@@ -1092,7 +1289,7 @@ def surfaces(parts, rounds=True, tol=1e-6, least_sides=SIDES):
     out = []
     for name, body in parts:
         faces, _count = body_faces(body, rounds, tol, least_sides)
-        out.append((name, faces))
+        out.append((name, faces, arcs(faces, least_sides, tol)))
     return out
 
 
@@ -1101,18 +1298,47 @@ def _face_span(faces):
 
 
 def _on_flat(f, p, near):
-    """Is this point on this planar face, holes and all."""
+    """Is this point on this planar face, holes and all.
+
+    A point on the edge between two faces is strictly inside neither, and a
+    finger on a phone lands on edges all the time: the wall of a bore that has
+    come out as facets is a fan of strips a millimetre wide, so most of what
+    he can hit is edge. So a point just outside the outline still counts, and
+    ranks worse than one properly inside it, which lets the face he actually
+    meant win when both are in the running.
+    """
     n = f.normal
-    if abs(S.dot(n, p) - S.dot(n, f.loops[0].pts[0])) > near:
+    off = abs(S.dot(n, p) - S.dot(n, f.loops[0].pts[0]))
+    if off > near:
         return None
     i, j = S._frame(n)
     flat = (p[i], p[j])
-    if not S._inside_loop(flat, [(q[i], q[j]) for q in f.loops[0].pts]):
-        return None
+    out = [(q[i], q[j]) for q in f.loops[0].pts]
+    if not S._inside_loop(flat, out):
+        edge = _to_edge(flat, out)
+        if edge > near:
+            return None
+        return math.hypot(off, edge)
     for hole in f.loops[1:]:
-        if S._inside_loop(flat, [(q[i], q[j]) for q in hole.pts]):
+        ring = [(q[i], q[j]) for q in hole.pts]
+        if S._inside_loop(flat, ring) and _to_edge(flat, ring) > near:
             return None                   # down the hole, not on the face
-    return abs(S.dot(n, p) - S.dot(n, f.loops[0].pts[0]))
+    return off
+
+
+def _to_edge(p, loop):
+    """How far this point is from the outline, measured on the flat."""
+    best = None
+    for k in range(len(loop)):
+        a, b = loop[k], loop[(k + 1) % len(loop)]
+        dx, dy = b[0] - a[0], b[1] - a[1]
+        run = dx * dx + dy * dy
+        t = 0.0 if run <= 0 else max(0.0, min(1.0, (
+            (p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / run))
+        away = math.hypot(p[0] - (a[0] + dx * t), p[1] - (a[1] + dy * t))
+        if best is None or away < best:
+            best = away
+    return best if best is not None else float("inf")
 
 
 def _on_round(f, p, near):
@@ -1138,10 +1364,10 @@ def point_at(kept, point, normal=None, part=None, near=None):
     coordinates, z up, the same numbers that are in the part's script.
     """
     if near is None:
-        span = max((_face_span(f) for _n, f in kept), default=1.0)
+        span = max((_face_span(f) for _n, f, _a in kept), default=1.0)
         near = max(span * 1e-3, 1e-4)
     best = None
-    for name, faces in kept:
+    for name, faces, round_bits in kept:
         if part and name != part:
             continue
         for k, f in enumerate(faces):
@@ -1160,10 +1386,38 @@ def point_at(kept, point, normal=None, part=None, near=None):
                 continue
             rank = (off, -agrees)
             if best is None or rank < best[0]:
-                best = (rank, name, k, f)
+                # A facet that is one slice of a bore is answered for by the
+                # bore. Nobody points at a strip a millimetre wide; they point
+                # at the hole it is part of.
+                part_of = next((a for a in round_bits if k in a["faces"]), None)
+                best = (rank, name, k, f, part_of)
     if best is None:
         return None
+    if best[4] is not None:
+        return describe_arc(best[1], best[4], best[2])
     return describe(best[1], best[3], best[2])
+
+
+def describe_arc(part, a, index=0):
+    """A bore that something else has cut through, said as the bore it is."""
+    axis, c, r = a["axis"], a["centre"], a["radius"]
+    b = tuple(c[k] + axis[k] * a["height"] for k in range(3))
+    word, ax = facing(axis)
+    if word is None:
+        word, ax = facing(tuple(-q for q in axis))
+    along = f"along {ax}" if ax else "along " + ", ".join(mm(q) for q in axis)
+    kind = "boss" if a["same_sense"] else "bore"
+    what = "a round post" if a["same_sense"] else "a bore"
+    said = (f"{what} on {part}, {mm(2 * r)} mm across and {mm(a['height'])} mm "
+            f"long, {along}, from ({mm(c[0])}, {mm(c[1])}, {mm(c[2])}) to "
+            f"({mm(b[0])}, {mm(b[1])}, {mm(b[2])}). Something else cuts "
+            f"through it: only {round(a['sweep'])} degrees of the wall is "
+            f"here")
+    return {"part": part, "index": index, "kind": kind, "said": said,
+            "short": f"\u2300{mm(2 * r)} {kind}, {mm(a['height'])} deep",
+            "diameter": 2 * r, "depth": a["height"], "axis": list(axis),
+            "from": list(c), "to": list(b), "sweep": a["sweep"],
+            "interrupted": True}
 
 
 def describe(part, f, index=0):
@@ -1480,6 +1734,106 @@ def selftest():
         fail.append("tapping down the middle of a hole found the face the "
                     "hole is in, which is the one place it is not")
 
+    # A bore with a slot cut into it, which is what a clamp is and what most
+    # real bores are: something else goes through them. The ring of facets
+    # never closes, so it is not written as a cylinder, but he still has to be
+    # able to point at it and be told it is a bore.
+    clamp = S.difference(plate, S.box(4.0, 16.0, 20.0, at=(18.0, -1.0, -6.0)))
+    check("a plate with a slot into its bore", [("Clamp", clamp)],
+          S.Solid(clamp.tris).volume(), cylinders=0)
+    held = surfaces([("Clamp", clamp)])
+    holes = held[0][2]
+    if len(holes) != 1:
+        fail.append(f"a bore with a slot into it was found {len(holes)} time(s), "
+                    f"wanted once")
+    else:
+        near("the interrupted bore is that wide", 2 * holes[0]["radius"], 12.0)
+        # Worked out rather than eyeballed: the slot is 4 wide across a bore
+        # 12 across, so it takes twice asin(2/6) out of the wall, which is 39
+        # degrees, and the facets either side of that round it out by one
+        # step. A range wide enough to pass a wall found in two halves and
+        # reported as the bigger half is a range that is not checking this.
+        want = 360.0 - 2.0 * math.degrees(math.asin(2.0 / 6.0))
+        if abs(holes[0]["sweep"] - want) > 12.0:
+            fail.append(f"a bore with a 4 mm slot into it has "
+                        f"{holes[0]['sweep']:.0f} degrees of wall, wanted about "
+                        f"{want:.0f}")
+    # Tapped on the chord, where the mesh is, on the far side from the slot.
+    turn = math.pi / 2
+    wall = point_at(held, (20.0 + inside * math.cos(turn),
+                           20.0 + inside * math.sin(turn), 4.0),
+                    (-math.cos(turn), -math.sin(turn), 0.0))
+    if not wall or wall["kind"] != "bore":
+        fail.append(f"tapping the wall of an interrupted bore found {wall}")
+    else:
+        near("and he is told how wide it is", wall["diameter"], 12.0)
+        if not wall.get("interrupted"):
+            fail.append("an interrupted bore does not say that it is")
+
+    # Tapped right on the join between two facets of that bore, which is most
+    # of what a finger can actually hit: the wall is a fan of strips about a
+    # millimetre wide. A point on the edge between two faces is strictly
+    # inside neither of them.
+    slice_ = held[0][1][sorted(holes[0]["faces"])[1]].loops[0].pts
+    seam = [q for q in slice_ if abs(q[2] - slice_[0][2]) > 1e-9]
+    if len(seam) < 2:
+        fail.append("a facet of a bore's wall does not have two ends")
+    else:
+        # With the way the surface faces there, which is what a real tap
+        # carries: a corner of a facet is also a corner of the face at the end
+        # of the bore, and nothing but the facing can separate the two.
+        which = held[0][1][sorted(holes[0]["faces"])[1]].normal
+        for where, on in (("the join between two facets",
+                           tuple((seam[0][k] + slice_[0][k]) / 2.0
+                                 for k in range(3))),
+                          ("the exact corner of a facet", slice_[0])):
+            edge = point_at(held, on, which)
+            if not edge or edge["kind"] != "bore":
+                fail.append(f"tapping {where} of a bore found "
+                            f"{edge and edge.get('short')}")
+
+    # The other half of that: a hexagonal pocket is a hexagon. Any four
+    # corners of a regular polygon sit on a circle, so a run of facets fitting
+    # one proves nothing on its own. What says a hexagon is a hexagon is how
+    # far each of its walls turns through: sixty degrees is a corner, and a
+    # circle made of corners like that would have six sides.
+    hexhole = S.difference(S.box(40.0, 40.0, 8.0),
+                           S.cylinder(8.0, 40.0, 6, at=(20.0, 20.0, -10.0)))
+    if surfaces([("Hexpocket", hexhole)])[0][2]:
+        fail.append("a hexagonal pocket was called a bore")
+    # And with a slot into it, so that its walls are a run rather than a ring
+    # and the only thing left standing between it and being called a bore is
+    # how far each wall turns.
+    hexslot = S.difference(hexhole,
+                           S.box(4.0, 16.0, 20.0, at=(18.0, -1.0, -6.0)))
+    if surfaces([("Hexslot", hexslot)])[0][2]:
+        fail.append("a hexagonal pocket with a slot into it was called a bore")
+    if surfaces([("Star", star)])[0][2]:
+        fail.append("a star shaped post was called a bore")
+
+    # An arc found whole no matter where its chain happens to begin. Asked of
+    # the chain directly, because going through a part to reach it makes the
+    # answer depend on which quad the walk started at, which is the one thing
+    # this is meant to be independent of.
+    ring = [c for c in chains(held[0][1]) if c[2] and len(c[0]) > 8]
+    if not ring:
+        fail.append("a bore with a slot into it left no closed chain of quads, "
+                    "so the test below is testing nothing")
+    else:
+        seq, rails, _closed = ring[0]
+        n, close = len(seq), (_span(held[0][1]) or 1.0) * 1e-6
+        widest = max(len(r) for r, _f in
+                     _arc_runs(held[0][1], seq, rails, close, True))
+        for turn in range(n):
+            spun = [seq[(turn + i) % n] for i in range(n)]
+            spunr = [rails[(turn + i) % n] for i in range(n)]
+            got = _arc_runs(held[0][1], spun, spunr, close, True)
+            if max((len(r) for r, _f in got), default=0) != widest:
+                fail.append(f"a chain begun {turn} quad(s) round finds an arc "
+                            f"of a different length, so what he is told he is "
+                            f"pointing at depends on where a walk started")
+                break
+
     # Two parts touching. The finger is on one of them, and which one it is
     # cannot be settled by position alone.
     both = surfaces([("Plate", plate), ("Post", post)])
@@ -1509,7 +1863,9 @@ def selftest():
           "A tap lands on the right face and says what it is in a sentence "
           "with the numbers in it: which part, how wide, how deep, which way "
           "it faces and where it is, so a request can name it rather than "
-          "describe it.")
+          "describe it. A bore with a slot cut into it, which is what most "
+          "real bores are, is still a bore when he points at it, while a "
+          "hexagonal pocket and a star stay what they are.")
     return 0
 
 

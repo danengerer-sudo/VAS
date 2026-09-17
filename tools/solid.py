@@ -1316,6 +1316,60 @@ def write_glb(parts, path, name="assembly"):
     return len(out)
 
 
+def read_stl(path):
+    """Triangles out of an STL, binary or ascii.
+
+    The length is what decides which: an ascii file starts with the word
+    solid, and so do plenty of binary ones written by tools that should know
+    better, but only a binary file is exactly eighty four bytes plus fifty per
+    triangle."""
+    raw = Path(path).read_bytes()
+    if len(raw) < 15:
+        raise ValueError("that file is too short to be an STL")
+    binary = True
+    if len(raw) >= 84:
+        count = struct.unpack_from("<I", raw, 80)[0]
+        binary = len(raw) == 84 + count * 50
+    if binary:
+        if len(raw) < 84:
+            raise ValueError("that file is not a readable STL")
+        count = struct.unpack_from("<I", raw, 80)[0]
+        out, at = [], 84
+        for _ in range(count):
+            v = struct.unpack_from("<12f", raw, at)
+            out.append(((v[3], v[4], v[5]), (v[6], v[7], v[8]),
+                        (v[9], v[10], v[11])))
+            at += 50
+    else:
+        out, corners = [], []
+        for line in raw.decode("utf-8", "replace").splitlines():
+            bits = line.split()
+            if len(bits) == 4 and bits[0] == "vertex":
+                try:
+                    corners.append((float(bits[1]), float(bits[2]),
+                                    float(bits[3])))
+                except ValueError:
+                    continue
+                if len(corners) == 3:
+                    out.append(tuple(corners))
+                    corners = []
+    if not out:
+        raise ValueError("there are no triangles in that STL")
+    return out
+
+
+def read_any(path):
+    """Whatever geometry file this is, as [(name, Solid)]. One entry for an
+    STL, because an STL is one anonymous heap of triangles and cannot be
+    anything else."""
+    suffix = Path(path).suffix.lower()
+    if suffix in (".glb", ".gltf"):
+        return read_glb(path)
+    if suffix == ".stl":
+        return [(Path(path).stem, Solid(read_stl(path)))]
+    raise ValueError(f"nothing here reads a {suffix or 'file'}: say STL or GLB")
+
+
 def read_glb(path):
     """Back out again: [(name, Solid)], so what was written can be checked
     against what was meant rather than taken on trust."""
@@ -1581,6 +1635,19 @@ def selftest():
             fail.append("an STL was read as a GLB")
         except ValueError:
             pass
+
+        # And back in the other direction, because a part written for a
+        # printer is the one most likely to come back to be analysed.
+        again = read_stl(out)
+        if len(again) != n:
+            fail.append(f"the STL came back with {len(again)} triangles "
+                        f"instead of {n}")
+        near("the part is the same size out of an STL and back",
+             Solid(again).volume(), part.volume(), 1e-6 * part.volume())
+        if [nm for nm, _ in read_any(asm)] != [nm for nm, _ in made]:
+            fail.append("read_any did not read a GLB as an assembly")
+        if len(read_any(out)) != 1:
+            fail.append("read_any read an STL as more than one part")
 
     # ---- the same three operations on shapes that are not a plate ----
     #

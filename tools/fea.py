@@ -116,6 +116,50 @@ class Grid:
     def volume(self):
         return self.count * self.step[0] * self.step[1] * self.step[2]
 
+    def thinnest(self, keep=0.10):
+        """How many bricks thick the part is, where it is thin.
+
+        The one number that decides whether an answer is worth having. A wall
+        one brick thick cannot bend, whatever the brick can do, and the same
+        part meshed one brick finer comes back several times floppier with
+        nothing on screen to say why.
+
+        Not the thinnest run anywhere: a grid laid over a curve always clips a
+        corner off somewhere and leaves one brick on its own, so the thinnest
+        run is one on every part ever made and a warning that always fires is
+        a warning nobody reads. Every brick is asked how thick the part is
+        where it stands, which is the shortest unbroken run of material
+        through it in any of the three directions, and what comes back is the
+        figure a tenth of the part is thinner than.
+        """
+        n = self.n
+        thick = {}
+        for axis in range(3):
+            for a in range(n[(axis + 1) % 3]):
+                for b in range(n[(axis + 2) % 3]):
+                    run = []
+                    for c in range(n[axis] + 1):
+                        on = False
+                        if c < n[axis]:
+                            here = [0, 0, 0]
+                            here[axis] = c
+                            here[(axis + 1) % 3] = a
+                            here[(axis + 2) % 3] = b
+                            at = self.cell(*here)
+                            on = bool(self.solid[at])
+                        if on:
+                            run.append(at)
+                        else:
+                            for cell in run:
+                                got = thick.get(cell)
+                                if got is None or len(run) < got:
+                                    thick[cell] = len(run)
+                            run = []
+        if not thick:
+            return 0
+        ranked = sorted(thick.values())
+        return ranked[min(len(ranked) - 1, int(len(ranked) * keep))]
+
 
 def voxelise(tris, across=20, most=40000):
     """A triangle mesh into a grid of bricks.
@@ -473,18 +517,22 @@ class Study:
         if axis is None or where[:1] not in "+-":
             raise ValueError(f"'{where}' is not a face: say -z, +x and so on")
         top = where[0] == "+"
+        # The end of the part, not every face that happens to point this way.
+        # A stepped part has upward faces at three different heights, and
+        # "pushed on the top" means the top, not all of them spread with a
+        # share each. It also has to mean the same thing here as it does when
+        # a face is held, or holding and pushing the same face are two
+        # different faces and the analysis quietly answers a question nobody
+        # asked.
+        edge = g.n[axis] - 1 if top else 0
         out = []
         for k in range(g.n[2]):
             for j in range(g.n[1]):
                 for i in range(g.n[0]):
                     if not g.solid[g.cell(i, j, k)]:
                         continue
-                    at = (i, j, k)[axis]
-                    beyond = at + 1 if top else at - 1
-                    if 0 <= beyond < g.n[axis]:
-                        nxt = list((i, j, k)); nxt[axis] = beyond
-                        if g.solid[g.cell(*nxt)]:
-                            continue          # not a face; there is more part
+                    if (i, j, k)[axis] != edge:
+                        continue
                     corner = []
                     for di, dj, dk in ((0,0,0),(1,0,0),(1,1,0),(0,1,0),
                                        (0,0,1),(1,0,1),(1,1,1),(0,1,1)):
@@ -845,6 +893,7 @@ class Study:
             "weight_kg": self.weight(),
             "bricks": self.grid.count,
             "brick_mm": self.grid.step[0],
+            "thinnest_wall_bricks": self.grid.thinnest(),
             "load_N": pushed,
             "worst_movement_mm": worst,
             "worst_movement_at": self.grid_at(where),
@@ -856,6 +905,18 @@ class Study:
             "steps": self.iterations,
             "seconds": self.seconds,
         }
+
+    def field(self):
+        """The answer as a picture: which bricks are material and how hard
+        each is working, so something with a screen can colour the part in."""
+        stress = self.stresses()
+        g = self.grid
+        cells, values = [], []
+        for (i, j, k), v in stress.items():
+            cells.append(g.cell(i, j, k))
+            values.append(v)
+        return {"lo": list(g.lo), "step": list(g.step), "n": list(g.n),
+                "cells": cells, "stress": values}
 
     def grid_at(self, node):
         g = self.grid
@@ -1088,6 +1149,29 @@ def selftest():
                         f"and the beam formula says {beam:.6f}: "
                         f"{tip / beam * 100:.0f}% of it")
 
+    # ---- and it says when the mesh is too coarse to believe ----
+    #
+    # A wall one brick thick cannot bend, so the same part meshed one brick
+    # finer comes back several times floppier. That is not a bug in the
+    # solver and it is not something to leave the reader to work out.
+    thin_part = S.difference(S.box(60.0, 60.0, 30.0),
+                             S.box(50.0, 50.0, 40.0, at=(5.0, 5.0, 5.0)))
+    coarse = voxelise(thin_part.tris, across=10)
+    if coarse.thinnest() > 2:
+        fail.append(f"a five millimetre wall meshed at six millimetre bricks "
+                    f"came out {coarse.thinnest()} bricks thick")
+    solid_bar = voxelise(S.box(40.0, 40.0, 40.0).tris, across=8)
+    if solid_bar.thinnest() != 8:
+        fail.append(f"a solid cube eight bricks across says its thinnest wall "
+                    f"is {solid_bar.thinnest()} bricks")
+    warned = say({"material": "x", "weight_kg": 0.1, "bricks": 10,
+                  "brick_mm": 1.0, "load_N": 1.0, "worst_movement_mm": 0.1,
+                  "peak_stress_MPa": 1.0, "yield_MPa": 10.0,
+                  "factor_of_safety": 10.0, "steps": 1, "seconds": 0.1,
+                  "thinnest_wall_bricks": 1})
+    if "CAREFUL" not in warned:
+        fail.append("a part one brick thick was reported without a word about it")
+
     # ---- symmetry ----
     #
     # A symmetric part pushed symmetrically has to answer symmetrically. It is
@@ -1186,9 +1270,15 @@ def analyse(path, material="6082", across=16, holds=("-z",), pushes=(),
                          f"There is: {', '.join(sorted(MATERIALS))}")
     pieces = S.read_any(path)
     if part:
-        pieces = [(nm, s) for nm, s in pieces if nm.lower() == part.lower()]
-        if not pieces:
-            raise ValueError(f"there is no part called '{part}' in that file")
+        want = part.lower()
+        stem = want.rsplit(".", 1)[0]
+        chosen = [(nm, s) for nm, s in pieces
+                  if nm.lower() in (want, stem) or nm.lower() + ".stl" == want]
+        if not chosen:
+            raise ValueError(
+                f"there is no part called '{part}' in that file. It holds: "
+                + ", ".join(nm for nm, _ in pieces))
+        pieces = chosen
     elif len(pieces) > 1:
         # The biggest one. An assembly analysed as though it were one solid
         # welds every part to every other and answers a question about a thing
@@ -1225,6 +1315,13 @@ def say(report, unit="mm"):
         f"factor of safety {fos:.2f}: {verdict}",
         f"solved in {report['steps']} steps, {report['seconds']:.1f} s",
     ]
+    thin = report.get("thinnest_wall_bricks", 9)
+    if thin < 3:
+        lines.insert(1, f"CAREFUL: the thinnest wall is {thin} brick"
+                        f"{'' if thin == 1 else 's'} across. A wall that thin "
+                        f"cannot bend properly however good the brick is, so "
+                        f"this reads stiffer than the part is. Ask for more "
+                        f"bricks across before believing it.")
     return "\n".join(lines)
 
 

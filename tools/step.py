@@ -121,15 +121,6 @@ class Round:
         return [(L, True) for L in self.ends]
 
 
-class Facet:
-    """One triangle, straight out, for a face that would not come apart."""
-
-    __slots__ = ("tri",)
-
-    def __init__(self, tri):
-        self.tri = tri
-
-
 # ------------------------------------------------------------- flat faces
 
 def _newell(pts):
@@ -439,7 +430,10 @@ def round_faces(faces, least_sides=SIDES, tol=1e-6):
 
 
 def _span(faces):
-    pts = [p for f in faces for L in f.loops for p in L.pts]
+    """How big the thing is, which is what every tolerance here is a fraction
+    of. Asked through `bounds` rather than `loops` so it can be asked of a
+    cylindrical face as readily as a flat one."""
+    pts = [p for f in faces for L, _flip in f.bounds for p in L.pts]
     if not pts:
         return 0.0
     return max(max(p[i] for p in pts) - min(p[i] for p in pts) for i in range(3))
@@ -676,10 +670,6 @@ def _shell(doc, faces, body):
         raise ValueError(f"{bad} edge(s) are not used by exactly two faces, "
                          f"once each way, so this is not a closed solid")
     return doc.add("CLOSED_SHELL('',(" + ",".join(f"#{m}" for m in made) + "))")
-
-
-def _facets(tris):
-    return [Facet(t) for t in tris]
 
 
 def _facet_faces(tris):
@@ -1064,6 +1054,164 @@ def volume_of(path):
     return Back(Path(path).read_text(encoding="utf-8")).volume()
 
 
+# ------------------------------------------------- pointing at a feature
+
+# Which way is which, in the words the viewer uses for its own standard
+# views, so that what this calls the front is the face he sees when he taps
+# Front. Engineering sits the part on the xy plane with z up.
+FACING = (((1.0, 0.0, 0.0), "the right", "+X"),
+          ((-1.0, 0.0, 0.0), "the left", "-X"),
+          ((0.0, 1.0, 0.0), "the back", "+Y"),
+          ((0.0, -1.0, 0.0), "the front", "-Y"),
+          ((0.0, 0.0, 1.0), "the top", "+Z"),
+          ((0.0, 0.0, -1.0), "the underside", "-Z"))
+
+
+def facing(n):
+    """What to call this direction, or None if it is not a square one."""
+    for d, word, axis in FACING:
+        if S.dot(n, d) > 0.9999:
+            return word, axis
+    return None, None
+
+
+def mm(x):
+    """A length the way somebody says it out loud: 12, not 12.000000."""
+    s = f"{x:.2f}"
+    return s.rstrip("0").rstrip(".") if "." in s else s
+
+
+def surfaces(parts, rounds=True, tol=1e-6, least_sides=SIDES):
+    """Every part's faces, worked out once and kept so they can be pointed at.
+
+    The same faces the STEP writer uses, which is the point of doing it this
+    way: what he taps is a face the file has a name for, so "make this bore
+    fourteen" means one number in one place rather than a description somebody
+    has to guess their way back to.
+    """
+    out = []
+    for name, body in parts:
+        faces, _count = body_faces(body, rounds, tol, least_sides)
+        out.append((name, faces))
+    return out
+
+
+def _face_span(faces):
+    return _span(faces) or 1.0
+
+
+def _on_flat(f, p, near):
+    """Is this point on this planar face, holes and all."""
+    n = f.normal
+    if abs(S.dot(n, p) - S.dot(n, f.loops[0].pts[0])) > near:
+        return None
+    i, j = S._frame(n)
+    flat = (p[i], p[j])
+    if not S._inside_loop(flat, [(q[i], q[j]) for q in f.loops[0].pts]):
+        return None
+    for hole in f.loops[1:]:
+        if S._inside_loop(flat, [(q[i], q[j]) for q in hole.pts]):
+            return None                   # down the hole, not on the face
+    return abs(S.dot(n, p) - S.dot(n, f.loops[0].pts[0]))
+
+
+def _on_round(f, p, near):
+    """Is this point on this cylindrical face.
+
+    The tap lands on a triangle, and a triangle of a round wall is a chord:
+    it sits inside the true surface by a fraction of the radius. So the
+    distance allowed has to be wider than that sag, which is what the caller's
+    tolerance is scaled from.
+    """
+    t = S.dot(S.sub(p, f.centre), f.axis)
+    if t < -near or t > f.height + near:
+        return None
+    off = S.sub(S.sub(p, f.centre), tuple(c * t for c in f.axis))
+    out = abs(S.length(off) - f.radius)
+    return out if out <= near else None
+
+
+def point_at(kept, point, normal=None, part=None, near=None):
+    """Which face of which part the finger is on. None if it is on none.
+
+    `kept` is what `surfaces` handed back. The point is in the part's own
+    coordinates, z up, the same numbers that are in the part's script.
+    """
+    if near is None:
+        span = max((_face_span(f) for _n, f in kept), default=1.0)
+        near = max(span * 1e-3, 1e-4)
+    best = None
+    for name, faces in kept:
+        if part and name != part:
+            continue
+        for k, f in enumerate(faces):
+            if isinstance(f, Round):
+                off = _on_round(f, point, near)
+                out = None
+            else:
+                off = _on_flat(f, point, near)
+                out = f.normal
+            if off is None:
+                continue
+            # A point on an edge is on two faces. The one he meant is the one
+            # he can see, which is the one facing back at him.
+            agrees = 1.0 if normal is None or out is None else S.dot(out, normal)
+            if agrees < 0.2 and normal is not None and out is not None:
+                continue
+            rank = (off, -agrees)
+            if best is None or rank < best[0]:
+                best = (rank, name, k, f)
+    if best is None:
+        return None
+    return describe(best[1], best[3], best[2])
+
+
+def describe(part, f, index=0):
+    """One face, said in a sentence with its numbers in it.
+
+    Written to be pasted into a request, which is the whole reason it exists:
+    a tap that produces "the 12 mm bore through the top of Bearing block, from
+    z 48 down to z 8" is a request somebody can act on without asking which
+    one he meant.
+    """
+    if isinstance(f, Round):
+        a, b = f.centre, tuple(f.centre[k] + f.axis[k] * f.height
+                               for k in range(3))
+        word, axis = facing(f.axis)
+        if word is None:
+            word, axis = facing(tuple(-c for c in f.axis))
+        along = f"along {axis}" if axis else (
+            "along " + ", ".join(mm(c) for c in f.axis))
+        kind = "boss" if f.same_sense else "bore"
+        what = ("a round post" if f.same_sense else "a bore")
+        said = (f"{what} on {part}, {mm(2 * f.radius)} mm across and "
+                f"{mm(f.height)} mm long, {along}, from "
+                f"({mm(a[0])}, {mm(a[1])}, {mm(a[2])}) to "
+                f"({mm(b[0])}, {mm(b[1])}, {mm(b[2])})")
+        return {"part": part, "index": index, "kind": kind, "said": said,
+                "short": f"\u2300{mm(2 * f.radius)} {kind}, {mm(f.height)} deep",
+                "diameter": 2 * f.radius, "depth": f.height,
+                "axis": list(f.axis), "from": list(a), "to": list(b)}
+
+    pts = f.loops[0].pts
+    i, j = S._frame(f.normal)
+    w = max(q[i] for q in pts) - min(q[i] for q in pts)
+    h = max(q[j] for q in pts) - min(q[j] for q in pts)
+    word, axis = facing(f.normal)
+    which = f"facing {word} ({axis})" if word else (
+        "facing " + ", ".join(mm(c) for c in f.normal))
+    off = S.dot(f.normal, pts[0])
+    holes = len(f.loops) - 1
+    said = (f"a flat face on {part}, {mm(w)} by {mm(h)} mm, {which}, "
+            f"{mm(abs(off))} mm from the origin along that direction")
+    if holes:
+        said += f", with {holes} hole(s) in it"
+    return {"part": part, "index": index, "kind": "flat", "said": said,
+            "short": f"flat face, {mm(w)} \u00d7 {mm(h)}",
+            "normal": list(f.normal), "size": [w, h], "holes": holes,
+            "at": list(pts[0])}
+
+
 # --------------------------------------------------------------- selftest
 
 def _ring(n, r, z):
@@ -1293,6 +1441,55 @@ def selftest():
     except ValueError:
         pass
 
+    # Pointing at a feature. The tap lands on a triangle, which for a round
+    # wall is a chord sitting inside the true surface, so this is also the
+    # test that the allowance for that sag is wide enough to find the face and
+    # not so wide that it finds the wrong one.
+    kept = surfaces([("Plate", plate)])
+    top = point_at(kept, (5.0, 5.0, 8.0), (0.0, 0.0, 1.0))
+    if not top or top["kind"] != "flat":
+        fail.append(f"tapping the top of a plate found {top}")
+    else:
+        if "the top" not in top["said"] or "+Z" not in top["said"]:
+            fail.append(f"the top of a plate is not called the top: {top['said']}")
+        if top["holes"] != 1:
+            fail.append(f"the top of a plate with a bore in it reports "
+                        f"{top['holes']} hole(s)")
+        if abs(top["size"][0] - 40.0) > 1e-6 or abs(top["size"][1] - 40.0) > 1e-6:
+            fail.append(f"a 40 by 40 face measures {top['size']}")
+
+    # The bore's wall, tapped where the mesh actually is: on a chord, a
+    # little inside the true cylinder.
+    inside = 6.0 * math.cos(math.pi / 64)
+    bore = point_at(kept, (20.0 + inside, 20.0, 4.0), (-1.0, 0.0, 0.0))
+    if not bore or bore["kind"] != "bore":
+        fail.append(f"tapping the wall of a bore found {bore}")
+    else:
+        near("the bore he tapped is that wide", bore["diameter"], 12.0)
+        near("and that deep", bore["depth"], 8.0)
+        if "\u2300" not in bore["short"]:
+            fail.append(f"a bore is not offered as a diameter: {bore['short']}")
+
+    side = point_at(kept, (40.0, 20.0, 4.0), (1.0, 0.0, 0.0))
+    if not side or "the right" not in (side.get("said") or ""):
+        fail.append(f"tapping the right hand face found {side}")
+    if point_at(kept, (20.0, 20.0, 400.0), (0.0, 0.0, 1.0)) is not None:
+        fail.append("tapping a long way off the part still found a face")
+    # Straight down the middle of the hole is not the wall of the hole.
+    if point_at(kept, (20.0, 20.0, 8.0), (0.0, 0.0, 1.0)) is not None:
+        fail.append("tapping down the middle of a hole found the face the "
+                    "hole is in, which is the one place it is not")
+
+    # Two parts touching. The finger is on one of them, and which one it is
+    # cannot be settled by position alone.
+    both = surfaces([("Plate", plate), ("Post", post)])
+    got = point_at(both, (20.0 + inside, 20.0, 20.0), (1.0, 0.0, 0.0))
+    if not got or got["part"] != "Post":
+        fail.append(f"tapping the post where it stands proud found {got}")
+    only = point_at(both, (5.0, 5.0, 8.0), (0.0, 0.0, 1.0), part="Post")
+    if only is not None:
+        fail.append("asking about one part answered about another")
+
     if fail:
         print("SELFTEST FAILED")
         for f in fail:
@@ -1308,7 +1505,11 @@ def selftest():
           "switched off the file carries the mesh exactly as it was. Four "
           "things that leave the same ring of flat quads behind them as a "
           "cylinder does, and are not one, are left alone: a hexagonal boss, "
-          "a taper, a cylinder cut off at an angle and a sixteen sided star.")
+          "a taper, a cylinder cut off at an angle and a sixteen sided star. "
+          "A tap lands on the right face and says what it is in a sentence "
+          "with the numbers in it: which part, how wide, how deep, which way "
+          "it faces and where it is, so a request can name it rather than "
+          "describe it.")
     return 0
 
 

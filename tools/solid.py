@@ -1221,6 +1221,22 @@ def intersect(a, b):
 
 # ------------------------------------------------------------------- export
 
+def _upright(p):
+    """Engineering sits a part on the xy plane with z up. glTF says y is up.
+
+    So a part written straight out of here lies on its side in every viewer
+    there is, which looks like a modelling mistake and is really a units
+    problem one axis over. The turn happens on the way out and is undone on
+    the way back in, so the numbers in a part file are always the numbers
+    somebody typed."""
+    return (p[0], p[2], -p[1])
+
+
+def _laid_down(p):
+    """The other way, for reading one back."""
+    return (p[0], -p[2], p[1])
+
+
 def write_glb(parts, path, name="assembly"):
     """An assembly out to one GLB, each part a named node of its own.
 
@@ -1251,8 +1267,9 @@ def write_glb(parts, path, name="assembly"):
         lo = [1e30] * 3
         hi = [-1e30] * 3
         for k, (a, b, c) in enumerate(solid.tris):
-            n = normalise(cross(sub(b, a), sub(c, a)))
+            n = _upright(normalise(cross(sub(b, a), sub(c, a))))
             for q in (a, b, c):
+                q = _upright(q)
                 pos += struct.pack("<3f", *q)
                 nrm += struct.pack("<3f", *n)
                 for i in range(3):
@@ -1341,7 +1358,7 @@ def read_glb(path):
             idx = read(prim["indices"]) if "indices" in prim else range(len(pos))
             idx = list(idx)
             for i in range(0, len(idx) - 2, 3):
-                tris.append((pos[idx[i]], pos[idx[i + 1]], pos[idx[i + 2]]))
+                tris.append(tuple(_laid_down(pos[idx[i + k]]) for k in range(3)))
         parts.append((node.get("name", "part"), Solid(tris)))
     return parts
 
@@ -1528,9 +1545,32 @@ def selftest():
                             f"instead of {len(want.tris)}")
             near(f"{nm} is the same size coming back as going in",
                  got.volume(), want.volume(), 1e-3 * max(1.0, want.volume()))
+            # Standing the same way up, and not just the same size. A part
+            # that comes back on its side has the same volume, the same
+            # triangle count and the same everything else this loop asks
+            # about.
+            for axis, was, now in zip("xyz", want.bounds()[2], got.bounds()[2]):
+                if abs(was - now) > 1e-6:
+                    fail.append(f"{nm} is {now:.3f} across in {axis} coming "
+                                f"back and was {was:.3f} going in, so it has "
+                                f"been turned over somewhere")
             if got.check():
                 fail.append(f"{nm} is not a sound solid once it has been "
                             f"through a GLB: {got.check()[0]}")
+        # And what is in the file is glTF's idea of upright, not ours, or
+        # every other viewer in the world lays the part on its side.
+        tall = box(4.0, 4.0, 40.0)
+        up = Path(td) / "tall.glb"
+        write_glb([("Post", tall)], up)
+        raw = up.read_bytes()
+        head = json.loads(raw[20:20 + struct.unpack_from("<I", raw, 12)[0]]
+                          .decode("utf-8"))
+        reach = head["accessors"][0]
+        span = [reach["max"][i] - reach["min"][i] for i in range(3)]
+        if abs(span[1] - 40.0) > 1e-4:
+            fail.append(f"a post forty tall is {span[1]:.1f} tall in the file "
+                        f"it was written to, so it is lying on its side")
+
         try:
             write_glb([], Path(td) / "nothing.glb")
             fail.append("an assembly with nothing in it was written anyway")

@@ -27,6 +27,7 @@ rendering something plausible.
 
     python3 tools/solid.py --selftest
 """
+import json
 import math
 import struct
 import sys
@@ -87,21 +88,32 @@ class Solid:
         triangles, each once in each direction. A mesh that fails this may
         still look perfect and will print wrong, slice wrong, and give a
         nonsense volume."""
+        if not self.tris:
+            return []                     # nothing at all is a fair answer:
+                                          # a solid taken out of one that
+                                          # contains it leaves nothing
         wrong = []
         edges = {}
+        flat = 0
         for a, b, c in self.tris:
             if length(cross(sub(b, a), sub(c, a))) < tol * tol:
-                continue                      # a degenerate sliver, ignored
+                flat += 1
+            # Counted even so. A triangle with no area is still a face as far
+            # as the edges are concerned, and leaving it out of the count
+            # invents holes on either side of it that nothing else can see.
             for u, v in ((a, b), (b, c), (c, a)):
                 key = (snap(u), snap(v))
                 edges[key] = edges.get(key, 0) + 1
-        open_edges = 0
+        loose = 0
         for (u, v), n in edges.items():
             if edges.get((v, u), 0) != n:
-                open_edges += 1
-        if open_edges:
-            wrong.append(f"{open_edges} edge(s) are not shared by exactly two "
+                loose += 1
+        if loose:
+            wrong.append(f"{loose} edge(s) are not shared by exactly two "
                          f"triangles, so it is not a closed solid")
+        if flat:
+            wrong.append(f"{flat} triangle(s) have no area, which nothing "
+                         f"downstream should have to make an exception for")
         if self.volume() <= 0:
             wrong.append("the volume is zero or negative, so it is inside out")
         return wrong
@@ -445,10 +457,14 @@ def weld(tris, tol=1e-7):
             net[key] = net.get(key, 0) + 1
     kept = []
     for key, n in net.items():
+        # However many are left, not one of them. Keeping a single copy of a
+        # face that turns up twice the same way round quietly takes an edge
+        # from three users to two and calls that tidy, which turns a fault
+        # somewhere upstream into a fault here instead of showing it.
         if n > 0:
-            kept.append(key)
+            kept.extend([key] * n)
         elif n < 0:
-            kept.append((key[0], key[2], key[1]))
+            kept.extend([(key[0], key[2], key[1])] * (-n))
     return kept
 
 
@@ -591,8 +607,15 @@ def fill_holes(tris, most=64):
                     del following[here]
                 if step == start_at:
                     if len(loop) >= 3:
+                        # The other way round. The loop runs the way the faces
+                        # around the hole run, so a lid wound the same way
+                        # repeats every edge of the hole instead of answering
+                        # it, and the hole is left exactly as open as it was
+                        # with a lid lying on top of it. It took a tube to
+                        # notice: on a plate the healing had already closed
+                        # everything and this never had a hole to get wrong.
                         for k in range(1, len(loop) - 1):
-                            out.append((loop[0], loop[k], loop[k + 1]))
+                            out.append((loop[0], loop[k + 1], loop[k]))
                         filled = True
                     break
                 if step in loop or len(loop) >= most:
@@ -604,10 +627,492 @@ def fill_holes(tris, most=64):
     return out
 
 
+# ------------------------------------------------- one face instead of many
+
+# A boolean leaves the top of a plate as several hundred slivers, because every
+# plane of the drill cut it again on the way through. They are all the same
+# face. Putting them back together is worth doing twice over: the model comes
+# out the size a person would expect, and the sliver whose three corners are
+# within a rounding error of a straight line stops existing rather than being
+# nursed along.
+#
+# The method is the one a draughtsman would use. Take every triangle lying on
+# one plane. An edge shared by two of them is inside the face and is no part of
+# its outline, so the edges left over once the shared ones have cancelled are
+# the outline: the outside of the face, and a loop around each hole in it. Then
+# drop the corners that are not corners, which are the ones sitting in the
+# middle of a straight run. Then fill each outline once.
+#
+# The one thing that must not happen is a corner disappearing from one face
+# while the face next door keeps it, because that is a T junction and it is
+# exactly the fault this is meant to cure. So a corner goes only when every
+# face that has it agrees it is not a corner.
+#
+# And the answer is checked before it is accepted, face by face: the area it
+# fills must be the area of the fragments it replaces, or the fragments are
+# kept and nothing is claimed.
+
+
+def _frame(n):
+    """Two axes to read a plane's points in, right handed about its normal, so
+    that counter clockwise on the flat means facing the way the face faces."""
+    ax = max(range(3), key=lambda i: abs(n[i]))
+    i, j = (1, 2) if ax == 0 else ((2, 0) if ax == 1 else (0, 1))
+    if n[ax] < 0:
+        i, j = j, i
+    return i, j
+
+
+def _wobble(tri, tol):
+    """How far out this triangle's normal could be, in radians.
+
+    A long thin fragment is the problem. Its corners are known to a rounding
+    error like everything else, but the shorter its height the more that error
+    swings the normal about: a sliver a hundredth wide and ten long has a
+    normal that can be a degree out, and grouping faces by their normals
+    without knowing that puts the fragments of one face on twenty planes."""
+    longest = max(length(sub(tri[1], tri[0])), length(sub(tri[2], tri[1])),
+                  length(sub(tri[0], tri[2])))
+    twice = length(cross(sub(tri[1], tri[0]), sub(tri[2], tri[0])))
+    if twice <= 0:
+        return math.pi
+    return tol * longest / twice
+
+
+def _by_plane(tris, tol):
+    """Every triangle, sorted into the flat faces they belong to.
+
+    Biggest first, so that the triangle a plane is remembered by is the one
+    whose normal is worth remembering. A face whose plane was taken from one of
+    its own slivers is a face whose other fragments do not match it."""
+    planes, index, groups = [], {}, []
+    for t in sorted(tris, key=lambda t: -_tri_area(t)):
+        n = normalise(cross(sub(t[1], t[0]), sub(t[2], t[0])))
+        loose = _wobble(t, tol) > 1e-5
+        key = tuple(int(math.floor(c * 200)) for c in n)
+        pid = None
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                for dz in (-1, 0, 1):
+                    for k in index.get((key[0] + dx, key[1] + dy, key[2] + dz), ()):
+                        pn, pw = planes[k]
+                        # A fragment whose normal cannot be trusted is placed by
+                        # where its corners are and which way it faces, which is
+                        # all that can honestly be asked of it.
+                        if dot(pn, n) <= (0.0 if loose else 1 - 1e-5):
+                            continue
+                        if max(abs(dot(pn, p) - pw) for p in t) <= tol:
+                            pid = k
+                            break
+                    if pid is not None:
+                        break
+                if pid is not None:
+                    break
+            if pid is not None:
+                break
+        if pid is None:
+            planes.append((n, dot(n, t[0])))
+            groups.append([])
+            index.setdefault(key, []).append(len(planes) - 1)
+            pid = len(planes) - 1
+        groups[pid].append(t)
+    return list(zip(planes, groups))
+
+
+def _next_around(prev, here, choices, i, j):
+    """Where the outline goes next when more than one edge leaves a corner.
+
+    Two loops can meet at a point, and taking the wrong one there joins two
+    separate outlines into a figure of eight. The turn to take is the tightest
+    one available going clockwise, which keeps the face on the left and keeps
+    each loop to itself."""
+    if len(choices) == 1 or prev is None:
+        return choices[0]
+    back = (prev[i] - here[i], prev[j] - here[j])
+    best, turn = None, None
+    for v in choices:
+        d = (v[i] - here[i], v[j] - here[j])
+        a = math.atan2(cross2(back, d), back[0] * d[0] + back[1] * d[1])
+        cw = (-a) % (2 * math.pi)
+        if cw <= 1e-12:
+            cw = 2 * math.pi              # straight back the way we came, last
+        if turn is None or cw < turn:
+            best, turn = v, cw
+    return best
+
+
+def _outlines(group, n):
+    """The outline of a set of coplanar triangles: the edges that were not
+    shared, walked into loops. None if they will not walk."""
+    i, j = _frame(n)
+    count = {}
+    for t in group:
+        for k in range(3):
+            e = (t[k], t[(k + 1) % 3])
+            count[e] = count.get(e, 0) + 1
+    out = {}
+    for (u, v), many in count.items():
+        spare = many - count.get((v, u), 0)
+        if spare > 0:
+            out.setdefault(u, []).extend([v] * spare)
+    loops = []
+    guard = sum(len(v) for v in out.values()) + 8
+    while out:
+        here = next(iter(out))
+        start, prev, loop = here, None, [here]
+        while True:
+            choices = out.get(here)
+            if not choices:
+                return None               # the outline does not close
+            step = _next_around(prev, here, choices, i, j)
+            choices.remove(step)
+            if not choices:
+                del out[here]
+            if step == start:
+                break
+            if len(loop) > guard:
+                return None
+            loop.append(step)
+            prev, here = here, step
+        if len(loop) >= 3:
+            loops.append(loop)
+    return loops or None
+
+
+def _straight_at(before, here, after, tol):
+    """Is this corner not a corner: how far the surface would move if it went.
+
+    Measured as the distance from the corner to the line that would replace it,
+    not as the angle between the two runs. The angle is the wrong thing to ask
+    about: two corners a thousandth apart on one straight edge make an angle
+    that a rounding error can swing right round, and the run reads as a bend
+    when nothing has bent. The distance does not care how short the runs are."""
+    a, b = sub(here, before), sub(after, here)
+    if length(a) <= 0 or length(b) <= 0:
+        return False
+    if dot(a, b) <= 0:                    # doubling back is not a straight run
+        return False
+    span = sub(after, before)
+    n = length(span)
+    if n <= 0:
+        return False
+    return length(cross(a, span)) / n <= tol
+
+
+def _straighten(outlines, pinned, tol):
+    """Drop the corners that every face agrees are not corners.
+
+    This is where the triangle count actually falls. The outline of a plate's
+    top face comes out of the partition with a hundred and forty corners along
+    four straight edges and a circle, and only thirty six of them are corners.
+    A corner is only dropped if it turns up in exactly two faces, is a straight
+    run in both, and belongs to no face that had to be left as it was, so the
+    two faces either side of it stay in step."""
+    seen, ok = {}, {}
+    for loops in outlines:
+        if loops is None:
+            continue
+        for loop in loops:
+            for k, v in enumerate(loop):
+                seen[v] = seen.get(v, 0) + 1
+                fine = _straight_at(loop[k - 1], v, loop[(k + 1) % len(loop)], tol)
+                ok[v] = ok.get(v, True) and fine
+    # Two faces, or one. Two is the ordinary case: a corner in the middle of
+    # an edge, and both faces either side of it agree it is not a corner. One
+    # is a corner that only one face has ever heard of, which is a T junction
+    # that got past the healing, and dropping it is the repair rather than a
+    # risk: it is on a straight run, so the face does not change shape, and the
+    # face next door stops having a corner poking into its edge.
+    drop = {v for v, many in seen.items()
+            if many <= 2 and ok.get(v) and v not in pinned}
+    if not drop:
+        return outlines
+    out = []
+    for loops in outlines:
+        if loops is None:
+            out.append(None)
+            continue
+        shorter = []
+        for loop in loops:
+            kept = [v for v in loop if v not in drop]
+            if len(kept) >= 3:
+                shorter.append(kept)
+            # Fewer than three corners left is a loop with no area: a fold,
+            # where the partition laid a scrap of one face back over itself.
+            # It goes, and so does the matching notch in the face it was
+            # folded off, because the corners that made the notch have just
+            # been dropped from that face too. Putting it back instead, which
+            # is the cautious looking thing to do, leaves the two faces
+            # disagreeing about a corner, which is the one thing here that
+            # must never happen.
+        out.append(shorter)
+    return out
+
+
+def _area2(poly):
+    total = 0.0
+    for k, (x0, y0) in enumerate(poly):
+        x1, y1 = poly[(k + 1) % len(poly)]
+        total += x0 * y1 - x1 * y0
+    return total / 2.0
+
+
+def _inside_loop(p, poly):
+    x, y = p
+    inside = False
+    for k in range(len(poly)):
+        a, b = poly[k], poly[(k + 1) % len(poly)]
+        if (a[1] > y) != (b[1] > y):
+            t = (y - a[1]) / (b[1] - a[1])
+            if x < a[0] + (b[0] - a[0]) * t:
+                inside = not inside
+    return inside
+
+
+def _join_hole(o2, o3, h2, h3):
+    """Cut a channel from an outline to a hole in it, so that what is left is
+    one loop an ear clip can fill. The standard construction: from the hole's
+    rightmost corner look right, take the first edge of the outline that is
+    hit, and go to whichever of its ends can be seen from there."""
+    m = max(range(len(h2)), key=lambda k: (h2[k][0], h2[k][1]))
+    mx, my = h2[m]
+    hit, n = None, len(o2)
+    for k in range(n):
+        a, b = o2[k], o2[(k + 1) % n]
+        if (a[1] > my) == (b[1] > my):
+            continue
+        x = a[0] + (b[0] - a[0]) * (my - a[1]) / (b[1] - a[1])
+        if x < mx - 1e-12:
+            continue
+        if hit is None or x < hit[0]:
+            hit = (x, k)
+    if hit is None:
+        return None                       # the hole is not in this outline
+    x, k = hit
+    pick = k if o2[k][0] > o2[(k + 1) % n][0] else (k + 1) % n
+    # A corner of the outline poking into the channel would be cut off by it.
+    # If one does, go to that corner instead: the one nearest straight ahead.
+    look = ((mx, my), (x, my), o2[pick])
+    closest = None
+    for q in range(n):
+        if q == pick:
+            continue
+        v, before, after = o2[q], o2[q - 1], o2[(q + 1) % n]
+        if cross2(sub2(v, before), sub2(after, v)) >= 0:
+            continue                      # a convex corner cannot be in the way
+        if not inside2(v, *look):
+            continue
+        dx, dy = v[0] - mx, v[1] - my
+        ahead = abs(dy) / (math.hypot(dx, dy) or 1.0)
+        if closest is None or ahead < closest:
+            closest, pick = ahead, q
+    return (o2[:pick + 1] + h2[m:] + h2[:m] + [h2[m]] + o2[pick:],
+            o3[:pick + 1] + h3[m:] + h3[:m] + [h3[m]] + o3[pick:])
+
+
+def _ears(poly):
+    """A simple polygon into triangles, by index. None if it will not go.
+
+    Unlike `ear_clip` this one expects a polygon that has had its holes joined
+    on, so the same corner appears in it more than once and a corner sitting
+    exactly on an edge is ordinary. A corner in the same place as one of the
+    ear's own corners is not inside the ear."""
+    left = list(range(len(poly)))
+    out, guard, limit = [], 0, len(poly) * len(poly) + 16
+    while len(left) > 3:
+        guard += 1
+        if guard > limit:
+            return None
+        for k in range(len(left)):
+            i0, i1, i2 = left[k - 1], left[k], left[(k + 1) % len(left)]
+            a, b, c = poly[i0], poly[i1], poly[i2]
+            if cross2(sub2(b, a), sub2(c, b)) <= 0:
+                continue                                  # not a convex corner
+            blocked = False
+            for q in left:
+                if q in (i0, i1, i2):
+                    continue
+                p = poly[q]
+                if p == a or p == b or p == c:
+                    continue
+                if inside2(p, a, b, c):
+                    blocked = True
+                    break
+            if blocked:
+                continue
+            out.append((i0, i1, i2))
+            left.pop(k)
+            break
+        else:
+            return None
+    if len(left) == 3:
+        out.append(tuple(left))
+    return out
+
+
+def _tri_area(t):
+    return length(cross(sub(t[1], t[0]), sub(t[2], t[0]))) / 2.0
+
+
+def _fill_face(loops, n, group):
+    """One flat face's outline, filled as one face. None rather than a guess."""
+    if not loops:
+        return []                         # the whole face was a fold
+    i, j = _frame(n)
+    flat = [[(p[i], p[j]) for p in loop] for loop in loops]
+    areas = [_area2(f) for f in flat]
+    if any(a == 0.0 for a in areas):
+        return None                       # a loop with no area; do not guess
+    outer = [k for k, a in enumerate(areas) if a > 0]
+    holes = [k for k, a in enumerate(areas) if a < 0]
+    if not outer:
+        return None
+    mine = {k: [] for k in outer}
+    for h in holes:
+        owner = None
+        for k in outer:
+            if _inside_loop(flat[h][0], flat[k]) and (
+                    owner is None or areas[k] < areas[owner]):
+                owner = k
+        if owner is None:
+            return None                   # a hole in nothing
+        mine[owner].append(h)
+    made = []
+    for k in outer:
+        poly2, poly3 = list(flat[k]), list(loops[k])
+        for h in sorted(mine[k], key=lambda h: -max(p[0] for p in flat[h])):
+            joined = _join_hole(poly2, poly3, flat[h], loops[h])
+            if joined is None:
+                return None
+            poly2, poly3 = joined
+        fan = _ears(poly2)
+        if fan is None:
+            return None
+        for a, b, c in fan:
+            made.append((poly3[a], poly3[b], poly3[c]))
+    was = sum(_tri_area(t) for t in group)
+    now = sum(_tri_area(t) for t in made)
+    if abs(now - was) > 1e-6 * max(1.0, was):
+        return None                       # not the same face; keep what worked
+    return made
+
+
+def merge_coplanar(tris, tol=1e-6):
+    """Fragments of one flat face, put back as one face, everywhere they are.
+
+    A face that will not come apart into an outline, or that fills to a
+    different area than it had, is left exactly as it was and its corners are
+    pinned so that its neighbours keep them too. So this can only ever tidy,
+    and never lose."""
+    groups = _by_plane(tris, tol)
+    outlines = [_outlines(g, pl[0]) for pl, g in groups]
+    made = [None] * len(groups)
+    for _ in range(4):
+        pinned = set()
+        for k, (_pl, g) in enumerate(groups):
+            if outlines[k] is None:
+                pinned.update(p for t in g for p in t)
+        short = _straighten(outlines, pinned, tol)
+        trouble = []
+        for k, (pl, g) in enumerate(groups):
+            if short[k] is None:
+                made[k] = None
+                continue
+            made[k] = _fill_face(short[k], pl[0], g)
+            if made[k] is None:
+                trouble.append(k)
+        if not trouble:
+            break
+        for k in trouble:
+            outlines[k] = None
+    out = []
+    for k, (_pl, g) in enumerate(groups):
+        out += made[k] if made[k] is not None else g
+    return out
+
+
+def fuse_points(tris, at=1e-6):
+    """Corners closer together than the part's own resolution are one corner.
+
+    Hundreds of plane cuts through one face now and then leave a triangle a few
+    millionths of a millimetre across on a part twenty millimetres long. It is
+    a point, not a face. Left alone it is a speck that every check has to make
+    an exception for, and an exception in a check is how a real fault gets
+    through. Pulling its corners together onto one corner deletes it, and
+    deletes the triangle on the other side of the edge it stood on, and the
+    edges left over pair up with each other, which is the ordinary edge
+    collapse and leaves the surface as closed as it found it.
+    """
+    lo, hi = _aabb(tris)
+    span = max(hi[i] - lo[i] for i in range(3)) or 1.0
+    speck = span * at
+    same = {}
+    for t in tris:
+        if max(length(sub(t[1], t[0])), length(sub(t[2], t[1])),
+               length(sub(t[0], t[2]))) > speck:
+            continue
+        for p in t[1:]:
+            same[p] = t[0]
+    if not same:
+        return tris
+
+    def settled(p):
+        for _ in range(8):
+            q = same.get(p, p)
+            if q == p:
+                return p
+            p = q
+        return p
+
+    return [tuple(settled(p) for p in t) for t in tris]
+
+
+def settle(tris, tol=1e-7):
+    """Put a set of triangles in order, in the one sequence that works.
+
+    Healing, fusing and welding all take triangles away or cut them up, and
+    putting a lid on a hole is the only step that puts one back, so the lid
+    goes on last and nothing runs after it that could take it off. Weld after
+    filling and a lid with no width, which is exactly the lid a nearly straight
+    hole needs, is thrown away again and the model is as open as it was with
+    more steps in between to hide it.
+
+    No test here depends on that order, because the healing deals with the
+    holes that would show it up. The order stays because the way it fails is
+    silent: the model comes out looking right and reading as open."""
+    tris = heal(tris, tol)
+    tris = fuse_points(tris)
+    tris = weld(tris, tol)
+    return fill_holes(tris)
+
+
 def tidy(solid, tol=1e-7):
     """Every operation ends here, so what comes out is a solid rather than a
-    picture of one."""
-    return Solid(weld(fill_holes(heal(solid.tris, tol)), tol))
+    picture of one.
+
+    Settle the fragments first, because putting a face back together needs its
+    fragments to agree about where their edges are. Then put the faces back
+    together, and settle again, which is quick once there are hundreds of
+    triangles instead of thousands.
+
+    The merge is only kept if the volume is the volume it was. That is the
+    whole guarantee: a tidier mesh that is a different shape is a bug, and this
+    is the one check that cannot be fooled by geometry that looks right."""
+    tris = settle(solid.tris, tol)
+    plain = settle(merge_coplanar(tris, tol * 10), tol)
+    return Solid(plain if _worth_keeping(tris, plain) else tris)
+
+
+def _worth_keeping(tris, plain, tol=1e-6):
+    """Is the tidier mesh the same solid, and actually tidier.
+
+    Not a formality. Everything the merge does is geometry, and geometry that
+    is nearly right looks exactly right in a picture. The volume of a closed
+    surface does not care what it looks like."""
+    was, now = Solid(tris).volume(), Solid(plain).volume()
+    if abs(now - was) > tol * max(1.0, abs(was)):
+        return False
+    return len(plain) <= len(tris)
 
 
 def _aabb(tris):
@@ -643,14 +1148,35 @@ def _split_by_box(tris, lo, hi, pad=1e-6):
     return near, far
 
 
+def _apart(alo, ahi, blo, bhi, pad=1e-9):
+    """Nowhere near each other, so no operation has anything to work out."""
+    return any(ahi[i] < blo[i] - pad or bhi[i] < alo[i] - pad for i in range(3))
+
+
+def _near_parts(a, b, alo, ahi, blo, bhi):
+    """The triangles each solid needs to put through the partition, and the
+    ones it can keep untouched.
+
+    A triangle of `a` that does not reach into `b`'s box cannot be cut by `b`
+    and comes out exactly as it went in. But if that leaves nothing to cut, it
+    does not follow that nothing happens: one solid can be wholly inside the
+    other, touching none of its triangles, and still change it completely.
+    Reading an empty list as `they do not touch` is how a block swallowed a
+    cavity and reported itself solid."""
+    amid, afar = _split_by_box(a.tris, blo, bhi)
+    bmid, bfar = _split_by_box(b.tris, alo, ahi)
+    if not amid or not bmid:
+        return a.tris, [], b.tris, []
+    return amid, afar, bmid, bfar
+
+
 def union(a, b):
     """Everything in either."""
     alo, ahi = _aabb(a.tris)
     blo, bhi = _aabb(b.tris)
-    amid, afar = _split_by_box(a.tris, blo, bhi)
-    bmid, bfar = _split_by_box(b.tris, alo, ahi)
-    if not amid or not bmid:
+    if _apart(alo, ahi, blo, bhi):
         return tidy(Solid(a.tris + b.tris))     # they do not touch
+    amid, afar, bmid, bfar = _near_parts(a, b, alo, ahi, blo, bhi)
     x, y = Node(amid), Node(bmid)
     x.clip_to(y)
     y.clip_to(x)
@@ -665,10 +1191,9 @@ def difference(a, b):
     """What is left of `a` once `b` is taken out. Every hole is this."""
     alo, ahi = _aabb(a.tris)
     blo, bhi = _aabb(b.tris)
-    amid, afar = _split_by_box(a.tris, blo, bhi)
-    bmid, _ = _split_by_box(b.tris, alo, ahi)
-    if not amid or not bmid:
+    if _apart(alo, ahi, blo, bhi):
         return tidy(Solid(a.tris))              # nothing to take out
+    amid, afar, bmid, _bfar = _near_parts(a, b, alo, ahi, blo, bhi)
     x, y = Node(amid), Node(bmid)
     x.invert()
     x.clip_to(y)
@@ -695,6 +1220,131 @@ def intersect(a, b):
 
 
 # ------------------------------------------------------------------- export
+
+def write_glb(parts, path, name="assembly"):
+    """An assembly out to one GLB, each part a named node of its own.
+
+    An STL is one anonymous heap of triangles, which is why a viewer given one
+    can show you the thing and nothing else. A GLB keeps the parts apart and
+    keeps their names, so the same viewer can hide the cover to look under it,
+    and a bill of materials has something to be a bill of.
+
+    `parts` is a list of (name, solid), in the order they should be listed.
+    """
+    if not parts:
+        raise ValueError("an assembly with nothing in it is not an assembly")
+    blob = bytearray()
+    views, accessors, meshes, nodes = [], [], [], []
+
+    def chunk(data, target):
+        while len(blob) % 4:
+            blob.append(0)
+        views.append({"buffer": 0, "byteOffset": len(blob),
+                      "byteLength": len(data), "target": target})
+        blob.extend(data)
+        return len(views) - 1
+
+    for label, solid in parts:
+        if not solid.tris:
+            continue
+        pos, nrm, idx = bytearray(), bytearray(), bytearray()
+        lo = [1e30] * 3
+        hi = [-1e30] * 3
+        for k, (a, b, c) in enumerate(solid.tris):
+            n = normalise(cross(sub(b, a), sub(c, a)))
+            for q in (a, b, c):
+                pos += struct.pack("<3f", *q)
+                nrm += struct.pack("<3f", *n)
+                for i in range(3):
+                    lo[i] = min(lo[i], q[i])
+                    hi[i] = max(hi[i], q[i])
+            idx += struct.pack("<3I", k * 3, k * 3 + 1, k * 3 + 2)
+        count = len(solid.tris) * 3
+        # Flat shaded on purpose: a corner of a machined part belongs to faces
+        # pointing different ways, and averaging those normals rounds the
+        # corner off in the picture. A part should look like it was made, not
+        # like it was blown up.
+        accessors.append({"bufferView": chunk(pos, 34962), "componentType": 5126,
+                          "count": count, "type": "VEC3", "min": lo, "max": hi})
+        accessors.append({"bufferView": chunk(nrm, 34962), "componentType": 5126,
+                          "count": count, "type": "VEC3"})
+        # Whole numbers four bytes wide, because a part of any size at all goes
+        # straight past what two bytes can count to.
+        accessors.append({"bufferView": chunk(idx, 34963), "componentType": 5125,
+                          "count": count, "type": "SCALAR"})
+        meshes.append({"name": label, "primitives": [{
+            "attributes": {"POSITION": len(accessors) - 3,
+                           "NORMAL": len(accessors) - 2},
+            "indices": len(accessors) - 1, "material": 0}]})
+        nodes.append({"name": label, "mesh": len(meshes) - 1})
+
+    while len(blob) % 4:
+        blob.append(0)
+    doc = {"asset": {"version": "2.0", "generator": "tools/solid.py"},
+           "scene": 0,
+           "scenes": [{"name": name, "nodes": list(range(len(nodes)))}],
+           "nodes": nodes, "meshes": meshes,
+           "materials": [{"name": "Steel", "pbrMetallicRoughness": {
+               "baseColorFactor": [0.69, 0.71, 0.74, 1.0],
+               "metallicFactor": 0.55, "roughnessFactor": 0.45}}],
+           "accessors": accessors, "bufferViews": views,
+           "buffers": [{"byteLength": len(blob)}]}
+    js = json.dumps(doc, separators=(",", ":")).encode("utf-8")
+    js += b" " * ((4 - len(js) % 4) % 4)
+    out = bytearray()
+    out += struct.pack("<III", 0x46546C67, 2, 12 + 8 + len(js) + 8 + len(blob))
+    out += struct.pack("<II", len(js), 0x4E4F534A) + js
+    out += struct.pack("<II", len(blob), 0x004E4942) + bytes(blob)
+    Path(path).write_bytes(out)
+    return len(out)
+
+
+def read_glb(path):
+    """Back out again: [(name, Solid)], so what was written can be checked
+    against what was meant rather than taken on trust."""
+    raw = Path(path).read_bytes()
+    if len(raw) < 12 or struct.unpack_from("<I", raw, 0)[0] != 0x46546C67:
+        raise ValueError("that is not a GLB")
+    at, doc, blob = 12, None, b""
+    while at + 8 <= len(raw):
+        size, kind = struct.unpack_from("<II", raw, at)
+        body = raw[at + 8:at + 8 + size]
+        if kind == 0x4E4F534A:
+            doc = json.loads(body.decode("utf-8"))
+        elif kind == 0x004E4942:
+            blob = body
+        at += 8 + size + ((4 - size % 4) % 4)
+    if doc is None:
+        raise ValueError("that GLB has no scene in it")
+
+    def read(index):
+        acc = doc["accessors"][index]
+        view = doc["bufferViews"][acc["bufferView"]]
+        start = view.get("byteOffset", 0) + acc.get("byteOffset", 0)
+        wide = {5126: ("<f", 4), 5125: ("<I", 4), 5123: ("<H", 2)}[acc["componentType"]]
+        each = {"VEC3": 3, "SCALAR": 1}[acc["type"]]
+        out = []
+        for i in range(acc["count"]):
+            row = [struct.unpack_from(wide[0], blob,
+                                      start + (i * each + k) * wide[1])[0]
+                   for k in range(each)]
+            out.append(tuple(row) if each > 1 else row[0])
+        return out
+
+    parts = []
+    for node in doc.get("nodes", []):
+        if "mesh" not in node:
+            continue
+        tris = []
+        for prim in doc["meshes"][node["mesh"]].get("primitives", []):
+            pos = read(prim["attributes"]["POSITION"])
+            idx = read(prim["indices"]) if "indices" in prim else range(len(pos))
+            idx = list(idx)
+            for i in range(0, len(idx) - 2, 3):
+                tris.append((pos[idx[i]], pos[idx[i + 1]], pos[idx[i + 2]]))
+        parts.append((node.get("name", "part"), Solid(tris)))
+    return parts
+
 
 def write_stl(solid, path, name="part"):
     """Binary STL, which is what a printer and a laser cutter want."""
@@ -785,6 +1435,15 @@ def selftest():
     near("a plate with a hole through it", holed.volume(), want, 1e-4)
 
 
+    # The same two solids joined rather than cut, at the same tessellation.
+    # This is the case that found four separate faults nothing else here
+    # touched: a lid wound the wrong way round, a weld that thinned a doubled
+    # face instead of reporting it, a fold left lying on a face, and a corner
+    # that only one of the two faces holding it had ever heard of.
+    bossed = union(box(20.0, 10.0, 4.0), drill)
+    near("a plate with a bar through it, joined", bossed.volume(),
+         800.0 + 0.5 * 128 * math.sin(2 * math.pi / 128) * 6.25 * 16.0, 1e-3)
+
     # A blind hole: the depth has to matter.
     blind = difference(box(20.0, 10.0, 4.0),
                        cylinder(2.5, 2.0, segments=128, at=(10.0, 5.0, -0.001)))
@@ -849,43 +1508,248 @@ def selftest():
         if struct.unpack_from("<I", raw, 80)[0] != n:
             fail.append("the STL says it has a different number of triangles")
 
-    # ---- what is not yet guaranteed, measured rather than claimed ----
+        # And an assembly, which is the thing an STL cannot be: several parts
+        # that stay several parts, each with the name somebody gave it, so a
+        # viewer can hide one and a bill of materials has something to list.
+        # Read straight back and measured again, because a writer that drops a
+        # part or puts the corners in the wrong order writes a file that opens
+        # perfectly and is not the assembly.
+        made = [("Bracket", part), ("Pin", cylinder(2.0, 30.0, segments=24)),
+                ("Plate", box(30.0, 30.0, 3.0, at=(0.0, 0.0, -3.0)))]
+        asm = Path(td) / "assembly.glb"
+        write_glb(made, asm)
+        back = read_glb(asm)
+        if [nm for nm, _ in back] != [nm for nm, _ in made]:
+            fail.append(f"the assembly came back as {[nm for nm, _ in back]}, "
+                        f"not the parts that went in")
+        for (nm, want), (_, got) in zip(made, back):
+            if len(got.tris) != len(want.tris):
+                fail.append(f"{nm} came back with {len(got.tris)} triangles "
+                            f"instead of {len(want.tris)}")
+            near(f"{nm} is the same size coming back as going in",
+                 got.volume(), want.volume(), 1e-3 * max(1.0, want.volume()))
+            if got.check():
+                fail.append(f"{nm} is not a sound solid once it has been "
+                            f"through a GLB: {got.check()[0]}")
+        try:
+            write_glb([], Path(td) / "nothing.glb")
+            fail.append("an assembly with nothing in it was written anyway")
+        except ValueError:
+            pass
+        try:
+            read_glb(out)
+            fail.append("an STL was read as a GLB")
+        except ValueError:
+            pass
+
+    # ---- the same three operations on shapes that are not a plate ----
     #
-    # The volumes above are right to a part in a billion. The surface that
-    # produces them is not always edge manifold: cutting a face by hundreds of
-    # nearly parallel planes leaves the odd triangle whose three corners are
-    # within a rounding error of a straight line, and its edges then have one
-    # neighbour instead of two. Removing them is worse, because their edges are
-    # shared with proper faces and taking one away leaves a hole its own shape.
-    # The real fix is to merge the fragments of each plane back into one face
-    # and retriangulate, which also takes a plate with a hole from eight
-    # thousand triangles to a few hundred. That is the next piece of work and
-    # it is not written yet.
-    gaps = []
-    for what, made in (("a plate with a hole", holed),
-                       ("two boxes joined", both),
-                       ("where two boxes overlap", shared),
-                       ("an L bracket with two holes", part)):
+    # One shape proved carefully is one shape. What follows is the same
+    # machinery on solids that stress different parts of it: a void with no
+    # opening, a tube, a slot cut right through, a boss standing proud, a
+    # profile that is not a rectangle, and a cut at an angle to everything so
+    # that no plane in it is axis aligned.
+    #
+    # Most of them have no volume anybody can write down in one line, which is
+    # the point. Two identities hold for any two solids whatever shape they
+    # are, and between them they pin down all three operations:
+    #
+    #     union and intersection together hold everything both hold
+    #     what is left of a after b is a less what they share
+    #
+    # A kernel that loses a fragment, counts one twice, or leaves a face open
+    # breaks one of those, and no hand arithmetic is needed to notice.
+
+    def closed(what, made):
         wrong = made.check()
         if wrong:
-            gaps.append(f"{what}: {wrong[0]}")
+            fail.append(f"{what} is not a sound solid: {wrong[0]}")
+
+    turned_bite = box(6.0, 6.0, 6.0, at=(5.0, 5.0, 5.0)).turned(2, 0.4)
+    ell30 = prism([(0, 0), (30, 0), (30, 6), (6, 6), (6, 30), (0, 30)], 5.0)
+    pairs = [
+        ("two boxes overlapping a corner",
+         box(10.0, 10.0, 10.0), box(10.0, 10.0, 10.0, at=(5.0, 5.0, 5.0))),
+        ("a box wholly inside a box",
+         box(10.0, 10.0, 10.0), box(6.0, 6.0, 6.0, at=(2.0, 2.0, 2.0))),
+        ("a plate and a drill through it",
+         box(10.0, 10.0, 10.0), cylinder(3.0, 20.0, segments=32, at=(5, 5, -5))),
+        ("a plate and a boss standing on it",
+         box(10.0, 10.0, 10.0), cylinder(3.0, 4.0, segments=24, at=(5, 5, 8))),
+        ("a bar and a bore down it",
+         cylinder(6.0, 10.0, segments=32), cylinder(3.0, 30.0, segments=32,
+                                                    at=(0, 0, -10))),
+        ("a block and a slot right through it",
+         box(10.0, 10.0, 10.0), box(4.0, 30.0, 4.0, at=(3.0, -10.0, 3.0))),
+        ("an L profile and a hole near its corner",
+         ell30, cylinder(2.0, 20.0, segments=24, at=(3.0, 3.0, -5.0))),
+        ("a block and a bite taken at an angle",
+         box(10.0, 10.0, 10.0), turned_bite),
+    ]
+    for what, one, two in pairs:
+        both = union(one, two)
+        shared = intersect(one, two)
+        less = difference(one, two)
+        other = difference(two, one)
+        for name, made in ((f"{what}, joined", both),
+                           (f"{what}, where they share", shared),
+                           (f"{what}, the first less the second", less),
+                           (f"{what}, the second less the first", other)):
+            closed(name, made)
+        size = max(one.volume(), two.volume())
+        near(f"{what}: joined and shared hold both of them",
+             both.volume() + shared.volume(),
+             one.volume() + two.volume(), 1e-5 * size)
+        near(f"{what}: the first less the second is the first less what "
+             f"they share", less.volume(), one.volume() - shared.volume(),
+             1e-5 * size)
+        near(f"{what}: the second less the first is the second less what "
+             f"they share", other.volume(), two.volume() - shared.volume(),
+             1e-5 * size)
+
+    closed("a plate with a hole through it", holed)
+    closed("a plate with a bar through it, joined", bossed)
+    closed("a plate with a blind hole", blind)
+    closed("an L bracket with two holes", part)
+
+    # A void with no way out is the case where a kernel that quietly keeps only
+    # the outer shell still passes every other test.
+    hollow = difference(box(10.0, 10.0, 10.0), box(6.0, 6.0, 6.0, at=(2, 2, 2)))
+    near("a box with a sealed cavity in it", hollow.volume(), 1000.0 - 216.0, 1e-6)
+    closed("a box with a sealed cavity in it", hollow)
+
+    # A tube, whose wall is the difference of two inscribed polygons.
+    tube = difference(cylinder(6.0, 10.0, segments=32),
+                      cylinder(3.0, 30.0, segments=32, at=(0, 0, -10)))
+    ring = 0.5 * 32 * math.sin(2 * math.pi / 32) * (36.0 - 9.0) * 10.0
+    near("a tube's wall", tube.volume(), ring, 1e-5)
+    closed("a tube", tube)
+
+    # One operation after another after another, which is how a real part is
+    # made and where an error that is too small to see compounds.
+    stack = difference(box(40.0, 20.0, 6.0),
+                       box(10.0, 30.0, 3.0, at=(15.0, -5.0, 3.0)))
+    stack = union(stack, cylinder(4.0, 10.0, segments=32, at=(6.0, 10.0, 6.0)))
+    stack = difference(stack, cylinder(2.0, 40.0, segments=32,
+                                       at=(6.0, 10.0, -10.0)))
+    pocket = 10.0 * 20.0 * 3.0
+    boss = 0.5 * 32 * math.sin(2 * math.pi / 32) * 16.0 * 10.0
+    bore = 0.5 * 32 * math.sin(2 * math.pi / 32) * 4.0 * 16.0
+    near("a plate with a pocket, a boss and a bore through the boss",
+         stack.volume(), 40.0 * 20.0 * 6.0 - pocket + boss - bore, 1e-4)
+    closed("a plate with a pocket, a boss and a bore through the boss", stack)
+
+    # ---- each repair on its own, where there is nothing else to credit ----
+    #
+    # The shapes above exercise everything at once, which is the right way to
+    # find faults and the wrong way to prove that any one repair is pulling its
+    # weight. These are the three that a finished model no longer shows,
+    # because the earlier steps have already dealt with what they are for.
+
+    # A box with one of its twelve faces taken out: three edges with no partner
+    # and a hole exactly the shape of that face. Settling has to give the box
+    # back, which it only does if the lid is wound against the hole and if
+    # nothing that runs afterwards takes the lid off again.
+    gapped = box(10.0, 10.0, 10.0).tris
+    gapped = gapped[:3] + gapped[4:]
+    if len(open_edges(gapped)) != 3:
+        fail.append("taking one face off a box did not leave three edges open, "
+                    "so this is not testing what it says it is")
+    mended = Solid(settle(gapped))
+    near("a box with one face taken out and put back", mended.volume(),
+         1000.0, 1e-9)
+    if mended.check():
+        fail.append(f"a hole the shape of one triangle did not close: "
+                    f"{mended.check()[0]}")
+
+    # The same face twice the same way round is a fault somewhere upstream.
+    # Welding hands back both of them. Keeping one looks tidier and takes the
+    # edge count from three users down to two, which is how a fault stops being
+    # visible without ever being fixed.
+    doubled = box(1.0, 1.0, 1.0).tris[:1] * 2
+    if len(weld(doubled)) != 2:
+        fail.append("welding a doubled face kept only one of it, which hides "
+                    "the doubling rather than showing it")
+
+    # A corner sitting in the middle of an edge, with the face that should
+    # have covered the sliver beside it missing: a hole whose three corners lie
+    # on one line. Settling has to come back with the box, which it does by
+    # splitting the edge rather than by covering the hole with a lid that has
+    # no width.
+    lid = box(10.0, 10.0, 10.0)
+    top = [(0.0, 0.0, 10.0), (10.0, 0.0, 10.0), (10.0, 10.0, 10.0),
+           (0.0, 10.0, 10.0)]
+    on_the_edge = (5.0, 0.0, 10.0)
+    tee = [t for t in lid.tris if not all(abs(q[2] - 10.0) < 1e-12 for q in t)]
+    tee += [(on_the_edge, top[1], top[2]), (on_the_edge, top[2], top[3]),
+            (on_the_edge, top[3], top[0])]
+    if len(open_edges(tee)) != 3:
+        fail.append("the hole with no width is not the hole this test means")
+    flat_lid = Solid(settle(tee))
+    near("a box whose lid has no width", flat_lid.volume(), 1000.0, 1e-9)
+    if flat_lid.check():
+        fail.append(f"a hole with three corners on one line did not close: "
+                    f"{flat_lid.check()[0]}")
+    # The last line of defence: a tidier mesh is only kept if it is the same
+    # solid. Nothing above can show this working, because nothing above makes
+    # it fire. So it is asked directly.
+    if _worth_keeping(box(10.0, 10.0, 10.0).tris, box(9.0, 10.0, 10.0).tris):
+        fail.append("a tidier mesh that is a different size was kept, which is "
+                    "the one thing that check exists to stop")
+    if not _worth_keeping(box(10.0, 10.0, 10.0).tris,
+                          box(10.0, 10.0, 10.0).tris):
+        fail.append("a mesh that is the same solid was thrown away")
+
+    # A corner in the middle of an edge that only one of the two faces holding
+    # that edge has ever heard of. It is on a straight run, so dropping it does
+    # not change the shape of the face that has it, and it stops poking into
+    # the edge of the face that does not.
+    lone = (5.0, 0.0, 0.0)
+    top = [(0.0, 0.0, 0.0), lone, (10.0, 0.0, 0.0), (10.0, 10.0, 0.0),
+           (0.0, 10.0, 0.0)]
+    side = [(10.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.0, 0.0, -10.0),
+            (10.0, 0.0, -10.0)]
+    tidied = _straighten([[top], [side]], set(), 1e-6)
+    if lone in tidied[0][0] or len(tidied[0][0]) != 4:
+        fail.append("a corner only one of the two faces knows about was kept, "
+                    "which leaves the two faces disagreeing about their edge")
+    if len(tidied[1][0]) != 4:
+        fail.append("straightening took a real corner off a square")
+
+    # ---- and that it stays a part a person could use ----
+    #
+    # Every face above is put back together from the fragments the partition
+    # left it in. Without that a plate with one hole in it comes out of here as
+    # fifty seven thousand triangles, most of them slivers along four straight
+    # edges, and the first thing anybody would ask is what went wrong. These
+    # are the numbers that say it did not, and they are the test that fails if
+    # the putting back together is taken out again.
+    if len(holed.tris) > 1200:
+        fail.append(f"a plate with one hole in it came to {len(holed.tris)} "
+                    f"triangles, which is a mesh nobody would send anywhere")
+    if len(stack.tris) > 1200:
+        fail.append(f"a plate with a pocket, a boss and a bore came to "
+                    f"{len(stack.tris)} triangles")
+    if len(box(1.0, 1.0, 1.0).tris) != 12:
+        fail.append("a box is not twelve triangles")
 
     if fail:
         print("SELFTEST FAILED")
         for f in fail:
             print(f"  {f}")
         return 1
-    for g in gaps:
-        print(f"  NOT YET: {g}")
     print("selftest ok: a box is x times y times z, a cylinder approaches pi r "
           "squared h from below and gets closer as it gets finer, a plate with "
-          "a hole through it is the one minus the other, a blind hole takes "
-          "out only its own depth, two boxes joined and overlapped come to the "
-          "numbers you would work out by hand, an L bracket with two holes is "
-          "still the volume you would work out by hand, an STL comes out the "
-          "length an STL should be, and a size that makes no sense is refused."
-          + ("\n             The surfaces are not all edge manifold yet, above."
-             if gaps else ""))
+          "a hole through it is the one minus the other, a blind hole takes out "
+          "only its own depth, an L bracket with two holes is the volume you "
+          "would work out by hand, a tube's wall is the difference of two "
+          "polygons, a sealed cavity is still inside the block, and on eight "
+          "pairs of solids that share a corner, a bore, a slot, a boss, a "
+          "profile or a cut at an angle to everything, joining and sharing "
+          "hold between them exactly what both solids hold.")
+    print("             Every one of them comes out closed, every edge shared "
+          "by two faces, no triangle without area, and a plate with a hole in "
+          "it comes to a few hundred triangles rather than fifty thousand.")
     return 0
 
 

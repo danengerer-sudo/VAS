@@ -1,7 +1,7 @@
 """roads_kenney: Kenney City Kit (Roads) tiles + Train Kit rail pieces.
 
 Road tiles use the same 8 m grid as city_buildings_kenney (1 Kenney tile = 8 m), origin at tile
-centre, so tiles snap on an 8 m grid. Asphalt -> LIB_Dark, kerbs / pavement / markings -> LIB_Body.
+centre, so tiles snap on an 8 m grid. Asphalt (source lum ~0.53) -> LIB_Dark via dark_lum=0.56, kerbs / pavement / markings -> LIB_Body.
 Rail pieces: 1 Train Kit unit = 2.6 m (matches vehicles_kenney trains).
 """
 import os
@@ -26,7 +26,7 @@ ROADS = ["road-straight", "road-straight-half", "road-straight-barrier", "road-b
          "tile-low", "tile-high", "tile-slant"]
 for m in ROADS:
     d, src, url = RD
-    specs.append(dict(name=m.replace("-", "_"), file=pi.kenney(d, m), scale=8.0, rot_z=0, profile="road",
+    specs.append(dict(name=m.replace("-", "_"), file=pi.kenney(d, m), scale=8.0, rot_z=0, profile="road", dark_lum=0.56,
                       tags=["road", "tile", "street", "city"], notes="Road tile, 8 m grid", source=src,
                       license=LIC, url=url, el=40))
 

@@ -135,10 +135,10 @@ def flame(mb, h=2.0, r=0.5, loc=(0, 0, 0), lean=0.0, seed=0, m=FIRE):
     """Single teardrop flame tongue."""
     x, y, z = loc
     sph = []
-    n = 9
+    n = 18
     for k in range(n):
         t = k / (n - 1)
-        sph.append(((x + lean * t * t * h, y, z + r * 0.5 + t * (h - r)), r * (1 - 0.8 * t ** 0.8)))
+        sph.append(((x + lean * t * t * h, y, z + r * 0.5 + t * (h - r * 1.5)), r * (1 - 0.75 * t ** 0.8)))
     return sph
 
 

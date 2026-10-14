@@ -72,12 +72,14 @@ ITEMS = [
     ("sur", "rock-a", 3, 0, ["rock", "nature"], "prop"),
     ("sur", "campfire-pit", 3, 0, ["campfire", "fire"], "prop"),
 ]
+NATURE = {"tree", "rocks", "rock", "planter", "campfire"}
 specs = []
 for pk, m, s, r, tags, prof in ITEMS:
     d, src, url = P[pk]
     nm = (pk + "_" if m in ("fence", "tree") else "") + m.replace("-", "_")
     specs.append(dict(name=nm, file=pi.kenney(d, m), scale=s, rot_z=r, profile=prof, tags=["street", "prop"] + tags,
-                      notes=f"{src}, scale x{s}", source=src, license="CC0 1.0", url=url))
+                      notes=f"{src}, scale x{s}", source=src, license="CC0 1.0", url=url,
+                      accent_as=pi.DARK if NATURE & set(tags) else None))
 
 if __name__ == "__main__":
     pi.build(CAT, specs, cols=10)

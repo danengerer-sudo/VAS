@@ -105,7 +105,7 @@
    "plume",
    "fire"
   ],
-  "notes": "40 m plume drifting +X with fire at base. fx_lib.smoke_column(mb, height, base_r, lean, fire) | ~64380 tris",
+  "notes": "40 m plume drifting +X with fire at base. fx_lib.smoke_column(mb, height, base_r, lean, fire) | ~61752 tris",
   "thumb": "thumbs/fx/smoke_column.jpg"
  },
  {
@@ -137,16 +137,16 @@
   "source": "procedural",
   "license": "original",
   "dims_m": [
-   3.567,
-   3.333,
-   3.024
+   3.595,
+   3.332,
+   2.874
   ],
   "tags": [
    "fx",
    "fire",
    "flames"
   ],
-  "notes": "Cluster of flame tongues (LIB_Fire). fx_lib.fire_patch(mb, radius, height, n) | ~22252 tris",
+  "notes": "Cluster of flame tongues (LIB_Fire). fx_lib.fire_patch(mb, radius, height, n) | ~21496 tris",
   "thumb": "thumbs/fx/fire_patch.jpg"
  },
  {
@@ -168,7 +168,7 @@
    "damage",
    "war"
   ],
-  "notes": "Damaged block with window flames, roof fire and smoke plume. fx_lib.building_on_fire(mb, w, d, h) | ~101272 tris",
+  "notes": "Damaged block with window flames, roof fire and smoke plume. fx_lib.building_on_fire(mb, w, d, h) | ~97484 tris",
   "thumb": "thumbs/fx/building_on_fire.jpg"
  },
  {

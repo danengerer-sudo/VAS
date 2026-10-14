@@ -234,7 +234,7 @@ def classify(cols, areas, profile, matnames=None, dark_lum=0.30):
     return out
 
 
-def remap(ob, profile, per_face=True, overrides=None, dark_lum=0.30):
+def remap(ob, profile, per_face=True, overrides=None, dark_lum=0.30, accent_as=None):
     """Replace ob's materials by LIB_* according to profile; keep the original colours as attribute."""
     me = ob.data
     if len(me.polygons) == 0:
@@ -250,6 +250,8 @@ def remap(ob, profile, per_face=True, overrides=None, dark_lum=0.30):
     cols, areas, midx, mats = face_colors(ob, per_face)
     names = [(mats[k].name if mats[k] else "") for k in midx]
     cls = classify(cols, areas, profile, names, dark_lum=dark_lum)
+    if accent_as:  # e.g. trees: brown trunk would read as brand colour -> make it dark
+        cls = [accent_as if c == ACCENT else c for c in cls]
     if overrides:  # {orig material name substring: LIB name}
         for i, nm in enumerate(names):
             for sub, lm in overrides.items():
@@ -438,7 +440,7 @@ def build(category, specs, cols=8, title=None):
                              sp.get("parts", False), sp.get("target"))
             for o in objs:
                 remap(o, sp.get("profile", "prop"), sp.get("per_face", True), sp.get("overrides"),
-                      sp.get("dark_lum", 0.30))
+                      sp.get("dark_lum", 0.30), sp.get("accent_as"))
                 ntri = tri_count([o])
                 if ntri > MAX_TRIS:
                     dm = o.modifiers.new("Decimate", "DECIMATE")

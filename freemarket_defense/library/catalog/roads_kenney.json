@@ -1,0 +1,1006 @@
+[
+ {
+  "name": "road_straight",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_straight",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~44 tris | src kenney_city_roads/raw/Models/GLB format/road-straight.glb",
+  "thumb": "thumbs/roads_kenney/road_straight.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_straight_half",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_straight_half",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~44 tris | src kenney_city_roads/raw/Models/GLB format/road-straight-half.glb",
+  "thumb": "thumbs/roads_kenney/road_straight_half.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_straight_barrier",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_straight_barrier",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.64
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~24 tris | src kenney_city_roads/raw/Models/GLB format/road-straight-barrier.glb",
+  "thumb": "thumbs/roads_kenney/road_straight_barrier.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_bend",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_bend",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~260 tris | src kenney_city_roads/raw/Models/GLB format/road-bend.glb",
+  "thumb": "thumbs/roads_kenney/road_bend.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_bend_sidewalk",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_bend_sidewalk",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~220 tris | src kenney_city_roads/raw/Models/GLB format/road-bend-sidewalk.glb",
+  "thumb": "thumbs/roads_kenney/road_bend_sidewalk.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_bend_square",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_bend_square",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~60 tris | src kenney_city_roads/raw/Models/GLB format/road-bend-square.glb",
+  "thumb": "thumbs/roads_kenney/road_bend_square.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_curve",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_curve",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   16.0,
+   16.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~308 tris | src kenney_city_roads/raw/Models/GLB format/road-curve.glb",
+  "thumb": "thumbs/roads_kenney/road_curve.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_curve_intersection",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_curve_intersection",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   16.0,
+   16.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~298 tris | src kenney_city_roads/raw/Models/GLB format/road-curve-intersection.glb",
+  "thumb": "thumbs/roads_kenney/road_curve_intersection.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_curve_pavement",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_curve_pavement",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   16.0,
+   16.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~220 tris | src kenney_city_roads/raw/Models/GLB format/road-curve-pavement.glb",
+  "thumb": "thumbs/roads_kenney/road_curve_pavement.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_crossroad",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_crossroad",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~116 tris | src kenney_city_roads/raw/Models/GLB format/road-crossroad.glb",
+  "thumb": "thumbs/roads_kenney/road_crossroad.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_crossroad_line",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_crossroad_line",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~108 tris | src kenney_city_roads/raw/Models/GLB format/road-crossroad-line.glb",
+  "thumb": "thumbs/roads_kenney/road_crossroad_line.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_crossroad_path",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_crossroad_path",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~276 tris | src kenney_city_roads/raw/Models/GLB format/road-crossroad-path.glb",
+  "thumb": "thumbs/roads_kenney/road_crossroad_path.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_crossing",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_crossing",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~104 tris | src kenney_city_roads/raw/Models/GLB format/road-crossing.glb",
+  "thumb": "thumbs/roads_kenney/road_crossing.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_intersection",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_intersection",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~84 tris | src kenney_city_roads/raw/Models/GLB format/road-intersection.glb",
+  "thumb": "thumbs/roads_kenney/road_intersection.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_intersection_line",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_intersection_line",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~76 tris | src kenney_city_roads/raw/Models/GLB format/road-intersection-line.glb",
+  "thumb": "thumbs/roads_kenney/road_intersection_line.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_intersection_path",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_intersection_path",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~204 tris | src kenney_city_roads/raw/Models/GLB format/road-intersection-path.glb",
+  "thumb": "thumbs/roads_kenney/road_intersection_path.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_roundabout",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_roundabout",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   24.0,
+   24.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~1636 tris | src kenney_city_roads/raw/Models/GLB format/road-roundabout.glb",
+  "thumb": "thumbs/roads_kenney/road_roundabout.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_end",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_end",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~42 tris | src kenney_city_roads/raw/Models/GLB format/road-end.glb",
+  "thumb": "thumbs/roads_kenney/road_end.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_end_round",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_end_round",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~218 tris | src kenney_city_roads/raw/Models/GLB format/road-end-round.glb",
+  "thumb": "thumbs/roads_kenney/road_end_round.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_side",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_side",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   10.48,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~44 tris | src kenney_city_roads/raw/Models/GLB format/road-side.glb",
+  "thumb": "thumbs/roads_kenney/road_side.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_side_entry",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_side_entry",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   10.48,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~306 tris | src kenney_city_roads/raw/Models/GLB format/road-side-entry.glb",
+  "thumb": "thumbs/roads_kenney/road_side_entry.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_side_exit",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_side_exit",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   10.48,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~306 tris | src kenney_city_roads/raw/Models/GLB format/road-side-exit.glb",
+  "thumb": "thumbs/roads_kenney/road_side_exit.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_split",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_split",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   16.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~862 tris | src kenney_city_roads/raw/Models/GLB format/road-split.glb",
+  "thumb": "thumbs/roads_kenney/road_split.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_square",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_square",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~36 tris | src kenney_city_roads/raw/Models/GLB format/road-square.glb",
+  "thumb": "thumbs/roads_kenney/road_square.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_driveway_single",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_driveway_single",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~60 tris | src kenney_city_roads/raw/Models/GLB format/road-driveway-single.glb",
+  "thumb": "thumbs/roads_kenney/road_driveway_single.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_driveway_double",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_driveway_double",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~72 tris | src kenney_city_roads/raw/Models/GLB format/road-driveway-double.glb",
+  "thumb": "thumbs/roads_kenney/road_driveway_double.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_slant",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_slant",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   2.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~44 tris | src kenney_city_roads/raw/Models/GLB format/road-slant.glb",
+  "thumb": "thumbs/roads_kenney/road_slant.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_slant_high",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_slant_high",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   4.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~44 tris | src kenney_city_roads/raw/Models/GLB format/road-slant-high.glb",
+  "thumb": "thumbs/roads_kenney/road_slant_high.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_slant_curve",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_slant_curve",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   16.0,
+   8.0,
+   4.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~544 tris | src kenney_city_roads/raw/Models/GLB format/road-slant-curve.glb",
+  "thumb": "thumbs/roads_kenney/road_slant_curve.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_slant_flat",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_slant_flat",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   2.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~44 tris | src kenney_city_roads/raw/Models/GLB format/road-slant-flat.glb",
+  "thumb": "thumbs/roads_kenney/road_slant_flat.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_bridge",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/road_bridge",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   4.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~240 tris | src kenney_city_roads/raw/Models/GLB format/road-bridge.glb",
+  "thumb": "thumbs/roads_kenney/road_bridge.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "bridge_pillar",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/bridge_pillar",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.8,
+   0.8,
+   4.0
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~38 tris | src kenney_city_roads/raw/Models/GLB format/bridge-pillar.glb",
+  "thumb": "thumbs/roads_kenney/bridge_pillar.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "bridge_pillar_wide",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/bridge_pillar_wide",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.12,
+   1.12,
+   4.0
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~38 tris | src kenney_city_roads/raw/Models/GLB format/bridge-pillar-wide.glb",
+  "thumb": "thumbs/roads_kenney/bridge_pillar_wide.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "tile_low",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/tile_low",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   0.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~12 tris | src kenney_city_roads/raw/Models/GLB format/tile-low.glb",
+  "thumb": "thumbs/roads_kenney/tile_low.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "tile_high",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/tile_high",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   2.0
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~12 tris | src kenney_city_roads/raw/Models/GLB format/tile-high.glb",
+  "thumb": "thumbs/roads_kenney/tile_high.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "tile_slant",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/tile_slant",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   8.0,
+   2.16
+  ],
+  "tags": [
+   "roads_kenney",
+   "road",
+   "tile",
+   "street",
+   "city"
+  ],
+  "notes": "Road tile, 8 m grid | ~12 tris | src kenney_city_roads/raw/Models/GLB format/tile-slant.glb",
+  "thumb": "thumbs/roads_kenney/tile_slant.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "railroad_straight",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/railroad_straight",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.4,
+   2.6,
+   0.26
+  ],
+  "tags": [
+   "roads_kenney",
+   "rail",
+   "railway",
+   "track"
+  ],
+  "notes": "Rail piece (Train Kit, 1 unit = 2.6 m) | ~376 tris | src kenney_train_kit/raw/Models/GLB format/railroad-straight.glb",
+  "thumb": "thumbs/roads_kenney/railroad_straight.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "railroad_curve",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/railroad_curve",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.4,
+   7.758,
+   0.26
+  ],
+  "tags": [
+   "roads_kenney",
+   "rail",
+   "railway",
+   "track"
+  ],
+  "notes": "Rail piece (Train Kit, 1 unit = 2.6 m) | ~452 tris | src kenney_train_kit/raw/Models/GLB format/railroad-curve.glb",
+  "thumb": "thumbs/roads_kenney/railroad_curve.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "railroad_corner_small",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/railroad_corner_small",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.48,
+   6.48,
+   0.26
+  ],
+  "tags": [
+   "roads_kenney",
+   "rail",
+   "railway",
+   "track"
+  ],
+  "notes": "Rail piece (Train Kit, 1 unit = 2.6 m) | ~376 tris | src kenney_train_kit/raw/Models/GLB format/railroad-corner-small.glb",
+  "thumb": "thumbs/roads_kenney/railroad_corner_small.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "railroad_corner_large",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/railroad_corner_large",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   11.667,
+   11.667,
+   0.26
+  ],
+  "tags": [
+   "roads_kenney",
+   "rail",
+   "railway",
+   "track"
+  ],
+  "notes": "Rail piece (Train Kit, 1 unit = 2.6 m) | ~568 tris | src kenney_train_kit/raw/Models/GLB format/railroad-corner-large.glb",
+  "thumb": "thumbs/roads_kenney/railroad_corner_large.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "railroad_straight_hill_complete",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/railroad_straight_hill_complete",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.4,
+   2.6,
+   2.86
+  ],
+  "tags": [
+   "roads_kenney",
+   "rail",
+   "railway",
+   "track"
+  ],
+  "notes": "Rail piece (Train Kit, 1 unit = 2.6 m) | ~416 tris | src kenney_train_kit/raw/Models/GLB format/railroad-straight-hill-complete.glb",
+  "thumb": "thumbs/roads_kenney/railroad_straight_hill_complete.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "railroad_rail_straight",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/railroad_rail_straight",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.4,
+   1.82,
+   0.26
+  ],
+  "tags": [
+   "roads_kenney",
+   "rail",
+   "railway",
+   "track"
+  ],
+  "notes": "Rail piece (Train Kit, 1 unit = 2.6 m) | ~160 tris | src kenney_train_kit/raw/Models/GLB format/railroad-rail-straight.glb",
+  "thumb": "thumbs/roads_kenney/railroad_rail_straight.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "track",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/track",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.6,
+   2.6,
+   0.39
+  ],
+  "tags": [
+   "roads_kenney",
+   "rail",
+   "railway",
+   "track"
+  ],
+  "notes": "Rail piece (Train Kit, 1 unit = 2.6 m) | ~76 tris | src kenney_train_kit/raw/Models/GLB format/track.glb",
+  "thumb": "thumbs/roads_kenney/track.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "track_detailed",
+  "category": "roads_kenney",
+  "collection": "roads_kenney/track_detailed",
+  "file": "build/roads_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.6,
+   2.6,
+   0.39
+  ],
+  "tags": [
+   "roads_kenney",
+   "rail",
+   "railway",
+   "track"
+  ],
+  "notes": "Rail piece (Train Kit, 1 unit = 2.6 m) | ~124 tris | src kenney_train_kit/raw/Models/GLB format/track-detailed.glb",
+  "thumb": "thumbs/roads_kenney/track_detailed.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ }
+]

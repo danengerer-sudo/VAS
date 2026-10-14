@@ -607,6 +607,13 @@ class Category:
         sc = bpy.context.scene
         if "_thumb_studio" in sc:
             del sc["_thumb_studio"]
+        for m in list(bpy.data.materials):
+            if not m.name.startswith("LIB_"):
+                bpy.data.materials.remove(m)
+        for w in list(bpy.data.worlds):
+            if w.name.startswith("Thumb"):
+                bpy.data.worlds.remove(w)
+        bpy.data.orphans_purge(do_local_ids=True, do_linked_ids=True, do_recursive=True)
         bpy.context.preferences.filepaths.save_version = 0  # no .blend1 backups
         if not self.opts["only"]:
             bpy.ops.wm.save_as_mainfile(filepath=self.blend, compress=True)

@@ -87,8 +87,32 @@ mx = nt.nodes.new("ShaderNodeMix"); mx.data_type = "RGBA"
 nt.links.new(mul.outputs[0], mx.inputs["Factor"])
 mx.inputs[6].default_value = (0.5, 0.48, 0.44, 1)
 mx.inputs[7].default_value = (0.36, 0.35, 0.33, 1)
-nt.links.new(mx.outputs[2], b.inputs["Base Color"])
+# monochrome surface interest: soft tonal mottling + fine relief
+geo = [n for n in nt.nodes if n.type == "NEW_GEOMETRY"][0]
+mot = nt.nodes.new("ShaderNodeTexNoise"); mot.inputs["Scale"].default_value = 0.08; mot.inputs["Detail"].default_value = 5
+nt.links.new(geo.outputs["Position"], mot.inputs["Vector"])
+motr = nt.nodes.new("ShaderNodeMapRange"); motr.inputs["From Min"].default_value = 0.35; motr.inputs["From Max"].default_value = 0.65
+motr.inputs["To Min"].default_value = 0.88; motr.inputs["To Max"].default_value = 1.08
+nt.links.new(mot.outputs["Fac"], motr.inputs["Value"])
+tone = nt.nodes.new("ShaderNodeMix"); tone.data_type = "RGBA"; tone.blend_type = "MULTIPLY"
+tone.inputs["Factor"].default_value = 1.0
+nt.links.new(mx.outputs[2], tone.inputs[6])
+cmb = nt.nodes.new("ShaderNodeCombineColor")
+for i in range(3):
+    nt.links.new(motr.outputs[0], cmb.inputs[i])
+nt.links.new(cmb.outputs[0], tone.inputs[7])
+nt.links.new(tone.outputs[2], b.inputs["Base Color"])
 b.inputs["Roughness"].default_value = 0.85
+fine = nt.nodes.new("ShaderNodeTexNoise"); fine.inputs["Scale"].default_value = 2.2; fine.inputs["Detail"].default_value = 8
+fine.inputs["Roughness"].default_value = 0.65
+nt.links.new(geo.outputs["Position"], fine.inputs["Vector"])
+grit = nt.nodes.new("ShaderNodeTexVoronoi"); grit.inputs["Scale"].default_value = 9.0
+nt.links.new(geo.outputs["Position"], grit.inputs["Vector"])
+hsum = nt.nodes.new("ShaderNodeMath"); hsum.operation = "MULTIPLY_ADD"; hsum.inputs[1].default_value = 0.35
+nt.links.new(grit.outputs["Distance"], hsum.inputs[0]); nt.links.new(fine.outputs["Fac"], hsum.inputs[2])
+gb = nt.nodes.new("ShaderNodeBump"); gb.inputs["Strength"].default_value = 0.45; gb.inputs["Distance"].default_value = 0.08
+nt.links.new(hsum.outputs[0], gb.inputs["Height"])
+nt.links.new(gb.outputs[0], b.inputs["Normal"])
 b.inputs["Specular IOR Level"].default_value = 0.2
 
 # water: pale slate, keep the ripple bump
@@ -103,7 +127,7 @@ bump.inputs["Strength"].default_value = 0.12
 
 # drop the grass/bush clutter; keep trees (they read as white model trees)
 for o in bpy.data.objects:
-    if o.type == "EMPTY" and o.instance_collection and any(k in o.instance_collection.name for k in ("grass", "rooibos")):
+    if o.type == "EMPTY" and o.instance_collection and "rooibos" in o.instance_collection.name:
         o.hide_render = True
 
 # ---------------------------------------------------------------- figures

@@ -124,8 +124,10 @@ def make_figure(name, pose="ready", coll=None, accent=None, loc=(0, 0, 0), headi
         knee, ank = _two_bone(hip, foot, THIGH, SHIN, hip + Vector((1.0, 0, -0.4)))
         parts += [_capsule(f"{name}_th{k}", hip, knee, 0.1, 0.075, coll, body),
                   _capsule(f"{name}_sh{k}", knee, ank, 0.072, 0.055, coll, body)]
-        boot = box(f"{name}_boot{k}", (0.24, 0.105, 0.11), (0, 0, 0), coll, 0.04, body)
-        boot.data.transform(Matrix.Translation((ank.x + 0.04, ank.y, 0.055)))
+        # rounded boot: heel-to-toe capsule, slightly flattened, toe a touch narrower
+        heel = Vector((ank.x - 0.05, ank.y, 0.052))
+        toe = Vector((ank.x + 0.15, ank.y, 0.042))
+        boot = _capsule(f"{name}_boot{k}", heel, toe, 0.052, 0.042, coll, body)
         parts.append(boot)
 
     # ---- torso

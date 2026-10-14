@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+freemarket_defense/assets/
+freemarket_defense/render/

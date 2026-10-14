@@ -1,0 +1,141 @@
+[
+ {
+  "name": "sedan",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/sedan",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.335,
+   1.95,
+   2.21
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "car",
+   "sedan"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2032 tris | src kenney_car_kit/raw/Models/GLB format/sedan.glb",
+  "thumb": "thumbs/vehicles_kenney/sedan.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "police",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/police",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   5.27,
+   1.95,
+   2.21
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "car",
+   "police",
+   "government"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2304 tris | src kenney_car_kit/raw/Models/GLB format/police.glb",
+  "thumb": "thumbs/vehicles_kenney/police.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "truck",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/truck",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   5.015,
+   1.95,
+   2.21
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "truck",
+   "logistics"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2082 tris | src kenney_car_kit/raw/Models/GLB format/truck.glb",
+  "thumb": "thumbs/vehicles_kenney/truck.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "train_diesel_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_diesel_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.24,
+   3.12,
+   4.152
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1742 tris | src kenney_train_kit/raw/Models/GLB format/train-diesel-a.glb",
+  "thumb": "thumbs/vehicles_kenney/train_diesel_a.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "boat_tug_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/boat_tug_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   23.328,
+   12.0,
+   15.039
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "boat",
+   "tug",
+   "port"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 12 m long | ~471 tris | src kenney_watercraft/raw/Models/GLB format/boat-tug-a.glb",
+  "thumb": "thumbs/vehicles_kenney/boat_tug_a.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "ship_cargo_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/ship_cargo_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   161.575,
+   60.0,
+   51.776
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "ship",
+   "cargo",
+   "trade",
+   "shipping"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 60 m long | ~1060 tris | src kenney_watercraft/raw/Models/GLB format/ship-cargo-a.glb",
+  "thumb": "thumbs/vehicles_kenney/ship_cargo_a.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ }
+]

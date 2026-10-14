@@ -1,0 +1,901 @@
+[
+ {
+  "name": "car_hatchback",
+  "category": "vehicles",
+  "collection": "vehicles/car_hatchback",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   4.1,
+   2.11,
+   1.5
+  ],
+  "tags": [
+   "vehicle",
+   "car",
+   "hatchback",
+   "compact"
+  ],
+  "thumb": "thumbs/vehicles/car_hatchback.jpg",
+  "notes": "Compact hatchback, ~4.05 m. ~19k tris.",
+  "generator": "scripts/vehicles_lib.py:car_hatchback"
+ },
+ {
+  "name": "car_sedan",
+  "category": "vehicles",
+  "collection": "vehicles/car_sedan",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   4.85,
+   2.2,
+   1.45
+  ],
+  "tags": [
+   "vehicle",
+   "car",
+   "sedan"
+  ],
+  "thumb": "thumbs/vehicles/car_sedan.jpg",
+  "notes": "Mid-size sedan, ~4.8 m. ~20k tris.",
+  "generator": "scripts/vehicles_lib.py:car_sedan"
+ },
+ {
+  "name": "car_suv",
+  "category": "vehicles",
+  "collection": "vehicles/car_suv",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   4.8,
+   2.27,
+   1.8
+  ],
+  "tags": [
+   "vehicle",
+   "car",
+   "suv"
+  ],
+  "thumb": "thumbs/vehicles/car_suv.jpg",
+  "notes": "SUV with dark lower cladding. ~21k tris.",
+  "generator": "scripts/vehicles_lib.py:car_suv"
+ },
+ {
+  "name": "car_pickup",
+  "category": "vehicles",
+  "collection": "vehicles/car_pickup",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   5.65,
+   2.37,
+   1.88
+  ],
+  "tags": [
+   "vehicle",
+   "car",
+   "pickup",
+   "truck"
+  ],
+  "thumb": "thumbs/vehicles/car_pickup.jpg",
+  "notes": "Crew-cab pickup with dark bed liner. ~23k tris.",
+  "generator": "scripts/vehicles_lib.py:car_pickup"
+ },
+ {
+  "name": "car_taxi",
+  "category": "vehicles",
+  "collection": "vehicles/car_taxi",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   4.85,
+   2.2,
+   1.75
+  ],
+  "tags": [
+   "vehicle",
+   "car",
+   "taxi",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/car_taxi.jpg",
+  "notes": "Sedan + accent roof sign and door band. ~21k tris.",
+  "generator": "scripts/vehicles_lib.py:car_taxi"
+ },
+ {
+  "name": "car_security",
+  "category": "vehicles",
+  "collection": "vehicles/car_security",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   4.94,
+   2.2,
+   1.59
+  ],
+  "tags": [
+   "vehicle",
+   "car",
+   "police",
+   "security",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/car_security.jpg",
+  "notes": "Sedan + accent door band, light bar (accent/light), push bar. ~21k tris.",
+  "generator": "scripts/vehicles_lib.py:car_security"
+ },
+ {
+  "name": "van_delivery",
+  "category": "vehicles",
+  "collection": "vehicles/van_delivery",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   6.05,
+   2.7,
+   2.62
+  ],
+  "tags": [
+   "vehicle",
+   "van",
+   "delivery",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/van_delivery.jpg",
+  "notes": "High-roof delivery van with accent brand panel. ~21k tris.",
+  "generator": "scripts/vehicles_lib.py:van_delivery"
+ },
+ {
+  "name": "truck_box",
+  "category": "vehicles",
+  "collection": "vehicles/truck_box",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   7.59,
+   2.69,
+   3.51
+  ],
+  "tags": [
+   "vehicle",
+   "truck",
+   "box truck",
+   "delivery",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/truck_box.jpg",
+  "notes": "Box truck with accent brand panel, roll-up door. ~16k tris.",
+  "generator": "scripts/vehicles_lib.py:truck_box"
+ },
+ {
+  "name": "truck_armored_cit",
+  "category": "vehicles",
+  "collection": "vehicles/truck_armored_cit",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   7.11,
+   2.84,
+   3.19
+  ],
+  "tags": [
+   "vehicle",
+   "truck",
+   "armoured",
+   "cash-in-transit",
+   "bank",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/truck_armored_cit.jpg",
+  "notes": "Cash-in-transit armoured truck: conventional cab, armoured box, gun ports, accent band. ~15k tris.",
+  "generator": "scripts/vehicles_lib.py:truck_armored"
+ },
+ {
+  "name": "bus_city",
+  "category": "vehicles",
+  "collection": "vehicles/bus_city",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.42,
+   2.56,
+   3.29
+  ],
+  "tags": [
+   "vehicle",
+   "bus",
+   "city bus",
+   "public transport",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/bus_city.jpg",
+  "notes": "12 m low-floor city bus, doors on right (-Y) side. ~24k tris.",
+  "generator": "scripts/vehicles_lib.py:bus_city"
+ },
+ {
+  "name": "semi_tractor",
+  "category": "vehicles",
+  "collection": "vehicles/semi_tractor",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   7.73,
+   2.96,
+   4.0
+  ],
+  "tags": [
+   "vehicle",
+   "truck",
+   "semi",
+   "tractor",
+   "lorry"
+  ],
+  "thumb": "thumbs/vehicles/semi_tractor.jpg",
+  "notes": "US-style conventional sleeper tractor 6x4; fifth wheel x in root['fifth_wheel_x']. ~24k tris.",
+  "generator": "scripts/vehicles_lib.py:semi_tractor"
+ },
+ {
+  "name": "trailer_box_40ft",
+  "category": "vehicles",
+  "collection": "vehicles/trailer_box_40ft",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.26,
+   2.57,
+   4.01
+  ],
+  "tags": [
+   "vehicle",
+   "trailer",
+   "semi",
+   "box",
+   "dry van"
+  ],
+  "thumb": "thumbs/vehicles/trailer_box_40ft.jpg",
+  "notes": "40 ft dry-van trailer; kingpin x in root['kingpin_x']. ~12k tris.",
+  "generator": "scripts/vehicles_lib.py:trailer_box"
+ },
+ {
+  "name": "trailer_tanker",
+  "category": "vehicles",
+  "collection": "vehicles/trailer_tanker",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.2,
+   2.4,
+   3.9
+  ],
+  "tags": [
+   "vehicle",
+   "trailer",
+   "semi",
+   "tanker",
+   "fuel",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/trailer_tanker.jpg",
+  "notes": "Fuel tanker trailer, elliptical tank, accent band. ~13k tris.",
+  "generator": "scripts/vehicles_lib.py:trailer_tanker"
+ },
+ {
+  "name": "trailer_flatbed_lumber",
+  "category": "vehicles",
+  "collection": "vehicles/trailer_flatbed_lumber",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.19,
+   2.62,
+   3.18
+  ],
+  "tags": [
+   "vehicle",
+   "trailer",
+   "semi",
+   "flatbed",
+   "lumber"
+  ],
+  "thumb": "thumbs/vehicles/trailer_flatbed_lumber.jpg",
+  "notes": "Flatbed trailer with strapped lumber bundles (load='lumber'|'crates'|'pipes'). ~12k tris.",
+  "generator": "scripts/vehicles_lib.py:trailer_flatbed"
+ },
+ {
+  "name": "trailer_flatbed_crates",
+  "category": "vehicles",
+  "collection": "vehicles/trailer_flatbed_crates",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.19,
+   2.62,
+   3.51
+  ],
+  "tags": [
+   "vehicle",
+   "trailer",
+   "semi",
+   "flatbed",
+   "crates"
+  ],
+  "thumb": "thumbs/vehicles/trailer_flatbed_crates.jpg",
+  "notes": "Flatbed trailer with strapped crates. ~11k tris.",
+  "generator": "scripts/vehicles_lib.py:trailer_flatbed"
+ },
+ {
+  "name": "semi_truck_box",
+  "category": "vehicles",
+  "collection": "vehicles/semi_truck_box",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   17.66,
+   2.96,
+   4.01
+  ],
+  "tags": [
+   "vehicle",
+   "truck",
+   "semi",
+   "lorry",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/semi_truck_box.jpg",
+  "notes": "Tractor + 40 ft box trailer with accent brand panel (separate tractor/trailer objects). ~36k tris.",
+  "generator": "scripts/vehicles_lib.py:semi_truck"
+ },
+ {
+  "name": "semi_truck_tanker",
+  "category": "vehicles",
+  "collection": "vehicles/semi_truck_tanker",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   17.61,
+   2.96,
+   4.0
+  ],
+  "tags": [
+   "vehicle",
+   "truck",
+   "semi",
+   "tanker",
+   "fuel",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/semi_truck_tanker.jpg",
+  "notes": "Tractor + tanker trailer. ~37k tris.",
+  "generator": "scripts/vehicles_lib.py:semi_truck"
+ },
+ {
+  "name": "truck_dump",
+  "category": "vehicles",
+  "collection": "vehicles/truck_dump",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   8.67,
+   3.2,
+   3.19
+  ],
+  "tags": [
+   "vehicle",
+   "truck",
+   "dump",
+   "construction"
+  ],
+  "thumb": "thumbs/vehicles/truck_dump.jpg",
+  "notes": "8x4-style 3-axle dump truck, cab-over. ~14k tris.",
+  "generator": "scripts/vehicles_lib.py:truck_dump"
+ },
+ {
+  "name": "truck_mixer",
+  "category": "vehicles",
+  "collection": "vehicles/truck_mixer",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   8.73,
+   3.2,
+   3.55
+  ],
+  "tags": [
+   "vehicle",
+   "truck",
+   "cement mixer",
+   "construction",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/truck_mixer.jpg",
+  "notes": "Cement mixer; drum is a separate object (origin at drum pivot) with accent helix stripe. ~14k tris.",
+  "generator": "scripts/vehicles_lib.py:truck_mixer"
+ },
+ {
+  "name": "container_20ft",
+  "category": "vehicles",
+  "collection": "vehicles/container_20ft",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   6.14,
+   2.46,
+   2.59
+  ],
+  "tags": [
+   "vehicle",
+   "container",
+   "shipping",
+   "iso",
+   "20ft",
+   "trade"
+  ],
+  "thumb": "thumbs/vehicles/container_20ft.jpg",
+  "notes": "ISO 20 ft container 6.06x2.44x2.59; doors at -X. paint='body'|'accent', frame=... ~3k tris.",
+  "generator": "scripts/vehicles_lib.py:container"
+ },
+ {
+  "name": "container_40ft",
+  "category": "vehicles",
+  "collection": "vehicles/container_40ft",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.27,
+   2.44,
+   2.59
+  ],
+  "tags": [
+   "vehicle",
+   "container",
+   "shipping",
+   "iso",
+   "40ft",
+   "trade"
+  ],
+  "thumb": "thumbs/vehicles/container_40ft.jpg",
+  "notes": "ISO 40 ft container 12.19x2.44x2.59; doors at -X. ~4k tris.",
+  "generator": "scripts/vehicles_lib.py:container_40ft"
+ },
+ {
+  "name": "container_20ft_accent",
+  "category": "vehicles",
+  "collection": "vehicles/container_20ft_accent",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   6.14,
+   2.46,
+   2.59
+  ],
+  "tags": [
+   "vehicle",
+   "container",
+   "shipping",
+   "iso",
+   "20ft",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/container_20ft_accent.jpg",
+  "notes": "20 ft container in accent colour (brand). ~3k tris.",
+  "generator": "scripts/vehicles_lib.py:container"
+ },
+ {
+  "name": "container_40ft_accent",
+  "category": "vehicles",
+  "collection": "vehicles/container_40ft_accent",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.27,
+   2.44,
+   2.59
+  ],
+  "tags": [
+   "vehicle",
+   "container",
+   "shipping",
+   "iso",
+   "40ft",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/container_40ft_accent.jpg",
+  "notes": "40 ft container in accent colour (brand). ~4k tris.",
+  "generator": "scripts/vehicles_lib.py:container_40ft"
+ },
+ {
+  "name": "forklift",
+  "category": "vehicles",
+  "collection": "vehicles/forklift",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   3.99,
+   1.28,
+   2.43
+  ],
+  "tags": [
+   "vehicle",
+   "industrial",
+   "forklift",
+   "warehouse",
+   "logistics"
+  ],
+  "thumb": "thumbs/vehicles/forklift.jpg",
+  "notes": "Counterbalance forklift; forks at +X. fork_height param. ~8k tris.",
+  "generator": "scripts/vehicles_lib.py:forklift"
+ },
+ {
+  "name": "wheel_loader",
+  "category": "vehicles",
+  "collection": "vehicles/wheel_loader",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   8.72,
+   3.35,
+   3.55
+  ],
+  "tags": [
+   "vehicle",
+   "industrial",
+   "construction",
+   "loader"
+  ],
+  "thumb": "thumbs/vehicles/wheel_loader.jpg",
+  "notes": "Articulated wheel loader, ~950 class. ~8k tris.",
+  "generator": "scripts/vehicles_lib.py:wheel_loader"
+ },
+ {
+  "name": "crane_mobile",
+  "category": "vehicles",
+  "collection": "vehicles/crane_mobile",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   13.04,
+   2.69,
+   3.38
+  ],
+  "tags": [
+   "vehicle",
+   "industrial",
+   "crane",
+   "construction"
+  ],
+  "thumb": "thumbs/vehicles/crane_mobile.jpg",
+  "notes": "4-axle all-terrain crane, boom stowed (boom is a separate object, origin at its pivot). ~12k tris.",
+  "generator": "scripts/vehicles_lib.py:crane_mobile"
+ },
+ {
+  "name": "crane_mobile_raised",
+  "category": "vehicles",
+  "collection": "vehicles/crane_mobile_raised",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   16.46,
+   7.24,
+   18.04
+  ],
+  "tags": [
+   "vehicle",
+   "industrial",
+   "crane",
+   "construction"
+  ],
+  "thumb": "thumbs/vehicles/crane_mobile_raised.jpg",
+  "notes": "Mobile crane with boom raised 50 deg, partly extended, outriggers deployed. ~13k tris.",
+  "generator": "scripts/vehicles_lib.py:crane_mobile"
+ },
+ {
+  "name": "crane_sts_gantry",
+  "category": "vehicles",
+  "collection": "vehicles/crane_sts_gantry",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   102.5,
+   24.2,
+   70.8
+  ],
+  "tags": [
+   "vehicle",
+   "industrial",
+   "port",
+   "crane",
+   "gantry",
+   "trade",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/crane_sts_gantry.jpg",
+  "notes": "Ship-to-shore container gantry crane; boom over +X; origin at leg-footprint centre; carries an accent 40ft box. ~5k tris.",
+  "generator": "scripts/vehicles_lib.py:crane_gantry"
+ },
+ {
+  "name": "ship_container",
+  "category": "vehicles",
+  "collection": "vehicles/ship_container",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   160.6,
+   25.4,
+   40.76
+  ],
+  "tags": [
+   "vehicle",
+   "ship",
+   "sea",
+   "container ship",
+   "trade",
+   "port",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/ship_container.jpg",
+  "notes": "160 m container ship, bridge aft, ~450 stacked 40ft boxes (body/accent/dark), accent funnel band. z=0 = waterline (draft 8 m). ~15k tris.",
+  "generator": "scripts/vehicles_lib.py:ship_container"
+ },
+ {
+  "name": "ship_container_empty",
+  "category": "vehicles",
+  "collection": "vehicles/ship_container_empty",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   160.6,
+   25.4,
+   40.76
+  ],
+  "tags": [
+   "vehicle",
+   "ship",
+   "sea",
+   "container ship",
+   "trade"
+  ],
+  "thumb": "thumbs/vehicles/ship_container_empty.jpg",
+  "notes": "Container ship without deck cargo. z=0 = waterline. ~10k tris.",
+  "generator": "scripts/vehicles_lib.py:ship_container"
+ },
+ {
+  "name": "tugboat",
+  "category": "vehicles",
+  "collection": "vehicles/tugboat",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   29.1,
+   11.24,
+   18.73
+  ],
+  "tags": [
+   "vehicle",
+   "ship",
+   "sea",
+   "tug",
+   "port",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/tugboat.jpg",
+  "notes": "28 m harbour tug, heavy fendering. z=0 = waterline. ~10k tris.",
+  "generator": "scripts/vehicles_lib.py:tugboat"
+ },
+ {
+  "name": "boat_fishing",
+  "category": "vehicles",
+  "collection": "vehicles/boat_fishing",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.02,
+   5.1,
+   7.99
+  ],
+  "tags": [
+   "vehicle",
+   "boat",
+   "sea",
+   "fishing",
+   "trawler"
+  ],
+  "thumb": "thumbs/vehicles/boat_fishing.jpg",
+  "notes": "12 m inshore fishing boat. z=0 = waterline. ~7k tris.",
+  "generator": "scripts/vehicles_lib.py:boat_fishing"
+ },
+ {
+  "name": "plane_airliner",
+  "category": "vehicles",
+  "collection": "vehicles/plane_airliner",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   37.6,
+   33.93,
+   11.75
+  ],
+  "tags": [
+   "vehicle",
+   "aircraft",
+   "airliner",
+   "jet",
+   "travel",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/plane_airliner.jpg",
+  "notes": "Narrow-body twinjet (A320 class) 37.6 m, span 34 m, gear down, accent tail/sharklets/cheatline. ~16k tris.",
+  "generator": "scripts/vehicles_lib.py:airliner"
+ },
+ {
+  "name": "plane_bizjet",
+  "category": "vehicles",
+  "collection": "vehicles/plane_bizjet",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   17.02,
+   14.04,
+   4.48
+  ],
+  "tags": [
+   "vehicle",
+   "aircraft",
+   "business jet",
+   "private jet",
+   "wealth",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/plane_bizjet.jpg",
+  "notes": "Business jet, rear engines, T-tail, accent fin. ~9k tris.",
+  "generator": "scripts/vehicles_lib.py:plane_bizjet"
+ },
+ {
+  "name": "drone_cargo",
+  "category": "vehicles",
+  "collection": "vehicles/drone_cargo",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   2.43,
+   2.5,
+   1.06
+  ],
+  "tags": [
+   "vehicle",
+   "aircraft",
+   "drone",
+   "delivery",
+   "logistics",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/drone_cargo.jpg",
+  "notes": "Hexacopter delivery drone with accent parcel; rotors are separate objects. ~1k tris.",
+  "generator": "scripts/vehicles_lib.py:drone_cargo"
+ },
+ {
+  "name": "bicycle",
+  "category": "vehicles",
+  "collection": "vehicles/bicycle",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.73,
+   0.59,
+   1.04
+  ],
+  "tags": [
+   "vehicle",
+   "two-wheeler",
+   "bicycle",
+   "bike",
+   "commute"
+  ],
+  "thumb": "thumbs/vehicles/bicycle.jpg",
+  "notes": "City/road bicycle, 700c wheels, spoked. ~3k tris.",
+  "generator": "scripts/vehicles_lib.py:bicycle"
+ },
+ {
+  "name": "bicycle_accent",
+  "category": "vehicles",
+  "collection": "vehicles/bicycle_accent",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.73,
+   0.59,
+   1.04
+  ],
+  "tags": [
+   "vehicle",
+   "two-wheeler",
+   "bicycle",
+   "bike",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/bicycle_accent.jpg",
+  "notes": "Bicycle with accent frame. ~3k tris.",
+  "generator": "scripts/vehicles_lib.py:bicycle"
+ },
+ {
+  "name": "motorbike",
+  "category": "vehicles",
+  "collection": "vehicles/motorbike",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   2.05,
+   0.89,
+   1.37
+  ],
+  "tags": [
+   "vehicle",
+   "two-wheeler",
+   "motorbike",
+   "motorcycle"
+  ],
+  "thumb": "thumbs/vehicles/motorbike.jpg",
+  "notes": "Naked standard motorbike ~2.1 m. ~4k tris.",
+  "generator": "scripts/vehicles_lib.py:motorbike"
+ },
+ {
+  "name": "motorbike_accent",
+  "category": "vehicles",
+  "collection": "vehicles/motorbike_accent",
+  "file": "build/vehicles.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   2.05,
+   0.89,
+   1.37
+  ],
+  "tags": [
+   "vehicle",
+   "two-wheeler",
+   "motorbike",
+   "motorcycle",
+   "accent"
+  ],
+  "thumb": "thumbs/vehicles/motorbike_accent.jpg",
+  "notes": "Motorbike with accent tank/tail. ~4k tris.",
+  "generator": "scripts/vehicles_lib.py:motorbike"
+ }
+]

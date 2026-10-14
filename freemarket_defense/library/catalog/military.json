@@ -1,0 +1,69 @@
+[
+ {
+  "name": "tank_mbt",
+  "category": "military",
+  "collection": "military/tank_mbt",
+  "file": "build/military.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   10.76,
+   4.2,
+   4.78
+  ],
+  "tags": [
+   "military",
+   "tank",
+   "armour",
+   "mbt"
+  ],
+  "thumb": "thumbs/military/tank_mbt.jpg",
+  "notes": "Abrams-like MBT. Turret/gun/wheels/tracks are named children (see scripts/tank.py animate_drive). Livery band/shield -> LIB_Accent, lettering -> LIB_Dark. ~52k tris.",
+  "generator": "../scripts/tank.py:build_tank"
+ },
+ {
+  "name": "helicopter_utility",
+  "category": "military",
+  "collection": "military/helicopter_utility",
+  "file": "build/military.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   20.78,
+   16.1,
+   5.6
+  ],
+  "tags": [
+   "military",
+   "helicopter",
+   "aircraft",
+   "utility"
+  ],
+  "thumb": "thumbs/military/helicopter_utility.jpg",
+  "notes": "UH-60-like utility helicopter; rotors are named children (scripts/heli.py animate_rotors). ~18k tris.",
+  "generator": "../scripts/heli.py:build_heli"
+ },
+ {
+  "name": "boat_patrol",
+  "category": "military",
+  "collection": "military/boat_patrol",
+  "file": "build/military.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   16.5,
+   4.42,
+   6.68
+  ],
+  "tags": [
+   "military",
+   "boat",
+   "sea",
+   "patrol",
+   "assault"
+  ],
+  "thumb": "thumbs/military/boat_patrol.jpg",
+  "notes": "CB90-like fast patrol boat. z=0 = waterline. ~8k tris.",
+  "generator": "../scripts/boat.py:build_boat"
+ }
+]

@@ -1,0 +1,1795 @@
+[
+ {
+  "name": "shop_building_a",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_a",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.52,
+   7.069,
+   10.344
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~1252 tris | src kenney_city_commercial/raw/Models/GLB format/building-a.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_a.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_b",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_b",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.52,
+   7.76,
+   10.344
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~1276 tris | src kenney_city_commercial/raw/Models/GLB format/building-b.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_b.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_c",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_c",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.72,
+   7.069,
+   7.144
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~1195 tris | src kenney_city_commercial/raw/Models/GLB format/building-c.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_c.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_d",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_d",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.2,
+   6.72,
+   10.344
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~1100 tris | src kenney_city_commercial/raw/Models/GLB format/building-d.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_d.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_e",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_e",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.063,
+   13.12,
+   7.144
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~1509 tris | src kenney_city_commercial/raw/Models/GLB format/building-e.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_e.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_f",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_f",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.24,
+   6.72,
+   13.544
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~1794 tris | src kenney_city_commercial/raw/Models/GLB format/building-f.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_f.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_g",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_g",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.376,
+   7.76,
+   13.544
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~2006 tris | src kenney_city_commercial/raw/Models/GLB format/building-g.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_g.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_h",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_h",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.063,
+   7.069,
+   10.344
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~1512 tris | src kenney_city_commercial/raw/Models/GLB format/building-h.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_h.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_i",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_i",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.416,
+   9.92,
+   13.44
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~2544 tris | src kenney_city_commercial/raw/Models/GLB format/building-i.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_i.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_j",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_j",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.72,
+   16.669,
+   13.544
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~5246 tris | src kenney_city_commercial/raw/Models/GLB format/building-j.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_j.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_k",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_k",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.536,
+   16.669,
+   11.76
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~2960 tris | src kenney_city_commercial/raw/Models/GLB format/building-k.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_k.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_l",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_l",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   11.216,
+   10.96,
+   18.16
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~3512 tris | src kenney_city_commercial/raw/Models/GLB format/building-l.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_l.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_m",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_m",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   9.936,
+   9.92,
+   25.2
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~3740 tris | src kenney_city_commercial/raw/Models/GLB format/building-m.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_m.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "shop_building_n",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/shop_building_n",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   14.56,
+   18.56,
+   19.84
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "commercial",
+   "shop",
+   "office",
+   "city"
+  ],
+  "notes": "Commercial block with ground-floor shopfront | ~4350 tris | src kenney_city_commercial/raw/Models/GLB format/building-n.glb",
+  "thumb": "thumbs/city_buildings_kenney/shop_building_n.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "skyscraper_a",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/skyscraper_a",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.88,
+   10.88,
+   23.04
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "skyscraper",
+   "office",
+   "tower",
+   "city",
+   "corporate"
+  ],
+  "notes": "Office tower | ~1292 tris | src kenney_city_commercial/raw/Models/GLB format/building-skyscraper-a.glb",
+  "thumb": "thumbs/city_buildings_kenney/skyscraper_a.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "skyscraper_b",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/skyscraper_b",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.88,
+   10.88,
+   35.84
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "skyscraper",
+   "office",
+   "tower",
+   "city",
+   "corporate"
+  ],
+  "notes": "Office tower | ~1592 tris | src kenney_city_commercial/raw/Models/GLB format/building-skyscraper-b.glb",
+  "thumb": "thumbs/city_buildings_kenney/skyscraper_b.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "skyscraper_c",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/skyscraper_c",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   11.103,
+   10.24,
+   32.64
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "skyscraper",
+   "office",
+   "tower",
+   "city",
+   "corporate"
+  ],
+  "notes": "Office tower | ~1704 tris | src kenney_city_commercial/raw/Models/GLB format/building-skyscraper-c.glb",
+  "thumb": "thumbs/city_buildings_kenney/skyscraper_c.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "skyscraper_d",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/skyscraper_d",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   11.103,
+   10.24,
+   43.76
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "skyscraper",
+   "office",
+   "tower",
+   "city",
+   "corporate"
+  ],
+  "notes": "Office tower | ~1892 tris | src kenney_city_commercial/raw/Models/GLB format/building-skyscraper-d.glb",
+  "thumb": "thumbs/city_buildings_kenney/skyscraper_d.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "skyscraper_e",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/skyscraper_e",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   9.936,
+   10.36,
+   32.64
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "skyscraper",
+   "office",
+   "tower",
+   "city",
+   "corporate"
+  ],
+  "notes": "Office tower | ~1156 tris | src kenney_city_commercial/raw/Models/GLB format/building-skyscraper-e.glb",
+  "thumb": "thumbs/city_buildings_kenney/skyscraper_e.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_a",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_a",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   16.0
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~188 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-a.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_a.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_b",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_b",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   17.8
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~200 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-b.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_b.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_c",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_c",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   18.0
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~142 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-c.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_c.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_d",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_d",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   14.0
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~106 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-d.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_d.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_e",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_e",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   14.4
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~96 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-e.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_e.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_f",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_f",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   16.0
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~88 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-f.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_f.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_g",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_g",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   16.0
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~200 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-g.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_g.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_h",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_h",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   16.8
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~378 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-h.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_h.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_i",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_i",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   14.2
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~152 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-i.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_i.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_j",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_j",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   14.0
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~188 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-j.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_j.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_k",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_k",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   12.4
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~86 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-k.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_k.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_l",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_l",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   14.8
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~150 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-l.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_l.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_m",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_m",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   15.8
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~188 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-m.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_m.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_n",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_n",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   4.0,
+   5.6
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail background building (cheap for crowds of buildings) | ~62 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-n.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_n.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_wide_a",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_wide_a",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   8.0,
+   8.8
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail wide background building | ~156 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-wide-a.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_wide_a.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "lowdetail_building_wide_b",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/lowdetail_building_wide_b",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   8.0,
+   9.2
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "low_detail",
+   "background",
+   "city"
+  ],
+  "notes": "Low-detail wide background building | ~246 tris | src kenney_city_commercial/raw/Models/GLB format/low-detail-building-wide-b.glb",
+  "thumb": "thumbs/city_buildings_kenney/lowdetail_building_wide_b.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "house_a",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_a",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.225,
+   10.4,
+   6.668
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1174 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-a.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_a.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_b",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_b",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   9.12,
+   14.624,
+   9.1
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1748 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-b.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_b.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_c",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_c",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.225,
+   10.291,
+   8.268
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1196 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-c.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_c.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_d",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_d",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.224,
+   14.051,
+   9.9
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1757 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-d.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_d.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_e",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_e",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.224,
+   10.4,
+   9.1
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1731 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-e.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_e.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_f",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_f",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   11.247,
+   11.424,
+   9.1
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1616 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-f.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_f.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_g",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_g",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   9.424,
+   11.6,
+   6.146
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1067 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-g.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_g.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_h",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_h",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.328,
+   10.4,
+   5.9
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~770 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-h.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_h.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_i",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_i",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.224,
+   10.291,
+   5.9
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~800 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-i.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_i.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_j",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_j",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.328,
+   10.96,
+   8.3
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1210 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-j.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_j.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_k",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_k",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.16,
+   7.368,
+   9.197
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1024 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-k.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_k.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_l",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_l",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.16,
+   8.269,
+   8.394
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1310 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-l.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_l.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_m",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_m",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   11.424,
+   11.424,
+   5.9
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1112 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-m.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_m.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_n",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_n",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   11.023,
+   14.274,
+   9.1
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1612 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-n.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_n.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_o",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_o",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.224,
+   10.16,
+   9.1
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1326 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-o.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_o.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_p",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_p",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.92,
+   9.92,
+   7.344
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1282 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-p.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_p.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_q",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_q",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.085,
+   9.92,
+   7.344
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1140 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-q.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_q.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_r",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_r",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.16,
+   8.224,
+   9.129
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1030 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-r.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_r.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_s",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_s",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.691,
+   11.248,
+   9.1
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1212 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-s.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_s.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_t",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_t",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   11.251,
+   10.509,
+   9.251
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~2062 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-t.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_t.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "house_u",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/house_u",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.695,
+   11.424,
+   9.1
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "house",
+   "suburban",
+   "residential",
+   "home"
+  ],
+  "notes": "Suburban house (garden plot included) | ~1332 tris | src kenney_city_suburban/raw/Models/GLB format/building-type-u.glb",
+  "thumb": "thumbs/city_buildings_kenney/house_u.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "factory_building_a",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_a",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   9.936,
+   16.669,
+   11.76
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~2046 tris | src kenney_city_industrial/raw/Models/GLB format/building-a.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_a.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_b",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_b",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.096,
+   16.669,
+   11.76
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~2422 tris | src kenney_city_industrial/raw/Models/GLB format/building-b.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_b.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_c",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_c",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   16.864,
+   15.007,
+   10.0
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~1928 tris | src kenney_city_industrial/raw/Models/GLB format/building-c.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_c.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_d",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_d",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   11.36,
+   7.069,
+   11.316
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~1158 tris | src kenney_city_industrial/raw/Models/GLB format/building-d.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_d.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_e",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_e",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.32,
+   13.469,
+   13.2
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~1484 tris | src kenney_city_industrial/raw/Models/GLB format/building-e.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_e.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_f",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_f",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.24,
+   14.32,
+   15.4
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~1552 tris | src kenney_city_industrial/raw/Models/GLB format/building-f.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_f.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_g",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_g",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.269,
+   13.425,
+   10.24
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~1242 tris | src kenney_city_industrial/raw/Models/GLB format/building-g.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_g.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_h",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_h",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.48,
+   10.574,
+   5.868
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~698 tris | src kenney_city_industrial/raw/Models/GLB format/building-h.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_h.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_i",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_i",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.4,
+   8.225,
+   5.868
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~798 tris | src kenney_city_industrial/raw/Models/GLB format/building-i.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_i.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_j",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_j",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.4,
+   8.213,
+   6.889
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~886 tris | src kenney_city_industrial/raw/Models/GLB format/building-j.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_j.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_k",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_k",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.309,
+   10.423,
+   6.182
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~702 tris | src kenney_city_industrial/raw/Models/GLB format/building-k.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_k.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_l",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_l",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   14.96,
+   16.669,
+   15.4
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~1896 tris | src kenney_city_industrial/raw/Models/GLB format/building-l.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_l.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_m",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_m",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   13.6,
+   10.53,
+   12.152
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~1694 tris | src kenney_city_industrial/raw/Models/GLB format/building-m.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_m.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_n",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_n",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   11.36,
+   7.813,
+   15.236
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~1262 tris | src kenney_city_industrial/raw/Models/GLB format/building-n.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_n.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_o",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_o",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   9.92,
+   7.069,
+   7.344
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~868 tris | src kenney_city_industrial/raw/Models/GLB format/building-o.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_o.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_p",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_p",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.936,
+   13.469,
+   5.716
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~1162 tris | src kenney_city_industrial/raw/Models/GLB format/building-p.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_p.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_q",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_q",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   14.159,
+   17.12,
+   7.04
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~2062 tris | src kenney_city_industrial/raw/Models/GLB format/building-q.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_q.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_r",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_r",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   10.176,
+   19.869,
+   11.144
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~1912 tris | src kenney_city_industrial/raw/Models/GLB format/building-r.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_r.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_s",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_s",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.33,
+   16.96,
+   6.694
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~876 tris | src kenney_city_industrial/raw/Models/GLB format/building-s.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_s.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "factory_building_t",
+  "category": "city_buildings_kenney",
+  "collection": "city_buildings_kenney/factory_building_t",
+  "file": "build/city_buildings_kenney.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   11.12,
+   13.774,
+   8.116
+  ],
+  "tags": [
+   "city_buildings_kenney",
+   "building",
+   "industrial",
+   "factory",
+   "warehouse"
+  ],
+  "notes": "Industrial building / factory hall | ~1586 tris | src kenney_city_industrial/raw/Models/GLB format/building-t.glb",
+  "thumb": "thumbs/city_buildings_kenney/factory_building_t.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ }
+]

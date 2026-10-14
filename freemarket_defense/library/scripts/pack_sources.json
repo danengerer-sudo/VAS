@@ -1,0 +1,137 @@
+{
+ "kenney_car_kit": {
+  "page": "https://kenney.nl/assets/car-kit",
+  "download": "https://kenney.nl/media/pages/assets/car-kit/1a312ec241-1775131960/kenney_car-kit.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "kenney_city_commercial": {
+  "page": "https://kenney.nl/assets/city-kit-commercial",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-commercial/a742d900eb-1753115042/kenney_city-kit-commercial_2.1.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "kenney_city_industrial": {
+  "page": "https://kenney.nl/assets/city-kit-industrial",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-industrial/0ec35b139d-1788171848/kenney_city-kit-industrial_2.0.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "kenney_city_roads": {
+  "page": "https://kenney.nl/assets/city-kit-roads",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-roads/74288c9459-1791628607/kenney_city-kit-roads.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "kenney_city_suburban": {
+  "page": "https://kenney.nl/assets/city-kit-suburban",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-suburban/2c871b7af2-1745479373/kenney_city-kit-suburban_20.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "kenney_factory_kit": {
+  "page": "https://kenney.nl/assets/factory-kit",
+  "download": "https://kenney.nl/media/pages/assets/factory-kit/edaac9d4f6-1777639602/kenney_factory-kit_3.0.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "kenney_food_kit": {
+  "page": "https://kenney.nl/assets/food-kit",
+  "download": "https://kenney.nl/media/pages/assets/food-kit/83086fa91c-1719418518/kenney_food-kit.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "kenney_furniture_kit": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "kenney_holiday_kit": {
+  "page": "https://kenney.nl/assets/holiday-kit",
+  "download": "https://kenney.nl/media/pages/assets/holiday-kit/3976a6496a-1733923970/kenney_holiday-kit.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "kenney_mini_market": {
+  "page": "https://kenney.nl/assets/mini-market",
+  "download": "https://kenney.nl/media/pages/assets/mini-market/463f38da51-1729865423/kenney_mini-market.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "kenney_survival_kit": {
+  "page": "https://kenney.nl/assets/survival-kit",
+  "download": "https://kenney.nl/media/pages/assets/survival-kit/4065a8185b-1712149243/kenney_survival-kit.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "kenney_train_kit": {
+  "page": "https://kenney.nl/assets/train-kit",
+  "download": "https://kenney.nl/media/pages/assets/train-kit/cf8521d625-1727040883/kenney_train-kit.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "kenney_watercraft": {
+  "page": "https://kenney.nl/assets/watercraft-kit",
+  "download": "https://kenney.nl/media/pages/assets/watercraft-kit/a335cfed49-1713519620/kenney_watercraft-pack.zip",
+  "license": "CC0 1.0 (Creative Commons Zero)"
+ },
+ "polyhaven": {
+  "page": "https://polyhaven.com/models",
+  "api": "https://api.polyhaven.com/files/<id> (gltf 1k)",
+  "license": "CC0 1.0",
+  "models": {
+   "Barrel_01": "https://polyhaven.com/a/Barrel_01",
+   "Camera_01": "https://polyhaven.com/a/Camera_01",
+   "CashRegister_01": "https://polyhaven.com/a/CashRegister_01",
+   "CoffeeCart_01": "https://polyhaven.com/a/CoffeeCart_01",
+   "Drill_01": "https://polyhaven.com/a/Drill_01",
+   "Lantern_01": "https://polyhaven.com/a/Lantern_01",
+   "Megaphone_01": "https://polyhaven.com/a/Megaphone_01",
+   "SchoolChair_01": "https://polyhaven.com/a/SchoolChair_01",
+   "SchoolDesk_01": "https://polyhaven.com/a/SchoolDesk_01",
+   "Shelf_01": "https://polyhaven.com/a/Shelf_01",
+   "Sofa_01": "https://polyhaven.com/a/Sofa_01",
+   "Television_01": "https://polyhaven.com/a/Television_01",
+   "WetFloorSign_01": "https://polyhaven.com/a/WetFloorSign_01",
+   "WoodenChair_01": "https://polyhaven.com/a/WoodenChair_01",
+   "bananas": "https://polyhaven.com/a/bananas",
+   "barrel_03": "https://polyhaven.com/a/barrel_03",
+   "cardboard_box_01": "https://polyhaven.com/a/cardboard_box_01",
+   "cement_bag": "https://polyhaven.com/a/cement_bag",
+   "classic_laptop": "https://polyhaven.com/a/classic_laptop",
+   "coffee_table_round_01": "https://polyhaven.com/a/coffee_table_round_01",
+   "concrete_road_barrier": "https://polyhaven.com/a/concrete_road_barrier",
+   "croissant": "https://polyhaven.com/a/croissant",
+   "dining_chair_02": "https://polyhaven.com/a/dining_chair_02",
+   "drawer_cabinet": "https://polyhaven.com/a/drawer_cabinet",
+   "exterior_aircon_unit": "https://polyhaven.com/a/exterior_aircon_unit",
+   "fire_hydrant": "https://polyhaven.com/a/fire_hydrant",
+   "food_apple_01": "https://polyhaven.com/a/food_apple_01",
+   "hand_truck": "https://polyhaven.com/a/hand_truck",
+   "korean_public_payphone_01": "https://polyhaven.com/a/korean_public_payphone_01",
+   "lightbulb_01": "https://polyhaven.com/a/lightbulb_01",
+   "metal_office_desk": "https://polyhaven.com/a/metal_office_desk",
+   "metal_toolbox": "https://polyhaven.com/a/metal_toolbox",
+   "metal_trash_can": "https://polyhaven.com/a/metal_trash_can",
+   "mid_century_lounge_chair": "https://polyhaven.com/a/mid_century_lounge_chair",
+   "modern_arm_chair_01": "https://polyhaven.com/a/modern_arm_chair_01",
+   "modular_street_seating": "https://polyhaven.com/a/modular_street_seating",
+   "old_tyre": "https://polyhaven.com/a/old_tyre",
+   "painted_wooden_bench": "https://polyhaven.com/a/painted_wooden_bench",
+   "plastic_crate_01": "https://polyhaven.com/a/plastic_crate_01",
+   "plastic_monobloc_chair_01": "https://polyhaven.com/a/plastic_monobloc_chair_01",
+   "portable_generator": "https://polyhaven.com/a/portable_generator",
+   "potted_plant_01": "https://polyhaven.com/a/potted_plant_01",
+   "propane_tank": "https://polyhaven.com/a/propane_tank",
+   "security_camera_01": "https://polyhaven.com/a/security_camera_01",
+   "sledgehammer_01": "https://polyhaven.com/a/sledgehammer_01",
+   "steel_frame_shelves_01": "https://polyhaven.com/a/steel_frame_shelves_01",
+   "street_lamp_01": "https://polyhaven.com/a/street_lamp_01",
+   "street_lamp_02": "https://polyhaven.com/a/street_lamp_02",
+   "tool_cart": "https://polyhaven.com/a/tool_cart",
+   "trashbag": "https://polyhaven.com/a/trashbag",
+   "utility_box_01": "https://polyhaven.com/a/utility_box_01",
+   "vintage_suitcase": "https://polyhaven.com/a/vintage_suitcase",
+   "wall_clock": "https://polyhaven.com/a/wall_clock",
+   "water_manhole_cover": "https://polyhaven.com/a/water_manhole_cover",
+   "wheelchair_01": "https://polyhaven.com/a/wheelchair_01",
+   "wicker_basket_01": "https://polyhaven.com/a/wicker_basket_01",
+   "wine_bottles_01": "https://polyhaven.com/a/wine_bottles_01",
+   "wooden_crate_01": "https://polyhaven.com/a/wooden_crate_01",
+   "wooden_crate_02": "https://polyhaven.com/a/wooden_crate_02",
+   "wooden_display_shelves_01": "https://polyhaven.com/a/wooden_display_shelves_01",
+   "wooden_ladder": "https://polyhaven.com/a/wooden_ladder",
+   "wooden_picnic_table": "https://polyhaven.com/a/wooden_picnic_table",
+   "wooden_stool_01": "https://polyhaven.com/a/wooden_stool_01"
+  }
+ }
+}

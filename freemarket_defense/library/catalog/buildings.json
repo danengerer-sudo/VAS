@@ -1,0 +1,714 @@
+[
+ {
+  "name": "house_gable",
+  "category": "buildings",
+  "collection": "buildings/house_gable",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   10.6,
+   10.7,
+   10.829
+  ],
+  "tags": [
+   "buildings",
+   "house",
+   "residential",
+   "suburb"
+  ],
+  "notes": "Detached 2-storey house, gable roof, porch. arch_lib.house(roof='gable', storeys=2) | ~3928 tris",
+  "thumb": "thumbs/buildings/house_gable.jpg"
+ },
+ {
+  "name": "house_hip",
+  "category": "buildings",
+  "collection": "buildings/house_hip",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   11.65,
+   12.0,
+   10.34
+  ],
+  "tags": [
+   "buildings",
+   "house",
+   "residential",
+   "suburb"
+  ],
+  "notes": "Detached house, hip roof. arch_lib.house(roof='hip', storeys=2, porch=True, frontage=11.0, depth=9.0, seed=1) | ~3964 tris",
+  "thumb": "thumbs/buildings/house_hip.jpg"
+ },
+ {
+  "name": "house_flat_modern",
+  "category": "buildings",
+  "collection": "buildings/house_flat_modern",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   10.32,
+   12.24,
+   6.63
+  ],
+  "tags": [
+   "buildings",
+   "house",
+   "residential",
+   "modern"
+  ],
+  "notes": "Modern flat-roof house, large windows. arch_lib.house(roof='flat', storeys=2, porch=False, chimneys=0, frontage=12.0, depth=9.0) | ~2154 tris",
+  "thumb": "thumbs/buildings/house_flat_modern.jpg"
+ },
+ {
+  "name": "cottage_1storey",
+  "category": "buildings",
+  "collection": "buildings/cottage_1storey",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   9.6,
+   9.7,
+   7.971
+  ],
+  "tags": [
+   "buildings",
+   "house",
+   "residential",
+   "rural"
+  ],
+  "notes": "Single-storey cottage. arch_lib.house(roof='gable', storeys=1, frontage=9.0, depth=7.0, porch=True, pitch=42) | ~2036 tris",
+  "thumb": "thumbs/buildings/cottage_1storey.jpg"
+ },
+ {
+  "name": "terraced_row",
+  "category": "buildings",
+  "collection": "buildings/terraced_row",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   16.4,
+   28.6,
+   10.97
+  ],
+  "tags": [
+   "buildings",
+   "house",
+   "terrace",
+   "row",
+   "residential"
+  ],
+  "notes": "Row of terraced houses (bay windows). arch_lib.terrace(units=5) | ~10202 tris",
+  "thumb": "thumbs/buildings/terraced_row.jpg"
+ },
+ {
+  "name": "apartment_block",
+  "category": "buildings",
+  "collection": "buildings/apartment_block",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   16.32,
+   32.24,
+   21.8
+  ],
+  "tags": [
+   "buildings",
+   "apartment",
+   "residential",
+   "housing"
+  ],
+  "notes": "Mid-rise apartment block with balconies. arch_lib.apartment(storeys=6) | ~25775 tris",
+  "thumb": "thumbs/buildings/apartment_block.jpg"
+ },
+ {
+  "name": "apartment_tall",
+  "category": "buildings",
+  "collection": "buildings/apartment_tall",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   16.32,
+   24.24,
+   33.8
+  ],
+  "tags": [
+   "buildings",
+   "apartment",
+   "residential",
+   "housing"
+  ],
+  "notes": "Taller slab block. arch_lib.apartment(storeys=10, width=24.0, balconies=True, seed=3) | ~33571 tris",
+  "thumb": "thumbs/buildings/apartment_tall.jpg"
+ },
+ {
+  "name": "office_tower_curtain",
+  "category": "buildings",
+  "collection": "buildings/office_tower_curtain",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   25.65,
+   26.3,
+   67.0
+  ],
+  "tags": [
+   "buildings",
+   "office",
+   "tower",
+   "commercial",
+   "downtown"
+  ],
+  "notes": "Glass curtain-wall office tower with a setback; accent logo band. arch_lib.office_tower(storeys=16, style='curtain') | ~7040 tris",
+  "thumb": "thumbs/buildings/office_tower_curtain.jpg"
+ },
+ {
+  "name": "office_midrise",
+  "category": "buildings",
+  "collection": "buildings/office_midrise",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   21.65,
+   36.3,
+   29.0
+  ],
+  "tags": [
+   "buildings",
+   "office",
+   "commercial"
+  ],
+  "notes": "Low office block (6 storeys). arch_lib.office_tower(storeys=6, style='curtain', tiers=(), width=36.0, depth=18.0, logo=True) | ~4620 tris",
+  "thumb": "thumbs/buildings/office_midrise.jpg"
+ },
+ {
+  "name": "skyscraper_spire",
+  "category": "buildings",
+  "collection": "buildings/skyscraper_spire",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   36.3,
+   36.3,
+   316.0
+  ],
+  "tags": [
+   "buildings",
+   "skyscraper",
+   "tower",
+   "downtown",
+   "finance"
+  ],
+  "notes": "Supertall with spire crown. arch_lib.skyscraper(crown='spire') | ~16876 tris",
+  "thumb": "thumbs/buildings/skyscraper_spire.jpg"
+ },
+ {
+  "name": "skyscraper_deco",
+  "category": "buildings",
+  "collection": "buildings/skyscraper_deco",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   36.3,
+   36.3,
+   245.9
+  ],
+  "tags": [
+   "buildings",
+   "skyscraper",
+   "tower",
+   "downtown",
+   "finance"
+  ],
+  "notes": "Art-deco stepped crown. arch_lib.skyscraper(crown='deco', storeys=50, taper=(1.0, 0.82, 0.66)) | ~17376 tris",
+  "thumb": "thumbs/buildings/skyscraper_deco.jpg"
+ },
+ {
+  "name": "storefront_shop",
+  "category": "buildings",
+  "collection": "buildings/storefront_shop",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   15.83,
+   7.6,
+   11.93
+  ],
+  "tags": [
+   "buildings",
+   "shop",
+   "retail",
+   "storefront",
+   "high street"
+  ],
+  "notes": "Shop: display window, accent awning + sign panel. arch_lib.storefront(sign='SHOP') | ~3556 tris",
+  "thumb": "thumbs/buildings/storefront_shop.jpg"
+ },
+ {
+  "name": "storefront_market",
+  "category": "buildings",
+  "collection": "buildings/storefront_market",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   15.83,
+   9.6,
+   8.73
+  ],
+  "tags": [
+   "buildings",
+   "shop",
+   "retail",
+   "storefront"
+  ],
+  "notes": "Shop with striped awning, 2 storeys. arch_lib.storefront(sign='MARKET', storeys=2, frontage=9.0, stripes=7) | ~3506 tris",
+  "thumb": "thumbs/buildings/storefront_market.jpg"
+ },
+ {
+  "name": "corner_cafe",
+  "category": "buildings",
+  "collection": "buildings/corner_cafe",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   16.85,
+   14.18,
+   8.38
+  ],
+  "tags": [
+   "buildings",
+   "cafe",
+   "retail",
+   "corner",
+   "high street"
+  ],
+  "notes": "Corner caf\u00e9, striped awnings, terrace. arch_lib.corner_cafe() | ~8710 tris",
+  "thumb": "thumbs/buildings/corner_cafe.jpg"
+ },
+ {
+  "name": "bank_classical",
+  "category": "buildings",
+  "collection": "buildings/bank_classical",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   38.2,
+   25.0,
+   18.615
+  ],
+  "tags": [
+   "buildings",
+   "bank",
+   "finance",
+   "classical",
+   "iconic"
+  ],
+  "notes": "Classical bank: steps, columns, pediment with accent emblem, frieze text, bronze doors. arch_lib.classical(text='BANK') | ~18692 tris",
+  "thumb": "thumbs/buildings/bank_classical.jpg"
+ },
+ {
+  "name": "stock_exchange",
+  "category": "buildings",
+  "collection": "buildings/stock_exchange",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   38.2,
+   35.0,
+   22.473
+  ],
+  "tags": [
+   "buildings",
+   "exchange",
+   "finance",
+   "classical",
+   "iconic"
+  ],
+  "notes": "Stock exchange: 8 columns, ionic. arch_lib.classical(text='STOCK EXCHANGE', columns=8, width=34.0, depth=30.0, height=15.0, order='ionic') | ~24665 tris",
+  "thumb": "thumbs/buildings/stock_exchange.jpg"
+ },
+ {
+  "name": "central_bank",
+  "category": "buildings",
+  "collection": "buildings/central_bank",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   36.2,
+   62.7,
+   19.615
+  ],
+  "tags": [
+   "buildings",
+   "central bank",
+   "finance",
+   "government",
+   "classical"
+  ],
+  "notes": "Central bank: portico, attic storey, side wings. arch_lib.classical(text='CENTRAL BANK', columns=6, width=26.0, depth=28.0, height=13.0, wings=1, attic=3.0, order='ionic') | ~36174 tris",
+  "thumb": "thumbs/buildings/central_bank.jpg"
+ },
+ {
+  "name": "parliament_dome",
+  "category": "buildings",
+  "collection": "buildings/parliament_dome",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   38.2,
+   90.7,
+   41.64
+  ],
+  "tags": [
+   "buildings",
+   "parliament",
+   "government",
+   "dome",
+   "classical"
+  ],
+  "notes": "Parliament: domed central block with wings. arch_lib.classical(text='', columns=8, width=34.0, depth=30.0, height=14.0, dome=True, wings=1, wing_w=28.0, emblem=True) | ~56487 tris",
+  "thumb": "thumbs/buildings/parliament_dome.jpg"
+ },
+ {
+  "name": "factory_sawtooth",
+  "category": "buildings",
+  "collection": "buildings/factory_sawtooth",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   65.65,
+   30.7,
+   32.5
+  ],
+  "tags": [
+   "buildings",
+   "factory",
+   "industrial",
+   "manufacturing"
+  ],
+  "notes": "Factory: sawtooth north-light roof, chimney stacks, office block. arch_lib.factory() | ~18769 tris",
+  "thumb": "thumbs/buildings/factory_sawtooth.jpg"
+ },
+ {
+  "name": "port_terminal_shed",
+  "category": "buildings",
+  "collection": "buildings/port_terminal_shed",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   98.0,
+   40.4,
+   15.67
+  ],
+  "tags": [
+   "buildings",
+   "port",
+   "shed",
+   "logistics",
+   "trade"
+  ],
+  "notes": "Barrel-vault transit shed. arch_lib.port_shed() | ~12812 tris",
+  "thumb": "thumbs/buildings/port_terminal_shed.jpg"
+ },
+ {
+  "name": "church",
+  "category": "buildings",
+  "collection": "buildings/church",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   36.416,
+   13.999,
+   42.423
+  ],
+  "tags": [
+   "buildings",
+   "church",
+   "civic",
+   "religion",
+   "town"
+  ],
+  "notes": "Gothic-ish church: spire, pointed windows. arch_lib.church() | ~16361 tris",
+  "thumb": "thumbs/buildings/church.jpg"
+ },
+ {
+  "name": "town_hall",
+  "category": "buildings",
+  "collection": "buildings/town_hall",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   19.806,
+   32.8,
+   45.74
+  ],
+  "tags": [
+   "buildings",
+   "town hall",
+   "civic",
+   "government",
+   "clock"
+  ],
+  "notes": "Town hall with clock tower. arch_lib.town_hall() | ~31861 tris",
+  "thumb": "thumbs/buildings/town_hall.jpg"
+ },
+ {
+  "name": "school",
+  "category": "buildings",
+  "collection": "buildings/school",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   46.96,
+   40.24,
+   9.14
+  ],
+  "tags": [
+   "buildings",
+   "school",
+   "civic",
+   "education"
+  ],
+  "notes": "L-shaped school, ribbon windows, flag. arch_lib.school() | ~11559 tris",
+  "thumb": "thumbs/buildings/school.jpg"
+ },
+ {
+  "name": "castle",
+  "category": "buildings",
+  "collection": "buildings/castle",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   53.6,
+   53.6,
+   31.4
+  ],
+  "tags": [
+   "buildings",
+   "castle",
+   "history",
+   "medieval",
+   "fortification"
+  ],
+  "notes": "Curtain walls, towers, gatehouse, keep. arch_lib.castle() | ~26202 tris",
+  "thumb": "thumbs/buildings/castle.jpg"
+ },
+ {
+  "name": "castle_roofed",
+  "category": "buildings",
+  "collection": "buildings/castle_roofed",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   45.6,
+   45.6,
+   31.4
+  ],
+  "tags": [
+   "buildings",
+   "castle",
+   "history",
+   "medieval"
+  ],
+  "notes": "Castle variant with conical tower roofs. arch_lib.castle(roofs=True, size=36.0) | ~23214 tris",
+  "thumb": "thumbs/buildings/castle_roofed.jpg"
+ },
+ {
+  "name": "star_fort",
+  "category": "buildings",
+  "collection": "buildings/star_fort",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   131.246,
+   124.822,
+   22.14
+  ],
+  "tags": [
+   "buildings",
+   "fort",
+   "history",
+   "fortification",
+   "early modern"
+  ],
+  "notes": "Bastioned star fort with moat. arch_lib.star_fort() | ~8590 tris",
+  "thumb": "thumbs/buildings/star_fort.jpg"
+ },
+ {
+  "name": "office_tower_punched",
+  "category": "buildings",
+  "collection": "buildings/office_tower_punched",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   27.64,
+   28.28,
+   59.4
+  ],
+  "tags": [
+   "buildings",
+   "office",
+   "tower",
+   "commercial",
+   "downtown"
+  ],
+  "notes": "Office tower with punched windows, two setbacks. arch_lib.office_tower(storeys=14, style='punched', tiers=((0.55, 0.85), (0.85, 0.65)), width=28.0, depth=24.0) | ~49838 tris",
+  "thumb": "thumbs/buildings/office_tower_punched.jpg"
+ },
+ {
+  "name": "skyscraper_pyramid",
+  "category": "buildings",
+  "collection": "buildings/skyscraper_pyramid",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   32.3,
+   32.3,
+   227.42
+  ],
+  "tags": [
+   "buildings",
+   "skyscraper",
+   "tower",
+   "downtown",
+   "finance"
+  ],
+  "notes": "Glass pyramid crown. arch_lib.skyscraper(crown='pyramid', storeys=44, width=32.0, taper=(1.0, 0.9, 0.8)) | ~13536 tris",
+  "thumb": "thumbs/buildings/skyscraper_pyramid.jpg"
+ },
+ {
+  "name": "warehouse",
+  "category": "buildings",
+  "collection": "buildings/warehouse",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   40.0,
+   40.6,
+   11.353
+  ],
+  "tags": [
+   "buildings",
+   "warehouse",
+   "logistics",
+   "industrial"
+  ],
+  "notes": "Portal-frame warehouse with dock doors. arch_lib.warehouse() | ~4976 tris",
+  "thumb": "thumbs/buildings/warehouse.jpg"
+ },
+ {
+  "name": "gas_station",
+  "category": "buildings",
+  "collection": "buildings/gas_station",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   27.8,
+   28.0,
+   7.0
+  ],
+  "tags": [
+   "buildings",
+   "gas station",
+   "fuel",
+   "retail",
+   "energy"
+  ],
+  "notes": "Canopy, pumps, kiosk, price pylon. arch_lib.gas_station() | ~6840 tris",
+  "thumb": "thumbs/buildings/gas_station.jpg"
+ },
+ {
+  "name": "hospital",
+  "category": "buildings",
+  "collection": "buildings/hospital",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   44.17,
+   60.24,
+   38.08
+  ],
+  "tags": [
+   "buildings",
+   "hospital",
+   "civic",
+   "health"
+  ],
+  "notes": "Hospital tower + podium, accent cross, helipad. arch_lib.hospital() | ~60132 tris",
+  "thumb": "thumbs/buildings/hospital.jpg"
+ },
+ {
+  "name": "farm_barn_silo",
+  "category": "buildings",
+  "collection": "buildings/farm_barn_silo",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   21.55,
+   19.1,
+   17.9
+  ],
+  "tags": [
+   "buildings",
+   "farm",
+   "barn",
+   "rural",
+   "agriculture"
+  ],
+  "notes": "Gambrel barn with accent doors + silo. arch_lib.barn() | ~5589 tris",
+  "thumb": "thumbs/buildings/farm_barn_silo.jpg"
+ },
+ {
+  "name": "grain_silos",
+  "category": "buildings",
+  "collection": "buildings/grain_silos",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   7.14,
+   37.32,
+   33.0
+  ],
+  "tags": [
+   "buildings",
+   "farm",
+   "silo",
+   "agriculture",
+   "industrial"
+  ],
+  "notes": "Grain elevator silo row. arch_lib.silo_group() | ~2600 tris",
+  "thumb": "thumbs/buildings/grain_silos.jpg"
+ }
+]

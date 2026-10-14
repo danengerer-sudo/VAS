@@ -1,0 +1,970 @@
+[
+ {
+  "name": "city_block_mixed",
+  "category": "city",
+  "collection": "city/city_block_mixed",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   85.7,
+   61.7,
+   22.25
+  ],
+  "tags": [
+   "city",
+   "block",
+   "city",
+   "street",
+   "mixed use"
+  ],
+  "notes": "84x60 m block: corner caf\u00e9s/apartments, shop rows, street trees+lamps, sidewalk+kerb. arch_lib.city_block(style='mixed', seed=1) | ~138632 tris",
+  "thumb": "thumbs/city/city_block_mixed.jpg"
+ },
+ {
+  "name": "city_block_downtown",
+  "category": "city",
+  "collection": "city/city_block_downtown",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   90.5,
+   70.5,
+   222.95
+  ],
+  "tags": [
+   "city",
+   "block",
+   "city",
+   "downtown",
+   "towers",
+   "finance"
+  ],
+  "notes": "Downtown block: corner towers + skyscraper + infill offices. arch_lib.city_block(style='downtown', w=90.0, d=70.0, seed=2) | ~40872 tris",
+  "thumb": "thumbs/city/city_block_downtown.jpg"
+ },
+ {
+  "name": "city_block_residential",
+  "category": "city",
+  "collection": "city/city_block_residential",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   96.5,
+   64.5,
+   11.67
+  ],
+  "tags": [
+   "city",
+   "block",
+   "suburb",
+   "houses",
+   "residential"
+  ],
+  "notes": "Suburban block: detached houses facing all streets, picket fences, trees. arch_lib.city_block(style='residential', w=96.0, d=64.0, seed=3) | ~121820 tris",
+  "thumb": "thumbs/city/city_block_residential.jpg"
+ },
+ {
+  "name": "road_straight_2lane",
+  "category": "city",
+  "collection": "city/road_straight_2lane",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   24.0,
+   13.5,
+   0.471
+  ],
+  "tags": [
+   "city",
+   "road",
+   "street",
+   "tile"
+  ],
+  "notes": "24 m tile, dashed centre line; tiles in 6 m. arch_lib.road_straight() | ~748 tris",
+  "thumb": "thumbs/city/road_straight_2lane.jpg"
+ },
+ {
+  "name": "road_straight_4lane",
+  "category": "city",
+  "collection": "city/road_straight_4lane",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   24.0,
+   20.5,
+   0.471
+  ],
+  "tags": [
+   "city",
+   "road",
+   "avenue",
+   "tile"
+  ],
+  "notes": "4-lane avenue tile, double centre line. arch_lib.road_straight(lanes=4, length=24.0) | ~1012 tris",
+  "thumb": "thumbs/city/road_straight_4lane.jpg"
+ },
+ {
+  "name": "road_intersection",
+  "category": "city",
+  "collection": "city/road_intersection",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   25.5,
+   25.5,
+   0.47
+  ],
+  "tags": [
+   "city",
+   "road",
+   "junction",
+   "crosswalk",
+   "tile"
+  ],
+  "notes": "4-way junction: rounded kerbs, zebra crossings, stop lines. arch_lib.road_intersection() | ~2760 tris",
+  "thumb": "thumbs/city/road_intersection.jpg"
+ },
+ {
+  "name": "road_t_junction",
+  "category": "city",
+  "collection": "city/road_t_junction",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   25.508,
+   25.508,
+   0.478
+  ],
+  "tags": [
+   "city",
+   "road",
+   "junction",
+   "tile"
+  ],
+  "notes": "T-junction (closed -Y side). arch_lib.road_intersection(arms=3) | ~1886 tris",
+  "thumb": "thumbs/city/road_t_junction.jpg"
+ },
+ {
+  "name": "roundabout",
+  "category": "city",
+  "collection": "city/roundabout",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   60.0,
+   60.0,
+   7.79
+  ],
+  "tags": [
+   "city",
+   "road",
+   "roundabout",
+   "junction"
+  ],
+  "notes": "Roundabout with planted island + tree, 4 arms. arch_lib.roundabout() | ~12187 tris",
+  "thumb": "thumbs/city/roundabout.jpg"
+ },
+ {
+  "name": "parking_lot",
+  "category": "city",
+  "collection": "city/parking_lot",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   32.521,
+   35.6,
+   8.902
+  ],
+  "tags": [
+   "city",
+   "parking",
+   "car park",
+   "lot"
+  ],
+  "notes": "20-bay surface car park, wheel stops, lamps, P sign. arch_lib.parking_lot() | ~5626 tris",
+  "thumb": "thumbs/city/parking_lot.jpg"
+ },
+ {
+  "name": "plaza_fountain",
+  "category": "city",
+  "collection": "city/plaza_fountain",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   30.0,
+   30.0,
+   8.335
+  ],
+  "tags": [
+   "city",
+   "plaza",
+   "square",
+   "fountain",
+   "public space"
+  ],
+  "notes": "Paved square with tiered fountain, benches, planted trees, classic lamps. arch_lib.plaza_fountain() | ~35644 tris",
+  "thumb": "thumbs/city/plaza_fountain.jpg"
+ },
+ {
+  "name": "park",
+  "category": "city",
+  "collection": "city/park",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   60.0,
+   44.0,
+   10.894
+  ],
+  "tags": [
+   "city",
+   "park",
+   "green",
+   "trees",
+   "pond"
+  ],
+  "notes": "Park: lawns, paths, pond, trees, benches. arch_lib.park() | ~92156 tris",
+  "thumb": "thumbs/city/park.jpg"
+ },
+ {
+  "name": "street_lamp",
+  "category": "city",
+  "collection": "city/street_lamp",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   2.61,
+   0.36,
+   8.6
+  ],
+  "tags": [
+   "city",
+   "street lamp",
+   "lighting",
+   "street furniture"
+  ],
+  "notes": "Modern lamp post, luminaire toward +X (LIB_Light lens). arch_lib.street_lamp(mb, h=8) | ~368 tris",
+  "thumb": "thumbs/city/street_lamp.jpg"
+ },
+ {
+  "name": "street_lamp_double",
+  "category": "city",
+  "collection": "city/street_lamp_double",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   4.9,
+   0.36,
+   9.6
+  ],
+  "tags": [
+   "city",
+   "street lamp",
+   "lighting"
+  ],
+  "notes": "Double-arm lamp. arch_lib.street_lamp(mb, 9, double=True) | ~552 tris",
+  "thumb": "thumbs/city/street_lamp_double.jpg"
+ },
+ {
+  "name": "street_lamp_classic",
+  "category": "city",
+  "collection": "city/street_lamp_classic",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.697,
+   0.697,
+   4.6
+  ],
+  "tags": [
+   "city",
+   "street lamp",
+   "lighting",
+   "old town"
+  ],
+  "notes": "Classic lantern post. arch_lib.street_lamp(mb, 4.2, kind='classic') | ~614 tris",
+  "thumb": "thumbs/city/street_lamp_classic.jpg"
+ },
+ {
+  "name": "traffic_light_mast",
+  "category": "city",
+  "collection": "city/traffic_light_mast",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.72,
+   6.3,
+   6.4
+  ],
+  "tags": [
+   "city",
+   "traffic light",
+   "signal",
+   "junction"
+  ],
+  "notes": "Mast-arm signal, heads face +X, arm over +Y. arch_lib.traffic_light(mb, 'mast', arm=6) | ~1920 tris",
+  "thumb": "thumbs/city/traffic_light_mast.jpg"
+ },
+ {
+  "name": "traffic_light_post",
+  "category": "city",
+  "collection": "city/traffic_light_post",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.67,
+   0.6,
+   3.6
+  ],
+  "tags": [
+   "city",
+   "traffic light",
+   "signal"
+  ],
+  "notes": "Post-mounted signal. arch_lib.traffic_light(mb, 'post') | ~792 tris",
+  "thumb": "thumbs/city/traffic_light_post.jpg"
+ },
+ {
+  "name": "bus_stop",
+  "category": "city",
+  "collection": "city/bus_stop",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   2.435,
+   5.38,
+   3.02
+  ],
+  "tags": [
+   "city",
+   "bus stop",
+   "shelter",
+   "transit",
+   "street furniture"
+  ],
+  "notes": "Glass shelter, bench, lit ad panel, accent stop roundel. arch_lib.bus_stop() | ~2116 tris",
+  "thumb": "thumbs/city/bus_stop.jpg"
+ },
+ {
+  "name": "bench",
+  "category": "city",
+  "collection": "city/bench",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.621,
+   1.8,
+   0.855
+  ],
+  "tags": [
+   "city",
+   "bench",
+   "street furniture",
+   "park"
+  ],
+  "notes": "Park bench. arch_lib.bench(mb, 1.8) | ~532 tris",
+  "thumb": "thumbs/city/bench.jpg"
+ },
+ {
+  "name": "bin_round",
+  "category": "city",
+  "collection": "city/bin_round",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.64,
+   0.64,
+   1.1
+  ],
+  "tags": [
+   "city",
+   "bin",
+   "litter",
+   "street furniture"
+  ],
+  "notes": "Litter bin. arch_lib.bin_(mb) | ~372 tris",
+  "thumb": "thumbs/city/bin_round.jpg"
+ },
+ {
+  "name": "bin_wheelie",
+  "category": "city",
+  "collection": "city/bin_wheelie",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.76,
+   0.78,
+   1.058
+  ],
+  "tags": [
+   "city",
+   "bin",
+   "wheelie bin"
+  ],
+  "notes": "Wheelie bin, accent lid. arch_lib.bin_(mb, kind='wheelie') | ~320 tris",
+  "thumb": "thumbs/city/bin_wheelie.jpg"
+ },
+ {
+  "name": "fire_hydrant",
+  "category": "city",
+  "collection": "city/fire_hydrant",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.41,
+   0.312,
+   0.86
+  ],
+  "tags": [
+   "city",
+   "hydrant",
+   "street furniture"
+  ],
+  "notes": "Fire hydrant (LIB_Accent). | ~738 tris",
+  "thumb": "thumbs/city/fire_hydrant.jpg"
+ },
+ {
+  "name": "tree_round",
+  "category": "city",
+  "collection": "city/tree_round",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   5.424,
+   5.03,
+   7.695
+  ],
+  "tags": [
+   "city",
+   "tree",
+   "vegetation",
+   "park",
+   "round"
+  ],
+  "notes": "Stylised white tree. arch_lib.tree(mb, 'round', h=8.0, seed=7) | ~5732 tris",
+  "thumb": "thumbs/city/tree_round.jpg"
+ },
+ {
+  "name": "tree_tall",
+  "category": "city",
+  "collection": "city/tree_tall",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   4.179,
+   3.876,
+   11.137
+  ],
+  "tags": [
+   "city",
+   "tree",
+   "vegetation",
+   "park",
+   "tall"
+  ],
+  "notes": "Stylised white tree. arch_lib.tree(mb, 'tall', h=11.0, seed=7) | ~2464 tris",
+  "thumb": "thumbs/city/tree_tall.jpg"
+ },
+ {
+  "name": "tree_wide",
+  "category": "city",
+  "collection": "city/tree_wide",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   8.054,
+   8.315,
+   9.422
+  ],
+  "tags": [
+   "city",
+   "tree",
+   "vegetation",
+   "park",
+   "wide"
+  ],
+  "notes": "Stylised white tree. arch_lib.tree(mb, 'wide', h=9.0, seed=7) | ~10968 tris",
+  "thumb": "thumbs/city/tree_wide.jpg"
+ },
+ {
+  "name": "tree_small",
+  "category": "city",
+  "collection": "city/tree_small",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   3.377,
+   3.298,
+   4.788
+  ],
+  "tags": [
+   "city",
+   "tree",
+   "vegetation",
+   "park",
+   "small"
+  ],
+  "notes": "Stylised white tree. arch_lib.tree(mb, 'small', h=5.5, seed=7) | ~4808 tris",
+  "thumb": "thumbs/city/tree_small.jpg"
+ },
+ {
+  "name": "tree_conifer",
+  "category": "city",
+  "collection": "city/tree_conifer",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   5.76,
+   5.76,
+   12.0
+  ],
+  "tags": [
+   "city",
+   "tree",
+   "vegetation",
+   "park",
+   "conifer"
+  ],
+  "notes": "Stylised white tree. arch_lib.tree(mb, 'conifer', h=12.0, seed=7) | ~262 tris",
+  "thumb": "thumbs/city/tree_conifer.jpg"
+ },
+ {
+  "name": "bridge_beam",
+  "category": "city",
+  "collection": "city/bridge_beam",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   106.0,
+   13.8,
+   12.3
+  ],
+  "tags": [
+   "city",
+   "bridge",
+   "beam bridge",
+   "road",
+   "infrastructure"
+  ],
+  "notes": "3-span girder bridge; params span, spans, width, clearance. arch_lib.beam_bridge() | ~1628 tris",
+  "thumb": "thumbs/city/bridge_beam.jpg"
+ },
+ {
+  "name": "bridge_arch",
+  "category": "city",
+  "collection": "city/bridge_arch",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   174.0,
+   17.0,
+   35.125
+  ],
+  "tags": [
+   "city",
+   "bridge",
+   "arch bridge",
+   "infrastructure"
+  ],
+  "notes": "Open-spandrel concrete deck arch; params span, rise, width, approach. arch_lib.arch_bridge() | ~12600 tris",
+  "thumb": "thumbs/city/bridge_arch.jpg"
+ },
+ {
+  "name": "bridge_masonry",
+  "category": "city",
+  "collection": "city/bridge_masonry",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   60.0,
+   12.159,
+   11.775
+  ],
+  "tags": [
+   "city",
+   "bridge",
+   "stone",
+   "history",
+   "arch"
+  ],
+  "notes": "Historic 3-arch stone bridge; params arches, span, pier, width. arch_lib.masonry_bridge() | ~916 tris",
+  "thumb": "thumbs/city/bridge_masonry.jpg"
+ },
+ {
+  "name": "bridge_suspension",
+  "category": "city",
+  "collection": "city/bridge_suspension",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   578.0,
+   34.4,
+   76.734
+  ],
+  "tags": [
+   "city",
+   "bridge",
+   "suspension bridge",
+   "infrastructure",
+   "iconic"
+  ],
+  "notes": "Suspension bridge, 300 m main span; params main, side_f, width, deck_h, sag_f. arch_lib.suspension_bridge() | ~37284 tris",
+  "thumb": "thumbs/city/bridge_suspension.jpg"
+ },
+ {
+  "name": "wall_concrete",
+  "category": "city",
+  "collection": "city/wall_concrete",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.1,
+   0.6,
+   2.7
+  ],
+  "tags": [
+   "city",
+   "wall",
+   "boundary"
+  ],
+  "notes": "12 m wall with pilasters + coping. arch_lib.wall_segment() | ~572 tris",
+  "thumb": "thumbs/city/wall_concrete.jpg"
+ },
+ {
+  "name": "fence_picket",
+  "category": "city",
+  "collection": "city/fence_picket",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   10.0,
+   0.112,
+   0.996
+  ],
+  "tags": [
+   "city",
+   "fence",
+   "picket",
+   "garden"
+  ],
+  "notes": "10 m picket fence. arch_lib.picket_fence() | ~3716 tris",
+  "thumb": "thumbs/city/fence_picket.jpg"
+ },
+ {
+  "name": "fence_security",
+  "category": "city",
+  "collection": "city/fence_security",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.4,
+   0.749,
+   3.965
+  ],
+  "tags": [
+   "city",
+   "fence",
+   "security",
+   "border",
+   "barbed wire"
+  ],
+  "notes": "Weld-mesh security fence with concertina wire. arch_lib.security_fence() | ~2404 tris",
+  "thumb": "thumbs/city/fence_security.jpg"
+ },
+ {
+  "name": "border_wall",
+  "category": "city",
+  "collection": "city/border_wall",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   20.0,
+   1.2,
+   6.6
+  ],
+  "tags": [
+   "city",
+   "wall",
+   "border",
+   "bollard"
+  ],
+  "notes": "6 m steel bollard border wall. arch_lib.border_wall() | ~3344 tris",
+  "thumb": "thumbs/city/border_wall.jpg"
+ },
+ {
+  "name": "jersey_barrier",
+  "category": "city",
+  "collection": "city/jersey_barrier",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   3.8,
+   0.6,
+   0.81
+  ],
+  "tags": [
+   "city",
+   "barrier",
+   "concrete",
+   "checkpoint"
+  ],
+  "notes": "Concrete jersey barrier 3.8 m. arch_lib.jersey_barrier(mb) | ~76 tris",
+  "thumb": "thumbs/city/jersey_barrier.jpg"
+ },
+ {
+  "name": "checkpoint_booth",
+  "category": "city",
+  "collection": "city/checkpoint_booth",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   16.5,
+   10.0,
+   3.7
+  ],
+  "tags": [
+   "city",
+   "checkpoint",
+   "booth",
+   "boom gate",
+   "border",
+   "security"
+  ],
+  "notes": "Guard booth, striped boom gate, jersey barriers, stop sign. arch_lib.checkpoint_booth() | ~2966 tris",
+  "thumb": "thumbs/city/checkpoint_booth.jpg"
+ },
+ {
+  "name": "border_checkpoint",
+  "category": "city",
+  "collection": "city/border_checkpoint",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   40.0,
+   30.349,
+   9.44
+  ],
+  "tags": [
+   "city",
+   "border",
+   "checkpoint",
+   "customs",
+   "trade",
+   "iconic"
+  ],
+  "notes": "Border crossing canopy over lanes with booths, gates, fences, flags. arch_lib.border_checkpoint() | ~29850 tris",
+  "thumb": "thumbs/city/border_checkpoint.jpg"
+ },
+ {
+  "name": "wind_turbine",
+  "category": "city",
+  "collection": "city/wind_turbine",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   13.6,
+   100.709,
+   148.5
+  ],
+  "tags": [
+   "city",
+   "wind turbine",
+   "energy",
+   "renewable"
+  ],
+  "notes": "90 m hub, 58 m blades, rotor faces +X. arch_lib.wind_turbine() | ~1552 tris",
+  "thumb": "thumbs/city/wind_turbine.jpg"
+ },
+ {
+  "name": "power_pylon",
+  "category": "city",
+  "collection": "city/power_pylon",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   9.0,
+   21.185,
+   42.078
+  ],
+  "tags": [
+   "city",
+   "pylon",
+   "power",
+   "electricity",
+   "grid"
+  ],
+  "notes": "42 m lattice transmission tower. arch_lib.power_pylon() | ~2904 tris",
+  "thumb": "thumbs/city/power_pylon.jpg"
+ },
+ {
+  "name": "power_line",
+  "category": "city",
+  "collection": "city/power_line",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   229.0,
+   21.185,
+   42.078
+  ],
+  "tags": [
+   "city",
+   "power line",
+   "pylon",
+   "electricity",
+   "grid"
+  ],
+  "notes": "3 pylons with sagging conductors. arch_lib.power_line() | ~12264 tris",
+  "thumb": "thumbs/city/power_line.jpg"
+ },
+ {
+  "name": "oil_pumpjack",
+  "category": "city",
+  "collection": "city/oil_pumpjack",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.2,
+   2.4,
+   7.166
+  ],
+  "tags": [
+   "city",
+   "oil",
+   "pumpjack",
+   "energy",
+   "extraction"
+  ],
+  "notes": "Nodding donkey; accent horsehead. arch_lib.pumpjack() | ~1616 tris",
+  "thumb": "thumbs/city/oil_pumpjack.jpg"
+ },
+ {
+  "name": "oil_derrick",
+  "category": "city",
+  "collection": "city/oil_derrick",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   42.0,
+   24.5,
+   44.211
+  ],
+  "tags": [
+   "city",
+   "oil",
+   "drilling rig",
+   "derrick",
+   "energy"
+  ],
+  "notes": "Drilling rig with lattice derrick. arch_lib.oil_derrick() | ~2212 tris",
+  "thumb": "thumbs/city/oil_derrick.jpg"
+ },
+ {
+  "name": "refinery_tank",
+  "category": "city",
+  "collection": "city/refinery_tank",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   44.04,
+   44.04,
+   16.0
+  ],
+  "tags": [
+   "city",
+   "oil",
+   "tank",
+   "refinery",
+   "storage"
+  ],
+  "notes": "Storage tank, spiral stair, bund wall. arch_lib.refinery_tank() | ~7324 tris",
+  "thumb": "thumbs/city/refinery_tank.jpg"
+ },
+ {
+  "name": "storage_spheres",
+  "category": "city",
+  "collection": "city/storage_spheres",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   39.893,
+   17.893,
+   19.2
+  ],
+  "tags": [
+   "city",
+   "gas",
+   "lpg",
+   "refinery",
+   "storage"
+  ],
+  "notes": "Pair of LPG spheres on legs. arch_lib.storage_spheres() | ~4160 tris",
+  "thumb": "thumbs/city/storage_spheres.jpg"
+ },
+ {
+  "name": "refinery_unit",
+  "category": "city",
+  "collection": "city/refinery_unit",
+  "file": "build/city.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   48.038,
+   46.45,
+   64.845
+  ],
+  "tags": [
+   "city",
+   "oil",
+   "refinery",
+   "industry",
+   "flare"
+  ],
+  "notes": "Distillation columns, pipe rack, furnace, flare stack with LIB_Fire flame. arch_lib.refinery_unit() | ~12706 tris",
+  "thumb": "thumbs/city/refinery_unit.jpg"
+ }
+]

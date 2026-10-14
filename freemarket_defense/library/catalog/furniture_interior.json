@@ -1,0 +1,165 @@
+[
+ {
+  "name": "desk",
+  "category": "furniture_interior",
+  "collection": "furniture_interior/desk",
+  "file": "build/furniture_interior.blend",
+  "source": "Kenney Furniture Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.745,
+   1.396,
+   0.73
+  ],
+  "tags": [
+   "furniture_interior",
+   "furniture",
+   "interior",
+   "office",
+   "desk"
+  ],
+  "notes": "Furniture Kit, 1 unit = 1.9 m | ~198 tris | src kenney_furniture_kit/raw/Models/GLTF format/desk.glb",
+  "thumb": "thumbs/furniture_interior/desk.jpg",
+  "source_url": "https://kenney.nl/assets/furniture-kit"
+ },
+ {
+  "name": "chair_desk",
+  "category": "furniture_interior",
+  "collection": "furniture_interior/chair_desk",
+  "file": "build/furniture_interior.blend",
+  "source": "Kenney Furniture Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.597,
+   0.636,
+   1.154
+  ],
+  "tags": [
+   "furniture_interior",
+   "furniture",
+   "interior",
+   "office",
+   "chair"
+  ],
+  "notes": "Furniture Kit, 1 unit = 1.9 m | ~588 tris | src kenney_furniture_kit/raw/Models/GLTF format/chairDesk.glb",
+  "thumb": "thumbs/furniture_interior/chair_desk.jpg",
+  "source_url": "https://kenney.nl/assets/furniture-kit"
+ },
+ {
+  "name": "computer_screen",
+  "category": "furniture_interior",
+  "collection": "furniture_interior/computer_screen",
+  "file": "build/furniture_interior.blend",
+  "source": "Kenney Furniture Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.198,
+   0.746,
+   0.559
+  ],
+  "tags": [
+   "furniture_interior",
+   "furniture",
+   "interior",
+   "office",
+   "computer",
+   "screen"
+  ],
+  "notes": "Furniture Kit, 1 unit = 1.9 m | ~72 tris | src kenney_furniture_kit/raw/Models/GLTF format/computerScreen.glb",
+  "thumb": "thumbs/furniture_interior/computer_screen.jpg",
+  "source_url": "https://kenney.nl/assets/furniture-kit"
+ },
+ {
+  "name": "lounge_sofa",
+  "category": "furniture_interior",
+  "collection": "furniture_interior/lounge_sofa",
+  "file": "build/furniture_interior.blend",
+  "source": "Kenney Furniture Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.779,
+   1.862,
+   0.874
+  ],
+  "tags": [
+   "furniture_interior",
+   "furniture",
+   "interior",
+   "home",
+   "sofa"
+  ],
+  "notes": "Furniture Kit, 1 unit = 1.9 m | ~128 tris | src kenney_furniture_kit/raw/Models/GLTF format/loungeSofa.glb",
+  "thumb": "thumbs/furniture_interior/lounge_sofa.jpg",
+  "source_url": "https://kenney.nl/assets/furniture-kit"
+ },
+ {
+  "name": "bed_double",
+  "category": "furniture_interior",
+  "collection": "furniture_interior/bed_double",
+  "file": "build/furniture_interior.blend",
+  "source": "Kenney Furniture Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.138,
+   1.816,
+   0.712
+  ],
+  "tags": [
+   "furniture_interior",
+   "furniture",
+   "interior",
+   "home",
+   "bed"
+  ],
+  "notes": "Furniture Kit, 1 unit = 1.9 m | ~264 tris | src kenney_furniture_kit/raw/Models/GLTF format/bedDouble.glb",
+  "thumb": "thumbs/furniture_interior/bed_double.jpg",
+  "source_url": "https://kenney.nl/assets/furniture-kit"
+ },
+ {
+  "name": "kitchen_fridge",
+  "category": "furniture_interior",
+  "collection": "furniture_interior/kitchen_fridge",
+  "file": "build/furniture_interior.blend",
+  "source": "Kenney Furniture Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.555,
+   0.817,
+   1.748
+  ],
+  "tags": [
+   "furniture_interior",
+   "furniture",
+   "interior",
+   "kitchen",
+   "appliance"
+  ],
+  "notes": "Furniture Kit, 1 unit = 1.9 m | ~250 tris | src kenney_furniture_kit/raw/Models/GLTF format/kitchenFridge.glb",
+  "thumb": "thumbs/furniture_interior/kitchen_fridge.jpg",
+  "source_url": "https://kenney.nl/assets/furniture-kit"
+ },
+ {
+  "name": "wall_doorway",
+  "category": "furniture_interior",
+  "collection": "furniture_interior/wall_doorway",
+  "file": "build/furniture_interior.blend",
+  "source": "Kenney Furniture Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.169,
+   1.9,
+   2.45
+  ],
+  "tags": [
+   "furniture_interior",
+   "furniture",
+   "interior",
+   "architecture",
+   "wall",
+   "door"
+  ],
+  "notes": "Furniture Kit, 1 unit = 1.9 m | ~60 tris | src kenney_furniture_kit/raw/Models/GLTF format/wallDoorway.glb",
+  "thumb": "thumbs/furniture_interior/wall_doorway.jpg",
+  "source_url": "https://kenney.nl/assets/furniture-kit"
+ }
+]

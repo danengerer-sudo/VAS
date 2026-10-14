@@ -96,10 +96,44 @@ POSES = {
 }
 
 
+def _vary(P, name, pose):
+    """Deterministic per-figure variation so a squad never looks copy-pasted."""
+    import random, zlib
+    rng = random.Random(zlib.crc32(name.encode()))
+    u = lambda a: rng.uniform(-a, a)
+    (f1x, f1y), (f2x, f2y) = P["feet"]
+    if pose == "patrol":
+        stride = rng.uniform(0.6, 1.25)
+        f1x, f2x = f1x * stride, f2x * stride
+        if rng.random() < 0.5:  # other foot leads
+            f1x, f2x = f2x, f1x
+    else:
+        f1x += u(0.06); f2x += u(0.06)
+    w = rng.uniform(0.85, 1.25)
+    Q = dict(P)
+    Q["feet"] = ((f1x, f1y * w), (f2x, f2y * w))
+    Q["lean"] = P["lean"] + u(0.05)
+    Q["yaw"] = P["yaw"] + u(0.12)
+    hx, hy, hz = P["head"]
+    Q["head"] = (hx + u(0.06), hy + u(0.14), hz + u(0.55))
+    if P["rifle"]:
+        carry = P["rifle"]
+        if pose == "patrol":  # vary how the weapon is carried, not just the angle
+            carries = [POSES["patrol"]["rifle"], POSES["rest"]["rifle"], POSES["aim"]["rifle"][0:0] or
+                       ((0.16, -0.15, 1.36), math.radians(18), math.radians(6)), POSES["ready"]["rifle"]]
+            # trailing digit spreads a numbered squad across all carries; others hash
+            key = int(name[-1]) if name[-1].isdigit() else zlib.crc32(name.encode())
+            carry = carries[key % len(carries)]
+        (bx, by, bz), pitch, ryaw = carry
+        Q["rifle"] = ((bx + u(0.03), by + u(0.025), bz + u(0.05)), pitch + u(math.radians(12)), ryaw + u(math.radians(10)))
+    Q["scale"] = rng.uniform(0.96, 1.04)
+    return Q
+
+
 def make_figure(name, pose="ready", coll=None, accent=None, loc=(0, 0, 0), heading=0.0,
-                body_col=(0.86, 0.85, 0.83), gun_col=(0.035, 0.037, 0.04), civ_col=None):
+                body_col=(0.86, 0.85, 0.83), gun_col=(0.035, 0.037, 0.04), civ_col=None, vary=True):
     coll = coll or bpy.context.scene.collection
-    P = POSES[pose]
+    P = _vary(POSES[pose], name, pose) if vary else POSES[pose]
     body = pbr(f"Fig_{body_col}", body_col, rough=0.55)
     vestm = pbr(f"FigVest_{body_col}", tuple(c * 0.92 for c in body_col), rough=0.7)
     acc = pbr(f"FigAcc_{accent}", accent, rough=0.5) if accent else body
@@ -209,4 +243,6 @@ def make_figure(name, pose="ready", coll=None, accent=None, loc=(0, 0, 0), headi
         p.use_smooth = p.material_index not in flat_idx
     fig.location = loc
     fig.rotation_euler = (0, 0, heading)
+    sc_ = P.get("scale", 1.0)
+    fig.data.transform(Matrix.Diagonal((sc_, sc_, sc_, 1)))
     return fig

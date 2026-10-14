@@ -4,3 +4,5 @@ freemarket_defense/assets/
 freemarket_defense/render/
 
 freemarket_defense/library/build/
+freemarket_defense/bench/*.blend
+freemarket_defense/bench/out/

@@ -79,7 +79,7 @@ for pk, m, s, r, tags, prof in ITEMS:
     nm = (pk + "_" if m in ("fence", "tree") else "") + m.replace("-", "_")
     specs.append(dict(name=nm, file=pi.kenney(d, m), scale=s, rot_z=r, profile=prof, tags=["street", "prop"] + tags,
                       notes=f"{src}, scale x{s}", source=src, license="CC0 1.0", url=url,
-                      accent_as=pi.DARK if NATURE & set(tags) else None))
+                      accent_as=(pi.BODY if (pk == "hol" or m == "planter") else pi.DARK) if NATURE & set(tags) else None))
 
 if __name__ == "__main__":
     pi.build(CAT, specs, cols=10)

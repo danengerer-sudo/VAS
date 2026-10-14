@@ -141,21 +141,33 @@ for o in bpy.data.objects:
     if o.name.endswith("_Rifle"):
         for ch in o.children_recursive:
             ch.hide_render = True
-POSE_OF = {"Patrol0": "patrol", "Patrol1": "patrol", "Patrol2": "ready", "Guard0": "ready", "Guard1": "rest",
-           "Guard2": "aim", "Runner": "ready", "Crew0": "aim", "Crew1": "ready"}
+# root name -> (mocap mode, weapon); poses come from real motion capture (see mfigure.py)
+POSE_OF = {"Patrol0": ("walk", "held"), "Patrol1": ("walk", "slung"), "Patrol2": ("walk", "one_hand"),
+           "Guard0": ("talk", "slung"), "Guard1": ("casual", "slung"), "Guard2": ("casual", "held"),
+           "Runner": ("walk", "held"), "Crew0": ("casual", "held"), "Crew1": ("casual", "slung")}
+EXTRA = [  # unscripted bystanders: civilians and an off-duty pair near the post
+    ("Civ0", (-6.0, 9.0), -2.2, "casual", None), ("Civ1", (-5.2, 9.6), -2.9, "talk", None),
+    ("Civ2", (-12.0, 8.0), -0.2, "walk", None), ("Off0", (3.6, 6.2), 3.6, "talk", "slung"),
+    ("Off1", (4.4, 7.0), -2.0, "casual", "slung")]
 FIG_COLL = bpy.data.collections.new("Figures")
 sc.collection.children.link(FIG_COLL)
 
 
 def place_figures():
+    from mfigure import make_person
+    from scene_helpers import ground_z
     for o in list(FIG_COLL.objects):
         bpy.data.objects.remove(o)
-    for root_name, pose in POSE_OF.items():
+    for root_name, (mode, weapon) in POSE_OF.items():
         root = bpy.data.objects.get(root_name)
         if not root:
             continue
-        f = make_figure(root_name + "_fig", pose, FIG_COLL, accent=ACCENTS["Tank_Decal"])
+        f = make_person(root_name + "_fig", mode, weapon, FIG_COLL, accent=ACCENTS["Tank_Decal"])
         f.matrix_world = root.matrix_world.copy()
+    for (n, (x, y), hd, mode, weapon) in EXTRA:
+        f = make_person(n, mode, weapon, FIG_COLL, accent=ACCENTS["Tank_Decal"], soldier=weapon is not None)
+        f.location = (x, y, ground_z(x, y))
+        f.rotation_euler = (0, 0, hd)
 
 
 # ---------------------------------------------------------------- light & sky

@@ -106,98 +106,33 @@ for o in bpy.data.objects:
     if o.type == "EMPTY" and o.instance_collection and any(k in o.instance_collection.name for k in ("grass", "rooibos")):
         o.hide_render = True
 
-# ---------------------------------------------------------------- mannequins
-mann = pbr("Mannequin", (0.86, 0.85, 0.83), rough=0.55)
-band = pbr("SentinelBand", ACCENTS["Tank_Decal"], rough=0.55)
-gunm = pbr("BlockGun", CHARCOAL, rough=0.5)
-C = bpy.data.collections["People"]
-
-
-def capsule(name, p0, p1, r0, r1, coll):
-    L = (p1 - p0).length
-    prof = []
-    for i in range(7):  # bottom hemisphere
-        a = -math.pi / 2 + (math.pi / 2) * i / 6
-        prof.append((r0 * math.sin(a), r0 * math.cos(a)))
-    for i in range(7):  # top hemisphere
-        a = (math.pi / 2) * i / 6
-        prof.append((L + r1 * math.sin(a), r1 * math.cos(a)))
-    prof[-1] = (prof[-1][0], 0.0)
-    prof[0] = (prof[0][0], 0.0)
-    o = lathe(name, prof, 16, coll, mann, axis="Z")
-    q = (p1 - p0).to_track_quat("Z", "Y")
-    o.matrix_world = Matrix.Translation(p0) @ q.to_matrix().to_4x4()
-    return o
-
-
-SEGS = [  # bone_from, bone_to (or None = use tail), r0, r1 (metres)
-    ("mixamorig:Hips", "mixamorig:Spine1", 0.13, 0.13),
-    ("mixamorig:Spine1", "mixamorig:Neck", 0.15, 0.13),
-    ("mixamorig:Neck", "mixamorig:Head", 0.05, 0.05),
-    ("mixamorig:LeftArm", "mixamorig:LeftForeArm", 0.055, 0.045),
-    ("mixamorig:LeftForeArm", "mixamorig:LeftHand", 0.045, 0.035),
-    ("mixamorig:RightArm", "mixamorig:RightForeArm", 0.055, 0.045),
-    ("mixamorig:RightForeArm", "mixamorig:RightHand", 0.045, 0.035),
-    ("mixamorig:LeftUpLeg", "mixamorig:LeftLeg", 0.075, 0.06),
-    ("mixamorig:LeftLeg", "mixamorig:LeftFoot", 0.06, 0.045),
-    ("mixamorig:RightUpLeg", "mixamorig:RightLeg", 0.075, 0.06),
-    ("mixamorig:RightLeg", "mixamorig:RightFoot", 0.06, 0.045),
-    ("mixamorig:LeftFoot", "mixamorig:LeftToeBase", 0.045, 0.04),
-    ("mixamorig:RightFoot", "mixamorig:RightToeBase", 0.045, 0.04),
-    ("mixamorig:LeftHand", "mixamorig:LeftHandMiddle1", 0.04, 0.035),
-    ("mixamorig:RightHand", "mixamorig:RightHandMiddle1", 0.04, 0.035),
-]
-
-arms = [o for o in bpy.data.objects if o.type == "ARMATURE" and o.users_collection and o.users_collection[0].name == "People"]
-for arm in arms:
-    for ch in arm.children:
-        if ch.type == "MESH":
+# ---------------------------------------------------------------- figures
+# hide the rigged soldiers and their scanned rifles; posed figurines are placed per frame below
+from figure import make_figure
+for o in bpy.data.objects:
+    if o.type == "ARMATURE" and o.users_collection and o.users_collection[0].name == "People":
+        for ch in o.children_recursive:
             ch.hide_render = True
-    arm.data.pose_position = "REST"
-    bpy.context.view_layer.update()
-    mw = arm.matrix_world
-    B = arm.data.bones
-    parts = []
-    for (b0, b1, r0, r1) in SEGS:
-        p0 = mw @ B[b0].head_local
-        p1 = mw @ B[b1].head_local
-        parts.append((b0, capsule(f"{arm.name}_{b0}", p0, p1, r0, r1, C)))
-    # head
-    hp = mw @ B["mixamorig:Head"].head_local
-    head = capsule(f"{arm.name}_head", hp + Vector((0, 0, 0.06)), hp + Vector((0, 0, 0.16)), 0.1, 0.1, C)
-    parts.append(("mixamorig:Head", head))
-    # helmet-ish cap in faction colour + armband
-    cap = capsule(f"{arm.name}_cap", hp + Vector((0, 0, 0.15)), hp + Vector((0, 0, 0.17)), 0.112, 0.112, C)
-    cap.data.materials.clear(); cap.data.materials.append(band)
-    parts.append(("mixamorig:Head", cap))
-    ua0, ua1 = mw @ B["mixamorig:LeftArm"].head_local, mw @ B["mixamorig:LeftForeArm"].head_local
-    ab = capsule(f"{arm.name}_band", ua0.lerp(ua1, 0.45), ua0.lerp(ua1, 0.6), 0.06, 0.06, C)
-    ab.data.materials.clear(); ab.data.materials.append(band)
-    parts.append(("mixamorig:LeftArm", ab))
-    for bn, o in parts:
-        m = o.matrix_world.copy()
-        o.parent = arm
-        o.parent_type = "BONE"
-        o.parent_bone = bn
-        bpy.context.view_layer.update()
-        o.matrix_world = m
-    arm.data.pose_position = "POSE"
-
-# block rifles replace the scanned bolt-action rifle
-for rr in [o for o in bpy.data.objects if o.name.endswith("_Rifle") and o.type == "EMPTY"]:
-    for ch in rr.children:
-        if ch.type == "MESH":
+        o.hide_render = True
+    if o.name.endswith("_Rifle"):
+        for ch in o.children_recursive:
             ch.hide_render = True
-    bits = [box("g_stock", (0.26, 0.045, 0.12), (-0.5, 0, -0.03), C, 0.01, gunm),
-            box("g_rcv", (0.48, 0.05, 0.085), (-0.14, 0, 0.0), C, 0.01, gunm),
-            box("g_hg", (0.3, 0.055, 0.07), (0.25, 0, 0.0), C, 0.01, gunm),
-            cylinder("g_brl", 0.012, 0.22, (0.5, 0, 0.0), (0, math.pi / 2, 0), 10, C, gunm),
-            box("g_mag", (0.07, 0.035, 0.16), (-0.02, 0, -0.1), C, 0.005, gunm),
-            box("g_grip", (0.05, 0.035, 0.11), (-0.28, 0, -0.08), C, 0.005, gunm),
-            box("g_optic", (0.12, 0.035, 0.05), (-0.12, 0, 0.07), C, 0.005, gunm)]
-    for b_ in bits:
-        b_.parent = rr
-        b_.matrix_parent_inverse = Matrix.Identity(4)
+POSE_OF = {"Patrol0": "patrol", "Patrol1": "patrol", "Patrol2": "ready", "Guard0": "ready", "Guard1": "rest",
+           "Guard2": "aim", "Runner": "ready", "Crew0": "aim", "Crew1": "ready"}
+FIG_COLL = bpy.data.collections.new("Figures")
+sc.collection.children.link(FIG_COLL)
+
+
+def place_figures():
+    for o in list(FIG_COLL.objects):
+        bpy.data.objects.remove(o)
+    for root_name, pose in POSE_OF.items():
+        root = bpy.data.objects.get(root_name)
+        if not root:
+            continue
+        f = make_figure(root_name + "_fig", pose, FIG_COLL, accent=ACCENTS["Tank_Decal"])
+        f.matrix_world = root.matrix_world.copy()
+
 
 # ---------------------------------------------------------------- light & sky
 wd = sc.world
@@ -271,8 +206,9 @@ sc.cycles.samples = 48
 sc.cycles.adaptive_threshold = 0.02
 
 marks = sorted(sc.timeline_markers, key=lambda m: m.frame)
-for f in FRAMES:
+for f in ([] if os.environ.get("NO_RENDER") else FRAMES):
     sc.frame_set(f)
+    place_figures()
     sc.camera = [m for m in marks if m.frame <= f][-1].camera
     r.filepath = f"{OUT}_{f:04d}.png"
     bpy.ops.render.render(write_still=True)

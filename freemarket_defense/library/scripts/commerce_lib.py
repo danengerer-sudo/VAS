@@ -153,14 +153,17 @@ def briefcase_cash(mb, open_deg=100, seed=0):
     """Open hard-shell briefcase filled with bundles; hinge along -X edge, opens toward -X."""
     W, D, H = 0.46, 0.33, 0.06   # inner half-shell depth
     t = 0.008
-    # bottom shell
-    rbox(mb, W, D, H, 0.02, 0.0, DARK)
+    # bottom shell (tray)
+    rbox(mb, W, D, 0.01, 0.02, 0.0, DARK)
+    for (x0, y0, x1, y1) in ((-W / 2, -D / 2, W / 2, -D / 2 + t), (-W / 2, D / 2 - t, W / 2, D / 2),
+                             (-W / 2, -D / 2 + t, -W / 2 + t, D / 2 - t), (W / 2 - t, -D / 2 + t, W / 2, D / 2 - t)):
+        mb.bb(x0, y0, 0.005, x1, y1, H, DARK)
     # fill: bundles in 2 layers (top printed)
     w, d, h = 0.156, 0.066, 0.011
     for l in range(4):
         for i in range(2):
             for j in range(4):
-                banknote_bundle(mb, ((i - 0.5) * (w + 0.03), (j - 1.5) * (d + 0.008), H - 0.004 - (4 - l) * (h + 0.0006) + 0.004),
+                banknote_bundle(mb, ((i - 0.5) * (w + 0.03), (j - 1.5) * (d + 0.008), 0.012 + l * (h + 0.0006)),
                                 top=(l == 3))
     # inner lining rim
     mb.bb(-W / 2 + t, -D / 2 + t, H - 0.006, W / 2 - t, -D / 2 + t + 0.004, H, BODY)
@@ -708,8 +711,8 @@ def smartphone(mb, loc=(0, 0, 0), rot=None, standing=False):
     """Phone with blank glass screen; lying flat (screen up) or standing (screen faces +X)."""
     w, h, t = 0.0715, 0.147, 0.0082
     if standing:
-        rot = (0, R(-75), 0)
-        loc = (0.0, 0, h / 2 * math.sin(R(75)) + 0.004)
+        rot = (0, R(75), 0)
+        loc = (-0.01, 0, h / 2 * math.sin(R(75)) + 0.004)
     with mb.at(loc, rot=rot):
         with mb.at((0, 0, -t / 2), rot=(0, 0, R(90))):
             mb.prism(rrect(w, h, 0.009, 5), 0, t, BODY)

@@ -1,0 +1,473 @@
+[
+ {
+  "name": "explosion_ignition",
+  "category": "fx",
+  "collection": "fx/explosion_ignition",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   8.59,
+   8.874,
+   8.187
+  ],
+  "tags": [
+   "fx",
+   "explosion",
+   "blast",
+   "ignition",
+   "war"
+  ],
+  "notes": "Frozen explosion stage 'ignition' (~10 m fireball). fx_lib.explosion(mb, stage, size, seed) | ~21608 tris",
+  "thumb": "thumbs/fx/explosion_ignition.jpg"
+ },
+ {
+  "name": "explosion_fireball",
+  "category": "fx",
+  "collection": "fx/explosion_fireball",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.931,
+   14.888,
+   10.41
+  ],
+  "tags": [
+   "fx",
+   "explosion",
+   "blast",
+   "fireball",
+   "war"
+  ],
+  "notes": "Frozen explosion stage 'fireball' (~10 m fireball). fx_lib.explosion(mb, stage, size, seed) | ~88104 tris",
+  "thumb": "thumbs/fx/explosion_fireball.jpg"
+ },
+ {
+  "name": "explosion_billow",
+  "category": "fx",
+  "collection": "fx/explosion_billow",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   18.927,
+   19.796,
+   16.985
+  ],
+  "tags": [
+   "fx",
+   "explosion",
+   "blast",
+   "billow",
+   "war"
+  ],
+  "notes": "Frozen explosion stage 'billow' (~10 m fireball). fx_lib.explosion(mb, stage, size, seed) | ~107046 tris",
+  "thumb": "thumbs/fx/explosion_billow.jpg"
+ },
+ {
+  "name": "explosion_dissipating",
+  "category": "fx",
+  "collection": "fx/explosion_dissipating",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   22.055,
+   20.744,
+   18.338
+  ],
+  "tags": [
+   "fx",
+   "explosion",
+   "blast",
+   "dissipating",
+   "war"
+  ],
+  "notes": "Frozen explosion stage 'dissipating' (~10 m fireball). fx_lib.explosion(mb, stage, size, seed) | ~92816 tris",
+  "thumb": "thumbs/fx/explosion_dissipating.jpg"
+ },
+ {
+  "name": "smoke_column",
+  "category": "fx",
+  "collection": "fx/smoke_column",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   24.78,
+   16.011,
+   49.975
+  ],
+  "tags": [
+   "fx",
+   "smoke",
+   "plume",
+   "fire"
+  ],
+  "notes": "40 m plume drifting +X with fire at base. fx_lib.smoke_column(mb, height, base_r, lean, fire) | ~64380 tris",
+  "thumb": "thumbs/fx/smoke_column.jpg"
+ },
+ {
+  "name": "dust_cloud",
+  "category": "fx",
+  "collection": "fx/dust_cloud",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   19.481,
+   21.959,
+   3.588
+  ],
+  "tags": [
+   "fx",
+   "dust",
+   "cloud",
+   "impact"
+  ],
+  "notes": "Low wide dust billow. fx_lib.dust_cloud(mb, radius, height) | ~62056 tris",
+  "thumb": "thumbs/fx/dust_cloud.jpg"
+ },
+ {
+  "name": "fire_patch",
+  "category": "fx",
+  "collection": "fx/fire_patch",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   3.567,
+   3.333,
+   3.024
+  ],
+  "tags": [
+   "fx",
+   "fire",
+   "flames"
+  ],
+  "notes": "Cluster of flame tongues (LIB_Fire). fx_lib.fire_patch(mb, radius, height, n) | ~22252 tris",
+  "thumb": "thumbs/fx/fire_patch.jpg"
+ },
+ {
+  "name": "building_on_fire",
+  "category": "fx",
+  "collection": "fx/building_on_fire",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   33.348,
+   18.402,
+   67.176
+  ],
+  "tags": [
+   "fx",
+   "fire",
+   "building",
+   "damage",
+   "war"
+  ],
+  "notes": "Damaged block with window flames, roof fire and smoke plume. fx_lib.building_on_fire(mb, w, d, h) | ~101272 tris",
+  "thumb": "thumbs/fx/building_on_fire.jpg"
+ },
+ {
+  "name": "muzzle_flash",
+  "category": "fx",
+  "collection": "fx/muzzle_flash",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.686,
+   0.389,
+   0.389
+  ],
+  "tags": [
+   "fx",
+   "muzzle flash",
+   "gunfire",
+   "weapon"
+  ],
+  "notes": "0.8 m star flash pointing +X; origin = muzzle (not ground). fx_lib.muzzle_flash(mb, length) | ~238 tris",
+  "thumb": "thumbs/fx/muzzle_flash.jpg"
+ },
+ {
+  "name": "rubble_pile",
+  "category": "fx",
+  "collection": "fx/rubble_pile",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   12.13,
+   11.177,
+   3.724
+  ],
+  "tags": [
+   "fx",
+   "rubble",
+   "debris",
+   "destruction"
+  ],
+  "notes": "Debris mound with slabs + rebar. fx_lib.rubble(mb, radius, height) | ~18258 tris",
+  "thumb": "thumbs/fx/rubble_pile.jpg"
+ },
+ {
+  "name": "debris_field",
+  "category": "fx",
+  "collection": "fx/debris_field",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   15.74,
+   14.438,
+   0.648
+  ],
+  "tags": [
+   "fx",
+   "debris",
+   "destruction"
+  ],
+  "notes": "Scattered chunks on the ground. fx_lib.debris(mb, n, radius, airborne=False) | ~1760 tris",
+  "thumb": "thumbs/fx/debris_field.jpg"
+ },
+ {
+  "name": "crater",
+  "category": "fx",
+  "collection": "fx/crater",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   19.322,
+   21.94,
+   1.436
+  ],
+  "tags": [
+   "fx",
+   "crater",
+   "impact",
+   "shell",
+   "war"
+  ],
+  "notes": "Crater built above ground (raised rim, scorched floor). fx_lib.crater(mb, radius, depth) | ~1296 tris",
+  "thumb": "thumbs/fx/crater.jpg"
+ },
+ {
+  "name": "impact_marks",
+  "category": "fx",
+  "collection": "fx/impact_marks",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   4.961,
+   4.994,
+   0.03
+  ],
+  "tags": [
+   "fx",
+   "scorch",
+   "impact",
+   "marks"
+  ],
+  "notes": "Scorch splats + strike rings. fx_lib.impact_marks(mb, n, area) | ~1440 tris",
+  "thumb": "thumbs/fx/impact_marks.jpg"
+ },
+ {
+  "name": "tracer",
+  "category": "fx",
+  "collection": "fx/tracer",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   6.0,
+   0.12,
+   0.12
+  ],
+  "tags": [
+   "fx",
+   "tracer",
+   "gunfire",
+   "bullet"
+  ],
+  "notes": "Single tracer flying +X. fx_lib.tracer(mb, length, r) | ~50 tris",
+  "thumb": "thumbs/fx/tracer.jpg"
+ },
+ {
+  "name": "tracer_burst",
+  "category": "fx",
+  "collection": "fx/tracer_burst",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   8.203,
+   2.409,
+   0.781
+  ],
+  "tags": [
+   "fx",
+   "tracer",
+   "gunfire",
+   "burst"
+  ],
+  "notes": "Five tracers. fx_lib.tracer(mb, n=5) | ~250 tris",
+  "thumb": "thumbs/fx/tracer_burst.jpg"
+ },
+ {
+  "name": "map_arrow",
+  "category": "fx",
+  "collection": "fx/map_arrow",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   23.444,
+   5.646,
+   0.46
+  ],
+  "tags": [
+   "fx",
+   "map",
+   "arrow",
+   "advance",
+   "campaign"
+  ],
+  "notes": "Thick curved arrow on the ground, accent. fx_lib.map_arrow(mb, path, width, height, head) | ~316 tris",
+  "thumb": "thumbs/fx/map_arrow.jpg"
+ },
+ {
+  "name": "map_arrow_straight",
+  "category": "fx",
+  "collection": "fx/map_arrow_straight",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   18.815,
+   4.968,
+   0.56
+  ],
+  "tags": [
+   "fx",
+   "map",
+   "arrow"
+  ],
+  "notes": "fx_lib.map_arrow(mb, ((0,0),(20,0)), 2.0, 0.5, 4.0) | ~172 tris",
+  "thumb": "thumbs/fx/map_arrow_straight.jpg"
+ },
+ {
+  "name": "territory_boundary",
+  "category": "fx",
+  "collection": "fx/territory_boundary",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   46.198,
+   32.397,
+   0.15
+  ],
+  "tags": [
+   "fx",
+   "map",
+   "territory",
+   "border",
+   "boundary"
+  ],
+  "notes": "Dashed accent boundary with light tint plate. fx_lib.territory_line(mb, pts, closed, fill) | ~392 tris",
+  "thumb": "thumbs/fx/territory_boundary.jpg"
+ },
+ {
+  "name": "range_ring",
+  "category": "fx",
+  "collection": "fx/range_ring",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   40.4,
+   40.4,
+   0.18
+  ],
+  "tags": [
+   "fx",
+   "map",
+   "range",
+   "ring",
+   "radius"
+  ],
+  "notes": "Range ring with ticks. fx_lib.range_ring(mb, radius) | ~2412 tris",
+  "thumb": "thumbs/fx/range_ring.jpg"
+ },
+ {
+  "name": "radar_circle",
+  "category": "fx",
+  "collection": "fx/radar_circle",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   40.24,
+   40.24,
+   0.15
+  ],
+  "tags": [
+   "fx",
+   "map",
+   "radar",
+   "scope",
+   "detection"
+  ],
+  "notes": "Radar scope with sweep wedge + blips. fx_lib.radar_circle(mb, radius, rings, sweep_deg) | ~3448 tris",
+  "thumb": "thumbs/fx/radar_circle.jpg"
+ },
+ {
+  "name": "pin_marker",
+  "category": "fx",
+  "collection": "fx/pin_marker",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.835,
+   1.798,
+   3.0
+  ],
+  "tags": [
+   "fx",
+   "map",
+   "pin",
+   "location",
+   "marker"
+  ],
+  "notes": "3 m map pin. fx_lib.pin_marker(mb, h) | ~1528 tris",
+  "thumb": "thumbs/fx/pin_marker.jpg"
+ },
+ {
+  "name": "label_board",
+  "category": "fx",
+  "collection": "fx/label_board",
+  "file": "build/fx.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.5,
+   3.9,
+   4.5
+  ],
+  "tags": [
+   "fx",
+   "label",
+   "sign",
+   "annotation",
+   "callout"
+  ],
+  "notes": "Floating label on a stem, readable from +X. fx_lib.label_board(mb, text, sub, h, z) | ~3208 tris",
+  "thumb": "thumbs/fx/label_board.jpg"
+ }
+]

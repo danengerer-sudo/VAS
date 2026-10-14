@@ -199,7 +199,7 @@ def classify(cols, areas, profile, matnames=None, dark_lum=0.30):
             out[i] = DARK
         elif profile in ("building",) and 190 <= hd <= 250 and s > 0.15:
             out[i] = GLASS
-        elif profile == "vehicle" and 185 <= hd <= 260 and s > 0.08 and v > 0.85 and s < 0.45:
+        elif profile == "vehicle" and 185 <= hd <= 260 and s > 0.05 and v > 0.85 and s < 0.45:
             out[i] = GLASS
     # dominant colour among remaining saturated faces
     rest = [i for i in range(n) if out[i] is None]
@@ -291,14 +291,19 @@ def import_file(path):
 
 
 def bounds(objs):
-    pts = []
+    """World-space bounds from vertex data (object.bound_box can be stale right after mesh edits)."""
+    mn = Vector((1e18, 1e18, 1e18))
+    mx = Vector((-1e18, -1e18, -1e18))
     for o in objs:
-        if o.type != "MESH":
+        if o.type != "MESH" or len(o.data.vertices) == 0:
             continue
-        for c in o.bound_box:
-            pts.append(o.matrix_world @ Vector(c))
-    mn = Vector([min(p[i] for p in pts) for i in range(3)])
-    mx = Vector([max(p[i] for p in pts) for i in range(3)])
+        co = np.empty(len(o.data.vertices) * 3, dtype=np.float64)
+        o.data.vertices.foreach_get("co", co)
+        co = co.reshape(-1, 3)
+        M = np.array(o.matrix_world)
+        w = co @ M[:3, :3].T + M[:3, 3]
+        mn = Vector(np.minimum(np.array(mn), w.min(0)))
+        mx = Vector(np.maximum(np.array(mx), w.max(0)))
     return mn, mx
 
 

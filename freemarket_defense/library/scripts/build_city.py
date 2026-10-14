@@ -91,7 +91,8 @@ add("bridge_arch", A.arch_bridge, ["bridge", "arch bridge", "infrastructure"],
 add("bridge_masonry", A.masonry_bridge, ["bridge", "stone", "history", "arch"],
     "Historic 3-arch stone bridge; params arches, span, pier, width.", el=18)
 add("bridge_suspension", A.suspension_bridge, ["bridge", "suspension bridge", "infrastructure", "iconic"],
-    "Suspension bridge, 300 m main span; params main, side_f, width, deck_h, sag_f.", el=15, bevel=0.05)
+    "Suspension bridge, 300 m main span; params main, side_f, width, deck_h, sag_f.", el=10, az=-20, fill=1.7,
+    bevel=0.05)
 # --- walls, fences, border
 add("wall_concrete", A.wall_segment, ["wall", "boundary"], "12 m wall with pilasters + coping.", bevel=0.015)
 add("fence_picket", A.picket_fence, ["fence", "picket", "garden"], "10 m picket fence.", bevel=0.005)
@@ -110,7 +111,7 @@ add("wind_turbine", A.wind_turbine, ["wind turbine", "energy", "renewable"], "90
 add("power_pylon", A.power_pylon, ["pylon", "power", "electricity", "grid"], "42 m lattice transmission tower.",
     bevel=0.0)
 add("power_line", A.power_line, ["power line", "pylon", "electricity", "grid"], "3 pylons with sagging conductors.",
-    bevel=0.0, el=18)
+    bevel=0.0, el=10, az=-20, fill=1.6)
 add("oil_pumpjack", A.pumpjack, ["oil", "pumpjack", "energy", "extraction"], "Nodding donkey; accent horsehead.",
     bevel=0.01)
 add("oil_derrick", A.oil_derrick, ["oil", "drilling rig", "derrick", "energy"], "Drilling rig with lattice derrick.",

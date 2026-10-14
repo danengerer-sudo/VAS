@@ -1,0 +1,1225 @@
+[
+ {
+  "name": "coin",
+  "category": "commerce",
+  "collection": "commerce/coin",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.026,
+   0.026,
+   0.002
+  ],
+  "tags": [
+   "commerce",
+   "coin",
+   "money",
+   "metal"
+  ],
+  "notes": "Real-size 26.5 mm coin with $ relief. commerce_lib.coin(mb, d, t, symbol) | ~1060 tris",
+  "thumb": "thumbs/commerce/coin.jpg"
+ },
+ {
+  "name": "coin_stack",
+  "category": "commerce",
+  "collection": "commerce/coin_stack",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.027,
+   0.028,
+   0.031
+  ],
+  "tags": [
+   "commerce",
+   "coin",
+   "stack",
+   "money",
+   "savings"
+  ],
+  "notes": "commerce_lib.coin_stack(mb, n=14) | ~6180 tris",
+  "thumb": "thumbs/commerce/coin_stack.jpg"
+ },
+ {
+  "name": "coin_stacks_row",
+  "category": "commerce",
+  "collection": "commerce/coin_stacks_row",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.149,
+   0.028,
+   0.04
+  ],
+  "tags": [
+   "commerce",
+   "coin",
+   "stacks",
+   "growth",
+   "savings"
+  ],
+  "notes": "Row of stacks of different heights. commerce_lib.coin_stacks(mb, stacks=(14,9,18,6,11)) | ~26100 tris",
+  "thumb": "thumbs/commerce/coin_stacks_row.jpg"
+ },
+ {
+  "name": "coin_pile",
+  "category": "commerce",
+  "collection": "commerce/coin_pile",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.251,
+   0.248,
+   0.054
+  ],
+  "tags": [
+   "commerce",
+   "coin",
+   "pile",
+   "treasure",
+   "money"
+  ],
+  "notes": "Scattered mound of coins. commerce_lib.coin_pile(mb, n=150, radius=0.12, height=0.05, seed) | ~37128 tris",
+  "thumb": "thumbs/commerce/coin_pile.jpg"
+ },
+ {
+  "name": "banknote",
+  "category": "commerce",
+  "collection": "commerce/banknote",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.156,
+   0.066,
+   0.004
+  ],
+  "tags": [
+   "commerce",
+   "banknote",
+   "cash",
+   "money"
+  ],
+  "notes": "Single curled note. commerce_lib.banknote(mb) | ~528 tris",
+  "thumb": "thumbs/commerce/banknote.jpg"
+ },
+ {
+  "name": "banknote_bundle",
+  "category": "commerce",
+  "collection": "commerce/banknote_bundle",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.156,
+   0.067,
+   0.012
+  ],
+  "tags": [
+   "commerce",
+   "banknote",
+   "bundle",
+   "cash"
+  ],
+  "notes": "Bundle of 100 notes with accent band. commerce_lib.banknote_bundle(mb, value='100') | ~1840 tris",
+  "thumb": "thumbs/commerce/banknote_bundle.jpg"
+ },
+ {
+  "name": "cash_stack",
+  "category": "commerce",
+  "collection": "commerce/cash_stack",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.472,
+   0.135,
+   0.047
+  ],
+  "tags": [
+   "commerce",
+   "cash",
+   "stack",
+   "money"
+  ],
+  "notes": "Brick of bundles. commerce_lib.cash_stack(mb, cols, rows, layers) | ~12624 tris",
+  "thumb": "thumbs/commerce/cash_stack.jpg"
+ },
+ {
+  "name": "cash_pallet",
+  "category": "commerce",
+  "collection": "commerce/cash_pallet",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.204,
+   0.804,
+   1.021
+  ],
+  "tags": [
+   "commerce",
+   "cash",
+   "pallet",
+   "money",
+   "wealth"
+  ],
+  "notes": "EUR pallet stacked with cash blocks. commerce_lib.cash_pallet(mb, layers=8) | ~55120 tris",
+  "thumb": "thumbs/commerce/cash_pallet.jpg"
+ },
+ {
+  "name": "briefcase_cash",
+  "category": "commerce",
+  "collection": "commerce/briefcase_cash",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.6,
+   0.33,
+   0.513
+  ],
+  "tags": [
+   "commerce",
+   "cash",
+   "briefcase",
+   "bribe",
+   "money"
+  ],
+  "notes": "Open briefcase full of bundles. commerce_lib.briefcase_cash(mb, open_deg=100) | ~17888 tris",
+  "thumb": "thumbs/commerce/briefcase_cash.jpg"
+ },
+ {
+  "name": "gold_bar",
+  "category": "commerce",
+  "collection": "commerce/gold_bar",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.255,
+   0.08,
+   0.046
+  ],
+  "tags": [
+   "commerce",
+   "gold",
+   "bar",
+   "bullion"
+  ],
+  "notes": "400 oz bar, '999.9' stamp. commerce_lib.gold_bar(mb) | ~3208 tris",
+  "thumb": "thumbs/commerce/gold_bar.jpg"
+ },
+ {
+  "name": "gold_pyramid",
+  "category": "commerce",
+  "collection": "commerce/gold_pyramid",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.255,
+   0.412,
+   0.226
+  ],
+  "tags": [
+   "commerce",
+   "gold",
+   "bullion",
+   "reserve"
+  ],
+  "notes": "Stepped pyramid of bars. commerce_lib.gold_pyramid(mb, base=5) | ~3824 tris",
+  "thumb": "thumbs/commerce/gold_pyramid.jpg"
+ },
+ {
+  "name": "gold_pallet",
+  "category": "commerce",
+  "collection": "commerce/gold_pallet",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.2,
+   0.805,
+   0.415
+  ],
+  "tags": [
+   "commerce",
+   "gold",
+   "bullion",
+   "pallet",
+   "reserve"
+  ],
+  "notes": "Pallet of gold bars. commerce_lib.gold_pallet(mb, layers=6) | ~134208 tris",
+  "thumb": "thumbs/commerce/gold_pallet.jpg"
+ },
+ {
+  "name": "vault_door",
+  "category": "commerce",
+  "collection": "commerce/vault_door",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.45,
+   5.4,
+   4.6
+  ],
+  "tags": [
+   "commerce",
+   "vault",
+   "bank",
+   "security"
+  ],
+  "notes": "Round vault door, closed. commerce_lib.vault_door(mb, r=1.2, open_deg=0) | ~7088 tris",
+  "thumb": "thumbs/commerce/vault_door.jpg"
+ },
+ {
+  "name": "vault_door_open",
+  "category": "commerce",
+  "collection": "commerce/vault_door_open",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   3.876,
+   5.4,
+   4.6
+  ],
+  "tags": [
+   "commerce",
+   "vault",
+   "bank",
+   "security"
+  ],
+  "notes": "Vault door swung open with bolts out. commerce_lib.vault_door(mb, open_deg=70) | ~7088 tris",
+  "thumb": "thumbs/commerce/vault_door_open.jpg"
+ },
+ {
+  "name": "safe",
+  "category": "commerce",
+  "collection": "commerce/safe",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.7,
+   0.6,
+   0.95
+  ],
+  "tags": [
+   "commerce",
+   "safe",
+   "bank",
+   "security"
+  ],
+  "notes": "Floor safe with dial + handle. commerce_lib.safe(mb) | ~2844 tris",
+  "thumb": "thumbs/commerce/safe.jpg"
+ },
+ {
+  "name": "atm",
+  "category": "commerce",
+  "collection": "commerce/atm",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.91,
+   0.76,
+   1.85
+  ],
+  "tags": [
+   "commerce",
+   "atm",
+   "bank",
+   "cash machine"
+  ],
+  "notes": "Freestanding ATM, accent header. commerce_lib.atm(mb) | ~1962 tris",
+  "thumb": "thumbs/commerce/atm.jpg"
+ },
+ {
+  "name": "cash_register",
+  "category": "commerce",
+  "collection": "commerce/cash_register",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.43,
+   0.42,
+   0.377
+  ],
+  "tags": [
+   "commerce",
+   "register",
+   "pos",
+   "shop",
+   "retail"
+  ],
+  "notes": "POS terminal with drawer, screen, printer, card reader. commerce_lib.cash_register(mb) | ~1230 tris",
+  "thumb": "thumbs/commerce/cash_register.jpg"
+ },
+ {
+  "name": "shop_counter",
+  "category": "commerce",
+  "collection": "commerce/shop_counter",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.7,
+   2.44,
+   1.327
+  ],
+  "tags": [
+   "commerce",
+   "counter",
+   "shop",
+   "retail"
+  ],
+  "notes": "Counter with display + register. commerce_lib.shop_counter(mb, length=2.4) | ~1890 tris",
+  "thumb": "thumbs/commerce/shop_counter.jpg"
+ },
+ {
+  "name": "market_stall",
+  "category": "commerce",
+  "collection": "commerce/market_stall",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   2.22,
+   3.2,
+   2.77
+  ],
+  "tags": [
+   "commerce",
+   "market",
+   "stall",
+   "trade",
+   "produce"
+  ],
+  "notes": "Striped canopy market stall with crates of produce. commerce_lib.market_stall(mb, w=3, d=1.6, seed) | ~19738 tris",
+  "thumb": "thumbs/commerce/market_stall.jpg"
+ },
+ {
+  "name": "chalkboard_sign",
+  "category": "commerce",
+  "collection": "commerce/chalkboard_sign",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.484,
+   0.6,
+   0.984
+  ],
+  "tags": [
+   "commerce",
+   "sign",
+   "price",
+   "shop",
+   "sale"
+  ],
+  "notes": "A-frame chalkboard. commerce_lib.chalkboard_sign(mb, text1, text2) | ~2772 tris",
+  "thumb": "thumbs/commerce/chalkboard_sign.jpg"
+ },
+ {
+  "name": "price_tag",
+  "category": "commerce",
+  "collection": "commerce/price_tag",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.011,
+   0.28,
+   0.14
+  ],
+  "tags": [
+   "commerce",
+   "price",
+   "tag",
+   "icon"
+  ],
+  "notes": "Display-size swing tag. commerce_lib.price_tag(mb, text) | ~2264 tris",
+  "thumb": "thumbs/commerce/price_tag.jpg"
+ },
+ {
+  "name": "shopping_cart",
+  "category": "commerce",
+  "collection": "commerce/shopping_cart",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.024,
+   0.569,
+   1.045
+  ],
+  "tags": [
+   "commerce",
+   "shopping cart",
+   "retail",
+   "consumer"
+  ],
+  "notes": "Wire trolley, accent handle. commerce_lib.shopping_cart(mb) | ~1312 tris",
+  "thumb": "thumbs/commerce/shopping_cart.jpg"
+ },
+ {
+  "name": "shopping_bags",
+  "category": "commerce",
+  "collection": "commerce/shopping_bags",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.433,
+   0.645,
+   0.514
+  ],
+  "tags": [
+   "commerce",
+   "shopping bag",
+   "retail",
+   "consumer"
+  ],
+  "notes": "Three paper bags. commerce_lib.shopping_bag(mb, w,d,h, m, logo) | ~2920 tris",
+  "thumb": "thumbs/commerce/shopping_bags.jpg"
+ },
+ {
+  "name": "cardboard_box",
+  "category": "commerce",
+  "collection": "commerce/cardboard_box",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.403,
+   0.3,
+   0.301
+  ],
+  "tags": [
+   "commerce",
+   "box",
+   "carton",
+   "shipping",
+   "logistics"
+  ],
+  "notes": "Taped carton with label. commerce_lib.cardboard_box(mb, size, open_=False) | ~308 tris",
+  "thumb": "thumbs/commerce/cardboard_box.jpg"
+ },
+ {
+  "name": "cardboard_box_open",
+  "category": "commerce",
+  "collection": "commerce/cardboard_box_open",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.746,
+   0.654,
+   0.303
+  ],
+  "tags": [
+   "commerce",
+   "box",
+   "carton",
+   "open"
+  ],
+  "notes": "Open carton. commerce_lib.cardboard_box(mb, open_=True) | ~396 tris",
+  "thumb": "thumbs/commerce/cardboard_box_open.jpg"
+ },
+ {
+  "name": "box_pile",
+  "category": "commerce",
+  "collection": "commerce/box_pile",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.15,
+   1.601,
+   0.701
+  ],
+  "tags": [
+   "commerce",
+   "box",
+   "carton",
+   "pile",
+   "logistics"
+  ],
+  "notes": "Heap of cartons. commerce_lib.box_pile(mb) | ~1936 tris",
+  "thumb": "thumbs/commerce/box_pile.jpg"
+ },
+ {
+  "name": "pallet",
+  "category": "commerce",
+  "collection": "commerce/pallet",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.206,
+   0.806,
+   0.144
+  ],
+  "tags": [
+   "commerce",
+   "pallet",
+   "logistics"
+  ],
+  "notes": "EUR pallet 1200x800x144. commerce_lib.pallet(mb) | ~912 tris",
+  "thumb": "thumbs/commerce/pallet.jpg"
+ },
+ {
+  "name": "pallet_stack",
+  "category": "commerce",
+  "collection": "commerce/pallet_stack",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.21,
+   0.812,
+   0.867
+  ],
+  "tags": [
+   "commerce",
+   "pallet",
+   "stack",
+   "logistics"
+  ],
+  "notes": "commerce_lib.pallet_stack(mb, n=6) | ~5472 tris",
+  "thumb": "thumbs/commerce/pallet_stack.jpg"
+ },
+ {
+  "name": "pallet_boxes",
+  "category": "commerce",
+  "collection": "commerce/pallet_boxes",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.201,
+   0.801,
+   1.045
+  ],
+  "tags": [
+   "commerce",
+   "pallet",
+   "boxes",
+   "shipment",
+   "trade"
+  ],
+  "notes": "Loaded pallet. commerce_lib.pallet_boxes(mb, layers=3) | ~3552 tris",
+  "thumb": "thumbs/commerce/pallet_boxes.jpg"
+ },
+ {
+  "name": "warehouse_shelving",
+  "category": "commerce",
+  "collection": "commerce/warehouse_shelving",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.2,
+   5.5,
+   4.5
+  ],
+  "tags": [
+   "commerce",
+   "shelving",
+   "racking",
+   "warehouse",
+   "inventory"
+  ],
+  "notes": "Pallet racking with accent beams + cartons. commerce_lib.shelving(mb, bays, levels, seed) | ~26312 tris",
+  "thumb": "thumbs/commerce/warehouse_shelving.jpg"
+ },
+ {
+  "name": "scales_of_justice",
+  "category": "commerce",
+  "collection": "commerce/scales_of_justice",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.28,
+   0.557,
+   0.63
+  ],
+  "tags": [
+   "commerce",
+   "justice",
+   "law",
+   "scales",
+   "balance"
+  ],
+  "notes": "Balance scales, tilt param (rad). commerce_lib.scales_of_justice(mb, tilt=0.18) | ~1476 tris",
+  "thumb": "thumbs/commerce/scales_of_justice.jpg"
+ },
+ {
+  "name": "gavel",
+  "category": "commerce",
+  "collection": "commerce/gavel",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.309,
+   0.191,
+   0.09
+  ],
+  "tags": [
+   "commerce",
+   "gavel",
+   "law",
+   "court",
+   "auction"
+  ],
+  "notes": "Gavel on sound block. commerce_lib.gavel(mb) | ~1156 tris",
+  "thumb": "thumbs/commerce/gavel.jpg"
+ },
+ {
+  "name": "contract",
+  "category": "commerce",
+  "collection": "commerce/contract",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.297,
+   0.21,
+   0.002
+  ],
+  "tags": [
+   "commerce",
+   "contract",
+   "document",
+   "paper",
+   "law"
+  ],
+  "notes": "A4 contract with text lines, signature, accent seal. commerce_lib.contract(mb, title, signed) | ~1108 tris",
+  "thumb": "thumbs/commerce/contract.jpg"
+ },
+ {
+  "name": "document_stack",
+  "category": "commerce",
+  "collection": "commerce/document_stack",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.39,
+   0.457,
+   0.018
+  ],
+  "tags": [
+   "commerce",
+   "documents",
+   "paperwork",
+   "bureaucracy",
+   "regulation"
+  ],
+  "notes": "Stack of papers + invoice + pen. commerce_lib.document_stack(mb, n=12) | ~1946 tris",
+  "thumb": "thumbs/commerce/document_stack.jpg"
+ },
+ {
+  "name": "credit_card",
+  "category": "commerce",
+  "collection": "commerce/credit_card",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.086,
+   0.054,
+   0.001
+  ],
+  "tags": [
+   "commerce",
+   "credit card",
+   "payment",
+   "bank"
+  ],
+  "notes": "ISO card, accent body, chip. commerce_lib.credit_card(mb, m) | ~3492 tris",
+  "thumb": "thumbs/commerce/credit_card.jpg"
+ },
+ {
+  "name": "credit_cards_fan",
+  "category": "commerce",
+  "collection": "commerce/credit_cards_fan",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.097,
+   0.092,
+   0.003
+  ],
+  "tags": [
+   "commerce",
+   "credit card",
+   "payment"
+  ],
+  "notes": "Three fanned cards. commerce_lib.credit_cards_fan(mb) | ~10476 tris",
+  "thumb": "thumbs/commerce/credit_cards_fan.jpg"
+ },
+ {
+  "name": "smartphone",
+  "category": "commerce",
+  "collection": "commerce/smartphone",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.063,
+   0.08,
+   0.147
+  ],
+  "tags": [
+   "commerce",
+   "smartphone",
+   "phone",
+   "mobile",
+   "tech"
+  ],
+  "notes": "Phone on a stand, blank glass screen toward +X. commerce_lib.smartphone(mb, standing=True) | ~916 tris",
+  "thumb": "thumbs/commerce/smartphone.jpg"
+ },
+ {
+  "name": "laptop",
+  "category": "commerce",
+  "collection": "commerce/laptop",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.288,
+   0.32,
+   0.212
+  ],
+  "tags": [
+   "commerce",
+   "laptop",
+   "computer",
+   "office",
+   "tech"
+  ],
+  "notes": "Open laptop, screen faces +X. commerce_lib.laptop(mb, open_deg=110) | ~3284 tris",
+  "thumb": "thumbs/commerce/laptop.jpg"
+ },
+ {
+  "name": "desk",
+  "category": "commerce",
+  "collection": "commerce/desk",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.8,
+   1.6,
+   0.75
+  ],
+  "tags": [
+   "commerce",
+   "desk",
+   "office",
+   "furniture"
+  ],
+  "notes": "Office desk with drawer pedestal. commerce_lib.desk(mb) | ~484 tris",
+  "thumb": "thumbs/commerce/desk.jpg"
+ },
+ {
+  "name": "office_chair",
+  "category": "commerce",
+  "collection": "commerce/office_chair",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.73,
+   0.625,
+   1.149
+  ],
+  "tags": [
+   "commerce",
+   "chair",
+   "office",
+   "furniture"
+  ],
+  "notes": "Swivel chair. commerce_lib.office_chair(mb) | ~2284 tris",
+  "thumb": "thumbs/commerce/office_chair.jpg"
+ },
+ {
+  "name": "office_desk_set",
+  "category": "commerce",
+  "collection": "commerce/office_desk_set",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.554,
+   1.6,
+   1.15
+  ],
+  "tags": [
+   "commerce",
+   "desk",
+   "office",
+   "workplace"
+  ],
+  "notes": "Desk + chair + laptop + phone + papers. commerce_lib.office_desk_set(mb) | ~8580 tris",
+  "thumb": "thumbs/commerce/office_desk_set.jpg"
+ },
+ {
+  "name": "lectern",
+  "category": "commerce",
+  "collection": "commerce/lectern",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.697,
+   0.8,
+   1.27
+  ],
+  "tags": [
+   "commerce",
+   "podium",
+   "lectern",
+   "speech",
+   "politics"
+  ],
+  "notes": "Podium with accent front panel + mic. commerce_lib.lectern(mb, text) | ~2440 tris",
+  "thumb": "thumbs/commerce/lectern.jpg"
+ },
+ {
+  "name": "flag_on_pole",
+  "category": "commerce",
+  "collection": "commerce/flag_on_pole",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   2.59,
+   0.7,
+   6.14
+  ],
+  "tags": [
+   "commerce",
+   "flag",
+   "nation",
+   "faction"
+  ],
+  "notes": "Waving accent flag with emblem. commerce_lib.flag_on_pole(mb, h=6, fw, fh) | ~672 tris",
+  "thumb": "thumbs/commerce/flag_on_pole.jpg"
+ },
+ {
+  "name": "flag_row",
+  "category": "commerce",
+  "collection": "commerce/flag_row",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   2.79,
+   6.7,
+   8.14
+  ],
+  "tags": [
+   "commerce",
+   "flag",
+   "nation",
+   "diplomacy"
+  ],
+  "notes": "Three flags in a row. commerce_lib.flag_row(mb, n=3) | ~2016 tris",
+  "thumb": "thumbs/commerce/flag_row.jpg"
+ },
+ {
+  "name": "flag_indoor",
+  "category": "commerce",
+  "collection": "commerce/flag_indoor",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.12,
+   0.4,
+   2.7
+  ],
+  "tags": [
+   "commerce",
+   "flag",
+   "office",
+   "press room"
+  ],
+  "notes": "Indoor stand flag. commerce_lib.flag_indoor(mb) | ~416 tris",
+  "thumb": "thumbs/commerce/flag_indoor.jpg"
+ },
+ {
+  "name": "bar_chart",
+  "category": "commerce",
+  "collection": "commerce/bar_chart",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.22,
+   5.14,
+   4.032
+  ],
+  "tags": [
+   "commerce",
+   "chart",
+   "bar chart",
+   "data",
+   "economy"
+  ],
+  "notes": "3D bar chart; values, scale, highlight index. commerce_lib.bar_chart(mb, values=(3,5,4,7,9)) | ~2000 tris",
+  "thumb": "thumbs/commerce/bar_chart.jpg"
+ },
+ {
+  "name": "bar_chart_highlight",
+  "category": "commerce",
+  "collection": "commerce/bar_chart_highlight",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.22,
+   5.14,
+   2.688
+  ],
+  "tags": [
+   "commerce",
+   "chart",
+   "bar chart",
+   "data"
+  ],
+  "notes": "One accent bar, rest white. commerce_lib.bar_chart(mb, values, highlight=0) | ~2608 tris",
+  "thumb": "thumbs/commerce/bar_chart_highlight.jpg"
+ },
+ {
+  "name": "line_chart",
+  "category": "commerce",
+  "collection": "commerce/line_chart",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.8,
+   4.2,
+   2.726
+  ],
+  "tags": [
+   "commerce",
+   "chart",
+   "line chart",
+   "growth",
+   "data"
+  ],
+  "notes": "Ribbon line chart with markers + arrow. commerce_lib.line_chart(mb, values=...) | ~2148 tris",
+  "thumb": "thumbs/commerce/line_chart.jpg"
+ },
+ {
+  "name": "pie_chart",
+  "category": "commerce",
+  "collection": "commerce/pie_chart",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   2.017,
+   2.117,
+   0.347
+  ],
+  "tags": [
+   "commerce",
+   "chart",
+   "pie chart",
+   "share",
+   "data"
+  ],
+  "notes": "Pie slices, first exploded with % label. commerce_lib.pie_chart(mb, values=(45,25,18,12)) | ~1580 tris",
+  "thumb": "thumbs/commerce/pie_chart.jpg"
+ },
+ {
+  "name": "icon_dollar",
+  "category": "commerce",
+  "collection": "commerce/icon_dollar",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.84,
+   0.84,
+   0.939
+  ],
+  "tags": [
+   "commerce",
+   "icon",
+   "dollar",
+   "currency",
+   "money"
+  ],
+  "notes": "1 m Inter-Black $ on a base. commerce_lib.currency_icon(mb, symbol, size, m) | ~896 tris",
+  "thumb": "thumbs/commerce/icon_dollar.jpg"
+ },
+ {
+  "name": "icon_euro",
+  "category": "commerce",
+  "collection": "commerce/icon_euro",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.84,
+   0.84,
+   0.884
+  ],
+  "tags": [
+   "commerce",
+   "icon",
+   "euro",
+   "currency"
+  ],
+  "notes": "commerce_lib.currency_icon(mb, '\u20ac') | ~916 tris",
+  "thumb": "thumbs/commerce/icon_euro.jpg"
+ },
+ {
+  "name": "icon_pound",
+  "category": "commerce",
+  "collection": "commerce/icon_pound",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.84,
+   0.84,
+   0.885
+  ],
+  "tags": [
+   "commerce",
+   "icon",
+   "pound",
+   "currency"
+  ],
+  "notes": "commerce_lib.currency_icon(mb, '\u00a3') | ~788 tris",
+  "thumb": "thumbs/commerce/icon_pound.jpg"
+ },
+ {
+  "name": "icon_bitcoin",
+  "category": "commerce",
+  "collection": "commerce/icon_bitcoin",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.84,
+   0.84,
+   0.939
+  ],
+  "tags": [
+   "commerce",
+   "icon",
+   "bitcoin",
+   "crypto",
+   "currency"
+  ],
+  "notes": "Accent \u20bf. commerce_lib.currency_icon(mb, '\u20bf', m=ACCENT) | ~892 tris",
+  "thumb": "thumbs/commerce/icon_bitcoin.jpg"
+ },
+ {
+  "name": "icon_percent",
+  "category": "commerce",
+  "collection": "commerce/icon_percent",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.84,
+   0.84,
+   0.885
+  ],
+  "tags": [
+   "commerce",
+   "icon",
+   "percent",
+   "interest",
+   "tax"
+  ],
+  "notes": "commerce_lib.currency_icon(mb, '%') | ~936 tris",
+  "thumb": "thumbs/commerce/icon_percent.jpg"
+ },
+ {
+  "name": "icon_coin",
+  "category": "commerce",
+  "collection": "commerce/icon_coin",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.099,
+   1.0,
+   1.0
+  ],
+  "tags": [
+   "commerce",
+   "icon",
+   "coin",
+   "money"
+  ],
+  "notes": "Display coin on edge (1 m). commerce_lib.coin_icon(mb, symbol, r) | ~2548 tris",
+  "thumb": "thumbs/commerce/icon_coin.jpg"
+ },
+ {
+  "name": "icon_arrow_up",
+  "category": "commerce",
+  "collection": "commerce/icon_arrow_up",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.16,
+   0.682,
+   0.879
+  ],
+  "tags": [
+   "commerce",
+   "icon",
+   "arrow",
+   "growth",
+   "up"
+  ],
+  "notes": "Chunky trend arrow. commerce_lib.percent_arrow(mb, up=True) | ~80 tris",
+  "thumb": "thumbs/commerce/icon_arrow_up.jpg"
+ },
+ {
+  "name": "icon_arrow_down",
+  "category": "commerce",
+  "collection": "commerce/icon_arrow_down",
+  "file": "build/commerce.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.16,
+   0.682,
+   0.879
+  ],
+  "tags": [
+   "commerce",
+   "icon",
+   "arrow",
+   "decline",
+   "down"
+  ],
+  "notes": "commerce_lib.percent_arrow(mb, up=False) | ~80 tris",
+  "thumb": "thumbs/commerce/icon_arrow_down.jpg"
+ }
+]

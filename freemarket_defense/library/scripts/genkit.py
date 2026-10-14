@@ -60,7 +60,7 @@ def mat(name):
         return lib.pbr(name, (0.8, 0.6, 0.2), rough=0.28, metal=1.0)
     if name == FIRE:
         # warm emissive for FX cores; strength tuned to read under the bright white-style sun
-        return lib.pbr(name, (1.0, 0.55, 0.18), rough=0.6, emission=((1.0, 0.42, 0.08), 6.0))
+        return lib.pbr(name, (1.0, 0.3, 0.03), rough=0.6, emission=((1.0, 0.22, 0.01), 1.3))
     raise ValueError("not a LIB material: " + name)
 
 
@@ -516,7 +516,7 @@ class Category:
         os.makedirs(os.path.join(LIBROOT, "catalog"), exist_ok=True)
         os.makedirs(os.path.join(LIBROOT, "build"), exist_ok=True)
 
-    def add(self, name, fn, tags=(), notes="", az=-35, el=22, fill=1.0, lens=50):
+    def add(self, name, fn, tags=(), notes="", az=-35, el=22, fill=1.0, lens=50, lift=0.0):
         if self.opts["only"] and name not in self.opts["only"]:
             return
         print(f"[{self.name}] building {name}", flush=True)
@@ -550,7 +550,9 @@ class Category:
         coll.asset_data.description = notes
         tpath = os.path.join(self.thumb_dir, name + ".jpg")
         if not self.opts["nothumb"]:
+            rootob.location.z += lift  # e.g. muzzle-origin FX would be clipped by the thumb floor
             thumb.thumbnail(objs, tpath, azimuth=az, elevation=el, lens=lens, fill=fill)
+            rootob.location.z -= lift
             self._preview(coll, tpath)
         # lay the asset out on a grid in the .blend; instance_offset keeps the asset origin
         w, d = dims[0] + 6, dims[1] + 6
@@ -605,6 +607,7 @@ class Category:
         sc = bpy.context.scene
         if "_thumb_studio" in sc:
             del sc["_thumb_studio"]
+        bpy.context.preferences.filepaths.save_version = 0  # no .blend1 backups
         if not self.opts["only"]:
             bpy.ops.wm.save_as_mainfile(filepath=self.blend, compress=True)
         else:

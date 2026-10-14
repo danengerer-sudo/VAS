@@ -170,6 +170,28 @@
   "thumb": "thumbs/buildings/office_tower_curtain.jpg"
  },
  {
+  "name": "office_tower_punched",
+  "category": "buildings",
+  "collection": "buildings/office_tower_punched",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   27.64,
+   28.28,
+   59.4
+  ],
+  "tags": [
+   "buildings",
+   "office",
+   "tower",
+   "commercial",
+   "downtown"
+  ],
+  "notes": "Office tower with punched windows, two setbacks. arch_lib.office_tower(storeys=14, style='punched', tiers=((0.55, 0.85), (0.85, 0.65)), width=28.0, depth=24.0) | ~49838 tris",
+  "thumb": "thumbs/buildings/office_tower_punched.jpg"
+ },
+ {
   "name": "office_midrise",
   "category": "buildings",
   "collection": "buildings/office_midrise",
@@ -232,6 +254,28 @@
   ],
   "notes": "Art-deco stepped crown. arch_lib.skyscraper(crown='deco', storeys=50, taper=(1.0, 0.82, 0.66)) | ~17376 tris",
   "thumb": "thumbs/buildings/skyscraper_deco.jpg"
+ },
+ {
+  "name": "skyscraper_pyramid",
+  "category": "buildings",
+  "collection": "buildings/skyscraper_pyramid",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   32.3,
+   32.3,
+   227.42
+  ],
+  "tags": [
+   "buildings",
+   "skyscraper",
+   "tower",
+   "downtown",
+   "finance"
+  ],
+  "notes": "Glass pyramid crown. arch_lib.skyscraper(crown='pyramid', storeys=44, width=32.0, taper=(1.0, 0.9, 0.8)) | ~13536 tris",
+  "thumb": "thumbs/buildings/skyscraper_pyramid.jpg"
  },
  {
   "name": "storefront_shop",
@@ -387,6 +431,27 @@
   "thumb": "thumbs/buildings/parliament_dome.jpg"
  },
  {
+  "name": "warehouse",
+  "category": "buildings",
+  "collection": "buildings/warehouse",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   40.6,
+   28.3,
+   10.513
+  ],
+  "tags": [
+   "buildings",
+   "warehouse",
+   "logistics",
+   "industrial"
+  ],
+  "notes": "Portal-frame warehouse with dock doors. arch_lib.warehouse() | ~4984 tris",
+  "thumb": "thumbs/buildings/warehouse.jpg"
+ },
+ {
   "name": "factory_sawtooth",
   "category": "buildings",
   "collection": "buildings/factory_sawtooth",
@@ -428,6 +493,28 @@
   ],
   "notes": "Barrel-vault transit shed. arch_lib.port_shed() | ~12812 tris",
   "thumb": "thumbs/buildings/port_terminal_shed.jpg"
+ },
+ {
+  "name": "gas_station",
+  "category": "buildings",
+  "collection": "buildings/gas_station",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   22.0,
+   40.0,
+   7.0
+  ],
+  "tags": [
+   "buildings",
+   "gas station",
+   "fuel",
+   "retail",
+   "energy"
+  ],
+  "notes": "Canopy, pumps, kiosk, price pylon. arch_lib.gas_station() | ~6840 tris",
+  "thumb": "thumbs/buildings/gas_station.jpg"
  },
  {
   "name": "church",
@@ -495,6 +582,27 @@
   "thumb": "thumbs/buildings/school.jpg"
  },
  {
+  "name": "hospital",
+  "category": "buildings",
+  "collection": "buildings/hospital",
+  "file": "build/buildings.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   44.17,
+   60.24,
+   38.08
+  ],
+  "tags": [
+   "buildings",
+   "hospital",
+   "civic",
+   "health"
+  ],
+  "notes": "Hospital tower + podium, accent cross, helipad. arch_lib.hospital() | ~60132 tris",
+  "thumb": "thumbs/buildings/hospital.jpg"
+ },
+ {
   "name": "castle",
   "category": "buildings",
   "collection": "buildings/castle",
@@ -558,114 +666,6 @@
   ],
   "notes": "Bastioned star fort with moat. arch_lib.star_fort() | ~8590 tris",
   "thumb": "thumbs/buildings/star_fort.jpg"
- },
- {
-  "name": "office_tower_punched",
-  "category": "buildings",
-  "collection": "buildings/office_tower_punched",
-  "file": "build/buildings.blend",
-  "source": "procedural",
-  "license": "original",
-  "dims_m": [
-   27.64,
-   28.28,
-   59.4
-  ],
-  "tags": [
-   "buildings",
-   "office",
-   "tower",
-   "commercial",
-   "downtown"
-  ],
-  "notes": "Office tower with punched windows, two setbacks. arch_lib.office_tower(storeys=14, style='punched', tiers=((0.55, 0.85), (0.85, 0.65)), width=28.0, depth=24.0) | ~49838 tris",
-  "thumb": "thumbs/buildings/office_tower_punched.jpg"
- },
- {
-  "name": "skyscraper_pyramid",
-  "category": "buildings",
-  "collection": "buildings/skyscraper_pyramid",
-  "file": "build/buildings.blend",
-  "source": "procedural",
-  "license": "original",
-  "dims_m": [
-   32.3,
-   32.3,
-   227.42
-  ],
-  "tags": [
-   "buildings",
-   "skyscraper",
-   "tower",
-   "downtown",
-   "finance"
-  ],
-  "notes": "Glass pyramid crown. arch_lib.skyscraper(crown='pyramid', storeys=44, width=32.0, taper=(1.0, 0.9, 0.8)) | ~13536 tris",
-  "thumb": "thumbs/buildings/skyscraper_pyramid.jpg"
- },
- {
-  "name": "warehouse",
-  "category": "buildings",
-  "collection": "buildings/warehouse",
-  "file": "build/buildings.blend",
-  "source": "procedural",
-  "license": "original",
-  "dims_m": [
-   40.0,
-   40.6,
-   11.353
-  ],
-  "tags": [
-   "buildings",
-   "warehouse",
-   "logistics",
-   "industrial"
-  ],
-  "notes": "Portal-frame warehouse with dock doors. arch_lib.warehouse() | ~4976 tris",
-  "thumb": "thumbs/buildings/warehouse.jpg"
- },
- {
-  "name": "gas_station",
-  "category": "buildings",
-  "collection": "buildings/gas_station",
-  "file": "build/buildings.blend",
-  "source": "procedural",
-  "license": "original",
-  "dims_m": [
-   27.8,
-   28.0,
-   7.0
-  ],
-  "tags": [
-   "buildings",
-   "gas station",
-   "fuel",
-   "retail",
-   "energy"
-  ],
-  "notes": "Canopy, pumps, kiosk, price pylon. arch_lib.gas_station() | ~6840 tris",
-  "thumb": "thumbs/buildings/gas_station.jpg"
- },
- {
-  "name": "hospital",
-  "category": "buildings",
-  "collection": "buildings/hospital",
-  "file": "build/buildings.blend",
-  "source": "procedural",
-  "license": "original",
-  "dims_m": [
-   44.17,
-   60.24,
-   38.08
-  ],
-  "tags": [
-   "buildings",
-   "hospital",
-   "civic",
-   "health"
-  ],
-  "notes": "Hospital tower + podium, accent cross, helipad. arch_lib.hospital() | ~60132 tris",
-  "thumb": "thumbs/buildings/hospital.jpg"
  },
  {
   "name": "farm_barn_silo",

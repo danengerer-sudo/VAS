@@ -1,0 +1,1219 @@
+[
+ {
+  "name": "light_square",
+  "category": "street_props",
+  "collection": "street_props/light_square",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.375,
+   0.5,
+   6.0
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "streetlight",
+   "lamp"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x10 | ~60 tris | src kenney_city_roads/raw/Models/GLB format/light-square.glb",
+  "thumb": "thumbs/street_props/light_square.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "light_square_double",
+  "category": "street_props",
+  "collection": "street_props/light_square_double",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.25,
+   0.5,
+   6.0
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "streetlight",
+   "lamp"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x10 | ~88 tris | src kenney_city_roads/raw/Models/GLB format/light-square-double.glb",
+  "thumb": "thumbs/street_props/light_square_double.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "light_curved",
+  "category": "street_props",
+  "collection": "street_props/light_curved",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.25,
+   0.5,
+   6.75
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "streetlight",
+   "lamp"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x10 | ~92 tris | src kenney_city_roads/raw/Models/GLB format/light-curved.glb",
+  "thumb": "thumbs/street_props/light_curved.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "light_curved_double",
+  "category": "street_props",
+  "collection": "street_props/light_curved_double",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.0,
+   0.5,
+   6.75
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "streetlight",
+   "lamp"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x10 | ~152 tris | src kenney_city_roads/raw/Models/GLB format/light-curved-double.glb",
+  "thumb": "thumbs/street_props/light_curved_double.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "traffic_light",
+  "category": "street_props",
+  "collection": "street_props/traffic_light",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.72,
+   0.941,
+   4.12
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "traffic_light",
+   "traffic"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x8 | ~212 tris | src kenney_city_roads/raw/Models/GLB format/traffic-light.glb",
+  "thumb": "thumbs/street_props/traffic_light.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "traffic_light_hanging",
+  "category": "street_props",
+  "collection": "street_props/traffic_light_hanging",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.36,
+   0.941,
+   4.073
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "traffic_light",
+   "traffic"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x8 | ~230 tris | src kenney_city_roads/raw/Models/GLB format/traffic-light-hanging.glb",
+  "thumb": "thumbs/street_props/traffic_light_hanging.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_sign_stop",
+  "category": "street_props",
+  "collection": "street_props/road_sign_stop",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.829,
+   0.465,
+   2.964
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "sign",
+   "traffic",
+   "stop"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x6 | ~104 tris | src kenney_city_roads/raw/Models/GLB format/road-sign-stop.glb",
+  "thumb": "thumbs/street_props/road_sign_stop.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_sign_warning",
+  "category": "street_props",
+  "collection": "street_props/road_sign_warning",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.883,
+   0.464,
+   2.991
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "sign",
+   "traffic"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x6 | ~104 tris | src kenney_city_roads/raw/Models/GLB format/road-sign-warning.glb",
+  "thumb": "thumbs/street_props/road_sign_warning.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_sign_street",
+  "category": "street_props",
+  "collection": "street_props/road_sign_street",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.177,
+   1.178,
+   2.85
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "sign",
+   "street_name"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x6 | ~154 tris | src kenney_city_roads/raw/Models/GLB format/road-sign-street.glb",
+  "thumb": "thumbs/street_props/road_sign_street.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "road_sign_empty",
+  "category": "street_props",
+  "collection": "street_props/road_sign_empty",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.3,
+   0.3,
+   2.85
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "sign",
+   "blank"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x6 | ~42 tris | src kenney_city_roads/raw/Models/GLB format/road-sign-empty.glb",
+  "thumb": "thumbs/street_props/road_sign_empty.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "sign_highway",
+  "category": "street_props",
+  "collection": "street_props/sign_highway",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   1.059,
+   5.659
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "sign",
+   "highway",
+   "gantry"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x8 | ~180 tris | src kenney_city_roads/raw/Models/GLB format/sign-highway.glb",
+  "thumb": "thumbs/street_props/sign_highway.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "sign_highway_wide",
+  "category": "street_props",
+  "collection": "street_props/sign_highway_wide",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   1.059,
+   5.659
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "sign",
+   "highway",
+   "gantry"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x8 | ~144 tris | src kenney_city_roads/raw/Models/GLB format/sign-highway-wide.glb",
+  "thumb": "thumbs/street_props/sign_highway_wide.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "construction_cone",
+  "category": "street_props",
+  "collection": "street_props/construction_cone",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.6,
+   0.6,
+   0.75
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "construction",
+   "cone",
+   "traffic"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x8 | ~66 tris | src kenney_city_roads/raw/Models/GLB format/construction-cone.glb",
+  "thumb": "thumbs/street_props/construction_cone.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "construction_barrier",
+  "category": "street_props",
+  "collection": "street_props/construction_barrier",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.8,
+   1.084,
+   1.04
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "construction",
+   "barrier"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x8 | ~60 tris | src kenney_city_roads/raw/Models/GLB format/construction-barrier.glb",
+  "thumb": "thumbs/street_props/construction_barrier.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "construction_fence",
+  "category": "street_props",
+  "collection": "street_props/construction_fence",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.0,
+   0.6,
+   1.43
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "construction",
+   "fence"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x8 | ~136 tris | src kenney_city_roads/raw/Models/GLB format/construction-fence.glb",
+  "thumb": "thumbs/street_props/construction_fence.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "construction_light",
+  "category": "street_props",
+  "collection": "street_props/construction_light",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.6,
+   0.6,
+   1.87
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "construction",
+   "light"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x8 | ~144 tris | src kenney_city_roads/raw/Models/GLB format/construction-light.glb",
+  "thumb": "thumbs/street_props/construction_light.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "dumpster",
+  "category": "street_props",
+  "collection": "street_props/dumpster",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.85,
+   1.375,
+   1.047
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "dumpster",
+   "bin",
+   "waste"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x5 | ~234 tris | src kenney_city_roads/raw/Models/GLB format/dumpster.glb",
+  "thumb": "thumbs/street_props/dumpster.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "electricity_pole",
+  "category": "street_props",
+  "collection": "street_props/electricity_pole",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.213,
+   8.686,
+   7.875
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "utility_pole",
+   "power"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x15 | ~416 tris | src kenney_city_roads/raw/Models/GLB format/electricity-pole.glb",
+  "thumb": "thumbs/street_props/electricity_pole.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "electricity_pole_wide",
+  "category": "street_props",
+  "collection": "street_props/electricity_pole_wide",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Roads)",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.213,
+   16.186,
+   7.875
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "utility_pole",
+   "power"
+  ],
+  "notes": "Kenney City Kit (Roads), scale x15 | ~544 tris | src kenney_city_roads/raw/Models/GLB format/electricity-pole-wide.glb",
+  "thumb": "thumbs/street_props/electricity_pole_wide.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-roads"
+ },
+ {
+  "name": "detail_awning",
+  "category": "street_props",
+  "collection": "street_props/detail_awning",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.183,
+   3.2,
+   3.2
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "awning",
+   "shopfront",
+   "brand"
+  ],
+  "notes": "Kenney City Kit (Commercial) 2.1, scale x8 | ~40 tris | src kenney_city_commercial/raw/Models/GLB format/detail-awning.glb",
+  "thumb": "thumbs/street_props/detail_awning.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "detail_awning_wide",
+  "category": "street_props",
+  "collection": "street_props/detail_awning_wide",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.183,
+   6.4,
+   3.2
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "awning",
+   "shopfront",
+   "brand"
+  ],
+  "notes": "Kenney City Kit (Commercial) 2.1, scale x8 | ~40 tris | src kenney_city_commercial/raw/Models/GLB format/detail-awning-wide.glb",
+  "thumb": "thumbs/street_props/detail_awning_wide.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "detail_overhang",
+  "category": "street_props",
+  "collection": "street_props/detail_overhang",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   4.0,
+   3.2
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "awning",
+   "shopfront"
+  ],
+  "notes": "Kenney City Kit (Commercial) 2.1, scale x8 | ~64 tris | src kenney_city_commercial/raw/Models/GLB format/detail-overhang.glb",
+  "thumb": "thumbs/street_props/detail_overhang.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "detail_overhang_wide",
+  "category": "street_props",
+  "collection": "street_props/detail_overhang_wide",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   8.0,
+   3.2
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "awning",
+   "shopfront"
+  ],
+  "notes": "Kenney City Kit (Commercial) 2.1, scale x8 | ~64 tris | src kenney_city_commercial/raw/Models/GLB format/detail-overhang-wide.glb",
+  "thumb": "thumbs/street_props/detail_overhang_wide.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "detail_parasol_a",
+  "category": "street_props",
+  "collection": "street_props/detail_parasol_a",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.2,
+   2.771,
+   3.6
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "parasol",
+   "cafe",
+   "market"
+  ],
+  "notes": "Kenney City Kit (Commercial) 2.1, scale x8 | ~96 tris | src kenney_city_commercial/raw/Models/GLB format/detail-parasol-a.glb",
+  "thumb": "thumbs/street_props/detail_parasol_a.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "detail_parasol_b",
+  "category": "street_props",
+  "collection": "street_props/detail_parasol_b",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Commercial) 2.1",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.2,
+   2.771,
+   3.6
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "parasol",
+   "cafe",
+   "market"
+  ],
+  "notes": "Kenney City Kit (Commercial) 2.1, scale x8 | ~120 tris | src kenney_city_commercial/raw/Models/GLB format/detail-parasol-b.glb",
+  "thumb": "thumbs/street_props/detail_parasol_b.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-commercial"
+ },
+ {
+  "name": "sub_fence",
+  "category": "street_props",
+  "collection": "street_props/sub_fence",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.375,
+   0.375,
+   1.35
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "fence",
+   "garden"
+  ],
+  "notes": "Kenney City Kit (Suburban) 2.0, scale x5 | ~88 tris | src kenney_city_suburban/raw/Models/GLB format/fence.glb",
+  "thumb": "thumbs/street_props/sub_fence.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "fence_low",
+  "category": "street_props",
+  "collection": "street_props/fence_low",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.375,
+   4.188,
+   0.85
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "fence",
+   "garden"
+  ],
+  "notes": "Kenney City Kit (Suburban) 2.0, scale x5 | ~180 tris | src kenney_city_suburban/raw/Models/GLB format/fence-low.glb",
+  "thumb": "thumbs/street_props/fence_low.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "fence_2x2",
+  "category": "street_props",
+  "collection": "street_props/fence_2x2",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.375,
+   4.188,
+   1.35
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "fence",
+   "garden",
+   "enclosure"
+  ],
+  "notes": "Kenney City Kit (Suburban) 2.0, scale x5 | ~236 tris | src kenney_city_suburban/raw/Models/GLB format/fence-2x2.glb",
+  "thumb": "thumbs/street_props/fence_2x2.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "planter",
+  "category": "street_props",
+  "collection": "street_props/planter",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.0,
+   1.5,
+   0.886
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "planter",
+   "garden",
+   "plant"
+  ],
+  "notes": "Kenney City Kit (Suburban) 2.0, scale x5 | ~204 tris | src kenney_city_suburban/raw/Models/GLB format/planter.glb",
+  "thumb": "thumbs/street_props/planter.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "tree_large",
+  "category": "street_props",
+  "collection": "street_props/tree_large",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.684,
+   1.944,
+   6.136
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "tree",
+   "nature"
+  ],
+  "notes": "Kenney City Kit (Suburban) 2.0, scale x8 | ~42 tris | src kenney_city_suburban/raw/Models/GLB format/tree-large.glb",
+  "thumb": "thumbs/street_props/tree_large.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "tree_small",
+  "category": "street_props",
+  "collection": "street_props/tree_small",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.684,
+   1.944,
+   4.536
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "tree",
+   "nature"
+  ],
+  "notes": "Kenney City Kit (Suburban) 2.0, scale x8 | ~42 tris | src kenney_city_suburban/raw/Models/GLB format/tree-small.glb",
+  "thumb": "thumbs/street_props/tree_small.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "driveway_long",
+  "category": "street_props",
+  "collection": "street_props/driveway_long",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.88,
+   3.2,
+   0.08
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "driveway",
+   "ground"
+  ],
+  "notes": "Kenney City Kit (Suburban) 2.0, scale x8 | ~12 tris | src kenney_city_suburban/raw/Models/GLB format/driveway-long.glb",
+  "thumb": "thumbs/street_props/driveway_long.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "path_stones_long",
+  "category": "street_props",
+  "collection": "street_props/path_stones_long",
+  "file": "build/street_props.blend",
+  "source": "Kenney City Kit (Suburban) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.12,
+   3.2,
+   0.08
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "path",
+   "ground"
+  ],
+  "notes": "Kenney City Kit (Suburban) 2.0, scale x8 | ~48 tris | src kenney_city_suburban/raw/Models/GLB format/path-stones-long.glb",
+  "thumb": "thumbs/street_props/path_stones_long.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-suburban"
+ },
+ {
+  "name": "bench",
+  "category": "street_props",
+  "collection": "street_props/bench",
+  "file": "build/street_props.blend",
+  "source": "Kenney Holiday Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.885,
+   1.569,
+   1.023
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "bench",
+   "park",
+   "seating"
+  ],
+  "notes": "Kenney Holiday Kit, scale x1.4 | ~160 tris | src kenney_holiday_kit/raw/Models/GLB format/bench.glb",
+  "thumb": "thumbs/street_props/bench.jpg",
+  "source_url": "https://kenney.nl/assets/holiday-kit"
+ },
+ {
+  "name": "bench_short",
+  "category": "street_props",
+  "collection": "street_props/bench_short",
+  "file": "build/street_props.blend",
+  "source": "Kenney Holiday Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.885,
+   0.869,
+   1.023
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "bench",
+   "park",
+   "seating"
+  ],
+  "notes": "Kenney Holiday Kit, scale x1.4 | ~160 tris | src kenney_holiday_kit/raw/Models/GLB format/bench-short.glb",
+  "thumb": "thumbs/street_props/bench_short.jpg",
+  "source_url": "https://kenney.nl/assets/holiday-kit"
+ },
+ {
+  "name": "lantern",
+  "category": "street_props",
+  "collection": "street_props/lantern",
+  "file": "build/street_props.blend",
+  "source": "Kenney Holiday Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.637,
+   0.735,
+   2.432
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "lamp",
+   "lantern",
+   "park"
+  ],
+  "notes": "Kenney Holiday Kit, scale x1.4 | ~172 tris | src kenney_holiday_kit/raw/Models/GLB format/lantern.glb",
+  "thumb": "thumbs/street_props/lantern.jpg",
+  "source_url": "https://kenney.nl/assets/holiday-kit"
+ },
+ {
+  "name": "hol_tree",
+  "category": "street_props",
+  "collection": "street_props/hol_tree",
+  "file": "build/street_props.blend",
+  "source": "Kenney Holiday Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.904,
+   1.904,
+   3.073
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "tree",
+   "pine",
+   "nature"
+  ],
+  "notes": "Kenney Holiday Kit, scale x1.6 | ~234 tris | src kenney_holiday_kit/raw/Models/GLB format/tree.glb",
+  "thumb": "thumbs/street_props/hol_tree.jpg",
+  "source_url": "https://kenney.nl/assets/holiday-kit"
+ },
+ {
+  "name": "tree_decorated",
+  "category": "street_props",
+  "collection": "street_props/tree_decorated",
+  "file": "build/street_props.blend",
+  "source": "Kenney Holiday Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.904,
+   1.904,
+   3.663
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "tree",
+   "christmas",
+   "holiday"
+  ],
+  "notes": "Kenney Holiday Kit, scale x1.6 | ~670 tris | src kenney_holiday_kit/raw/Models/GLB format/tree-decorated.glb",
+  "thumb": "thumbs/street_props/tree_decorated.jpg",
+  "source_url": "https://kenney.nl/assets/holiday-kit"
+ },
+ {
+  "name": "rocks_large",
+  "category": "street_props",
+  "collection": "street_props/rocks_large",
+  "file": "build/street_props.blend",
+  "source": "Kenney Holiday Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.398,
+   3.762,
+   2.399
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "rocks",
+   "nature"
+  ],
+  "notes": "Kenney Holiday Kit, scale x1.4 | ~696 tris | src kenney_holiday_kit/raw/Models/GLB format/rocks-large.glb",
+  "thumb": "thumbs/street_props/rocks_large.jpg",
+  "source_url": "https://kenney.nl/assets/holiday-kit"
+ },
+ {
+  "name": "rocks_small",
+  "category": "street_props",
+  "collection": "street_props/rocks_small",
+  "file": "build/street_props.blend",
+  "source": "Kenney Holiday Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.155,
+   1.981,
+   0.904
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "rocks",
+   "nature"
+  ],
+  "notes": "Kenney Holiday Kit, scale x1.4 | ~330 tris | src kenney_holiday_kit/raw/Models/GLB format/rocks-small.glb",
+  "thumb": "thumbs/street_props/rocks_small.jpg",
+  "source_url": "https://kenney.nl/assets/holiday-kit"
+ },
+ {
+  "name": "present_a_cube",
+  "category": "street_props",
+  "collection": "street_props/present_a_cube",
+  "file": "build/street_props.blend",
+  "source": "Kenney Holiday Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.45,
+   0.45,
+   0.571
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "gift",
+   "present",
+   "box"
+  ],
+  "notes": "Kenney Holiday Kit, scale x1.0 | ~238 tris | src kenney_holiday_kit/raw/Models/GLB format/present-a-cube.glb",
+  "thumb": "thumbs/street_props/present_a_cube.jpg",
+  "source_url": "https://kenney.nl/assets/holiday-kit"
+ },
+ {
+  "name": "present_b_rectangle",
+  "category": "street_props",
+  "collection": "street_props/present_b_rectangle",
+  "file": "build/street_props.blend",
+  "source": "Kenney Holiday Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.65,
+   0.45,
+   0.471
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "gift",
+   "present",
+   "box"
+  ],
+  "notes": "Kenney Holiday Kit, scale x1.0 | ~238 tris | src kenney_holiday_kit/raw/Models/GLB format/present-b-rectangle.glb",
+  "thumb": "thumbs/street_props/present_b_rectangle.jpg",
+  "source_url": "https://kenney.nl/assets/holiday-kit"
+ },
+ {
+  "name": "snowman",
+  "category": "street_props",
+  "collection": "street_props/snowman",
+  "file": "build/street_props.blend",
+  "source": "Kenney Holiday Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.963,
+   1.545,
+   1.49
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "snowman",
+   "winter"
+  ],
+  "notes": "Kenney Holiday Kit, scale x1.4 | ~446 tris | src kenney_holiday_kit/raw/Models/GLB format/snowman.glb",
+  "thumb": "thumbs/street_props/snowman.jpg",
+  "source_url": "https://kenney.nl/assets/holiday-kit"
+ },
+ {
+  "name": "signpost",
+  "category": "street_props",
+  "collection": "street_props/signpost",
+  "file": "build/street_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.172,
+   0.856,
+   1.84
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "sign",
+   "signpost",
+   "wood"
+  ],
+  "notes": "Kenney Survival Kit, scale x4 | ~44 tris | src kenney_survival_kit/raw/Models/GLB format/signpost.glb",
+  "thumb": "thumbs/street_props/signpost.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "signpost_single",
+  "category": "street_props",
+  "collection": "street_props/signpost_single",
+  "file": "build/street_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.172,
+   0.835,
+   1.84
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "sign",
+   "signpost",
+   "wood"
+  ],
+  "notes": "Kenney Survival Kit, scale x4 | ~28 tris | src kenney_survival_kit/raw/Models/GLB format/signpost-single.glb",
+  "thumb": "thumbs/street_props/signpost_single.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "sur_fence",
+  "category": "street_props",
+  "collection": "street_props/sur_fence",
+  "file": "build/street_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.5,
+   0.128,
+   1.552
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "fence",
+   "wood"
+  ],
+  "notes": "Kenney Survival Kit, scale x3 | ~48 tris | src kenney_survival_kit/raw/Models/GLB format/fence.glb",
+  "thumb": "thumbs/street_props/sur_fence.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "fence_fortified",
+  "category": "street_props",
+  "collection": "street_props/fence_fortified",
+  "file": "build/street_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.5,
+   0.159,
+   1.552
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "fence",
+   "wall",
+   "fortified"
+  ],
+  "notes": "Kenney Survival Kit, scale x3 | ~120 tris | src kenney_survival_kit/raw/Models/GLB format/fence-fortified.glb",
+  "thumb": "thumbs/street_props/fence_fortified.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "sur_tree",
+  "category": "street_props",
+  "collection": "street_props/sur_tree",
+  "file": "build/street_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.659,
+   1.579,
+   4.233
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "tree",
+   "nature"
+  ],
+  "notes": "Kenney Survival Kit, scale x3 | ~226 tris | src kenney_survival_kit/raw/Models/GLB format/tree.glb",
+  "thumb": "thumbs/street_props/sur_tree.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "tree_tall",
+  "category": "street_props",
+  "collection": "street_props/tree_tall",
+  "file": "build/street_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.659,
+   1.579,
+   5.133
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "tree",
+   "nature"
+  ],
+  "notes": "Kenney Survival Kit, scale x3 | ~254 tris | src kenney_survival_kit/raw/Models/GLB format/tree-tall.glb",
+  "thumb": "thumbs/street_props/tree_tall.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "tree_autumn",
+  "category": "street_props",
+  "collection": "street_props/tree_autumn",
+  "file": "build/street_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.659,
+   1.579,
+   4.233
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "tree",
+   "nature"
+  ],
+  "notes": "Kenney Survival Kit, scale x3 | ~198 tris | src kenney_survival_kit/raw/Models/GLB format/tree-autumn.glb",
+  "thumb": "thumbs/street_props/tree_autumn.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "rock_a",
+  "category": "street_props",
+  "collection": "street_props/rock_a",
+  "file": "build/street_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.666,
+   1.865,
+   1.178
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "rock",
+   "nature"
+  ],
+  "notes": "Kenney Survival Kit, scale x3 | ~104 tris | src kenney_survival_kit/raw/Models/GLB format/rock-a.glb",
+  "thumb": "thumbs/street_props/rock_a.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "campfire_pit",
+  "category": "street_props",
+  "collection": "street_props/campfire_pit",
+  "file": "build/street_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.833,
+   0.808,
+   0.327
+  ],
+  "tags": [
+   "street_props",
+   "street",
+   "prop",
+   "campfire",
+   "fire"
+  ],
+  "notes": "Kenney Survival Kit, scale x3 | ~305 tris | src kenney_survival_kit/raw/Models/GLB format/campfire-pit.glb",
+  "thumb": "thumbs/street_props/campfire_pit.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ }
+]

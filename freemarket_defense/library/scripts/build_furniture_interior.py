@@ -17,7 +17,7 @@ ITEMS = {
     "computerScreen": ["office", "computer", "screen"], "computerKeyboard": ["office", "computer"],
     "laptop": ["office", "computer"], "bookcaseClosed": ["office", "shelf"], "bookcaseClosedDoors": ["office", "cabinet"],
     "bookcaseClosedWide": ["office", "shelf"], "bookcaseOpen": ["office", "shelf"], "bookcaseOpenLow": ["office", "shelf"],
-    "books": ["office", "books"], "cardboardBoxClosed": ["box", "logistics"], "cardboardBoxOpen": ["box", "logistics"],
+    "books": ["office", "books"],
     "coatRackStanding": ["home"], "trashcan": ["office", "bin"], "speaker": ["electronics"], "radio": ["electronics"],
     "chair": ["home", "chair"], "chairCushion": ["home", "chair"], "chairModernCushion": ["home", "chair"],
     "chairModernFrameCushion": ["home", "chair"], "chairRounded": ["home", "chair"], "stoolBar": ["home", "stool"],

@@ -1,0 +1,1481 @@
+[
+ {
+  "name": "cashregister",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/cashregister",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: CashRegister_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.624,
+   0.6,
+   0.621
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "shop",
+   "retail",
+   "checkout",
+   "money"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~9927 tris | src polyhaven/CashRegister_01/CashRegister_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/cashregister.jpg",
+  "source_url": "https://polyhaven.com/a/CashRegister_01"
+ },
+ {
+  "name": "coffeecart",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/coffeecart",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: CoffeeCart_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.073,
+   2.168,
+   1.718
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "shop",
+   "cafe",
+   "cart",
+   "street_vendor"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~27659 tris | src polyhaven/CoffeeCart_01/CoffeeCart_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/coffeecart.jpg",
+  "source_url": "https://polyhaven.com/a/CoffeeCart_01"
+ },
+ {
+  "name": "barrel",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/barrel",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: Barrel_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.563,
+   0.563,
+   0.88
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "barrel",
+   "container"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~2682 tris | src polyhaven/Barrel_01/Barrel_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/barrel.jpg",
+  "source_url": "https://polyhaven.com/a/Barrel_01"
+ },
+ {
+  "name": "barrel_03",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/barrel_03",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: barrel_03",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.634,
+   0.639,
+   0.93
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "barrel",
+   "container"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~1473 tris | src polyhaven/barrel_03/barrel_03_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/barrel_03.jpg",
+  "source_url": "https://polyhaven.com/a/barrel_03"
+ },
+ {
+  "name": "cardboard_box",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/cardboard_box",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: cardboard_box_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.387,
+   0.516,
+   0.342
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "box",
+   "logistics",
+   "parcel"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~16952 tris | src polyhaven/cardboard_box_01/cardboard_box_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/cardboard_box.jpg",
+  "source_url": "https://polyhaven.com/a/cardboard_box_01"
+ },
+ {
+  "name": "wooden_crate",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/wooden_crate",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: wooden_crate_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.825,
+   0.409,
+   0.35
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "crate",
+   "logistics",
+   "trade"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~6576 tris | src polyhaven/wooden_crate_01/wooden_crate_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/wooden_crate.jpg",
+  "source_url": "https://polyhaven.com/a/wooden_crate_01"
+ },
+ {
+  "name": "wooden_crate_02",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/wooden_crate_02",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: wooden_crate_02",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.529,
+   1.166,
+   0.464
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "crate",
+   "logistics",
+   "trade"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~5176 tris | src polyhaven/wooden_crate_02/wooden_crate_02_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/wooden_crate_02.jpg",
+  "source_url": "https://polyhaven.com/a/wooden_crate_02"
+ },
+ {
+  "name": "plastic_crate",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/plastic_crate",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: plastic_crate_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.298,
+   0.408,
+   0.264
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "crate",
+   "market",
+   "produce"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~18320 tris | src polyhaven/plastic_crate_01/plastic_crate_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/plastic_crate.jpg",
+  "source_url": "https://polyhaven.com/a/plastic_crate_01"
+ },
+ {
+  "name": "street_lamp",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/street_lamp",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: street_lamp_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.386,
+   0.704,
+   3.871
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "street",
+   "streetlight",
+   "lamp"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~30610 tris | src polyhaven/street_lamp_01/street_lamp_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/street_lamp.jpg",
+  "source_url": "https://polyhaven.com/a/street_lamp_01"
+ },
+ {
+  "name": "street_lamp_02",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/street_lamp_02",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: street_lamp_02",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.807,
+   0.386,
+   1.675
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "street",
+   "streetlight",
+   "lamp"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~20338 tris | src polyhaven/street_lamp_02/street_lamp_02_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/street_lamp_02.jpg",
+  "source_url": "https://polyhaven.com/a/street_lamp_02"
+ },
+ {
+  "name": "fire_hydrant",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/fire_hydrant",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: fire_hydrant",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.318,
+   0.875,
+   0.799
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "street",
+   "hydrant"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~86316 tris | src polyhaven/fire_hydrant/fire_hydrant_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/fire_hydrant.jpg",
+  "source_url": "https://polyhaven.com/a/fire_hydrant"
+ },
+ {
+  "name": "metal_trash_can",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/metal_trash_can",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: metal_trash_can",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.778,
+   0.556,
+   0.906
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "street",
+   "bin",
+   "waste"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~13960 tris | src polyhaven/metal_trash_can/metal_trash_can_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/metal_trash_can.jpg",
+  "source_url": "https://polyhaven.com/a/metal_trash_can"
+ },
+ {
+  "name": "concrete_road_barrier",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/concrete_road_barrier",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: concrete_road_barrier",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.545,
+   0.639,
+   0.831
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "street",
+   "barrier",
+   "construction"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~60928 tris | src polyhaven/concrete_road_barrier/concrete_road_barrier_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/concrete_road_barrier.jpg",
+  "source_url": "https://polyhaven.com/a/concrete_road_barrier"
+ },
+ {
+  "name": "modular_street_seating",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/modular_street_seating",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: modular_street_seating",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.77,
+   4.34,
+   0.95
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "street",
+   "bench",
+   "seating"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~25156 tris | src polyhaven/modular_street_seating/modular_street_seating_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/modular_street_seating.jpg",
+  "source_url": "https://polyhaven.com/a/modular_street_seating"
+ },
+ {
+  "name": "painted_wooden_bench",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/painted_wooden_bench",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: painted_wooden_bench",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.497,
+   1.165,
+   0.889
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "bench",
+   "park",
+   "seating"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~630 tris | src polyhaven/painted_wooden_bench/painted_wooden_bench_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/painted_wooden_bench.jpg",
+  "source_url": "https://polyhaven.com/a/painted_wooden_bench"
+ },
+ {
+  "name": "wooden_picnic_table",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/wooden_picnic_table",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: wooden_picnic_table",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.241,
+   3.022,
+   0.746
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "table",
+   "park",
+   "seating"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~10210 tris | src polyhaven/wooden_picnic_table/wooden_picnic_table_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/wooden_picnic_table.jpg",
+  "source_url": "https://polyhaven.com/a/wooden_picnic_table"
+ },
+ {
+  "name": "metal_office_desk",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/metal_office_desk",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: metal_office_desk",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.947,
+   2.0,
+   0.788
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "office",
+   "desk"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~6898 tris | src polyhaven/metal_office_desk/metal_office_desk_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/metal_office_desk.jpg",
+  "source_url": "https://polyhaven.com/a/metal_office_desk"
+ },
+ {
+  "name": "modern_arm_chair",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/modern_arm_chair",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: modern_arm_chair_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.987,
+   0.82,
+   1.023
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "office",
+   "chair",
+   "armchair"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~8916 tris | src polyhaven/modern_arm_chair_01/modern_arm_chair_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/modern_arm_chair.jpg",
+  "source_url": "https://polyhaven.com/a/modern_arm_chair_01"
+ },
+ {
+  "name": "schooldesk",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/schooldesk",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: SchoolDesk_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.546,
+   0.712,
+   0.883
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "school",
+   "desk"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~4162 tris | src polyhaven/SchoolDesk_01/SchoolDesk_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/schooldesk.jpg",
+  "source_url": "https://polyhaven.com/a/SchoolDesk_01"
+ },
+ {
+  "name": "schoolchair",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/schoolchair",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: SchoolChair_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.675,
+   0.566,
+   1.006
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "school",
+   "chair"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~5072 tris | src polyhaven/SchoolChair_01/SchoolChair_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/schoolchair.jpg",
+  "source_url": "https://polyhaven.com/a/SchoolChair_01"
+ },
+ {
+  "name": "woodenchair",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/woodenchair",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: WoodenChair_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.658,
+   0.688,
+   2.274
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "home",
+   "chair"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~19992 tris | src polyhaven/WoodenChair_01/WoodenChair_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/woodenchair.jpg",
+  "source_url": "https://polyhaven.com/a/WoodenChair_01"
+ },
+ {
+  "name": "dining_chair_02",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/dining_chair_02",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: dining_chair_02",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.576,
+   0.434,
+   0.973
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "home",
+   "chair"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~22013 tris | src polyhaven/dining_chair_02/dining_chair_02_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/dining_chair_02.jpg",
+  "source_url": "https://polyhaven.com/a/dining_chair_02"
+ },
+ {
+  "name": "plastic_monobloc_chair",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/plastic_monobloc_chair",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: plastic_monobloc_chair_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.628,
+   0.642,
+   0.88
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "chair",
+   "cafe",
+   "outdoor"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~3356 tris | src polyhaven/plastic_monobloc_chair_01/plastic_monobloc_chair_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/plastic_monobloc_chair.jpg",
+  "source_url": "https://polyhaven.com/a/plastic_monobloc_chair_01"
+ },
+ {
+  "name": "wooden_stool",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/wooden_stool",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: wooden_stool_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.425,
+   0.442,
+   0.437
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "stool"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~10946 tris | src polyhaven/wooden_stool_01/wooden_stool_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/wooden_stool.jpg",
+  "source_url": "https://polyhaven.com/a/wooden_stool_01"
+ },
+ {
+  "name": "sofa",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/sofa",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: Sofa_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.658,
+   1.571,
+   0.797
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "home",
+   "sofa"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~4101 tris | src polyhaven/Sofa_01/Sofa_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/sofa.jpg",
+  "source_url": "https://polyhaven.com/a/Sofa_01"
+ },
+ {
+  "name": "mid_century_lounge_chair",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/mid_century_lounge_chair",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: mid_century_lounge_chair",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.19,
+   1.009,
+   1.169
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "home",
+   "armchair"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~6148 tris | src polyhaven/mid_century_lounge_chair/mid_century_lounge_chair_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/mid_century_lounge_chair.jpg",
+  "source_url": "https://polyhaven.com/a/mid_century_lounge_chair"
+ },
+ {
+  "name": "coffee_table_round",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/coffee_table_round",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: coffee_table_round_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.301,
+   1.301,
+   0.491
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "home",
+   "table"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~4044 tris | src polyhaven/coffee_table_round_01/coffee_table_round_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/coffee_table_round.jpg",
+  "source_url": "https://polyhaven.com/a/coffee_table_round_01"
+ },
+ {
+  "name": "drawer_cabinet",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/drawer_cabinet",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: drawer_cabinet",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.488,
+   1.141,
+   1.881
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "office",
+   "cabinet"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~26406 tris | src polyhaven/drawer_cabinet/drawer_cabinet_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/drawer_cabinet.jpg",
+  "source_url": "https://polyhaven.com/a/drawer_cabinet"
+ },
+ {
+  "name": "shelf",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/shelf",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: Shelf_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.257,
+   1.003,
+   2.08
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "shelf",
+   "storage"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~182 tris | src polyhaven/Shelf_01/Shelf_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/shelf.jpg",
+  "source_url": "https://polyhaven.com/a/Shelf_01"
+ },
+ {
+  "name": "steel_frame_shelves",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/steel_frame_shelves",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: steel_frame_shelves_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   5.021,
+   10.974,
+   21.405
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "shelf",
+   "storage",
+   "warehouse"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~4348 tris | src polyhaven/steel_frame_shelves_01/steel_frame_shelves_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/steel_frame_shelves.jpg",
+  "source_url": "https://polyhaven.com/a/steel_frame_shelves_01"
+ },
+ {
+  "name": "wooden_display_shelves",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/wooden_display_shelves",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: wooden_display_shelves_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.078,
+   0.372,
+   1.556
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "shelf",
+   "shop",
+   "display"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~3174 tris | src polyhaven/wooden_display_shelves_01/wooden_display_shelves_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/wooden_display_shelves.jpg",
+  "source_url": "https://polyhaven.com/a/wooden_display_shelves_01"
+ },
+ {
+  "name": "hand_truck",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/hand_truck",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: hand_truck",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.693,
+   0.593,
+   1.403
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "logistics",
+   "trolley",
+   "warehouse"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~13220 tris | src polyhaven/hand_truck/hand_truck_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/hand_truck.jpg",
+  "source_url": "https://polyhaven.com/a/hand_truck"
+ },
+ {
+  "name": "tool_cart",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/tool_cart",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: tool_cart",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.754,
+   1.273,
+   0.965
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "workshop",
+   "tools",
+   "cart"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~29394 tris | src polyhaven/tool_cart/tool_cart_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/tool_cart.jpg",
+  "source_url": "https://polyhaven.com/a/tool_cart"
+ },
+ {
+  "name": "portable_generator",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/portable_generator",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: portable_generator",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.564,
+   0.818,
+   0.577
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "industrial",
+   "generator",
+   "energy"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~26419 tris | src polyhaven/portable_generator/portable_generator_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/portable_generator.jpg",
+  "source_url": "https://polyhaven.com/a/portable_generator"
+ },
+ {
+  "name": "propane_tank",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/propane_tank",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: propane_tank",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.337,
+   0.337,
+   0.554
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "industrial",
+   "gas",
+   "tank"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~5238 tris | src polyhaven/propane_tank/propane_tank_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/propane_tank.jpg",
+  "source_url": "https://polyhaven.com/a/propane_tank"
+ },
+ {
+  "name": "metal_toolbox",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/metal_toolbox",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: metal_toolbox",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.271,
+   0.4,
+   0.305
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "workshop",
+   "tools"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~14228 tris | src polyhaven/metal_toolbox/metal_toolbox_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/metal_toolbox.jpg",
+  "source_url": "https://polyhaven.com/a/metal_toolbox"
+ },
+ {
+  "name": "drill",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/drill",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: Drill_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.052,
+   0.183,
+   0.185
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "tools",
+   "drill"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~2926 tris | src polyhaven/Drill_01/Drill_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/drill.jpg",
+  "source_url": "https://polyhaven.com/a/Drill_01"
+ },
+ {
+  "name": "sledgehammer",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/sledgehammer",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: sledgehammer_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.09,
+   0.208,
+   1.006
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "tools",
+   "hammer"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~2596 tris | src polyhaven/sledgehammer_01/sledgehammer_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/sledgehammer.jpg",
+  "source_url": "https://polyhaven.com/a/sledgehammer_01"
+ },
+ {
+  "name": "wooden_ladder",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/wooden_ladder",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: wooden_ladder",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.5,
+   0.959,
+   1.335
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "tools",
+   "ladder"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~8492 tris | src polyhaven/wooden_ladder/wooden_ladder_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/wooden_ladder.jpg",
+  "source_url": "https://polyhaven.com/a/wooden_ladder"
+ },
+ {
+  "name": "television",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/television",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: Television_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.471,
+   0.6,
+   0.457
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "electronics",
+   "tv",
+   "media"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~1918 tris | src polyhaven/Television_01/Television_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/television.jpg",
+  "source_url": "https://polyhaven.com/a/Television_01"
+ },
+ {
+  "name": "classic_laptop",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/classic_laptop",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: classic_laptop",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.486,
+   0.652,
+   0.543
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "electronics",
+   "laptop",
+   "office"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~14450 tris | src polyhaven/classic_laptop/classic_laptop_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/classic_laptop.jpg",
+  "source_url": "https://polyhaven.com/a/classic_laptop"
+ },
+ {
+  "name": "camera",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/camera",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: Camera_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.263,
+   0.214,
+   0.078
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "electronics",
+   "camera",
+   "media"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~26987 tris | src polyhaven/Camera_01/Camera_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/camera.jpg",
+  "source_url": "https://polyhaven.com/a/Camera_01"
+ },
+ {
+  "name": "megaphone",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/megaphone",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: Megaphone_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.228,
+   0.371,
+   0.3
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "megaphone",
+   "protest",
+   "announcement"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~15814 tris | src polyhaven/Megaphone_01/Megaphone_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/megaphone.jpg",
+  "source_url": "https://polyhaven.com/a/Megaphone_01"
+ },
+ {
+  "name": "korean_public_payphone",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/korean_public_payphone",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: korean_public_payphone_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.301,
+   0.401,
+   0.74
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "street",
+   "payphone",
+   "telecom"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~48132 tris | src polyhaven/korean_public_payphone_01/korean_public_payphone_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/korean_public_payphone.jpg",
+  "source_url": "https://polyhaven.com/a/korean_public_payphone_01"
+ },
+ {
+  "name": "exterior_aircon_unit",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/exterior_aircon_unit",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: exterior_aircon_unit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.374,
+   1.8,
+   0.928
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "building",
+   "aircon"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~18986 tris | src polyhaven/exterior_aircon_unit/exterior_aircon_unit_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/exterior_aircon_unit.jpg",
+  "source_url": "https://polyhaven.com/a/exterior_aircon_unit"
+ },
+ {
+  "name": "utility_box",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/utility_box",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: utility_box_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.432,
+   0.52,
+   1.12
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "street",
+   "utility"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~4404 tris | src polyhaven/utility_box_01/utility_box_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/utility_box.jpg",
+  "source_url": "https://polyhaven.com/a/utility_box_01"
+ },
+ {
+  "name": "security_camera",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/security_camera",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: security_camera_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.554,
+   0.17,
+   0.286
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "security",
+   "surveillance",
+   "camera"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~13571 tris | src polyhaven/security_camera_01/security_camera_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/security_camera.jpg",
+  "source_url": "https://polyhaven.com/a/security_camera_01"
+ },
+ {
+  "name": "wetfloorsign",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/wetfloorsign",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: WetFloorSign_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.359,
+   0.3,
+   0.63
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "sign",
+   "cleaning"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~228 tris | src polyhaven/WetFloorSign_01/WetFloorSign_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/wetfloorsign.jpg",
+  "source_url": "https://polyhaven.com/a/WetFloorSign_01"
+ },
+ {
+  "name": "lantern",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/lantern",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: Lantern_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.122,
+   0.097,
+   0.294
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "lamp",
+   "lantern"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~33902 tris | src polyhaven/Lantern_01/Lantern_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/lantern.jpg",
+  "source_url": "https://polyhaven.com/a/Lantern_01"
+ },
+ {
+  "name": "lightbulb",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/lightbulb",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: lightbulb_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.06,
+   0.06,
+   0.1
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "lightbulb",
+   "idea",
+   "innovation"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~4372 tris | src polyhaven/lightbulb_01/lightbulb_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/lightbulb.jpg",
+  "source_url": "https://polyhaven.com/a/lightbulb_01"
+ },
+ {
+  "name": "wall_clock",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/wall_clock",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: wall_clock",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.047,
+   0.32,
+   0.32
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "clock",
+   "time"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~3658 tris | src polyhaven/wall_clock/wall_clock_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/wall_clock.jpg",
+  "source_url": "https://polyhaven.com/a/wall_clock"
+ },
+ {
+  "name": "food_apple",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/food_apple",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: food_apple_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.098,
+   0.096,
+   0.085
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "food",
+   "produce"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~7012 tris | src polyhaven/food_apple_01/food_apple_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/food_apple.jpg",
+  "source_url": "https://polyhaven.com/a/food_apple_01"
+ },
+ {
+  "name": "bananas",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/bananas",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: bananas",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.6,
+   0.244,
+   0.179
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "food",
+   "produce"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~46868 tris | src polyhaven/bananas/bananas_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/bananas.jpg",
+  "source_url": "https://polyhaven.com/a/bananas"
+ },
+ {
+  "name": "croissant",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/croissant",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: croissant",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.2,
+   0.076,
+   0.062
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "food",
+   "bakery"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~1990 tris | src polyhaven/croissant/croissant_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/croissant.jpg",
+  "source_url": "https://polyhaven.com/a/croissant"
+ },
+ {
+  "name": "wine_bottles",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/wine_bottles",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: wine_bottles_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.676,
+   0.081,
+   0.331
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "drinks",
+   "bottle"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~28848 tris | src polyhaven/wine_bottles_01/wine_bottles_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/wine_bottles.jpg",
+  "source_url": "https://polyhaven.com/a/wine_bottles_01"
+ },
+ {
+  "name": "wicker_basket",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/wicker_basket",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: wicker_basket_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.383,
+   0.295,
+   0.117
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "basket",
+   "market"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~22276 tris | src polyhaven/wicker_basket_01/wicker_basket_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/wicker_basket.jpg",
+  "source_url": "https://polyhaven.com/a/wicker_basket_01"
+ },
+ {
+  "name": "trashbag",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/trashbag",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: trashbag",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.528,
+   0.463,
+   0.575
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "waste",
+   "bag"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~4482 tris | src polyhaven/trashbag/trashbag_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/trashbag.jpg",
+  "source_url": "https://polyhaven.com/a/trashbag"
+ },
+ {
+  "name": "water_manhole_cover",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/water_manhole_cover",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: water_manhole_cover",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.691,
+   0.691,
+   0.068
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "street",
+   "manhole"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~6301 tris | src polyhaven/water_manhole_cover/water_manhole_cover_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/water_manhole_cover.jpg",
+  "source_url": "https://polyhaven.com/a/water_manhole_cover"
+ },
+ {
+  "name": "wheelchair",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/wheelchair",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: wheelchair_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.091,
+   0.824,
+   1.104
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "health",
+   "wheelchair"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~40252 tris | src polyhaven/wheelchair_01/wheelchair_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/wheelchair.jpg",
+  "source_url": "https://polyhaven.com/a/wheelchair_01"
+ },
+ {
+  "name": "old_tyre",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/old_tyre",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: old_tyre",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.6,
+   0.165,
+   0.6
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "tyre",
+   "junk"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~2880 tris | src polyhaven/old_tyre/old_tyre_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/old_tyre.jpg",
+  "source_url": "https://polyhaven.com/a/old_tyre"
+ },
+ {
+  "name": "cement_bag",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/cement_bag",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: cement_bag",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.462,
+   0.7,
+   0.18
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "construction",
+   "bag"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~844 tris | src polyhaven/cement_bag/cement_bag_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/cement_bag.jpg",
+  "source_url": "https://polyhaven.com/a/cement_bag"
+ },
+ {
+  "name": "vintage_suitcase",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/vintage_suitcase",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: vintage_suitcase",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.239,
+   1.608,
+   0.568
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "travel",
+   "suitcase"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~16474 tris | src polyhaven/vintage_suitcase/vintage_suitcase_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/vintage_suitcase.jpg",
+  "source_url": "https://polyhaven.com/a/vintage_suitcase"
+ },
+ {
+  "name": "potted_plant",
+  "category": "everyday_objects_ph",
+  "collection": "everyday_objects_ph/potted_plant",
+  "file": "build/everyday_objects_ph.blend",
+  "source": "Poly Haven: potted_plant_01",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.587,
+   0.634,
+   1.35
+  ],
+  "tags": [
+   "everyday_objects_ph",
+   "polyhaven",
+   "everyday",
+   "plant",
+   "home",
+   "office"
+  ],
+  "notes": "Poly Haven 1k glTF, textures dropped (white model) | ~134999 tris | src polyhaven/potted_plant_01/potted_plant_01_1k.gltf",
+  "thumb": "thumbs/everyday_objects_ph/potted_plant.jpg",
+  "source_url": "https://polyhaven.com/a/potted_plant_01"
+ }
+]

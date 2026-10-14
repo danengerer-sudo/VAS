@@ -17,7 +17,7 @@ LIC = "CC0 1.0"
 CAR = ("kenney_car_kit", "Kenney Car Kit", "https://kenney.nl/assets/car-kit")
 TRN = ("kenney_train_kit", "Kenney Train Kit", "https://kenney.nl/assets/train-kit")
 WAT = ("kenney_watercraft", "Kenney Watercraft Kit", "https://kenney.nl/assets/watercraft-kit")
-CAR_ROT = -90  # kit models drive along +Y
+CAR_ROT = 90  # kit models drive along -Y (verified: rear showed at +X with -90)
 specs = []
 
 
@@ -42,7 +42,7 @@ CARS = {
 }
 for m, tags in CARS.items():
     add(CAR, m, m.replace("-", "_"), tags, "Car Kit vehicle; wheels are separate children",
-        scale=(1.3, 1.7, 1.7), rot_z=CAR_ROT, parts=True)
+        scale=(1.3, 1.7, 1.7), rot_z=CAR_ROT, parts=True, dark_lum=0.47)
 for m in ["cone", "box"]:
     add(CAR, m, f"car_kit_{m}", ["prop"], "Car Kit prop", scale=1.7, profile="prop")
 
@@ -55,7 +55,7 @@ TRAINS = ["train-diesel-a", "train-diesel-b", "train-diesel-box-a", "train-locom
 for m in TRAINS:
     t = ["train", "rail"] + (["tram"] if "tram" in m else []) + (["freight", "wagon"] if "carriage" in m else ["locomotive"])
     add(TRN, m, m.replace("-", "_"), t, "Train Kit (stylised short); bogies are separate children",
-        scale=2.6, rot_z=CAR_ROT, parts=True)
+        scale=2.6, rot_z=CAR_ROT, parts=True, dark_lum=0.47)
 
 BOATS = {  # model: (target length m, tags)
     "boat-row-small": (3.5, ["boat", "rowboat"]), "boat-row-large": (5, ["boat", "rowboat"]),

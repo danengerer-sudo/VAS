@@ -846,7 +846,7 @@ def classical(mb, width=24.0, depth=30.0, height=12.0, columns=6, order="doric",
     Wx, Dy = depth, width
     # podium
     mb.bb(-Wx / 2 - 0.4, -Dy / 2 - 0.4, 0, Wx / 2, Dy / 2 + 0.4, P, BODY)
-    mb.bb(-Wx / 2 - 0.5, -Dy / 2 - 0.5, P - 0.25, Wx / 2 + 0.1, Dy / 2 + 0.5, P, BODY)
+    mb.bb(-Wx / 2 - 0.5, -Dy / 2 - 0.5, P - 0.25, Wx / 2 + 0.1, Dy / 2 + 0.5, P + 0.02, BODY)
     pd = 4.5  # portico depth
     pw = min(Dy - 1.0, columns * 3.2)
     cr = min(0.75, pw / columns * 0.2)
@@ -1128,7 +1128,7 @@ def port_shed(mb, length=90.0, width=32.0, height=10.0, doors=8, seed=0):
 def gas_station(mb, canopy=(14.0, 20.0), height=5.2, islands=2, pumps_per=2, kiosk=True, price="3.49", seed=0):
     cw, cd = canopy  # x, y
     # forecourt slab
-    mb.bb(-cw / 2 - 14, -cd / 2 - 4, 0, cw / 2 + 4, cd / 2 + 4, 0.06, BODY)
+    mb.bb(-cw / 2 - 4, -cd / 2 - 16, 0, cw / 2 + 4, cd / 2 + 4, 0.06, BODY)
     # canopy
     th = 1.1
     mb.bb(-cw / 2, -cd / 2, height, cw / 2, cd / 2, height + th, BODY)
@@ -1151,7 +1151,7 @@ def gas_station(mb, canopy=(14.0, 20.0), height=5.2, islands=2, pumps_per=2, kio
             x = -cw / 2 + cw * (k + 0.5) / 3
             mb.bb(x - 0.6, y - 0.6, height - 0.02, x + 0.6, y + 0.6, height + 0.01, LIGHT)
     if kiosk:
-        with mb.at((-cw / 2 - 8.0, cd * 0.12, 0.06)):
+        with mb.at((-cw / 2 + 2.0, -cd / 2 - 9.0, 0.06)):
             kf = lambda w: [W(1.0, 0.0, w - 1.0, 3.0, "shop", mv=int(w // 2.2), depth=0.15),
                             ]
             block(mb, 8.0, 12.0, 4.0, 0, {"px": lambda w: [W(w / 2 - 1.0, 0, w / 2 + 1.0, 2.5, "glassdoor", mv=1),
@@ -1372,7 +1372,7 @@ def castle(mb, size=44.0, wall_h=10.0, wall_t=3.0, tower_r=4.2, tower_h=16.0, ke
         with mb.at(((x0 + x1) / 2, (y0 + y1) / 2, 0), rz=math.atan2(dy, dx)):
             mb.bb(-L / 2, -wall_t / 2, 0, L / 2, wall_t / 2, wall_h, BODY)
             mb.bb(-L / 2, -wall_t / 2 - 0.5, 0, L / 2, wall_t / 2 + 0.5, 1.2, BODY)
-            mb.bb(-L / 2, -wall_t / 2 - 0.15, wall_h - 0.4, L / 2, wall_t / 2 + 0.15, wall_h, BODY)
+            mb.bb(-L / 2, -wall_t / 2 - 0.15, wall_h - 0.4, L / 2, wall_t / 2 + 0.15, wall_h + 0.06, BODY)
             for k in range(int(L // 6)):
                 x = -L / 2 + (k + 0.5) * L / int(L // 6)
                 mb.bb(x - 0.12, -wall_t / 2 - 0.02, 4.0, x + 0.12, -wall_t / 2 + 0.3, 6.0, DARK)  # arrow slits
@@ -1430,7 +1430,7 @@ def castle(mb, size=44.0, wall_h=10.0, wall_t=3.0, tower_r=4.2, tower_h=16.0, ke
         block(mb, kw, kw, kh, 0, {"px": lambda w: kf(w) + [W(w / 2 - 1.0, 3.0, w / 2 + 1.0, 6.0, "door", arch="round")],
                                   "ny": kf, "py": kf, "nx": kf}, depth=0.5)
         band(mb, kw, kw, 0, 1.5, 0.3)
-        mb.bb(-kw / 2 - 0.3, -kw / 2 - 0.3, kh - 0.5, kw / 2 + 0.3, kw / 2 + 0.3, kh, BODY)
+        mb.bb(-kw / 2 - 0.3, -kw / 2 - 0.3, kh - 0.5, kw / 2 + 0.3, kw / 2 + 0.3, kh + 0.08, BODY)
         for (x0, y0, x1, y1) in ((-1, -1, 1, -1), (1, -1, 1, 1), (1, 1, -1, 1), (-1, 1, -1, -1)):
             merlons(x0 * (kw / 2), y0 * (kw / 2), x1 * (kw / 2), y1 * (kw / 2), kh, 0.6)
         for (sx, sy) in ((-1, -1), (1, -1), (1, 1), (-1, 1)):

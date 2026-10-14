@@ -94,6 +94,10 @@ def _dress(body, sex, age, outfit, rng):
     return [i for i in items if i]
 
 
+KEEP_REST = {"LHipJoint", "RHipJoint", "LeftShoulder", "RightShoulder", "LThumb", "RThumb",
+             "LeftFingerBase", "RightFingerBase", "LeftHandFinger1", "RightHandFinger1"}
+
+
 def _mocap_key(n):
     return MOCAP_NAME.get(n, n)
 
@@ -131,6 +135,8 @@ def _pose_rig(rig, M):
             walk(b)
     twist = {"Hips": ("LeftUpLeg", "Hips"), "LowerBack": ("LeftUpLeg", "Hips"), "Spine1": ("LeftArm", "Spine1")}
     for b in order:
+        if b.name in KEEP_REST:  # structural bones keep the body's own shape (no hunched shoulders / knock knees)
+            continue
         d = seg_dir(b)
         if d is None:
             continue

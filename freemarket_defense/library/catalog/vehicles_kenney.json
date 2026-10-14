@@ -22,6 +22,117 @@
   "source_url": "https://kenney.nl/assets/car-kit"
  },
  {
+  "name": "sedan_sports",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/sedan_sports",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.335,
+   1.69,
+   1.87
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "car",
+   "sports"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2088 tris | src kenney_car_kit/raw/Models/GLB format/sedan-sports.glb",
+  "thumb": "thumbs/vehicles_kenney/sedan_sports.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "hatchback_sports",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/hatchback_sports",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.845,
+   1.69,
+   1.87
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "car",
+   "hatchback"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2088 tris | src kenney_car_kit/raw/Models/GLB format/hatchback-sports.glb",
+  "thumb": "thumbs/vehicles_kenney/hatchback_sports.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "suv",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/suv",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.59,
+   1.95,
+   2.21
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "car",
+   "suv"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2474 tris | src kenney_car_kit/raw/Models/GLB format/suv.glb",
+  "thumb": "thumbs/vehicles_kenney/suv.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "suv_luxury",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/suv_luxury",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.845,
+   1.95,
+   2.21
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "car",
+   "suv",
+   "luxury"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2086 tris | src kenney_car_kit/raw/Models/GLB format/suv-luxury.glb",
+  "thumb": "thumbs/vehicles_kenney/suv_luxury.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "taxi",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/taxi",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.675,
+   1.95,
+   2.55
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "car",
+   "taxi"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2072 tris | src kenney_car_kit/raw/Models/GLB format/taxi.glb",
+  "thumb": "thumbs/vehicles_kenney/taxi.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
   "name": "police",
   "category": "vehicles_kenney",
   "collection": "vehicles_kenney/police",
@@ -45,6 +156,120 @@
   "source_url": "https://kenney.nl/assets/car-kit"
  },
  {
+  "name": "ambulance",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/ambulance",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   5.525,
+   1.95,
+   3.06
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "van",
+   "ambulance",
+   "emergency"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2804 tris | src kenney_car_kit/raw/Models/GLB format/ambulance.glb",
+  "thumb": "thumbs/vehicles_kenney/ambulance.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "firetruck",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/firetruck",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   5.78,
+   1.95,
+   2.89
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "truck",
+   "firetruck",
+   "emergency"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2767 tris | src kenney_car_kit/raw/Models/GLB format/firetruck.glb",
+  "thumb": "thumbs/vehicles_kenney/firetruck.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "van",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/van",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.675,
+   1.95,
+   2.295
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "van",
+   "commercial"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2082 tris | src kenney_car_kit/raw/Models/GLB format/van.glb",
+  "thumb": "thumbs/vehicles_kenney/van.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "delivery",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/delivery",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   5.525,
+   1.95,
+   2.805
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "van",
+   "delivery",
+   "logistics"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2476 tris | src kenney_car_kit/raw/Models/GLB format/delivery.glb",
+  "thumb": "thumbs/vehicles_kenney/delivery.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "delivery_flat",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/delivery_flat",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   5.525,
+   1.95,
+   2.295
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "truck",
+   "delivery",
+   "flatbed"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2574 tris | src kenney_car_kit/raw/Models/GLB format/delivery-flat.glb",
+  "thumb": "thumbs/vehicles_kenney/delivery_flat.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
   "name": "truck",
   "category": "vehicles_kenney",
   "collection": "vehicles_kenney/truck",
@@ -64,6 +289,206 @@
   ],
   "notes": "Car Kit vehicle; wheels are separate children | ~2082 tris | src kenney_car_kit/raw/Models/GLB format/truck.glb",
   "thumb": "thumbs/vehicles_kenney/truck.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "truck_flat",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/truck_flat",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.667,
+   1.95,
+   2.21
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "truck",
+   "flatbed"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2488 tris | src kenney_car_kit/raw/Models/GLB format/truck-flat.glb",
+  "thumb": "thumbs/vehicles_kenney/truck_flat.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "garbage_truck",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/garbage_truck",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   5.865,
+   2.08,
+   2.72
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "truck",
+   "garbage",
+   "municipal"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~3124 tris | src kenney_car_kit/raw/Models/GLB format/garbage-truck.glb",
+  "thumb": "thumbs/vehicles_kenney/garbage_truck.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "race",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/race",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.352,
+   1.69,
+   1.245
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "car",
+   "race"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~1952 tris | src kenney_car_kit/raw/Models/GLB format/race.glb",
+  "thumb": "thumbs/vehicles_kenney/race.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "race_future",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/race_future",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.522,
+   1.56,
+   1.415
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "car",
+   "race",
+   "futuristic"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2068 tris | src kenney_car_kit/raw/Models/GLB format/race-future.glb",
+  "thumb": "thumbs/vehicles_kenney/race_future.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "tractor",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/tractor",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.743,
+   1.745,
+   2.723
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "tractor",
+   "farm",
+   "agriculture"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2044 tris | src kenney_car_kit/raw/Models/GLB format/tractor.glb",
+  "thumb": "thumbs/vehicles_kenney/tractor.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "tractor_police",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/tractor_police",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.913,
+   1.745,
+   2.893
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "tractor",
+   "police"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2278 tris | src kenney_car_kit/raw/Models/GLB format/tractor-police.glb",
+  "thumb": "thumbs/vehicles_kenney/tractor_police.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "tractor_shovel",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/tractor_shovel",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.199,
+   2.159,
+   2.57
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "tractor",
+   "loader",
+   "construction"
+  ],
+  "notes": "Car Kit vehicle; wheels are separate children | ~2646 tris | src kenney_car_kit/raw/Models/GLB format/tractor-shovel.glb",
+  "thumb": "thumbs/vehicles_kenney/tractor_shovel.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "car_kit_cone",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/car_kit_cone",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.81,
+   0.81,
+   1.012
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "prop"
+  ],
+  "notes": "Car Kit prop | ~172 tris | src kenney_car_kit/raw/Models/GLB format/cone.glb",
+  "thumb": "thumbs/vehicles_kenney/car_kit_cone.jpg",
+  "source_url": "https://kenney.nl/assets/car-kit"
+ },
+ {
+  "name": "car_kit_box",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/car_kit_box",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Car Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.215,
+   1.215,
+   1.215
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "prop"
+  ],
+  "notes": "Car Kit prop | ~124 tris | src kenney_car_kit/raw/Models/GLB format/box.glb",
+  "thumb": "thumbs/vehicles_kenney/car_kit_box.jpg",
   "source_url": "https://kenney.nl/assets/car-kit"
  },
  {
@@ -90,6 +515,637 @@
   "source_url": "https://kenney.nl/assets/train-kit"
  },
  {
+  "name": "train_diesel_b",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_diesel_b",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.24,
+   2.6,
+   3.86
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1244 tris | src kenney_train_kit/raw/Models/GLB format/train-diesel-b.glb",
+  "thumb": "thumbs/vehicles_kenney/train_diesel_b.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_diesel_box_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_diesel_box_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.82,
+   3.51,
+   4.354
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1726 tris | src kenney_train_kit/raw/Models/GLB format/train-diesel-box-a.glb",
+  "thumb": "thumbs/vehicles_kenney/train_diesel_box_a.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_locomotive_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_locomotive_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.76,
+   3.716,
+   4.315
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1666 tris | src kenney_train_kit/raw/Models/GLB format/train-locomotive-a.glb",
+  "thumb": "thumbs/vehicles_kenney/train_locomotive_a.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_locomotive_passenger_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_locomotive_passenger_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.76,
+   3.104,
+   4.288
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1308 tris | src kenney_train_kit/raw/Models/GLB format/train-locomotive-passenger-a.glb",
+  "thumb": "thumbs/vehicles_kenney/train_locomotive_passenger_a.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_electric_bullet_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_electric_bullet_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.277,
+   3.432,
+   4.257
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1261 tris | src kenney_train_kit/raw/Models/GLB format/train-electric-bullet-a.glb",
+  "thumb": "thumbs/vehicles_kenney/train_electric_bullet_a.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_electric_city_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_electric_city_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.24,
+   2.86,
+   4.375
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1130 tris | src kenney_train_kit/raw/Models/GLB format/train-electric-city-a.glb",
+  "thumb": "thumbs/vehicles_kenney/train_electric_city_a.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_electric_double_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_electric_double_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.5,
+   3.341,
+   5.002
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1445 tris | src kenney_train_kit/raw/Models/GLB format/train-electric-double-a.glb",
+  "thumb": "thumbs/vehicles_kenney/train_electric_double_a.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_electric_subway_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_electric_subway_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.76,
+   3.51,
+   4.085
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1544 tris | src kenney_train_kit/raw/Models/GLB format/train-electric-subway-a.glb",
+  "thumb": "thumbs/vehicles_kenney/train_electric_subway_a.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_electric_square_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_electric_square_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.76,
+   2.932,
+   6.03
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1616 tris | src kenney_train_kit/raw/Models/GLB format/train-electric-square-a.glb",
+  "thumb": "thumbs/vehicles_kenney/train_electric_square_a.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_tram_classic",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_tram_classic",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.793,
+   3.25,
+   6.55
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "tram",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1648 tris | src kenney_train_kit/raw/Models/GLB format/train-tram-classic.glb",
+  "thumb": "thumbs/vehicles_kenney/train_tram_classic.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_tram_modern",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_tram_modern",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.985,
+   2.932,
+   5.982
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "tram",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1498 tris | src kenney_train_kit/raw/Models/GLB format/train-tram-modern.glb",
+  "thumb": "thumbs/vehicles_kenney/train_tram_modern.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_tram_round",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_tram_round",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.76,
+   3.26,
+   6.486
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "tram",
+   "locomotive"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1944 tris | src kenney_train_kit/raw/Models/GLB format/train-tram-round.glb",
+  "thumb": "thumbs/vehicles_kenney/train_tram_round.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_carriage_box",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_carriage_box",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.02,
+   3.12,
+   3.374
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "freight",
+   "wagon"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1076 tris | src kenney_train_kit/raw/Models/GLB format/train-carriage-box.glb",
+  "thumb": "thumbs/vehicles_kenney/train_carriage_box.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_carriage_coal",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_carriage_coal",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.02,
+   3.12,
+   4.279
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "freight",
+   "wagon"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1184 tris | src kenney_train_kit/raw/Models/GLB format/train-carriage-coal.glb",
+  "thumb": "thumbs/vehicles_kenney/train_carriage_coal.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_carriage_container_red",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_carriage_container_red",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.02,
+   2.6,
+   3.535
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "freight",
+   "wagon"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1242 tris | src kenney_train_kit/raw/Models/GLB format/train-carriage-container-red.glb",
+  "thumb": "thumbs/vehicles_kenney/train_carriage_container_red.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_carriage_flatbed",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_carriage_flatbed",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.02,
+   2.86,
+   3.015
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "freight",
+   "wagon"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1070 tris | src kenney_train_kit/raw/Models/GLB format/train-carriage-flatbed.glb",
+  "thumb": "thumbs/vehicles_kenney/train_carriage_flatbed.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_carriage_lumber",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_carriage_lumber",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.02,
+   2.86,
+   3.015
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "freight",
+   "wagon"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1170 tris | src kenney_train_kit/raw/Models/GLB format/train-carriage-lumber.glb",
+  "thumb": "thumbs/vehicles_kenney/train_carriage_lumber.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_carriage_tank",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_carriage_tank",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.02,
+   3.604,
+   4.556
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "freight",
+   "wagon"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1146 tris | src kenney_train_kit/raw/Models/GLB format/train-carriage-tank.glb",
+  "thumb": "thumbs/vehicles_kenney/train_carriage_tank.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "train_carriage_wood",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/train_carriage_wood",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Train Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.02,
+   3.12,
+   4.095
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "train",
+   "rail",
+   "freight",
+   "wagon"
+  ],
+  "notes": "Train Kit (stylised short); bogies are separate children | ~1136 tris | src kenney_train_kit/raw/Models/GLB format/train-carriage-wood.glb",
+  "thumb": "thumbs/vehicles_kenney/train_carriage_wood.jpg",
+  "source_url": "https://kenney.nl/assets/train-kit"
+ },
+ {
+  "name": "boat_row_small",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/boat_row_small",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.5,
+   4.055,
+   1.251
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "boat",
+   "rowboat"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 3.5 m long | ~168 tris | src kenney_watercraft/raw/Models/GLB format/boat-row-small.glb",
+  "thumb": "thumbs/vehicles_kenney/boat_row_small.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "boat_row_large",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/boat_row_large",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   5.0,
+   4.818,
+   1.486
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "boat",
+   "rowboat"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 5 m long | ~174 tris | src kenney_watercraft/raw/Models/GLB format/boat-row-large.glb",
+  "thumb": "thumbs/vehicles_kenney/boat_row_large.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "boat_speed_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/boat_speed_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.0,
+   3.708,
+   3.116
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "boat",
+   "speedboat"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 7 m long | ~156 tris | src kenney_watercraft/raw/Models/GLB format/boat-speed-a.glb",
+  "thumb": "thumbs/vehicles_kenney/boat_speed_a.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "boat_speed_d",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/boat_speed_d",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.0,
+   3.616,
+   2.171
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "boat",
+   "speedboat"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 7 m long | ~250 tris | src kenney_watercraft/raw/Models/GLB format/boat-speed-d.glb",
+  "thumb": "thumbs/vehicles_kenney/boat_speed_d.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "boat_speed_g",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/boat_speed_g",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   7.0,
+   3.278,
+   2.387
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "boat",
+   "speedboat"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 7 m long | ~136 tris | src kenney_watercraft/raw/Models/GLB format/boat-speed-g.glb",
+  "thumb": "thumbs/vehicles_kenney/boat_speed_g.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "boat_fishing_small",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/boat_fishing_small",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   9.0,
+   4.151,
+   6.047
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "boat",
+   "fishing"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 9 m long | ~237 tris | src kenney_watercraft/raw/Models/GLB format/boat-fishing-small.glb",
+  "thumb": "thumbs/vehicles_kenney/boat_fishing_small.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "boat_sail_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/boat_sail_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   3.788,
+   10.057
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "boat",
+   "sailboat"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 8 m long | ~386 tris | src kenney_watercraft/raw/Models/GLB format/boat-sail-a.glb",
+  "thumb": "thumbs/vehicles_kenney/boat_sail_a.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "boat_sail_b",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/boat_sail_b",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.0,
+   3.509,
+   8.808
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "boat",
+   "sailboat"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 8 m long | ~426 tris | src kenney_watercraft/raw/Models/GLB format/boat-sail-b.glb",
+  "thumb": "thumbs/vehicles_kenney/boat_sail_b.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
   "name": "boat_tug_a",
   "category": "vehicles_kenney",
   "collection": "vehicles_kenney/boat_tug_a",
@@ -97,9 +1153,9 @@
   "source": "Kenney Watercraft Kit",
   "license": "CC0 1.0",
   "dims_m": [
-   23.328,
    12.0,
-   15.039
+   6.173,
+   7.736
   ],
   "tags": [
    "vehicles_kenney",
@@ -114,6 +1170,123 @@
   "source_url": "https://kenney.nl/assets/watercraft-kit"
  },
  {
+  "name": "boat_tow_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/boat_tow_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   12.0,
+   5.646,
+   6.52
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "boat",
+   "tow"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 12 m long | ~576 tris | src kenney_watercraft/raw/Models/GLB format/boat-tow-a.glb",
+  "thumb": "thumbs/vehicles_kenney/boat_tow_a.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "boat_house_a",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/boat_house_a",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   12.0,
+   6.919,
+   5.614
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "boat",
+   "houseboat"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 12 m long | ~408 tris | src kenney_watercraft/raw/Models/GLB format/boat-house-a.glb",
+  "thumb": "thumbs/vehicles_kenney/boat_house_a.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "boat_fan",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/boat_fan",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.0,
+   3.732,
+   4.568
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "boat",
+   "airboat"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 6 m long | ~310 tris | src kenney_watercraft/raw/Models/GLB format/boat-fan.glb",
+  "thumb": "thumbs/vehicles_kenney/boat_fan.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "ship_small",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/ship_small",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   25.0,
+   11.321,
+   23.499
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "ship",
+   "sailing_ship",
+   "trade"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 25 m long | ~1723 tris | src kenney_watercraft/raw/Models/GLB format/ship-small.glb",
+  "thumb": "thumbs/vehicles_kenney/ship_small.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "ship_large",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/ship_large",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   35.0,
+   12.824,
+   26.62
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "ship",
+   "sailing_ship",
+   "trade"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 35 m long | ~1849 tris | src kenney_watercraft/raw/Models/GLB format/ship-large.glb",
+  "thumb": "thumbs/vehicles_kenney/ship_large.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
   "name": "ship_cargo_a",
   "category": "vehicles_kenney",
   "collection": "vehicles_kenney/ship_cargo_a",
@@ -121,9 +1294,9 @@
   "source": "Kenney Watercraft Kit",
   "license": "CC0 1.0",
   "dims_m": [
-   161.575,
    60.0,
-   51.776
+   22.281,
+   19.227
   ],
   "tags": [
    "vehicles_kenney",
@@ -136,6 +1309,104 @@
   ],
   "notes": "Watercraft Kit (stylised), rescaled to 60 m long | ~1060 tris | src kenney_watercraft/raw/Models/GLB format/ship-cargo-a.glb",
   "thumb": "thumbs/vehicles_kenney/ship_cargo_a.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "ship_cargo_b",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/ship_cargo_b",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   60.0,
+   22.281,
+   18.773
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "ship",
+   "cargo",
+   "trade",
+   "shipping"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 60 m long | ~850 tris | src kenney_watercraft/raw/Models/GLB format/ship-cargo-b.glb",
+  "thumb": "thumbs/vehicles_kenney/ship_cargo_b.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "ship_cargo_c",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/ship_cargo_c",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   60.0,
+   22.281,
+   14.714
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "ship",
+   "cargo",
+   "trade",
+   "shipping"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 60 m long | ~362 tris | src kenney_watercraft/raw/Models/GLB format/ship-cargo-c.glb",
+  "thumb": "thumbs/vehicles_kenney/ship_cargo_c.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "ship_ocean_liner",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/ship_ocean_liner",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   90.0,
+   20.132,
+   37.784
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "ship",
+   "liner",
+   "cruise"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 90 m long | ~2796 tris | src kenney_watercraft/raw/Models/GLB format/ship-ocean-liner.glb",
+  "thumb": "thumbs/vehicles_kenney/ship_ocean_liner.jpg",
+  "source_url": "https://kenney.nl/assets/watercraft-kit"
+ },
+ {
+  "name": "ship_ocean_liner_small",
+  "category": "vehicles_kenney",
+  "collection": "vehicles_kenney/ship_ocean_liner_small",
+  "file": "build/vehicles_kenney.blend",
+  "source": "Kenney Watercraft Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   70.0,
+   21.921,
+   41.142
+  ],
+  "tags": [
+   "vehicles_kenney",
+   "vehicle",
+   "watercraft",
+   "ship",
+   "liner",
+   "cruise"
+  ],
+  "notes": "Watercraft Kit (stylised), rescaled to 70 m long | ~1750 tris | src kenney_watercraft/raw/Models/GLB format/ship-ocean-liner-small.glb",
+  "thumb": "thumbs/vehicles_kenney/ship_ocean_liner_small.jpg",
   "source_url": "https://kenney.nl/assets/watercraft-kit"
  }
 ]

@@ -1,0 +1,1907 @@
+[
+ {
+  "name": "factory_conveyor",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_conveyor",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   0.64
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "conveyor"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~196 tris | src kenney_factory_kit/raw/Models/GLB format/conveyor.glb",
+  "thumb": "thumbs/industrial_props/factory_conveyor.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_conveyor_long",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_conveyor_long",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   3.2,
+   0.64
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "conveyor"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~196 tris | src kenney_factory_kit/raw/Models/GLB format/conveyor-long.glb",
+  "thumb": "thumbs/industrial_props/factory_conveyor_long.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_conveyor_stripe",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_conveyor_stripe",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   0.64
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "conveyor"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~244 tris | src kenney_factory_kit/raw/Models/GLB format/conveyor-stripe.glb",
+  "thumb": "thumbs/industrial_props/factory_conveyor_stripe.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_conveyor_corner",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_conveyor_corner",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   0.72
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "conveyor"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~234 tris | src kenney_factory_kit/raw/Models/GLB format/conveyor-corner.glb",
+  "thumb": "thumbs/industrial_props/factory_conveyor_corner.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_conveyor_sides",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_conveyor_sides",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   0.64
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "conveyor"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~228 tris | src kenney_factory_kit/raw/Models/GLB format/conveyor-sides.glb",
+  "thumb": "thumbs/industrial_props/factory_conveyor_sides.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_conveyor_bars_high",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_conveyor_bars_high",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.62,
+   1.6,
+   0.672
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "conveyor"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~204 tris | src kenney_factory_kit/raw/Models/GLB format/conveyor-bars-high.glb",
+  "thumb": "thumbs/industrial_props/factory_conveyor_bars_high.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_conveyor_bars_high_slope",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_conveyor_bars_high_slope",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.62,
+   1.6,
+   1.28
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "conveyor"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~204 tris | src kenney_factory_kit/raw/Models/GLB format/conveyor-bars-high-slope.glb",
+  "thumb": "thumbs/industrial_props/factory_conveyor_bars_high_slope.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_robot_arm_a",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_robot_arm_a",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   5.12
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "robot",
+   "automation"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~472 tris | src kenney_factory_kit/raw/Models/GLB format/robot-arm-a.glb",
+  "thumb": "thumbs/industrial_props/factory_robot_arm_a.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_robot_arm_b",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_robot_arm_b",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   4.8
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "robot",
+   "automation"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~420 tris | src kenney_factory_kit/raw/Models/GLB format/robot-arm-b.glb",
+  "thumb": "thumbs/industrial_props/factory_robot_arm_b.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_machine",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_machine",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.4,
+   1.92,
+   2.08
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "machine"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~268 tris | src kenney_factory_kit/raw/Models/GLB format/machine.glb",
+  "thumb": "thumbs/industrial_props/factory_machine.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_machine_window",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_machine_window",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.4,
+   1.92,
+   2.064
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "machine"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~428 tris | src kenney_factory_kit/raw/Models/GLB format/machine-window.glb",
+  "thumb": "thumbs/industrial_props/factory_machine_window.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_machine_fortified",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_machine_fortified",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.56,
+   1.92,
+   2.161
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "machine"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~320 tris | src kenney_factory_kit/raw/Models/GLB format/machine-fortified.glb",
+  "thumb": "thumbs/industrial_props/factory_machine_fortified.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_machine_bed",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_machine_bed",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.76,
+   3.76,
+   2.078
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "machine"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~568 tris | src kenney_factory_kit/raw/Models/GLB format/machine-bed.glb",
+  "thumb": "thumbs/industrial_props/factory_machine_bed.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_scanner_high",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_scanner_high",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.838,
+   0.774,
+   2.032
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "machine",
+   "scanner"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~240 tris | src kenney_factory_kit/raw/Models/GLB format/scanner-high.glb",
+  "thumb": "thumbs/industrial_props/factory_scanner_high.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_scanner_low",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_scanner_low",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.56,
+   1.12,
+   1.712
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "machine",
+   "scanner"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~240 tris | src kenney_factory_kit/raw/Models/GLB format/scanner-low.glb",
+  "thumb": "thumbs/industrial_props/factory_scanner_low.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_hopper_round",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_hopper_round",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.789,
+   1.789,
+   1.6
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "hopper"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~144 tris | src kenney_factory_kit/raw/Models/GLB format/hopper-round.glb",
+  "thumb": "thumbs/industrial_props/factory_hopper_round.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_hopper_square",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_hopper_square",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.788,
+   1.788,
+   1.6
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "hopper"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~104 tris | src kenney_factory_kit/raw/Models/GLB format/hopper-square.glb",
+  "thumb": "thumbs/industrial_props/factory_hopper_square.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_hopper_high_round",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_hopper_high_round",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.789,
+   1.789,
+   2.4
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "hopper"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~176 tris | src kenney_factory_kit/raw/Models/GLB format/hopper-high-round.glb",
+  "thumb": "thumbs/industrial_props/factory_hopper_high_round.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_crane",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_crane",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   5.888,
+   3.082,
+   5.685
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "crane"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~564 tris | src kenney_factory_kit/raw/Models/GLB format/crane.glb",
+  "thumb": "thumbs/industrial_props/factory_crane.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_crane_lift",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_crane_lift",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.147,
+   1.147,
+   4.0
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "crane"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~304 tris | src kenney_factory_kit/raw/Models/GLB format/crane-lift.glb",
+  "thumb": "thumbs/industrial_props/factory_crane_lift.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_crane_magnet",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_crane_magnet",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.147,
+   1.147,
+   1.44
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "crane"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~172 tris | src kenney_factory_kit/raw/Models/GLB format/crane-magnet.glb",
+  "thumb": "thumbs/industrial_props/factory_crane_magnet.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_piston_round",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_piston_round",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   1.647
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "machine"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~276 tris | src kenney_factory_kit/raw/Models/GLB format/piston-round.glb",
+  "thumb": "thumbs/industrial_props/factory_piston_round.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_piston_square",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_piston_square",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   1.647
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "machine"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~180 tris | src kenney_factory_kit/raw/Models/GLB format/piston-square.glb",
+  "thumb": "thumbs/industrial_props/factory_piston_square.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_cog_a",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_cog_a",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   0.36
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "cog",
+   "gear"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~160 tris | src kenney_factory_kit/raw/Models/GLB format/cog-a.glb",
+  "thumb": "thumbs/industrial_props/factory_cog_a.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_cog_b",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_cog_b",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   0.36
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "cog",
+   "gear"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~192 tris | src kenney_factory_kit/raw/Models/GLB format/cog-b.glb",
+  "thumb": "thumbs/industrial_props/factory_cog_b.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_pipe_large",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_pipe_large",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   1.6
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "pipe"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~248 tris | src kenney_factory_kit/raw/Models/GLB format/pipe-large.glb",
+  "thumb": "thumbs/industrial_props/factory_pipe_large.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_pipe_large_bend",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_pipe_large_bend",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.04,
+   3.04,
+   1.6
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "pipe"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~448 tris | src kenney_factory_kit/raw/Models/GLB format/pipe-large-bend.glb",
+  "thumb": "thumbs/industrial_props/factory_pipe_large_bend.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_pipe_large_valve",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_pipe_large_valve",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.625,
+   1.6,
+   1.6
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "pipe",
+   "valve"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~456 tris | src kenney_factory_kit/raw/Models/GLB format/pipe-large-valve.glb",
+  "thumb": "thumbs/industrial_props/factory_pipe_large_valve.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_pipe_glass_large",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_pipe_glass_large",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   1.6
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "pipe"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~160 tris | src kenney_factory_kit/raw/Models/GLB format/pipe-glass-large.glb",
+  "thumb": "thumbs/industrial_props/factory_pipe_glass_large.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_box_large",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_box_large",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.76,
+   0.88
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "box",
+   "crate"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~70 tris | src kenney_factory_kit/raw/Models/GLB format/box-large.glb",
+  "thumb": "thumbs/industrial_props/factory_box_large.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_box_small",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_box_small",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.8,
+   0.952,
+   0.88
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "box"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~70 tris | src kenney_factory_kit/raw/Models/GLB format/box-small.glb",
+  "thumb": "thumbs/industrial_props/factory_box_small.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_box_long",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_box_long",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.8,
+   1.76,
+   0.88
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "box"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~70 tris | src kenney_factory_kit/raw/Models/GLB format/box-long.glb",
+  "thumb": "thumbs/industrial_props/factory_box_long.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_box_wide",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_box_wide",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   0.952,
+   0.88
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "box"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~70 tris | src kenney_factory_kit/raw/Models/GLB format/box-wide.glb",
+  "thumb": "thumbs/industrial_props/factory_box_wide.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_screen_wide",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_screen_wide",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.78,
+   1.92,
+   1.586
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "screen",
+   "monitor"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~144 tris | src kenney_factory_kit/raw/Models/GLB format/screen-wide.glb",
+  "thumb": "thumbs/industrial_props/factory_screen_wide.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_screen_panel_wide",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_screen_panel_wide",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.052,
+   1.92,
+   1.586
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "screen",
+   "control_panel"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~162 tris | src kenney_factory_kit/raw/Models/GLB format/screen-panel-wide.glb",
+  "thumb": "thumbs/industrial_props/factory_screen_panel_wide.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_lever_double",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_lever_double",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.864,
+   0.864,
+   0.595
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "lever",
+   "control"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~118 tris | src kenney_factory_kit/raw/Models/GLB format/lever-double.glb",
+  "thumb": "thumbs/industrial_props/factory_lever_double.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_button_floor_round",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_button_floor_round",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.8,
+   0.8,
+   0.238
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "button"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~92 tris | src kenney_factory_kit/raw/Models/GLB format/button-floor-round.glb",
+  "thumb": "thumbs/industrial_props/factory_button_floor_round.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_catwalk_straight",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_catwalk_straight",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.009,
+   1.6,
+   0.962
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "catwalk"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~328 tris | src kenney_factory_kit/raw/Models/GLB format/catwalk-straight.glb",
+  "thumb": "thumbs/industrial_props/factory_catwalk_straight.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_catwalk_stairs",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_catwalk_stairs",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.009,
+   3.2,
+   2.24
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "catwalk",
+   "stairs"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~668 tris | src kenney_factory_kit/raw/Models/GLB format/catwalk-stairs.glb",
+  "thumb": "thumbs/industrial_props/factory_catwalk_stairs.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_structure_tall",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_structure_tall",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.76,
+   0.48,
+   3.2
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "structure"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~268 tris | src kenney_factory_kit/raw/Models/GLB format/structure-tall.glb",
+  "thumb": "thumbs/industrial_props/factory_structure_tall.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_structure_wall",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_structure_wall",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.2,
+   1.6,
+   4.8
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "structure",
+   "wall"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~26 tris | src kenney_factory_kit/raw/Models/GLB format/structure-wall.glb",
+  "thumb": "thumbs/industrial_props/factory_structure_wall.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_structure_window",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_structure_window",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.2,
+   1.6,
+   4.8
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "structure",
+   "wall"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~226 tris | src kenney_factory_kit/raw/Models/GLB format/structure-window.glb",
+  "thumb": "thumbs/industrial_props/factory_structure_window.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_structure_doorway_wide",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_structure_doorway_wide",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.2,
+   3.2,
+   4.8
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "structure",
+   "door"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~46 tris | src kenney_factory_kit/raw/Models/GLB format/structure-doorway-wide.glb",
+  "thumb": "thumbs/industrial_props/factory_structure_doorway_wide.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_door_wide_closed",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_door_wide_closed",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.0,
+   2.88,
+   2.56
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "door"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~22 tris | src kenney_factory_kit/raw/Models/GLB format/door-wide-closed.glb",
+  "thumb": "thumbs/industrial_props/factory_door_wide_closed.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_warning_traffic",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_warning_traffic",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.64,
+   0.64,
+   2.482
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "warning",
+   "barrier"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~176 tris | src kenney_factory_kit/raw/Models/GLB format/warning-traffic.glb",
+  "thumb": "thumbs/industrial_props/factory_warning_traffic.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_warning_orange",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_warning_orange",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.64,
+   0.64,
+   2.065
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "warning"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~154 tris | src kenney_factory_kit/raw/Models/GLB format/warning-orange.glb",
+  "thumb": "thumbs/industrial_props/factory_warning_orange.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_cone",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_cone",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.48,
+   0.48,
+   0.49
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "cone"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~66 tris | src kenney_factory_kit/raw/Models/GLB format/cone.glb",
+  "thumb": "thumbs/industrial_props/factory_cone.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "factory_floor",
+  "category": "industrial_props",
+  "collection": "industrial_props/factory_floor",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Factory Kit 3.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   0.0
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "floor"
+  ],
+  "notes": "Kenney Factory Kit 3.0, scale x1.6 | ~2 tris | src kenney_factory_kit/raw/Models/GLB format/floor.glb",
+  "thumb": "thumbs/industrial_props/factory_floor.jpg",
+  "source_url": "https://kenney.nl/assets/factory-kit"
+ },
+ {
+  "name": "chimney_basic",
+  "category": "industrial_props",
+  "collection": "industrial_props/chimney_basic",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.6,
+   1.6,
+   8.0
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "chimney"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x8.0 | ~88 tris | src kenney_city_industrial/raw/Models/GLB format/chimney-basic.glb",
+  "thumb": "thumbs/industrial_props/chimney_basic.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "chimney_large",
+  "category": "industrial_props",
+  "collection": "industrial_props/chimney_large",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   8.64,
+   8.64,
+   13.6
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "chimney"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x8.0 | ~218 tris | src kenney_city_industrial/raw/Models/GLB format/chimney-large.glb",
+  "thumb": "thumbs/industrial_props/chimney_large.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "chimney_medium",
+  "category": "industrial_props",
+  "collection": "industrial_props/chimney_medium",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.6,
+   3.6,
+   15.4
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "chimney"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x8.0 | ~160 tris | src kenney_city_industrial/raw/Models/GLB format/chimney-medium.glb",
+  "thumb": "thumbs/industrial_props/chimney_medium.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "detail_tank",
+  "category": "industrial_props",
+  "collection": "industrial_props/detail_tank",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   4.122,
+   6.784,
+   3.322
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "tank"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x8.0 | ~310 tris | src kenney_city_industrial/raw/Models/GLB format/detail-tank.glb",
+  "thumb": "thumbs/industrial_props/detail_tank.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "detail_tank_large",
+  "category": "industrial_props",
+  "collection": "industrial_props/detail_tank_large",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   13.187,
+   12.067,
+   7.693
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "tank"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x8.0 | ~566 tris | src kenney_city_industrial/raw/Models/GLB format/detail-tank-large.glb",
+  "thumb": "thumbs/industrial_props/detail_tank_large.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "water_tower",
+  "category": "industrial_props",
+  "collection": "industrial_props/water_tower",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.654,
+   6.818,
+   17.133
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "water_tower"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x8.0 | ~968 tris | src kenney_city_industrial/raw/Models/GLB format/water-tower.glb",
+  "thumb": "thumbs/industrial_props/water_tower.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "windmill",
+  "category": "industrial_props",
+  "collection": "industrial_props/windmill",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   9.015,
+   4.838,
+   18.511
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "wind_turbine",
+   "energy"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x8.0 | ~456 tris | src kenney_city_industrial/raw/Models/GLB format/windmill.glb",
+  "thumb": "thumbs/industrial_props/windmill.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "windmill_low",
+  "category": "industrial_props",
+  "collection": "industrial_props/windmill_low",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   9.015,
+   4.838,
+   14.351
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "wind_turbine",
+   "energy"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x8.0 | ~456 tris | src kenney_city_industrial/raw/Models/GLB format/windmill-low.glb",
+  "thumb": "thumbs/industrial_props/windmill_low.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "shipping_container_a",
+  "category": "industrial_props",
+  "collection": "industrial_props/shipping_container_a",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.17,
+   2.795,
+   2.611
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "container",
+   "shipping",
+   "trade"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x7.5 | ~402 tris | src kenney_city_industrial/raw/Models/GLB format/shipping-container-a.glb",
+  "thumb": "thumbs/industrial_props/shipping_container_a.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "shipping_container_b",
+  "category": "industrial_props",
+  "collection": "industrial_props/shipping_container_b",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.17,
+   2.795,
+   2.611
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "container",
+   "shipping",
+   "trade"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x7.5 | ~402 tris | src kenney_city_industrial/raw/Models/GLB format/shipping-container-b.glb",
+  "thumb": "thumbs/industrial_props/shipping_container_b.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "shipping_container_c",
+  "category": "industrial_props",
+  "collection": "industrial_props/shipping_container_c",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   6.17,
+   2.795,
+   2.611
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "container",
+   "shipping",
+   "trade"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x7.5 | ~402 tris | src kenney_city_industrial/raw/Models/GLB format/shipping-container-c.glb",
+  "thumb": "thumbs/industrial_props/shipping_container_c.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "solar_panel_flat",
+  "category": "industrial_props",
+  "collection": "industrial_props/solar_panel_flat",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   5.707,
+   3.346,
+   0.492
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "solar",
+   "energy"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x8.0 | ~164 tris | src kenney_city_industrial/raw/Models/GLB format/solar-panel-flat.glb",
+  "thumb": "thumbs/industrial_props/solar_panel_flat.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "solar_panel_landscape",
+  "category": "industrial_props",
+  "collection": "industrial_props/solar_panel_landscape",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   3.16,
+   5.707,
+   2.099
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "solar",
+   "energy"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x8.0 | ~244 tris | src kenney_city_industrial/raw/Models/GLB format/solar-panel-landscape.glb",
+  "thumb": "thumbs/industrial_props/solar_panel_landscape.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "solar_panel_portrait_group",
+  "category": "industrial_props",
+  "collection": "industrial_props/solar_panel_portrait_group",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney City Kit (Industrial) 2.0",
+  "license": "CC0 1.0",
+  "dims_m": [
+   9.989,
+   7.346,
+   3.28
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "solar",
+   "energy"
+  ],
+  "notes": "Kenney City Kit (Industrial) 2.0, scale x8.0 | ~976 tris | src kenney_city_industrial/raw/Models/GLB format/solar-panel-portrait-group.glb",
+  "thumb": "thumbs/industrial_props/solar_panel_portrait_group.jpg",
+  "source_url": "https://kenney.nl/assets/city-kit-industrial"
+ },
+ {
+  "name": "barrel",
+  "category": "industrial_props",
+  "collection": "industrial_props/barrel",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.709,
+   0.709,
+   1.032
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "barrel"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~412 tris | src kenney_survival_kit/raw/Models/GLB format/barrel.glb",
+  "thumb": "thumbs/industrial_props/barrel.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "barrel_open",
+  "category": "industrial_props",
+  "collection": "industrial_props/barrel_open",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.709,
+   0.709,
+   1.032
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "barrel"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~380 tris | src kenney_survival_kit/raw/Models/GLB format/barrel-open.glb",
+  "thumb": "thumbs/industrial_props/barrel_open.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "crate",
+  "category": "industrial_props",
+  "collection": "industrial_props/crate",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.75,
+   0.75,
+   0.75
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "crate"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~124 tris | src kenney_survival_kit/raw/Models/GLB format/box.glb",
+  "thumb": "thumbs/industrial_props/crate.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "crate_large",
+  "category": "industrial_props",
+  "collection": "industrial_props/crate_large",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.5,
+   0.75,
+   0.75
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "crate"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~124 tris | src kenney_survival_kit/raw/Models/GLB format/box-large.glb",
+  "thumb": "thumbs/industrial_props/crate_large.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "crate_open",
+  "category": "industrial_props",
+  "collection": "industrial_props/crate_open",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.75,
+   0.75,
+   0.919
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "crate"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~156 tris | src kenney_survival_kit/raw/Models/GLB format/box-open.glb",
+  "thumb": "thumbs/industrial_props/crate_open.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "crate_large_open",
+  "category": "industrial_props",
+  "collection": "industrial_props/crate_large_open",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.5,
+   0.75,
+   0.919
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "crate"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~156 tris | src kenney_survival_kit/raw/Models/GLB format/box-large-open.glb",
+  "thumb": "thumbs/industrial_props/crate_large_open.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "bucket",
+  "category": "industrial_props",
+  "collection": "industrial_props/bucket",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.432,
+   0.432,
+   0.576
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "bucket"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~68 tris | src kenney_survival_kit/raw/Models/GLB format/bucket.glb",
+  "thumb": "thumbs/industrial_props/bucket.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "chest",
+  "category": "industrial_props",
+  "collection": "industrial_props/chest",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.816,
+   0.781,
+   0.921
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "chest",
+   "treasure"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~322 tris | src kenney_survival_kit/raw/Models/GLB format/chest.glb",
+  "thumb": "thumbs/industrial_props/chest.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "workbench",
+  "category": "industrial_props",
+  "collection": "industrial_props/workbench",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.887,
+   0.977,
+   0.86
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "workbench",
+   "craft"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~236 tris | src kenney_survival_kit/raw/Models/GLB format/workbench.glb",
+  "thumb": "thumbs/industrial_props/workbench.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "workbench_anvil",
+  "category": "industrial_props",
+  "collection": "industrial_props/workbench_anvil",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.887,
+   0.968,
+   1.007
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "workbench",
+   "anvil",
+   "craft"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~298 tris | src kenney_survival_kit/raw/Models/GLB format/workbench-anvil.glb",
+  "thumb": "thumbs/industrial_props/workbench_anvil.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "workbench_grind",
+  "category": "industrial_props",
+  "collection": "industrial_props/workbench_grind",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.987,
+   0.781,
+   0.845
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "workbench",
+   "craft"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~232 tris | src kenney_survival_kit/raw/Models/GLB format/workbench-grind.glb",
+  "thumb": "thumbs/industrial_props/workbench_grind.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "tent",
+  "category": "industrial_props",
+  "collection": "industrial_props/tent",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.683,
+   1.682,
+   1.474
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "tent"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~124 tris | src kenney_survival_kit/raw/Models/GLB format/tent.glb",
+  "thumb": "thumbs/industrial_props/tent.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "tent_canvas",
+  "category": "industrial_props",
+  "collection": "industrial_props/tent_canvas",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.683,
+   1.682,
+   1.474
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "tent"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~148 tris | src kenney_survival_kit/raw/Models/GLB format/tent-canvas.glb",
+  "thumb": "thumbs/industrial_props/tent_canvas.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "resource_planks",
+  "category": "industrial_props",
+  "collection": "industrial_props/resource_planks",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.878,
+   1.119,
+   0.281
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "resource",
+   "lumber"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~72 tris | src kenney_survival_kit/raw/Models/GLB format/resource-planks.glb",
+  "thumb": "thumbs/industrial_props/resource_planks.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "resource_wood",
+  "category": "industrial_props",
+  "collection": "industrial_props/resource_wood",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.261,
+   0.615,
+   0.187
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "resource",
+   "lumber"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~64 tris | src kenney_survival_kit/raw/Models/GLB format/resource-wood.glb",
+  "thumb": "thumbs/industrial_props/resource_wood.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "resource_stone",
+  "category": "industrial_props",
+  "collection": "industrial_props/resource_stone",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.427,
+   0.496,
+   0.32
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "resource",
+   "stone"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~44 tris | src kenney_survival_kit/raw/Models/GLB format/resource-stone.glb",
+  "thumb": "thumbs/industrial_props/resource_stone.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "tool_axe",
+  "category": "industrial_props",
+  "collection": "industrial_props/tool_axe",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.093,
+   0.343,
+   0.768
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "tool"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~84 tris | src kenney_survival_kit/raw/Models/GLB format/tool-axe.glb",
+  "thumb": "thumbs/industrial_props/tool_axe.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "tool_hammer",
+  "category": "industrial_props",
+  "collection": "industrial_props/tool_hammer",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.12,
+   0.27,
+   0.46
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "tool"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~52 tris | src kenney_survival_kit/raw/Models/GLB format/tool-hammer.glb",
+  "thumb": "thumbs/industrial_props/tool_hammer.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "tool_pickaxe",
+  "category": "industrial_props",
+  "collection": "industrial_props/tool_pickaxe",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.116,
+   0.536,
+   0.72
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "tool"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~74 tris | src kenney_survival_kit/raw/Models/GLB format/tool-pickaxe.glb",
+  "thumb": "thumbs/industrial_props/tool_pickaxe.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "tool_shovel",
+  "category": "industrial_props",
+  "collection": "industrial_props/tool_shovel",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.093,
+   0.213,
+   0.87
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "tool"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~124 tris | src kenney_survival_kit/raw/Models/GLB format/tool-shovel.glb",
+  "thumb": "thumbs/industrial_props/tool_shovel.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "tool_hoe",
+  "category": "industrial_props",
+  "collection": "industrial_props/tool_hoe",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.213,
+   0.254,
+   0.72
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "tool"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~58 tris | src kenney_survival_kit/raw/Models/GLB format/tool-hoe.glb",
+  "thumb": "thumbs/industrial_props/tool_hoe.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "structure_metal",
+  "category": "industrial_props",
+  "collection": "industrial_props/structure_metal",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.606,
+   1.606,
+   1.5
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "shed"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~184 tris | src kenney_survival_kit/raw/Models/GLB format/structure-metal.glb",
+  "thumb": "thumbs/industrial_props/structure_metal.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ },
+ {
+  "name": "metal_panel",
+  "category": "industrial_props",
+  "collection": "industrial_props/metal_panel",
+  "file": "build/industrial_props.blend",
+  "source": "Kenney Survival Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.15,
+   1.5,
+   1.5
+  ],
+  "tags": [
+   "industrial_props",
+   "industrial",
+   "prop",
+   "panel"
+  ],
+  "notes": "Kenney Survival Kit, scale x3.0 | ~280 tris | src kenney_survival_kit/raw/Models/GLB format/metal-panel.glb",
+  "thumb": "thumbs/industrial_props/metal_panel.jpg",
+  "source_url": "https://kenney.nl/assets/survival-kit"
+ }
+]

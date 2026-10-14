@@ -50,7 +50,7 @@ ITEMS = {
         "resource-planks": ["resource", "lumber"], "resource-wood": ["resource", "lumber"],
         "resource-stone": ["resource", "stone"], "tool-axe": ["tool"], "tool-hammer": ["tool"],
         "tool-pickaxe": ["tool"], "tool-shovel": ["tool"], "tool-hoe": ["tool"], "structure-metal": ["shed"],
-        "metal-panel": ["panel"],
+
     },
 }
 SCALE_OVR = {"shipping-container-a": 7.5, "shipping-container-b": 7.5, "shipping-container-c": 7.5}

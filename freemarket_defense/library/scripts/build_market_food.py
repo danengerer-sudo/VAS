@@ -42,7 +42,7 @@ FOOD = {
 specs = []
 for m, tags in MARKET.items():
     specs.append(dict(name="market_" + m.replace("-", "_").replace("_rotate", ""), file=pi.kenney(MM[0], m),
-                      scale=2.2, rot_z=90, profile="prop", tags=["market", "shop", "retail"] + tags,
+                      scale=2.2, rot_z=90, profile="prop", dark_lum=0.2, tags=["market", "shop", "retail"] + tags,
                       notes="Mini Market, 1 unit = 2.2 m", source=MM[1], license="CC0 1.0", url=MM[2]))
 for m, grp in FOOD.items():
     specs.append(dict(name="food_" + m.replace("-", "_"), file=pi.kenney(FK[0], m), scale=0.4, rot_z=90,

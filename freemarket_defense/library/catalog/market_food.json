@@ -1,0 +1,1864 @@
+[
+ {
+  "name": "market_shelf_boxes",
+  "category": "market_food",
+  "collection": "market_food/market_shelf_boxes",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.54,
+   1.76,
+   1.87
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "shelf",
+   "supermarket"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~436 tris | src kenney_mini_market/raw/Models/GLB format/shelf-boxes.glb",
+  "thumb": "thumbs/market_food/market_shelf_boxes.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_shelf_bags",
+  "category": "market_food",
+  "collection": "market_food/market_shelf_bags",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.54,
+   1.76,
+   1.899
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "shelf",
+   "supermarket"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~892 tris | src kenney_mini_market/raw/Models/GLB format/shelf-bags.glb",
+  "thumb": "thumbs/market_food/market_shelf_bags.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_shelf_end",
+  "category": "market_food",
+  "collection": "market_food/market_shelf_end",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.88,
+   1.76,
+   2.31
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "shelf",
+   "supermarket"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~362 tris | src kenney_mini_market/raw/Models/GLB format/shelf-end.glb",
+  "thumb": "thumbs/market_food/market_shelf_end.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_cash_register",
+  "category": "market_food",
+  "collection": "market_food/market_cash_register",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.87,
+   1.87,
+   1.309
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "checkout",
+   "counter",
+   "till"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~203 tris | src kenney_mini_market/raw/Models/GLB format/cash-register.glb",
+  "thumb": "thumbs/market_food/market_cash_register.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_freezer",
+  "category": "market_food",
+  "collection": "market_food/market_freezer",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.32,
+   1.76,
+   0.77
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "freezer",
+   "fridge"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~180 tris | src kenney_mini_market/raw/Models/GLB format/freezer.glb",
+  "thumb": "thumbs/market_food/market_freezer.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_freezers_standing",
+  "category": "market_food",
+  "collection": "market_food/market_freezers_standing",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.1,
+   2.2,
+   1.98
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "freezer",
+   "fridge"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~156 tris | src kenney_mini_market/raw/Models/GLB format/freezers-standing.glb",
+  "thumb": "thumbs/market_food/market_freezers_standing.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_display_fruit",
+  "category": "market_food",
+  "collection": "market_food/market_display_fruit",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.32,
+   1.32,
+   1.135
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "display",
+   "produce",
+   "stall"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~650 tris | src kenney_mini_market/raw/Models/GLB format/display-fruit.glb",
+  "thumb": "thumbs/market_food/market_display_fruit.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_display_bread",
+  "category": "market_food",
+  "collection": "market_food/market_display_bread",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.32,
+   1.54,
+   1.1
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "display",
+   "bakery"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~362 tris | src kenney_mini_market/raw/Models/GLB format/display-bread.glb",
+  "thumb": "thumbs/market_food/market_display_bread.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_shopping_cart",
+  "category": "market_food",
+  "collection": "market_food/market_shopping_cart",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.054,
+   0.66,
+   0.859
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "cart",
+   "trolley"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~384 tris | src kenney_mini_market/raw/Models/GLB format/shopping-cart.glb",
+  "thumb": "thumbs/market_food/market_shopping_cart.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_shopping_basket",
+  "category": "market_food",
+  "collection": "market_food/market_shopping_basket",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.77,
+   0.77,
+   0.55
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "basket"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~288 tris | src kenney_mini_market/raw/Models/GLB format/shopping-basket.glb",
+  "thumb": "thumbs/market_food/market_shopping_basket.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_bottle_return",
+  "category": "market_food",
+  "collection": "market_food/market_bottle_return",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.058,
+   0.99,
+   2.404
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "machine",
+   "recycling"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~324 tris | src kenney_mini_market/raw/Models/GLB format/bottle-return.glb",
+  "thumb": "thumbs/market_food/market_bottle_return.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_column",
+  "category": "market_food",
+  "collection": "market_food/market_column",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.597,
+   1.597,
+   2.2
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "architecture"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~188 tris | src kenney_mini_market/raw/Models/GLB format/column.glb",
+  "thumb": "thumbs/market_food/market_column.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_wall",
+  "category": "market_food",
+  "collection": "market_food/market_wall",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.32,
+   2.2,
+   2.2
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "architecture",
+   "wall"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~32 tris | src kenney_mini_market/raw/Models/GLB format/wall.glb",
+  "thumb": "thumbs/market_food/market_wall.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_wall_window",
+  "category": "market_food",
+  "collection": "market_food/market_wall_window",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.32,
+   2.2,
+   2.2
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "architecture",
+   "wall",
+   "window"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~146 tris | src kenney_mini_market/raw/Models/GLB format/wall-window.glb",
+  "thumb": "thumbs/market_food/market_wall_window.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_wall_door",
+  "category": "market_food",
+  "collection": "market_food/market_wall_door",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.32,
+   2.2,
+   2.2
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "architecture",
+   "wall",
+   "door"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~316 tris | src kenney_mini_market/raw/Models/GLB format/wall-door-rotate.glb",
+  "thumb": "thumbs/market_food/market_wall_door.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_wall_corner",
+  "category": "market_food",
+  "collection": "market_food/market_wall_corner",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   1.76,
+   1.76,
+   2.2
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "architecture",
+   "wall"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~66 tris | src kenney_mini_market/raw/Models/GLB format/wall-corner.glb",
+  "thumb": "thumbs/market_food/market_wall_corner.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_floor",
+  "category": "market_food",
+  "collection": "market_food/market_floor",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   2.2,
+   2.2,
+   0.055
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "architecture",
+   "floor"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~24 tris | src kenney_mini_market/raw/Models/GLB format/floor.glb",
+  "thumb": "thumbs/market_food/market_floor.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "market_fence",
+  "category": "market_food",
+  "collection": "market_food/market_fence",
+  "file": "build/market_food.blend",
+  "source": "Kenney Mini Market",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.33,
+   1.265,
+   0.834
+  ],
+  "tags": [
+   "market_food",
+   "market",
+   "shop",
+   "retail",
+   "fence",
+   "barrier"
+  ],
+  "notes": "Mini Market, 1 unit = 2.2 m | ~76 tris | src kenney_mini_market/raw/Models/GLB format/fence.glb",
+  "thumb": "thumbs/market_food/market_fence.jpg",
+  "source_url": "https://kenney.nl/assets/mini-market"
+ },
+ {
+  "name": "food_apple",
+  "category": "market_food",
+  "collection": "market_food/food_apple",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.079,
+   0.079,
+   0.076
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~136 tris | src kenney_food_kit/raw/Models/GLB format/apple.glb",
+  "thumb": "thumbs/market_food/food_apple.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_banana",
+  "category": "market_food",
+  "collection": "market_food/food_banana",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.252,
+   0.055,
+   0.078
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~104 tris | src kenney_food_kit/raw/Models/GLB format/banana.glb",
+  "thumb": "thumbs/market_food/food_banana.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_orange",
+  "category": "market_food",
+  "collection": "market_food/food_orange",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.068,
+   0.068,
+   0.067
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~120 tris | src kenney_food_kit/raw/Models/GLB format/orange.glb",
+  "thumb": "thumbs/market_food/food_orange.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_lemon",
+  "category": "market_food",
+  "collection": "market_food/food_lemon",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.08,
+   0.069,
+   0.09
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~104 tris | src kenney_food_kit/raw/Models/GLB format/lemon.glb",
+  "thumb": "thumbs/market_food/food_lemon.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_pear",
+  "category": "market_food",
+  "collection": "market_food/food_pear",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.079,
+   0.079,
+   0.108
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~136 tris | src kenney_food_kit/raw/Models/GLB format/pear.glb",
+  "thumb": "thumbs/market_food/food_pear.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_pineapple",
+  "category": "market_food",
+  "collection": "market_food/food_pineapple",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.098,
+   0.096,
+   0.189
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~196 tris | src kenney_food_kit/raw/Models/GLB format/pineapple.glb",
+  "thumb": "thumbs/market_food/food_pineapple.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_watermelon",
+  "category": "market_food",
+  "collection": "market_food/food_watermelon",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.182,
+   0.182,
+   0.19
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~1376 tris | src kenney_food_kit/raw/Models/GLB format/watermelon.glb",
+  "thumb": "thumbs/market_food/food_watermelon.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_grapes",
+  "category": "market_food",
+  "collection": "market_food/food_grapes",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.095,
+   0.112,
+   0.169
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~592 tris | src kenney_food_kit/raw/Models/GLB format/grapes.glb",
+  "thumb": "thumbs/market_food/food_grapes.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_strawberry",
+  "category": "market_food",
+  "collection": "market_food/food_strawberry",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.048,
+   0.048,
+   0.073
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~156 tris | src kenney_food_kit/raw/Models/GLB format/strawberry.glb",
+  "thumb": "thumbs/market_food/food_strawberry.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_carrot",
+  "category": "market_food",
+  "collection": "market_food/food_carrot",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.137,
+   0.137,
+   0.287
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~148 tris | src kenney_food_kit/raw/Models/GLB format/carrot.glb",
+  "thumb": "thumbs/market_food/food_carrot.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_tomato",
+  "category": "market_food",
+  "collection": "market_food/food_tomato",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.068,
+   0.068,
+   0.057
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~132 tris | src kenney_food_kit/raw/Models/GLB format/tomato.glb",
+  "thumb": "thumbs/market_food/food_tomato.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_cabbage",
+  "category": "market_food",
+  "collection": "market_food/food_cabbage",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.161,
+   0.152,
+   0.123
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~140 tris | src kenney_food_kit/raw/Models/GLB format/cabbage.glb",
+  "thumb": "thumbs/market_food/food_cabbage.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_broccoli",
+  "category": "market_food",
+  "collection": "market_food/food_broccoli",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.15,
+   0.15,
+   0.169
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~220 tris | src kenney_food_kit/raw/Models/GLB format/broccoli.glb",
+  "thumb": "thumbs/market_food/food_broccoli.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_corn",
+  "category": "market_food",
+  "collection": "market_food/food_corn",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.12,
+   0.137,
+   0.126
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~128 tris | src kenney_food_kit/raw/Models/GLB format/corn.glb",
+  "thumb": "thumbs/market_food/food_corn.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_onion",
+  "category": "market_food",
+  "collection": "market_food/food_onion",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.098,
+   0.085,
+   0.1
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~68 tris | src kenney_food_kit/raw/Models/GLB format/onion.glb",
+  "thumb": "thumbs/market_food/food_onion.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_pumpkin",
+  "category": "market_food",
+  "collection": "market_food/food_pumpkin",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.168,
+   0.168,
+   0.092
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~188 tris | src kenney_food_kit/raw/Models/GLB format/pumpkin.glb",
+  "thumb": "thumbs/market_food/food_pumpkin.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_eggplant",
+  "category": "market_food",
+  "collection": "market_food/food_eggplant",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.086,
+   0.082,
+   0.162
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~124 tris | src kenney_food_kit/raw/Models/GLB format/eggplant.glb",
+  "thumb": "thumbs/market_food/food_eggplant.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_mushroom",
+  "category": "market_food",
+  "collection": "market_food/food_mushroom",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.058,
+   0.05,
+   0.056
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~80 tris | src kenney_food_kit/raw/Models/GLB format/mushroom.glb",
+  "thumb": "thumbs/market_food/food_mushroom.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_paprika",
+  "category": "market_food",
+  "collection": "market_food/food_paprika",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.067,
+   0.067,
+   0.08
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "produce"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~132 tris | src kenney_food_kit/raw/Models/GLB format/paprika.glb",
+  "thumb": "thumbs/market_food/food_paprika.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_bread",
+  "category": "market_food",
+  "collection": "market_food/food_bread",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.146,
+   0.177,
+   0.016
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "bakery"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~116 tris | src kenney_food_kit/raw/Models/GLB format/bread.glb",
+  "thumb": "thumbs/market_food/food_bread.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_loaf",
+  "category": "market_food",
+  "collection": "market_food/food_loaf",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.146,
+   0.232,
+   0.177
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "bakery"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~116 tris | src kenney_food_kit/raw/Models/GLB format/loaf.glb",
+  "thumb": "thumbs/market_food/food_loaf.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_loaf_baguette",
+  "category": "market_food",
+  "collection": "market_food/food_loaf_baguette",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.1,
+   0.332,
+   0.1
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "bakery"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~122 tris | src kenney_food_kit/raw/Models/GLB format/loaf-baguette.glb",
+  "thumb": "thumbs/market_food/food_loaf_baguette.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_loaf_round",
+  "category": "market_food",
+  "collection": "market_food/food_loaf_round",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.206,
+   0.309,
+   0.117
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "bakery"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~116 tris | src kenney_food_kit/raw/Models/GLB format/loaf-round.glb",
+  "thumb": "thumbs/market_food/food_loaf_round.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_croissant",
+  "category": "market_food",
+  "collection": "market_food/food_croissant",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.191,
+   0.138,
+   0.077
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "bakery"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~162 tris | src kenney_food_kit/raw/Models/GLB format/croissant.glb",
+  "thumb": "thumbs/market_food/food_croissant.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_cake",
+  "category": "market_food",
+  "collection": "market_food/food_cake",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.256,
+   0.256,
+   0.109
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "bakery"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~750 tris | src kenney_food_kit/raw/Models/GLB format/cake.glb",
+  "thumb": "thumbs/market_food/food_cake.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_cupcake",
+  "category": "market_food",
+  "collection": "market_food/food_cupcake",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.123,
+   0.142,
+   0.17
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "bakery"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~204 tris | src kenney_food_kit/raw/Models/GLB format/cupcake.glb",
+  "thumb": "thumbs/market_food/food_cupcake.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_donut",
+  "category": "market_food",
+  "collection": "market_food/food_donut",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.113,
+   0.098,
+   0.036
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "bakery"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~108 tris | src kenney_food_kit/raw/Models/GLB format/donut.glb",
+  "thumb": "thumbs/market_food/food_donut.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_muffin",
+  "category": "market_food",
+  "collection": "market_food/food_muffin",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.106,
+   0.122,
+   0.099
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "bakery"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~84 tris | src kenney_food_kit/raw/Models/GLB format/muffin.glb",
+  "thumb": "thumbs/market_food/food_muffin.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_pie",
+  "category": "market_food",
+  "collection": "market_food/food_pie",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.38,
+   0.38,
+   0.06
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "bakery"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~292 tris | src kenney_food_kit/raw/Models/GLB format/pie.glb",
+  "thumb": "thumbs/market_food/food_pie.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_cheese",
+  "category": "market_food",
+  "collection": "market_food/food_cheese",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.272,
+   0.272,
+   0.088
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "dairy"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~576 tris | src kenney_food_kit/raw/Models/GLB format/cheese.glb",
+  "thumb": "thumbs/market_food/food_cheese.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_egg",
+  "category": "market_food",
+  "collection": "market_food/food_egg",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.054,
+   0.046,
+   0.066
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "dairy"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~44 tris | src kenney_food_kit/raw/Models/GLB format/egg.glb",
+  "thumb": "thumbs/market_food/food_egg.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_carton",
+  "category": "market_food",
+  "collection": "market_food/food_carton",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.092,
+   0.092,
+   0.236
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~94 tris | src kenney_food_kit/raw/Models/GLB format/carton.glb",
+  "thumb": "thumbs/market_food/food_carton.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_carton_small",
+  "category": "market_food",
+  "collection": "market_food/food_carton_small",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.092,
+   0.092,
+   0.156
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~74 tris | src kenney_food_kit/raw/Models/GLB format/carton-small.glb",
+  "thumb": "thumbs/market_food/food_carton_small.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_can",
+  "category": "market_food",
+  "collection": "market_food/food_can",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.12,
+   0.12,
+   0.128
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~156 tris | src kenney_food_kit/raw/Models/GLB format/can.glb",
+  "thumb": "thumbs/market_food/food_can.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_can_small",
+  "category": "market_food",
+  "collection": "market_food/food_can_small",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.12,
+   0.12,
+   0.064
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~154 tris | src kenney_food_kit/raw/Models/GLB format/can-small.glb",
+  "thumb": "thumbs/market_food/food_can_small.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_bag",
+  "category": "market_food",
+  "collection": "market_food/food_bag",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.165,
+   0.088,
+   0.24
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~46 tris | src kenney_food_kit/raw/Models/GLB format/bag.glb",
+  "thumb": "thumbs/market_food/food_bag.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_bag_flat",
+  "category": "market_food",
+  "collection": "market_food/food_bag_flat",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.187,
+   0.26,
+   0.076
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~114 tris | src kenney_food_kit/raw/Models/GLB format/bag-flat.glb",
+  "thumb": "thumbs/market_food/food_bag_flat.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_bottle_ketchup",
+  "category": "market_food",
+  "collection": "market_food/food_bottle_ketchup",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.067,
+   0.058,
+   0.157
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~96 tris | src kenney_food_kit/raw/Models/GLB format/bottle-ketchup.glb",
+  "thumb": "thumbs/market_food/food_bottle_ketchup.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_bottle_oil",
+  "category": "market_food",
+  "collection": "market_food/food_bottle_oil",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.056,
+   0.056,
+   0.249
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~96 tris | src kenney_food_kit/raw/Models/GLB format/bottle-oil.glb",
+  "thumb": "thumbs/market_food/food_bottle_oil.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_honey",
+  "category": "market_food",
+  "collection": "market_food/food_honey",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.13,
+   0.13,
+   0.126
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~140 tris | src kenney_food_kit/raw/Models/GLB format/honey.glb",
+  "thumb": "thumbs/market_food/food_honey.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_peanut_butter",
+  "category": "market_food",
+  "collection": "market_food/food_peanut_butter",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.094,
+   0.094,
+   0.118
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~172 tris | src kenney_food_kit/raw/Models/GLB format/peanut-butter.glb",
+  "thumb": "thumbs/market_food/food_peanut_butter.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_soda_bottle",
+  "category": "market_food",
+  "collection": "market_food/food_soda_bottle",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.063,
+   0.072,
+   0.232
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "drinks"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~100 tris | src kenney_food_kit/raw/Models/GLB format/soda-bottle.glb",
+  "thumb": "thumbs/market_food/food_soda_bottle.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_soda_can",
+  "category": "market_food",
+  "collection": "market_food/food_soda_can",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.09,
+   0.09,
+   0.14
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "drinks"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~164 tris | src kenney_food_kit/raw/Models/GLB format/soda-can.glb",
+  "thumb": "thumbs/market_food/food_soda_can.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_wine_red",
+  "category": "market_food",
+  "collection": "market_food/food_wine_red",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.066,
+   0.076,
+   0.28
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "drinks"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~132 tris | src kenney_food_kit/raw/Models/GLB format/wine-red.glb",
+  "thumb": "thumbs/market_food/food_wine_red.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_wine_white",
+  "category": "market_food",
+  "collection": "market_food/food_wine_white",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.07,
+   0.081,
+   0.262
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "drinks"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~124 tris | src kenney_food_kit/raw/Models/GLB format/wine-white.glb",
+  "thumb": "thumbs/market_food/food_wine_white.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_cup_coffee",
+  "category": "market_food",
+  "collection": "market_food/food_cup_coffee",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.115,
+   0.087,
+   0.056
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "drinks"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~108 tris | src kenney_food_kit/raw/Models/GLB format/cup-coffee.glb",
+  "thumb": "thumbs/market_food/food_cup_coffee.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_mug",
+  "category": "market_food",
+  "collection": "market_food/food_mug",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.114,
+   0.137,
+   0.109
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "drinks"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~232 tris | src kenney_food_kit/raw/Models/GLB format/mug.glb",
+  "thumb": "thumbs/market_food/food_mug.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_barrel",
+  "category": "market_food",
+  "collection": "market_food/food_barrel",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.272,
+   0.304,
+   0.272
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~308 tris | src kenney_food_kit/raw/Models/GLB format/barrel.glb",
+  "thumb": "thumbs/market_food/food_barrel.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_pizza_box",
+  "category": "market_food",
+  "collection": "market_food/food_pizza_box",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.381,
+   0.377,
+   0.353
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~84 tris | src kenney_food_kit/raw/Models/GLB format/pizza-box.glb",
+  "thumb": "thumbs/market_food/food_pizza_box.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_candy_bar",
+  "category": "market_food",
+  "collection": "market_food/food_candy_bar",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.03,
+   0.117,
+   0.026
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~72 tris | src kenney_food_kit/raw/Models/GLB format/candy-bar.glb",
+  "thumb": "thumbs/market_food/food_candy_bar.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_chocolate",
+  "category": "market_food",
+  "collection": "market_food/food_chocolate",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.058,
+   0.117,
+   0.013
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "packaged"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~140 tris | src kenney_food_kit/raw/Models/GLB format/chocolate.glb",
+  "thumb": "thumbs/market_food/food_chocolate.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_burger",
+  "category": "market_food",
+  "collection": "market_food/food_burger",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.162,
+   0.162,
+   0.116
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "fast_food"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~294 tris | src kenney_food_kit/raw/Models/GLB format/burger.glb",
+  "thumb": "thumbs/market_food/food_burger.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_fries",
+  "category": "market_food",
+  "collection": "market_food/food_fries",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.106,
+   0.073,
+   0.159
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "fast_food"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~564 tris | src kenney_food_kit/raw/Models/GLB format/fries.glb",
+  "thumb": "thumbs/market_food/food_fries.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_hot_dog",
+  "category": "market_food",
+  "collection": "market_food/food_hot_dog",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.081,
+   0.234,
+   0.061
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "fast_food"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~272 tris | src kenney_food_kit/raw/Models/GLB format/hot-dog.glb",
+  "thumb": "thumbs/market_food/food_hot_dog.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_pizza",
+  "category": "market_food",
+  "collection": "market_food/food_pizza",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.337,
+   0.337,
+   0.017
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "fast_food"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~1208 tris | src kenney_food_kit/raw/Models/GLB format/pizza.glb",
+  "thumb": "thumbs/market_food/food_pizza.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_sandwich",
+  "category": "market_food",
+  "collection": "market_food/food_sandwich",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.174,
+   0.173,
+   0.067
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "fast_food"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~176 tris | src kenney_food_kit/raw/Models/GLB format/sandwich.glb",
+  "thumb": "thumbs/market_food/food_sandwich.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_taco",
+  "category": "market_food",
+  "collection": "market_food/food_taco",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.046,
+   0.17,
+   0.105
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "fast_food"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~174 tris | src kenney_food_kit/raw/Models/GLB format/taco.glb",
+  "thumb": "thumbs/market_food/food_taco.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_ice_cream",
+  "category": "market_food",
+  "collection": "market_food/food_ice_cream",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.109,
+   0.094,
+   0.185
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "fast_food"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~80 tris | src kenney_food_kit/raw/Models/GLB format/ice-cream.glb",
+  "thumb": "thumbs/market_food/food_ice_cream.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_soda",
+  "category": "market_food",
+  "collection": "market_food/food_soda",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.102,
+   0.102,
+   0.173
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "fast_food"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~188 tris | src kenney_food_kit/raw/Models/GLB format/soda.glb",
+  "thumb": "thumbs/market_food/food_soda.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_meat_raw",
+  "category": "market_food",
+  "collection": "market_food/food_meat_raw",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.23,
+   0.191,
+   0.026
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "butcher"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~110 tris | src kenney_food_kit/raw/Models/GLB format/meat-raw.glb",
+  "thumb": "thumbs/market_food/food_meat_raw.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_meat_ribs",
+  "category": "market_food",
+  "collection": "market_food/food_meat_ribs",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.153,
+   0.214,
+   0.024
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "butcher"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~164 tris | src kenney_food_kit/raw/Models/GLB format/meat-ribs.glb",
+  "thumb": "thumbs/market_food/food_meat_ribs.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_fish",
+  "category": "market_food",
+  "collection": "market_food/food_fish",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.248,
+   0.079,
+   0.129
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "butcher"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~233 tris | src kenney_food_kit/raw/Models/GLB format/fish.glb",
+  "thumb": "thumbs/market_food/food_fish.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_whole_ham",
+  "category": "market_food",
+  "collection": "market_food/food_whole_ham",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.256,
+   0.152,
+   0.176
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "butcher"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~128 tris | src kenney_food_kit/raw/Models/GLB format/whole-ham.glb",
+  "thumb": "thumbs/market_food/food_whole_ham.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_sausage",
+  "category": "market_food",
+  "collection": "market_food/food_sausage",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.055,
+   0.148,
+   0.048
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "butcher"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~92 tris | src kenney_food_kit/raw/Models/GLB format/sausage.glb",
+  "thumb": "thumbs/market_food/food_sausage.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_plate",
+  "category": "market_food",
+  "collection": "market_food/food_plate",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.357,
+   0.357,
+   0.036
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "tableware"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~140 tris | src kenney_food_kit/raw/Models/GLB format/plate.glb",
+  "thumb": "thumbs/market_food/food_plate.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_pot",
+  "category": "market_food",
+  "collection": "market_food/food_pot",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.329,
+   0.263,
+   0.144
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "kitchen"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~228 tris | src kenney_food_kit/raw/Models/GLB format/pot.glb",
+  "thumb": "thumbs/market_food/food_pot.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_frying_pan",
+  "category": "market_food",
+  "collection": "market_food/food_frying_pan",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.409,
+   0.263,
+   0.048
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "kitchen"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~200 tris | src kenney_food_kit/raw/Models/GLB format/frying-pan.glb",
+  "thumb": "thumbs/market_food/food_frying_pan.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ },
+ {
+  "name": "food_cutting_board",
+  "category": "market_food",
+  "collection": "market_food/food_cutting_board",
+  "file": "build/market_food.blend",
+  "source": "Kenney Food Kit",
+  "license": "CC0 1.0",
+  "dims_m": [
+   0.328,
+   0.232,
+   0.024
+  ],
+  "tags": [
+   "market_food",
+   "food",
+   "kitchen"
+  ],
+  "notes": "Food Kit, x0.4 (real size); orig colours in orig_color | ~120 tris | src kenney_food_kit/raw/Models/GLB format/cutting-board.glb",
+  "thumb": "thumbs/market_food/food_cutting_board.jpg",
+  "source_url": "https://kenney.nl/assets/food-kit"
+ }
+]

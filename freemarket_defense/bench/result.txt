@@ -1,0 +1,4 @@
+BLENDER_EEVEE_NEXT 1920x1080 samples=32: first 170.5s, then 143.1s/frame
+BLENDER_EEVEE_NEXT 1920x1080 samples=16: first 74.9s, then 79.5s/frame
+BLENDER_EEVEE_NEXT 1280x720 samples=16: first 36.5s, then 48.9s/frame
+CYCLES 1920x1080 samples=8: first 78.3s, then 72.4s/frame

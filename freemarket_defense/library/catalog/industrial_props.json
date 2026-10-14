@@ -1881,27 +1881,5 @@
   "notes": "Kenney Survival Kit, scale x3.0 | ~184 tris | src kenney_survival_kit/raw/Models/GLB format/structure-metal.glb",
   "thumb": "thumbs/industrial_props/structure_metal.jpg",
   "source_url": "https://kenney.nl/assets/survival-kit"
- },
- {
-  "name": "metal_panel",
-  "category": "industrial_props",
-  "collection": "industrial_props/metal_panel",
-  "file": "build/industrial_props.blend",
-  "source": "Kenney Survival Kit",
-  "license": "CC0 1.0",
-  "dims_m": [
-   0.15,
-   1.5,
-   1.5
-  ],
-  "tags": [
-   "industrial_props",
-   "industrial",
-   "prop",
-   "panel"
-  ],
-  "notes": "Kenney Survival Kit, scale x3.0 | ~280 tris | src kenney_survival_kit/raw/Models/GLB format/metal-panel.glb",
-  "thumb": "thumbs/industrial_props/metal_panel.jpg",
-  "source_url": "https://kenney.nl/assets/survival-kit"
  }
 ]

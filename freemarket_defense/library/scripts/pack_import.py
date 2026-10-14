@@ -320,6 +320,8 @@ def tri_count(objs):
 
 def normalise(objs, name, scale=1.0, rot_z=0.0, parts=False, target=None, wheel_hint="wheel"):
     """Bake transforms, scale/rotate, put origin at ground centre. Returns [root, *children]."""
+    for o in objs:  # some kits ship animations (levers, pistons) that would pin the location
+        o.animation_data_clear()
     meshes = [o for o in objs if o.type == "MESH"]
     others = [o for o in objs if o.type != "MESH"]
     sc = scale if isinstance(scale, (tuple, list)) else (scale, scale, scale)

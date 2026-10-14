@@ -277,52 +277,6 @@
   "source_url": "https://kenney.nl/assets/furniture-kit"
  },
  {
-  "name": "cardboard_box_closed",
-  "category": "furniture_interior",
-  "collection": "furniture_interior/cardboard_box_closed",
-  "file": "build/furniture_interior.blend",
-  "source": "Kenney Furniture Kit",
-  "license": "CC0 1.0",
-  "dims_m": [
-   0.404,
-   0.404,
-   0.534
-  ],
-  "tags": [
-   "furniture_interior",
-   "furniture",
-   "interior",
-   "box",
-   "logistics"
-  ],
-  "notes": "Furniture Kit, 1 unit = 1.9 m | ~60 tris | src kenney_furniture_kit/raw/Models/GLTF format/cardboardBoxClosed.glb",
-  "thumb": "thumbs/furniture_interior/cardboard_box_closed.jpg",
-  "source_url": "https://kenney.nl/assets/furniture-kit"
- },
- {
-  "name": "cardboard_box_open",
-  "category": "furniture_interior",
-  "collection": "furniture_interior/cardboard_box_open",
-  "file": "build/furniture_interior.blend",
-  "source": "Kenney Furniture Kit",
-  "license": "CC0 1.0",
-  "dims_m": [
-   0.404,
-   0.707,
-   0.534
-  ],
-  "tags": [
-   "furniture_interior",
-   "furniture",
-   "interior",
-   "box",
-   "logistics"
-  ],
-  "notes": "Furniture Kit, 1 unit = 1.9 m | ~60 tris | src kenney_furniture_kit/raw/Models/GLTF format/cardboardBoxOpen.glb",
-  "thumb": "thumbs/furniture_interior/cardboard_box_open.jpg",
-  "source_url": "https://kenney.nl/assets/furniture-kit"
- },
- {
   "name": "coat_rack_standing",
   "category": "furniture_interior",
   "collection": "furniture_interior/coat_rack_standing",

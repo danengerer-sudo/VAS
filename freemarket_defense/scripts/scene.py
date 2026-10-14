@@ -820,7 +820,8 @@ keys(c, [(361, p4), (504, (p4[0] - 2, p4[1] - 1, p4[2] + 0.2))])
 for f in range(361, 505, 8):
     sc.frame_set(f)
     hp = heli.matrix_world.translation.copy()
-    t.location = (hp.x - 6, hp.y, hp.z * 0.55)
+    k = ((f - 361) / 143.0) ** 2
+    t.location = (hp.x - 6 * (1 - k), hp.y, hp.z * (0.55 + 0.45 * k) - 3.0 * k)
     t.keyframe_insert("location", frame=f)
 ease(t)
 linear(c)

@@ -45,14 +45,14 @@ Paper can't give anyone the right to rob you. And it can't give you your rights,
 And the real question was never "Why should you be allowed to own a gun?"
 It's this: who would have to use force to stop you?
 
-And if you don't like it, you can kiss my—
+And if you don't like it... you can kiss my ass.
 
 *Shot: long crane pull-back over the white town at golden hour.*
-*TAG: tight frame filled by a big rear end in trousers; hold a beat; fast zoom out: heavy-set guy bent over plugging in his new TV, oblivious (mocap: pick-up clip 69_73/74). Smash cut to title card.*
+*TAG: on "ass", hard cut to a white donkey in a paddock, side-on, looking back over its shoulder at the camera; slow push-in; hold two beats, it flicks an ear. Smash cut to the end card.*
 
 ## Assets needed
 Have: parliament_dome, contract, document_stack, gavel, desk, storefront_shop, furniture_interior (sofa, TV stand, room), houses, people (mhuman), carbine (figure.carbine), city pieces, trees.
-To add: hall pass prop, tiny jail cell + placard, bent-over pick-up pose (CMU 69_73), TV (+ boxed TV), kitchen knife, hammer, car keys, gun safe, enforcer outfit/kit (accent colour), labels.
+To add: hall pass prop, tiny jail cell + placard, DONKEY, TV (+ boxed TV), kitchen knife, hammer, car keys, gun safe, enforcer outfit/kit (accent colour), labels.
 
 ## Easter eggs (subtle ancap references)
 - Intro: tiny black/gold flag pin after "Dan Engerer".

@@ -1,0 +1,18 @@
+{
+  "_comment": "Copy to config.json (git-ignored) and edit. Paths use forward slashes or doubled backslashes.",
+  "blender": "C:/Program Files/Blender Foundation/Blender 4.2/blender.exe",
+  "repo": "C:/renderfarm/VAS",
+  "branch": "main",
+  "worker": "minipc1",
+  "poll_minutes": 5,
+  "push_minutes": 10,
+  "uploader": "auto",
+  "rclone_remote": "gdrive:renderfarm",
+  "rclone": "rclone",
+  "git": "git",
+  "outbox_dir": "",
+  "zip_part_bytes": 1900000000,
+  "claim_stale_hours": 12,
+  "bench_url": "https://example.com/bench.blend",
+  "blender_extra_args": []
+}

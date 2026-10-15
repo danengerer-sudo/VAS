@@ -6,3 +6,8 @@ freemarket_defense/render/
 freemarket_defense/library/build/
 freemarket_defense/bench/*.blend
 freemarket_defense/bench/out/
+freemarket_defense/episodes/*/shots/*.blend
+freemarket_defense/episodes/*/comp/
+freemarket_defense/episodes/*/frames/
+freemarket_defense/episodes/*/intro_frames/
+freemarket_defense/assets/tts/

@@ -1,0 +1,13 @@
+# local machine config and state (never committed)
+config.json
+logs/
+outbox/
+# rendered frames and downloaded/cached blends never go through git
+jobs/*/frames/
+jobs/*/_dl/
+jobs/*/logs/
+bench/*.blend
+bench/out/
+bench/_dl/
+__pycache__/
+*.pyc

@@ -1,0 +1,22 @@
+{
+  "blender": "C:\\Program Files\\Blender Foundation\\Blender 4.2\\blender.exe",
+  "chunks": {
+    "1-181": {
+      "end": 181,
+      "frames_done": 0,
+      "frames_total": 181,
+      "sec_per_frame": null,
+      "seconds": 0.0,
+      "start": 1,
+      "started_at": "2026-10-15T03:41:14Z",
+      "status": "rendering",
+      "updated": "2026-10-15T03:41:14Z"
+    }
+  },
+  "engine": "BLENDER_EEVEE_NEXT",
+  "frames_done_total": 0,
+  "host": "M6_Ultra",
+  "sec_per_frame": null,
+  "updated": "2026-10-15T03:41:14Z",
+  "worker": "minipc1"
+}

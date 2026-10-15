@@ -1,6 +1,7 @@
 """Assemble an episode: intro → shots (cross-dissolves) → end card, with narration (+ optional music).
 
 python3 assemble_episode.py <episode_dir> --title "..." --frames <dir with f_####.png or shots/*/frames>
+                            [--videos <dir with SHOT.mp4 from fetch_videos.py>]
                             [--audio narration.wav] [--music file.mp3] [--out video.mp4] [--res 1280x720]
 Shot frame ranges come from shotlist.json (global frame numbers f_0001...). Missing frames are
 filled by holding the last available one (so a partial render still previews).
@@ -54,6 +55,23 @@ def main():
     out = arg("--out", os.path.join(ep, "episode.mp4"))
     W, H = map(int, arg("--res", "1920x1080").split("x"))
     sl = json.load(open(os.path.join(ep, "shotlist.json")))
+    videos = arg("--videos")
+    if videos:  # per-shot mp4s from the render farm -> globally numbered frames under frames_dir/<id>/
+        frames_dir = arg("--frames", os.path.join(ep, "frames_final"))
+        for s in sl["shots"]:
+            mp4 = os.path.join(videos, s["id"] + ".mp4")
+            d = os.path.join(frames_dir, s["id"])
+            want = s["frame_end"] - s["frame_start"] + 1
+            have = len(glob.glob(os.path.join(d, "f_*.png")))
+            if not os.path.exists(mp4):
+                print("WARN no video for", s["id"], "- holding last frame")
+                continue
+            if have == want:
+                continue
+            os.makedirs(d, exist_ok=True)
+            subprocess.check_call(["ffmpeg", "-y", "-loglevel", "error", "-i", mp4, "-start_number", str(s["frame_start"]),
+                                   os.path.join(d, "f_%04d.png")])
+            print("expanded", s["id"], len(glob.glob(os.path.join(d, "f_*.png"))), "frames")
     comp = os.path.join(ep, "comp")
     os.makedirs(comp, exist_ok=True)
     for f in glob.glob(os.path.join(comp, "*.jpg")):

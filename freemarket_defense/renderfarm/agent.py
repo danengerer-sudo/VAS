@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as _dt
+import hashlib
 import json
 import logging
 import logging.handlers
@@ -56,6 +57,8 @@ DEFAULT_CHUNK = 240
 LFS_POINTER_PREFIX = b"version https://git-lfs.github.com/spec"
 
 log = logging.getLogger("agent")
+AGENT_HASH = hashlib.sha256(Path(__file__).read_bytes()).hexdigest() if Path(__file__).exists() else ""
+EXIT_SELF_UPDATE = 3  # start_agent.bat restarts us on any non-zero exit: used after `git pull` changed agent.py
 
 
 # ----------------------------------------------------------------------------- helpers
@@ -369,6 +372,72 @@ _RE_FRA = re.compile(r"^Fra:(\d+)")
 _RE_TIME = re.compile(r"\bTime: (\d+):(\d+\.\d+)")
 
 
+# ----------------------------------------------------------------------------- video publish
+# After a job is complete the frames are encoded to one high-quality H.264 mp4 with Blender's own
+# bundled ffmpeg (nothing extra to install on the box) and uploaded next to the frames. The share
+# link goes into done.json so the cloud side can fetch one file per shot instead of thousands of PNGs.
+ENCODE_EXPR = (
+    "import bpy,os,sys;"
+    "a=sys.argv[sys.argv.index('--')+1:];d,out,fps=a[0],a[1],int(a[2]);"
+    "fs=sorted(f for f in os.listdir(d) if f.lower().endswith(('.png','.jpg','.exr')));"
+    "im=bpy.data.images.load(os.path.join(d,fs[0]));sc=bpy.context.scene;"
+    "sc.render.resolution_x,sc.render.resolution_y=im.size[0]//2*2,im.size[1]//2*2;sc.render.resolution_percentage=100;"
+    "sc.render.fps=fps;sc.render.fps_base=1;sc.frame_start=1;sc.frame_end=len(fs);"
+    "sc.view_settings.view_transform='Standard';sc.view_settings.look='None';"
+    "se=sc.sequence_editor_create();st=se.sequences.new_image('seq',os.path.join(d,fs[0]),1,1);"
+    "[st.elements.append(f) for f in fs[1:]];"
+    "r=sc.render;r.image_settings.file_format='FFMPEG';r.ffmpeg.format='MPEG4';r.ffmpeg.codec='H264';"
+    "r.ffmpeg.constant_rate_factor='PERC_LOSSLESS';r.ffmpeg.ffmpeg_preset='GOOD';r.ffmpeg.gopsize=12;"
+    "r.ffmpeg.audio_codec='NONE';r.filepath=out;bpy.ops.render.render(animation=True);print('ENCODED',out)"
+)
+
+
+def encode_video(cfg: "Config", frames_dir: Path, out_mp4: Path, fps: int = 24) -> bool:
+    """Encode the PNG sequence in frames_dir to out_mp4 (H.264, near-lossless CRF) via Blender's VSE."""
+    tmp = out_mp4.parent / (out_mp4.stem + "_enc")
+    cmd = [cfg.blender, "-b", "--factory-startup", "--python-expr", ENCODE_EXPR, "--",
+           str(frames_dir), str(tmp), str(fps)]
+    log.info("encoding %s -> %s", frames_dir, out_mp4.name)
+    try:
+        cp = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace",
+                            timeout=3 * 3600)
+    except subprocess.TimeoutExpired:
+        log.error("encode timed out")
+        return False
+    produced = [q for q in sorted(out_mp4.parent.glob(tmp.name + "*")) if q.is_file()]
+    if cp.returncode != 0 or not produced:
+        log.error("encode failed (%d): %s", cp.returncode, (cp.stdout + cp.stderr).strip()[-1200:])
+        return False
+    produced[-1].replace(out_mp4)  # Blender appends the frame range to the file name
+    for q in produced[:-1]:
+        q.unlink(missing_ok=True)
+    log.info("encoded %s (%.1f MB)", out_mp4.name, out_mp4.stat().st_size / 1e6)
+    return True
+
+
+def rclone_link(cfg: "Config", remote_path: str) -> Optional[str]:
+    """Public 'anyone with the link' URL for a file on the remote (on Drive this sets that permission)."""
+    try:
+        cp = subprocess.run([cfg.rclone, "link", remote_path], capture_output=True, text=True,
+                            encoding="utf-8", errors="replace", timeout=300)
+    except (FileNotFoundError, subprocess.TimeoutExpired) as exc:
+        log.error("rclone link failed: %s", exc)
+        return None
+    if cp.returncode != 0:
+        log.error("rclone link failed (%d): %s", cp.returncode, (cp.stderr or cp.stdout).strip()[-500:])
+        return None
+    lines = [ln.strip() for ln in cp.stdout.splitlines() if ln.strip()]
+    return lines[-1] if lines else None
+
+
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for blk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(blk)
+    return h.hexdigest()
+
+
 class BlenderRun:
     """Runs one Blender process rendering a list of frames and streams its stdout to a log file.
     `on_frame(frame, seconds)` is called after every saved frame."""
@@ -650,10 +719,14 @@ class Agent:
     def poll_once(self) -> bool:
         """Pull, pick a job with a free chunk, render that chunk. Returns True if work was done."""
         self.git.pull()
+        self.check_self_update()
         jobs = self.list_jobs()
         for job in jobs:
             if self.stop:
                 return False
+            if job.done and not job.failed and job.ok:
+                self.publish_video(job)  # no-op once done.json carries video_url
+                continue
             if job.done or job.failed:
                 continue
             if not job.ok:
@@ -863,6 +936,73 @@ class Agent:
         log.info("job %s chunk %s done (%.1f s/frame)", job.id, key, cprog.get("sec_per_frame") or 0)
         return True
 
+    def check_self_update(self):
+        """agent.py changed after `git pull` -> exit between chunks; start_agent.bat restarts us on the new code."""
+        try:
+            now = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+        except OSError:
+            return
+        if AGENT_HASH and now != AGENT_HASH:
+            log.info("agent.py changed on %s; restarting to pick up the new version", self.cfg.branch)
+            self.flush_push(force=True)
+            raise SystemExit(EXIT_SELF_UPDATE)
+
+    def publish_video(self, job: Job) -> bool:
+        """Encode the finished job's frames to <job>.mp4, upload it next to the frames and record a share
+        link + sha256 in done.json. Idempotent: skipped once done.json has video_url (or after 3 failures)."""
+        done_path = job.folder / "done.json"
+        info = read_json(done_path, None) or {}
+        if info.get("video_url") or int(info.get("video_failed", 0)) >= 3:
+            return bool(info.get("video_url"))
+        a, b = int(job.data["frame_start"]), int(job.data["frame_end"])
+        fd = job.frames_dir
+        missing = job.missing_frames(a, b)
+        if missing and self.cfg.rclone_remote:
+            src = f"{self.cfg.rclone_remote.rstrip('/')}/{job.id}/frames"
+            log.info("job %s: %d frames rendered elsewhere; fetching from %s", job.id, len(missing), src)
+            subprocess.run([self.cfg.rclone, "copy", src, str(fd), "--transfers", "8"], capture_output=True,
+                           timeout=6 * 3600)
+            missing = job.missing_frames(a, b)
+        if missing:
+            log.warning("job %s: cannot publish video, %d frames missing locally", job.id, len(missing))
+            return False
+
+        def fail(msg: str) -> bool:
+            info["video_failed"] = int(info.get("video_failed", 0)) + 1
+            info["video_error"] = msg
+            write_json(done_path, info)
+            self.git.commit_push([done_path], f"renderfarm: {job.id} video publish failed")
+            return False
+
+        mp4 = job.folder / f"{job.id}.mp4"
+        fps = int(job.data.get("fps") or 24)
+        if not (mp4.exists() and mp4.stat().st_size > 1024) and not encode_video(self.cfg, fd, mp4, fps):
+            return fail("encode failed")
+        info.update(video_file=mp4.name, video_size=mp4.stat().st_size, video_sha256=sha256_file(mp4),
+                    video_frames=b - a + 1, video_fps=fps)
+        if self.cfg.rclone_remote:
+            dest = f"{self.cfg.rclone_remote.rstrip('/')}/{job.id}/{mp4.name}"
+            cp = subprocess.run([self.cfg.rclone, "copyto", str(mp4), dest, "--retries", "5"],
+                                capture_output=True, text=True, encoding="utf-8", errors="replace",
+                                timeout=6 * 3600)
+            if cp.returncode != 0:
+                return fail("upload failed: " + (cp.stderr or cp.stdout).strip()[-300:])
+            url = rclone_link(self.cfg, dest)
+            if not url:
+                return fail("rclone link failed")
+        else:
+            outbox = Path(self.cfg.outbox_dir or DEFAULT_OUTBOX) / job.id
+            outbox.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(mp4, outbox / mp4.name)
+            url = "outbox:" + str(outbox / mp4.name)
+        info["video_url"] = url
+        info["video_published_at"] = utcnow()
+        info.pop("video_error", None)
+        write_json(done_path, info)
+        log.info("job %s video published: %s (%.1f MB)", job.id, url, info["video_size"] / 1e6)
+        self.git.commit_push([done_path], f"renderfarm: {job.id} video published")
+        return True
+
     def finish_job(self, job: Job):
         self.git.pull()
         if job.done:
@@ -894,6 +1034,7 @@ class Agent:
         log.info("job %s DONE: %d frames, %s, %.2f s/frame, workers=%s", job.id, frames,
                  info["total_time"], info["sec_per_frame"] or 0, workers)
         self.git.commit_push([job.folder / "done.json"], f"renderfarm: {job.id} done ({frames} frames)")
+        self.publish_video(job)
 
     def mark_failed(self, job: Job, error: str):
         path = job.folder / "failed.json"

@@ -146,14 +146,14 @@ def hook():
 def paper():
     """A desk: the document, a gavel, a stack of papers; a second paper slides over the first (static here)."""
     place("commerce", "desk", (0, 0, 0))
-    place("commerce", "office_chair", (-1.4, 0.6, 0), math.radians(25))
+    place("commerce", "office_chair", (-1.7, 1.0, 0), math.radians(35))
     Z = 0.758
     d1 = place("commerce", "contract", (0.1, 0.1, Z), math.radians(8), 1.3)
     d2 = place("commerce", "contract", (0.22, 0.02, Z + 0.004), math.radians(-14), 1.3)
     place("commerce", "gavel", (0.2, -0.45, Z), math.radians(20))
     place("commerce", "document_stack", (-0.1, 0.45, Z), math.radians(-5))
     if has("household", "hall_pass"):
-        place("household", "hall_pass", (0.42, 0.35, Z), math.radians(30))
+        place("household", "hall_pass", (0.55, -0.22, Z), math.radians(-35))
     if has("symbols", "flag_ancap_desk"):
         place("symbols", "flag_ancap_desk", (-0.45, 0.42, Z), math.radians(-20))
     box("wall", (0.2, 8, 3.2), (-2.5, 0, 1.6), None, 0.02, pbr("LIB_Body", (0.82, 0.81, 0.79), rough=0.6))
@@ -170,12 +170,13 @@ def tv_shop():
     place("city", "tree_round", (-7, -3, 0.15), 1.0)
     place("city", "tree_small", (8, -3.5, 0.15), 2.0)
     place("city", "street_lamp", (4, -4, 0.15), D)
-    if has("household", "tv_boxed"):
-        b = place("household", "tv_boxed", (1.2, -2.4, 0.55), math.radians(100))
-        b.rotation_euler = (math.radians(12), 0, math.radians(100))
+    hd = math.radians(-110)
+    buyer = person("Buyer", 0.6, -2.0, hd, "walk")
+    if has("household", "tv_boxed"):  # carried in front of the chest, long side across the body
+        b = place("household", "tv_boxed", (0.6 + 0.4 * math.cos(hd), -2.0 + 0.4 * math.sin(hd), 0.62), hd)
+        b.rotation_euler = (math.radians(6), 0, hd)
     else:
         place("commerce", "cardboard_box", (1.2, -2.4, 0.5), math.radians(30))
-    person("Buyer", 0.6, -2.0, math.radians(-110), "walk")
     person("Shop1", -4, -5.5, math.radians(20), "talk")
     person("Shop2", -4.8, -4.8, math.radians(-150), "casual")
     person("Shop3", 7, -6, math.radians(170), "walk", age="child")
@@ -199,8 +200,6 @@ def door():
         place("city", "fence_picket", (x, 2.5, 0), 0) if has("city", "fence_picket") else None
     if has("symbols", "flag_ancap_porch"):
         place("symbols", "flag_ancap_porch", (4 - 0.1, 2.8, 0), -D)
-    if has("household", "front_door"):
-        place("household", "front_door", (4, 1.2, 0), -D)
     # three enforcers on the walk, one knocking distance away; a neighbour watching
     person("E1", 2.6, -2.2, math.radians(80), "walk", "held", accent=ACCENT)
     person("E2", 4.6, -3.4, math.radians(95), "walk", "slung", accent=ACCENT)
@@ -238,10 +237,13 @@ def donkey():
     ground((0.5, 0.52, 0.42))
     for i in range(-4, 5):
         place("city", "fence_picket", (i * 4, 4, 0), 0) if has("city", "fence_picket") else None
-    place("city", "tree_wide", (-6, 7, 0), 0.5)
-    place("buildings", "farm_barn_silo", (18, 12, 0), math.radians(-110))
+    place("city", "tree_wide", (-14, 13, 0), 0.5)
+    place("city", "tree_round", (11, 10, 0), 2.0)
+    place("buildings", "farm_barn_silo", (18, 14, 0), math.radians(-110))
+    if has("household", "donkey_grazing"):
+        place("household", "donkey_grazing", (5, 6, 0), math.radians(150))
     if has("household", "donkey"):
-        place("household", "donkey", (0, 0, 0), math.radians(20))
+        place("household", "donkey", (0, 0, 0), math.radians(35))
     else:
         box("donkey_placeholder", (1.4, 0.5, 1.0), (0, 0, 0.8), None, 0.1, pbr("LIB_Body", (0.82, 0.81, 0.79)))
 

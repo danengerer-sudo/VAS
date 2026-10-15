@@ -1,6 +1,17 @@
 {
   "blender": "C:\\Program Files\\Blender Foundation\\Blender 4.2\\blender.exe",
   "chunks": {
+    "1122-1198": {
+      "end": 1198,
+      "frames_done": 0,
+      "frames_total": 77,
+      "sec_per_frame": null,
+      "seconds": 0.0,
+      "start": 1122,
+      "started_at": "2026-10-15T05:29:37Z",
+      "status": "rendering",
+      "updated": "2026-10-15T05:29:37Z"
+    },
     "722-921": {
       "end": 921,
       "finished_at": "2026-10-15T05:08:54Z",
@@ -34,6 +45,6 @@
   "frames_done_total": 400,
   "host": "M6_Ultra",
   "sec_per_frame": 1.94,
-  "updated": "2026-10-15T05:29:30Z",
+  "updated": "2026-10-15T05:29:37Z",
   "worker": "minipc1"
 }

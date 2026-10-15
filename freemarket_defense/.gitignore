@@ -3,3 +3,4 @@ episodes/*/roughcut*.mp4
 episodes/*/frames_final/
 episodes/*/video/
 renderfarm/jobs/*/*.mp4
+episodes/*/narration.wav

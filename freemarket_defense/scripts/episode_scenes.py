@@ -51,7 +51,7 @@ def person(name, x, y, hd, mode="casual", weapon=None, **kw):
 
 
 def label(text, loc, rot_z=0, size=0.12, col=(0.03, 0.03, 0.035)):
-    plate = box(f"lbl_{text}", (0.02, size * 0.62 * len(text) + 0.2, size + 0.14), loc, None, 0.015,
+    plate = box(f"lbl_{text}", (0.012, size * 0.62 * len(text) + size * 0.9, size * 1.9), loc, None, min(0.012, size * 0.2),
                 pbr("LIB_Body", (0.82, 0.81, 0.79), rough=0.5))
     plate.rotation_euler = (0, 0, rot_z)
     t = text_decal(f"txt_{text}", text, size, pbr("LIB_Dark", col, rough=0.5), (0.013, 0, 0),
@@ -146,15 +146,16 @@ def hook():
 def paper():
     """A desk: the document, a gavel, a stack of papers; a second paper slides over the first (static here)."""
     place("commerce", "desk", (0, 0, 0))
-    place("commerce", "office_chair", (-1.1, 0.1, 0), math.radians(15))
-    d1 = place("commerce", "contract", (0.1, 0.1, 0.74), math.radians(8), 1.3)
-    d2 = place("commerce", "contract", (0.22, 0.02, 0.745), math.radians(-14), 1.3)
-    place("commerce", "gavel", (0.2, -0.45, 0.74), math.radians(20))
-    place("commerce", "document_stack", (-0.1, 0.45, 0.74), math.radians(-5))
+    place("commerce", "office_chair", (-1.4, 0.6, 0), math.radians(25))
+    Z = 0.758
+    d1 = place("commerce", "contract", (0.1, 0.1, Z), math.radians(8), 1.3)
+    d2 = place("commerce", "contract", (0.22, 0.02, Z + 0.004), math.radians(-14), 1.3)
+    place("commerce", "gavel", (0.2, -0.45, Z), math.radians(20))
+    place("commerce", "document_stack", (-0.1, 0.45, Z), math.radians(-5))
     if has("household", "hall_pass"):
-        place("household", "hall_pass", (0.42, 0.35, 0.74), math.radians(30))
+        place("household", "hall_pass", (0.42, 0.35, Z), math.radians(30))
     if has("symbols", "flag_ancap_desk"):
-        place("symbols", "flag_ancap_desk", (-0.45, 0.42, 0.74), math.radians(-20))
+        place("symbols", "flag_ancap_desk", (-0.45, 0.42, Z), math.radians(-20))
     box("wall", (0.2, 8, 3.2), (-2.5, 0, 1.6), None, 0.02, pbr("LIB_Body", (0.82, 0.81, 0.79), rough=0.6))
     box("floor", (8, 8, 0.02), (0, 0, -0.01), None, 0, pbr("FloorWood", (0.5, 0.47, 0.43), rough=0.5))
 
@@ -191,9 +192,9 @@ def door():
     place("buildings", "cottage_1storey", (6, -17, 0), D)
     for i in range(-2, 3):
         place("city", "road_straight_2lane", (i * 24, -6, 0))
-    for x in (-8, 12, 26):
+    for x in (-8, 22, 30):
         place("city", "tree_round", (x, 0.5, 0.15), rng.uniform(0, 6))
-    place("city", "street_lamp", (-2, -1.0, 0.15), D)
+    place("city", "street_lamp", (-14, -1.0, 0.15), D)
     for x in (-8, -4, 12, 16):
         place("city", "fence_picket", (x, 2.5, 0), 0) if has("city", "fence_picket") else None
     if has("symbols", "flag_ancap_porch"):
@@ -214,18 +215,18 @@ def table():
     box("floor", (8, 8, 0.02), (0, 0, -0.01), None, 0, pbr("FloorWood", (0.5, 0.47, 0.43), rough=0.5))
     gun = pbr("FigGun", (0.035, 0.037, 0.04), rough=0.45)
     g = carbine("rifle", sc.collection, gun)
-    g.location = (-0.35, 0.25, 0.75)
-    g.rotation_euler = (0, 0, math.radians(-15))
-    items = [("hammer", (0.35, 0.3), 20), ("kitchen_knife", (0.0, -0.3), -10), ("car_keys", (0.45, -0.2), 0)]
+    g.location = (-0.15, -0.05, 0.775)
+    g.rotation_euler = (0, 0, math.radians(-20))
+    items = [("hammer", (-0.25, 0.5), 20), ("kitchen_knife", (0.4, -0.42), -35), ("car_keys", (0.42, 0.3), 0)]
     for n, (x, y), r in items:
         if has("household", n):
-            place("household", n, (x, y, 0.74), math.radians(r))
+            place("household", n, (x, y, 0.758), math.radians(r))
         else:
-            box(n, (0.3, 0.06, 0.04), (x, y, 0.76), None, 0.01, gun)
+            box(n, (0.3, 0.06, 0.04), (x, y, 0.778), None, 0.01, gun)
     if has("household", "jail_cell_tiny"):
-        place("household", "jail_cell_tiny", (0.35, 0.3, 0.74), 0)
-    for text, (x, y) in [("RIFLE", (-0.35, 0.5)), ("HAMMER", (0.35, 0.55)), ("KNIFE", (0.0, -0.55)), ("CAR KEYS", (0.5, -0.45))]:
-        label(text, (x, y, 0.95), math.radians(-5), 0.06)  # faces the camera arc at +X
+        place("household", "jail_cell_tiny", (-0.25, 0.5, 0.758), math.radians(-10))
+    for text, (x, y) in [("RIFLE", (-0.5, -0.25)), ("HAMMER", (-0.55, 0.72)), ("KNIFE", (0.2, -0.68)), ("CAR KEYS", (0.2, 0.52))]:
+        label(text, (x, y, 0.86), math.radians(-5), 0.03)
 
 
 def town_shot():

@@ -4,9 +4,14 @@
       "claimed_at": "2026-10-15T04:51:05Z",
       "end": 921,
       "start": 722
+    },
+    "922-1121": {
+      "claimed_at": "2026-10-15T05:08:58Z",
+      "end": 1121,
+      "start": 922
     }
   },
   "host": "M6_Ultra",
-  "updated": "2026-10-15T04:51:05Z",
+  "updated": "2026-10-15T05:08:58Z",
   "worker": "minipc1"
 }

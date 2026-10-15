@@ -10,7 +10,7 @@ from thumb import thumbnail, contact_sheet
 
 LIB = os.path.join(HERE, "..")
 bpy.ops.wm.read_factory_settings(use_empty=True)
-GOLD = (0.88, 0.56, 0.0)
+GOLD = (1.0, 0.8, 0.0)
 BLACK = (0.018, 0.018, 0.02)
 
 
@@ -33,7 +33,7 @@ def ancap_material():
     mx.inputs[6].default_value = (*BLACK, 1); mx.inputs[7].default_value = (*GOLD, 1)
     l.new(mx.outputs[2], b.inputs["Base Color"])
     b.inputs["Roughness"].default_value = 0.6
-    b.inputs["Sheen Weight"].default_value = 0.3
+    b.inputs["Sheen Weight"].default_value = 0.0
     return m
 
 

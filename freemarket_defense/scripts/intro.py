@@ -177,7 +177,7 @@ def make_intro(title, bg_path, out_dir, name="Dan Engerer", photo=PHOTO, fps=24,
             fw, fh = 30, 20
             pin = Image.new("RGBA", (fw * 4, fh * 4), (0, 0, 0, 0))
             pd = ImageDraw.Draw(pin)
-            pd.polygon([(0, 0), (fw * 4, 0), (0, fh * 4)], fill=(242, 181, 12, 255))   # gold upper-hoist
+            pd.polygon([(0, 0), (fw * 4, 0), (0, fh * 4)], fill=(255, 204, 0, 255))   # gold upper-hoist
             pd.polygon([(fw * 4, 0), (fw * 4, fh * 4), (0, fh * 4)], fill=(20, 20, 22, 255))  # black lower-fly
             mask = Image.new("L", (fw * 4, fh * 4), 0)
             ImageDraw.Draw(mask).rounded_rectangle((0, 0, fw * 4 - 1, fh * 4 - 1), radius=10, fill=255)

@@ -189,7 +189,7 @@ def door():
     place("buildings", "house_hip", (-14, 7, 0), -D)
     place("buildings", "cottage_1storey", (22, 6.5, 0), -D)
     place("buildings", "house_gable", (-14, -16, 0), D)
-    place("buildings", "cottage_1storey", (6, -17, 0), D)
+    place("buildings", "cottage_1storey", (20, -24, 0), D)
     for i in range(-2, 3):
         place("city", "road_straight_2lane", (i * 24, -6, 0))
     for x in (-8, 22, 30):

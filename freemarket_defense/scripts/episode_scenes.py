@@ -135,10 +135,10 @@ def hook():
     place("buildings", "parliament_dome", (0, 0, 0), -D)
     for i in range(-3, 4):
         place("city", "tree_round", (-30 + i * 2 * rng.uniform(1, 4), -30 + rng.uniform(-6, 6), 0), rng.uniform(0, 6))
-    doc = place("commerce", "contract", (-30, -12, 3.2), math.radians(-30))
-    doc.rotation_euler = (math.radians(70), 0, math.radians(-25))
-    doc.scale = (6, 6, 6)
-    label("2ND AMENDMENT", (-30.5, -12.8, 2.4), math.radians(-25), 0.28)
+    doc = place("commerce", "contract", (-88, -52, 14), 0)
+    doc.rotation_euler = (math.radians(75), 0, math.radians(-120))
+    doc.scale = (22, 22, 22)
+    label("2ND AMENDMENT", (-86, -53.5, 10.5), math.radians(-120), 0.9)
     for k in range(6):
         person(f"H{k}", -20 + k * 4, -22 + rng.uniform(-3, 3), rng.uniform(-3, 3), rng.choice(["casual", "walk"]))
 
@@ -146,9 +146,9 @@ def hook():
 def paper():
     """A desk: the document, a gavel, a stack of papers; a second paper slides over the first (static here)."""
     place("commerce", "desk", (0, 0, 0))
-    place("commerce", "office_chair", (-0.7, 0, 0), 0)
-    d1 = place("commerce", "contract", (0.1, 0.1, 0.74), math.radians(8))
-    d2 = place("commerce", "contract", (0.22, 0.02, 0.745), math.radians(-14))
+    place("commerce", "office_chair", (-1.1, 0.1, 0), math.radians(15))
+    d1 = place("commerce", "contract", (0.1, 0.1, 0.74), math.radians(8), 1.3)
+    d2 = place("commerce", "contract", (0.22, 0.02, 0.745), math.radians(-14), 1.3)
     place("commerce", "gavel", (0.2, -0.45, 0.74), math.radians(20))
     place("commerce", "document_stack", (-0.1, 0.45, 0.74), math.radians(-5))
     if has("household", "hall_pass"):
@@ -194,7 +194,8 @@ def door():
     for x in (-8, 12, 26):
         place("city", "tree_round", (x, 0.5, 0.15), rng.uniform(0, 6))
     place("city", "street_lamp", (-2, -1.0, 0.15), D)
-    place("city", "picket_fence", (-6, 2.5, 0), 0) if has("city", "picket_fence") else None
+    for x in (-8, -4, 12, 16):
+        place("city", "fence_picket", (x, 2.5, 0), 0) if has("city", "fence_picket") else None
     if has("symbols", "flag_ancap_porch"):
         place("symbols", "flag_ancap_porch", (4 - 0.1, 2.8, 0), -D)
     if has("household", "front_door"):
@@ -224,7 +225,7 @@ def table():
     if has("household", "jail_cell_tiny"):
         place("household", "jail_cell_tiny", (0.35, 0.3, 0.74), 0)
     for text, (x, y) in [("RIFLE", (-0.35, 0.5)), ("HAMMER", (0.35, 0.55)), ("KNIFE", (0.0, -0.55)), ("CAR KEYS", (0.5, -0.45))]:
-        label(text, (x, y, 0.95), math.radians(-90), 0.06)
+        label(text, (x, y, 0.95), math.radians(-5), 0.06)  # faces the camera arc at +X
 
 
 def town_shot():
@@ -235,7 +236,7 @@ def donkey():
     """A paddock; the donkey (placeholder box until the household library lands) looks back at us."""
     ground((0.5, 0.52, 0.42))
     for i in range(-4, 5):
-        place("city", "picket_fence", (i * 2.4, 4, 0), 0) if has("city", "picket_fence") else None
+        place("city", "fence_picket", (i * 4, 4, 0), 0) if has("city", "fence_picket") else None
     place("city", "tree_wide", (-6, 7, 0), 0.5)
     place("buildings", "farm_barn_silo", (18, 12, 0), math.radians(-110))
     if has("household", "donkey"):

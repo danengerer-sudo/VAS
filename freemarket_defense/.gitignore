@@ -4,3 +4,4 @@ episodes/*/frames_final/
 episodes/*/video/
 renderfarm/jobs/*/*.mp4
 episodes/*/narration.wav
+episodes/*/*.mp4

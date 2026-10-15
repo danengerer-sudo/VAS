@@ -169,6 +169,22 @@ def make_intro(title, bg_path, out_dir, name="Dan Engerer", photo=PHOTO, fps=24,
         na = ease_out(seg(t, 2.2, 2.95))
         fr = Image.alpha_composite(fr, text_layer((W, H), name, f_name, INK, na * fade_all, dy=(1 - na) * 18,
                                                   xy=(tx, by + D / 2 + 30), anchor="ls"))
+        # subtle Easter egg: tiny ancap flag pin after the narrator's name
+        pa2 = ease_out(seg(t, 2.6, 3.2)) * fade_all
+        if pa2 > 0.01:
+            fx = tx + name_w + 16
+            fy = by + D / 2 + 30 - 27
+            fw, fh = 30, 20
+            pin = Image.new("RGBA", (fw * 4, fh * 4), (0, 0, 0, 0))
+            pd = ImageDraw.Draw(pin)
+            pd.polygon([(0, 0), (fw * 4, 0), (0, fh * 4)], fill=(242, 181, 12, 255))   # gold upper-hoist
+            pd.polygon([(fw * 4, 0), (fw * 4, fh * 4), (0, fh * 4)], fill=(20, 20, 22, 255))  # black lower-fly
+            mask = Image.new("L", (fw * 4, fh * 4), 0)
+            ImageDraw.Draw(mask).rounded_rectangle((0, 0, fw * 4 - 1, fh * 4 - 1), radius=10, fill=255)
+            pin.putalpha(ImageChops.multiply(pin.getchannel("A"), mask))
+            pin = pin.resize((fw, fh), Image.LANCZOS)
+            pin.putalpha(ImageChops.multiply(pin.getchannel("A"), Image.new("L", pin.size, int(255 * pa2))))
+            fr.alpha_composite(pin, (int(fx), int(fy + (1 - pa2) * 8)))
         fr.convert("RGB").save(os.path.join(out_dir, f"intro_{i:04d}.png"))
     return n
 

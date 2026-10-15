@@ -1,0 +1,67 @@
+[
+ {
+  "name": "flag_ancap_pole",
+  "category": "symbols",
+  "collection": "symbols/flag_ancap_pole",
+  "file": "build/symbols.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   2.152,
+   0.6,
+   6.18
+  ],
+  "tags": [
+   "flag",
+   "ancap",
+   "symbol",
+   "pole"
+  ],
+  "notes": "Ancap flag: gold upper-hoist triangle, black lower-fly (material LIB_Ancap, UV-driven).",
+  "thumb": "thumbs/symbols/flag_ancap_pole.jpg"
+ },
+ {
+  "name": "flag_ancap_porch",
+  "category": "symbols",
+  "collection": "symbols/flag_ancap_porch",
+  "file": "build/symbols.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.102,
+   0.1,
+   1.623
+  ],
+  "tags": [
+   "flag",
+   "ancap",
+   "symbol",
+   "house",
+   "porch"
+  ],
+  "notes": "Ancap flag: gold upper-hoist triangle, black lower-fly (material LIB_Ancap, UV-driven).",
+  "thumb": "thumbs/symbols/flag_ancap_porch.jpg"
+ },
+ {
+  "name": "flag_ancap_desk",
+  "category": "symbols",
+  "collection": "symbols/flag_ancap_desk",
+  "file": "build/symbols.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.188,
+   0.07,
+   0.321
+  ],
+  "tags": [
+   "flag",
+   "ancap",
+   "symbol",
+   "desk",
+   "office"
+  ],
+  "notes": "Ancap flag: gold upper-hoist triangle, black lower-fly (material LIB_Ancap, UV-driven).",
+  "thumb": "thumbs/symbols/flag_ancap_desk.jpg"
+ }
+]

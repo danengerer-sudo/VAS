@@ -52,3 +52,10 @@ And if you don't like it, you can kiss my—
 ## Assets needed
 Have: parliament_dome, contract, document_stack, gavel, desk, storefront_shop, furniture_interior (sofa, TV stand, room), houses, people (mhuman), carbine (figure.carbine), city pieces, trees.
 To add: hall pass prop, tiny jail cell + placard, bent-over pick-up pose (CMU 69_73), TV (+ boxed TV), kitchen knife, hammer, car keys, gun safe, enforcer outfit/kit (accent colour), labels.
+
+## Easter eggs (subtle ancap references)
+- Intro: tiny black/gold flag pin after "Dan Engerer".
+- Beat 3 (TV): `flag_ancap_desk` on the side table next to the TV.
+- Beat 4 (the door): `flag_ancap_porch` on the house the enforcers walk up to.
+- Beat 6 (pull-back): one `flag_ancap_pole` in a front yard, visible for a second in the wide shot.
+- Tag: the bent-over guy's living room has the desk flag again.

@@ -4,9 +4,14 @@
       "claimed_at": "2026-10-15T03:58:51Z",
       "end": 381,
       "start": 182
+    },
+    "382-581": {
+      "claimed_at": "2026-10-15T04:18:55Z",
+      "end": 581,
+      "start": 382
     }
   },
   "host": "M6_Ultra",
-  "updated": "2026-10-15T03:58:51Z",
+  "updated": "2026-10-15T04:18:55Z",
   "worker": "minipc1"
 }

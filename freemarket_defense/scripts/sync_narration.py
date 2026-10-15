@@ -531,13 +531,14 @@ def main():
 
     # --- removal spans on the original timeline
     removed, report_cuts = [], []
+    kept_js = set(x for x in a if x is not None)
     for j0, j1, why in retake_cuts:
         s = max(0.0, ttoks[j0]["start"] - PAD_BEFORE_WORD)
         # cut up to just before the next kept transcript token
-        nxt = next((ttoks[j]["start"] for j in range(j1, len(ttoks)) if j in set(x for x in a if x is not None)), None)
+        nxt = next((ttoks[j]["start"] for j in range(j1, len(ttoks)) if j in kept_js), None)
         e = (nxt - PAD_BEFORE_WORD) if nxt is not None else ttoks[j1 - 1]["end"]
         e = max(e, ttoks[j1 - 1]["end"] + 0.05)
-        prev_kept_end = max([ttoks[j]["end"] for j in range(0, j0) if j in set(x for x in a if x is not None)] + [0.0])
+        prev_kept_end = max([ttoks[j]["end"] for j in range(0, j0) if j in kept_js] + [0.0])
         s = max(s, prev_kept_end + 0.02)
         if e > s:
             removed.append((s, e))
@@ -609,6 +610,8 @@ def main():
             pos = k - (lo + 1 if lo is not None else 0)
             step = max(0.0, t1 - t0) / max(1, n)
             wt[k] = [t0 + step * pos, t0 + step * (pos + 1)]
+        # keep words inside the (snapped) paragraph span
+        wt = [[min(max(s, info["start"]), info["end"]), min(max(e, info["start"]), info["end"])] for s, e in wt]
         words_out = [{"w": w, "start": round(tl.map(s), 3), "end": round(tl.map(e), 3)}
                      for (w, _), (s, e) in zip(pw, wt)]
         entry = {"text": p, "start": round(tl.map(info["start"]), 3), "end": round(tl.map(info["end"]), 3),

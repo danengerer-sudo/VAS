@@ -1,7 +1,0 @@
-{
-  "attempts": 1,
-  "error": "job.json missing or lacks frame_start/frame_end",
-  "failed_at": "2026-10-15T02:01:54Z",
-  "job": "badjob",
-  "worker": "minipc1"
-}

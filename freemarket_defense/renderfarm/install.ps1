@@ -30,7 +30,8 @@ param(
     [string]$BenchUrl = "",
     [switch]$NoTask,
     [switch]$NoPower,
-    [switch]$RunBench
+    [switch]$RunBench,
+    [switch]$Quiet
 )
 $ErrorActionPreference = "Stop"
 
@@ -42,6 +43,7 @@ function Need($cmd, $hint) {
     return $true
 }
 function Ask($prompt, $default) {
+    if ($Quiet) { Write-Host "$prompt -> $default"; return $default }
     $v = Read-Host "$prompt [$default]"
     if ([string]::IsNullOrWhiteSpace($v)) { return $default }
     return $v
@@ -57,7 +59,7 @@ if (-not $ok) { throw "install the missing tools, reopen PowerShell, run again" 
 $pyver = (& python -c "import sys;print('%d.%d'%sys.version_info[:2])")
 if ([version]$pyver -lt [version]"3.11") { throw "Python $pyver found; need 3.11+" }
 
-if (-not $BlenderExe) {
+if (-not $BlenderExe -or -not (Test-Path $BlenderExe)) {
     $cands = @(
         "C:\Program Files\Blender Foundation\Blender 4.2\blender.exe",
         "C:\Program Files\Blender Foundation\Blender 4.5\blender.exe",
@@ -101,7 +103,7 @@ if (-not $Worker)       { $Worker       = Ask "worker name (unique per PC)" (Pre
 $BlenderExe             = Ask "blender.exe path" (Prev "blender" $BlenderExe)
 if (-not (Test-Path $BlenderExe)) { Write-Host "WARNING: $BlenderExe does not exist yet - install Blender 4.2 LTS from blender.org" -ForegroundColor Yellow }
 if (-not $RcloneRemote) { $RcloneRemote = Ask "rclone remote:path for frames (empty = zip to outbox/)" (Prev "rclone_remote" "") }
-if (-not $BenchUrl)     { $BenchUrl     = Ask "bench_url (direct link to bench.blend, may be empty)" (Prev "bench_url" "") }
+if (-not $BenchUrl)     { $BenchUrl     = Ask "bench_url (direct link to bench.blend, may be empty)" (Prev "bench_url" "https://raw.githubusercontent.com/danengerer-sudo/VAS/claude/low-poly-helicopter-glb-d0l1zs/freemarket_defense/bench/bench.blend") }
 $poll = Ask "poll interval minutes" (Prev "poll_minutes" 5)
 
 $cfg = [ordered]@{

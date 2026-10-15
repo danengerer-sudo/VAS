@@ -31,20 +31,23 @@
     },
     "582-721": {
       "end": 721,
-      "frames_done": 0,
+      "finished_at": "2026-10-15T04:50:57Z",
+      "frames_done": 140,
       "frames_total": 140,
-      "sec_per_frame": null,
-      "seconds": 0.0,
+      "sec_per_frame": 1.93,
+      "seconds": 269.98,
       "start": 582,
       "started_at": "2026-10-15T04:37:01Z",
-      "status": "rendering",
-      "updated": "2026-10-15T04:37:01Z"
+      "status": "done",
+      "updated": "2026-10-15T04:50:57Z",
+      "uploaded": true,
+      "uploader": "rclone"
     }
   },
   "engine": "BLENDER_EEVEE_NEXT",
-  "frames_done_total": 400,
+  "frames_done_total": 540,
   "host": "M6_Ultra",
-  "sec_per_frame": 1.94,
-  "updated": "2026-10-15T04:37:01Z",
+  "sec_per_frame": 1.93,
+  "updated": "2026-10-15T04:50:57Z",
   "worker": "minipc1"
 }

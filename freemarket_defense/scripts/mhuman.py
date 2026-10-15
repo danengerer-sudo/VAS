@@ -88,12 +88,18 @@ def _dress(body, sex, age, outfit, rng):
         if os.path.exists(p):
             items.append(HS.add_mhclo_asset(p, body, asset_type="Clothes" if kind == "clothes" else "Hair",
                                             subdiv_levels=0, material_type="MAKESKIN"))
+    eyes = os.path.join(_mpfb()["LS"].get_user_data(), "eyes", "low-poly", "low-poly.mhclo")
+    if os.path.exists(eyes):
+        items.append(HS.add_mhclo_asset(eyes, body, asset_type="Eyes", subdiv_levels=0, material_type="MAKESKIN"))
     if o.get("hat"):
         items.append(HS.add_mhclo_asset(_asset("clothes", o["hat"]), body, asset_type="Clothes", subdiv_levels=0,
                                         material_type="MAKESKIN"))
     return [i for i in items if i]
 
 
+UPRIGHT = {"LowerBack": 0.35, "Spine": 0.45, "Spine1": 0.5, "Neck": 0.75, "Neck1": 0.8, "Head": 0.8}
+FINGER_CURL = {"LeftFingerBase": 0.35, "RightFingerBase": 0.35, "LeftHandFinger1": 0.7, "RightHandFinger1": 0.7,
+               "LThumb": 0.25, "RThumb": 0.25}
 KEEP_REST = {"LHipJoint", "RHipJoint", "LeftShoulder", "RightShoulder", "LThumb", "RThumb",
              "LeftFingerBase", "RightFingerBase", "LeftHandFinger1", "RightHandFinger1"}
 
@@ -140,6 +146,10 @@ def _pose_rig(rig, M):
         d = seg_dir(b)
         if d is None:
             continue
+        # damp lean: spine follows mocap partly, neck/head stay mostly upright (mocap head data is noisy)
+        upright = UPRIGHT.get(b.name, 0.0)
+        if upright:
+            d = (d * (1 - upright) + Vector((0, 0, 1)) * upright).normalized()
         bpy.context.view_layer.update()
         head_w = rig.matrix_world @ pb[b.name].head
         e = empty(b.name)
@@ -162,8 +172,17 @@ def _pose_rig(rig, M):
             e2.location = head_w + side.normalized() * 0.3
             lt = pb[b.name].constraints.new("LOCKED_TRACK")
             lt.target, lt.track_axis, lt.lock_axis = e2, ax, "LOCK_Y"
+    # relaxed hands: curl finger bones about their local X axis (sign chosen per side so they close inward)
+    from mathutils import Quaternion
+    for bn, ang in FINGER_CURL.items():
+        if bn in pb:
+            pb[bn].rotation_mode = "QUATERNION"
+            pb[bn].rotation_quaternion = Quaternion((1, 0, 0), ang * CURL_SIGN)
     bpy.context.view_layer.update()
     return tg
+
+
+CURL_SIGN = 1.0
 
 
 def _soldier_kit(name, coll, baked, JW, acc):
@@ -324,7 +343,9 @@ def make_person(name, sex=None, age="adult", build=None, mode="casual", weapon=N
         if i == 0:
             me.materials.append(skin)
         else:
-            c = cols[(i - 1) % len(cols)] if "hair" not in m.name.lower() else (0.5, 0.49, 0.47)
+            nm = m.name.lower()
+            c = (0.5, 0.49, 0.47) if any(k in nm for k in ("hair", "short", "bob", "long", "braid", "afro", "ponytail")) \
+                else ((0.9, 0.9, 0.9) if "low-poly" in nm else cols[(i - 1) % len(cols)])
             me.materials.append(pbr(f"FigCloth_{c}", c, rough=0.75))
         for p in me.polygons:
             p.use_smooth = True

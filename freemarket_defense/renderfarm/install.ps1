@@ -159,15 +159,14 @@ if (-not $NoTask) {
 # --- 4. power plan ----------------------------------------------------------------------------
 if (-not $NoPower) {
     Write-Host "setting power plan: never sleep / hibernate on AC, high performance" -ForegroundColor Cyan
-    & powercfg /setactive SCHEME_MIN 2>$null          # High performance (if present)
-    & powercfg /change standby-timeout-ac 0
-    & powercfg /change hibernate-timeout-ac 0
-    & powercfg /change monitor-timeout-ac 15
-    & powercfg /change disk-timeout-ac 0
-    & powercfg /hibernate off 2>$null
-    # keep the GPU/USB from power-saving the render
-    & powercfg /setacvalueindex SCHEME_CURRENT SUB_SLEEP STANDBYIDLE 0 2>$null
-    & powercfg /setactive SCHEME_CURRENT 2>$null
+    $ErrorActionPreference = "Continue"
+    $pc = "$env:SystemRoot\System32\powercfg.exe"
+    foreach ($a in @("/setactive SCHEME_MIN", "/change standby-timeout-ac 0", "/change hibernate-timeout-ac 0",
+                     "/change monitor-timeout-ac 15", "/change disk-timeout-ac 0", "/hibernate off",
+                     "/setacvalueindex SCHEME_CURRENT SUB_SLEEP STANDBYIDLE 0", "/setactive SCHEME_CURRENT")) {
+        try { cmd.exe /c "`"$pc`" $a >nul 2>&1" } catch { }
+    }
+    $ErrorActionPreference = "Stop"
 }
 
 # --- 5. optional bench, then start ------------------------------------------------------------

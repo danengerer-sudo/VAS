@@ -20,7 +20,7 @@ F_SMALL = os.path.join(FONT_DIR, "Inter-SemiBold.otf")
 PHOTO = os.path.join(HERE, "..", "branding", "narrator_dan_engerer.jpg")
 INK = (24, 26, 29)
 MUTED = (118, 122, 128)
-ACCENT = (240, 128, 32)
+ACCENT = (255, 214, 0)  # ancap gold
 
 
 def ease_out(t):
@@ -173,14 +173,14 @@ def make_intro(title, bg_path, out_dir, name="Dan Engerer", photo=PHOTO, fps=24,
         pa2 = ease_out(seg(t, 2.6, 3.2)) * fade_all
         if pa2 > 0.01:
             fx = tx + name_w + 16
-            fy = by + D / 2 + 30 - 27
-            fw, fh = 30, 20
+            fy = by + D / 2 + 30 - 33
+            fw, fh = 42, 28
             pin = Image.new("RGBA", (fw * 4, fh * 4), (0, 0, 0, 0))
             pd = ImageDraw.Draw(pin)
-            pd.polygon([(0, 0), (fw * 4, 0), (0, fh * 4)], fill=(255, 204, 0, 255))   # gold upper-hoist
+            pd.polygon([(0, 0), (fw * 4, 0), (0, fh * 4)], fill=(255, 221, 0, 255))   # gold upper-hoist
             pd.polygon([(fw * 4, 0), (fw * 4, fh * 4), (0, fh * 4)], fill=(20, 20, 22, 255))  # black lower-fly
             mask = Image.new("L", (fw * 4, fh * 4), 0)
-            ImageDraw.Draw(mask).rounded_rectangle((0, 0, fw * 4 - 1, fh * 4 - 1), radius=10, fill=255)
+            ImageDraw.Draw(mask).rounded_rectangle((0, 0, fw * 4 - 1, fh * 4 - 1), radius=14, fill=255)
             pin.putalpha(ImageChops.multiply(pin.getchannel("A"), mask))
             pin = pin.resize((fw, fh), Image.LANCZOS)
             pin.putalpha(ImageChops.multiply(pin.getchannel("A"), Image.new("L", pin.size, int(255 * pa2))))

@@ -2,7 +2,7 @@
 
 ## 1. Hook (0:00–0:15)
 Ask most people where gun rights come from, and you'll get the same answer: the Second Amendment.
-It's a reasonable answer. It's also wrong.
+It's the wrong answer.
 
 *Shot: slow push toward a white classical government building (parliament_dome) at golden hour; a contract asset floats in front labelled "2nd Amendment".*
 
@@ -40,7 +40,8 @@ You punish the act, not the object. Nobody's arresting the hammer.
 ## 6. Close (2:10–2:45)
 So where do gun rights come from? Not from the Second Amendment.
 They come from the same place as your right to own a TV, a book, or a hammer: from the simple fact that peacefully owning something violates no one.
-The Second Amendment didn't create that right. At best, it recognizes it.
+And the document people point to? It's the same piece of paper politicians wave around to excuse taking your money by force.
+Paper can't give anyone the right to rob you. And it can't give you your rights, either.
 And the real question was never "Why should you be allowed to own a gun?"
 It's this: who would have to use force to stop you?
 

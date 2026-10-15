@@ -1,0 +1,25 @@
+{
+  "blender": "/opt/blender_dl/blender-4.2.23-linux-x64/blender",
+  "chunks": {
+    "1-4": {
+      "end": 4,
+      "finished_at": "2026-10-15T02:01:18Z",
+      "frames_done": 4,
+      "frames_total": 4,
+      "sec_per_frame": 0.49,
+      "seconds": 1.96,
+      "start": 1,
+      "started_at": "2026-10-15T02:01:16Z",
+      "status": "done",
+      "updated": "2026-10-15T02:01:18Z",
+      "uploaded": true,
+      "uploader": "zip"
+    }
+  },
+  "engine": "CYCLES",
+  "frames_done_total": 4,
+  "host": "vm",
+  "sec_per_frame": 0.49,
+  "updated": "2026-10-15T02:01:18Z",
+  "worker": "minipc1"
+}

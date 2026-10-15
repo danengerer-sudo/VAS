@@ -104,9 +104,9 @@ def donkey(mb, pose="standing", voxel=0.012):
 
     UP = Vector((0, 0, 1))
     # ---- torso: barrel + chest + rump + withers
-    ell((-0.08, 0, 0.80), (0.50, 0.235, 0.245))
-    ell((0.36, 0, 0.80), (0.21, 0.19, 0.24))              # chest
-    ell((-0.46, 0, 0.84), (0.20, 0.215, 0.235))           # rump
+    ell((-0.08, 0, 0.78), (0.52, 0.25, 0.27))
+    ell((0.38, 0, 0.78), (0.22, 0.20, 0.26))              # chest
+    ell((-0.48, 0, 0.82), (0.21, 0.225, 0.25))            # rump
     ell((0.30, 0, 0.93), (0.19, 0.13, 0.13))              # withers / shoulder mass (flat, not horse-like)
     ell((-0.42, 0, 0.93), (0.17, 0.15, 0.12))             # croup
     # ---- legs (long for a donkey: ~half the height), slight knee / hock angles
@@ -148,19 +148,18 @@ def donkey(mb, pose="standing", voxel=0.012):
     Rh = Matrix((hd, side_h, up_h)).transposed()  # columns: x=along head, y=side, z=up
     skull = neck1 + hd * 0.10
     ell(skull, (0.19, 0.125, 0.15), Rh)                        # skull / cheeks (big donkey head)
-    cap(skull + hd * 0.05 - up_h * 0.01, neck1 + hd * 0.55 - up_h * 0.04, 0.11, 0.082)  # muzzle (slightly down)
-    ell(neck1 + hd * 0.55 - up_h * 0.04, (0.09, 0.088, 0.08), Rh)     # nose end
+    cap(skull + hd * 0.05 - up_h * 0.01, neck1 + hd * 0.52 - up_h * 0.045, 0.115, 0.088)  # muzzle (slightly down)
+    ell(neck1 + hd * 0.52 - up_h * 0.045, (0.10, 0.095, 0.085), Rh)   # big rounded nose end
     ell(neck1 + hd * 0.28 - up_h * 0.08, (0.15, 0.09, 0.07), Rh)      # jaw
     # ---- ears: long, upright, splayed
     ear_base = skull - hd * 0.01 + up_h * 0.12
     for sy in (1, -1):
         ed = (up_h * 1.0 + side_h * 0.48 * sy - hd * 0.2).normalized()
         c = ear_base + side_h * 0.05 * sy + ed * 0.17
-        ell(c, (0.03, 0.066, 0.19), _frame(side_h * sy, ed))
-        ell(c + ed * 0.04, (0.026, 0.05, 0.12), _frame(side_h * sy, ed))  # keeps the tip wide (spoon)
+        ell(c + ed * 0.015, (0.03, 0.068, 0.21), _frame(side_h * sy, ed))
+        ell(c + ed * 0.06, (0.026, 0.052, 0.13), _frame(side_h * sy, ed))  # keeps the tip wide (spoon)
     # ---- tail: thin with a tuft
-    cap((-0.63, 0, 0.92), (-0.68, 0.02, 0.48), 0.035, 0.026)
-    ell((-0.69, 0.025, 0.40), (0.05, 0.05, 0.11))
+    cap((-0.64, 0, 0.90), (-0.69, 0.02, 0.46), 0.035, 0.026)
 
     # ---- remesh into one sculpt
     sculpt = join(soft, "_donkey_sculpt")
@@ -179,6 +178,7 @@ def donkey(mb, pose="standing", voxel=0.012):
         y = 0.135 * sy * 0.9
         for x in (0.37, -0.43):
             mb.cyl(0.058, 0.07, (x + 0.01, y, 0.0), DARK, n=20, r2=0.05)
+    mb.sphere(0.05, (-0.70, 0.025, 0.37), DARK, seg=16, rings=8, scale=(1, 1, 2.2))   # dark tail tuft
     eye_c = skull + hd * 0.09 + up_h * 0.04
     for sy in (1, -1):
         mb.sphere(0.025, eye_c + side_h * 0.11 * sy, DARK, seg=14, rings=7)
@@ -211,16 +211,14 @@ def tv(mb, stand=True, wall=False, diag_in=55):
     rplate_yz(mb, Wt, Ht, depth, 0.012, x0, zc, DARK, n=3)
     # screen: glossy dark glass sunk 1 mm into the front face
     mb.box((0.004, W, Hs), (x0 + depth - 0.001, 0, zc + 0.006), GLASS)
-    # slim light bezel frame around the glass (reads as the thin bezel in white style)
-    mb.box((0.003, Wt, 0.004), (x0 + depth, 0, zc + Ht / 2 - 0.002), BODY)
-    mb.box((0.003, Wt, 0.004), (x0 + depth, 0, zc - Ht / 2 + 0.002), BODY)
     # back bulge (electronics) and ports
     rplate_yz(mb, W * 0.55, Hs * 0.55, 0.045, 0.02, x0 - 0.045, zc - 0.03, DARK, n=3)
     # tiny logo / IR window on the chin
     mb.box((0.002, 0.06, 0.006), (x0 + depth + 0.001, 0, zc - Ht / 2 + 0.012), BODY)
     if stand and not wall:
         # centre pedestal: slim neck + flat oval foot
-        mb.lathe([(0.0, 0.0), (0.22, 0.0), (0.21, 0.015), (0.05, 0.02), (0.0, 0.02)], DARK, n=32, loc=(0.02, 0, 0))
+        with mb.at((0.02, 0, 0), scale=(0.55, 1.0, 1.0)):
+            mb.lathe([(0.0, 0.0), (0.22, 0.0), (0.21, 0.015), (0.05, 0.02), (0.0, 0.02)], DARK, n=32)
         mb.box((0.03, 0.26, 0.10), (x0 + 0.015, 0, 0.065), DARK)
         mb.box((0.06, 0.14, 0.02), (0.0, 0, 0.03), DARK)
     return W, Ht
@@ -255,18 +253,18 @@ def tv_boxed(mb, size=(1.35, 0.2, 0.8)):
 def hall_pass(mb, scale=1.0):
     """Chunky laminated hall pass on a lanyard; ~0.25 m tall overall at scale 1, standing, facing +X."""
     with mb.at(scale=scale):
-        pw, ph, pt = 0.13, 0.17, 0.014
+        pw, ph, pt = 0.12, 0.15, 0.014
         zc = ph / 2
         rplate_yz(mb, pw, ph, pt, 0.012, -pt / 2, zc, ACCENT, n=4)
         # laminate edge: thin lighter border proud of the face
         rplate_yz(mb, pw + 0.006, ph + 0.006, 0.002, 0.014, -pt / 2 - 0.002, zc, BODY, n=4)
         rplate_yz(mb, pw + 0.006, ph + 0.006, 0.002, 0.014, pt / 2, zc, BODY, n=4)
         # text, two lines, extruded
-        text_px(mb, "HALL", 0.044, pt / 2, zc + 0.033, DARK, 0.006, FONT_BLACK)
-        text_px(mb, "PASS", 0.044, pt / 2, zc - 0.018, DARK, 0.006, FONT_BLACK)
+        text_px(mb, "HALL", 0.04, pt / 2, zc + 0.028, DARK, 0.006, FONT_BLACK)
+        text_px(mb, "PASS", 0.04, pt / 2, zc - 0.018, DARK, 0.006, FONT_BLACK)
         # thin rule and a small room number line
-        mb.box((0.004, 0.09, 0.003), (pt / 2 + 0.002, 0, zc - 0.05), DARK)
-        text_px(mb, "RM 101", 0.016, pt / 2, zc - 0.066, DARK, 0.004, FONT_SEMI)
+        mb.box((0.004, 0.08, 0.003), (pt / 2 + 0.002, 0, zc - 0.045), DARK)
+        text_px(mb, "RM 101", 0.014, pt / 2, zc - 0.058, DARK, 0.004, FONT_SEMI)
         # clip + grommet at the top
         mb.cyl(0.006, pt + 0.004, (-pt / 2 - 0.002, 0, ph - 0.014), BODY, n=12, rot=(0, R(90), 0))
         mb.box((0.012, 0.022, 0.022), (0, 0, ph + 0.008), DARK)
@@ -278,35 +276,29 @@ def hall_pass(mb, scale=1.0):
         path2 = [(0.0, 0.0, ph + 0.018), (0.0, -0.008, ph + 0.05), (0.0, -0.025, ph + 0.07),
                  (0.0, -0.03, ph + 0.082)]
         mb.sweep(path2, strap, DARK)
-        mb.torus(0.03, 0.004, (0, 0, ph + 0.082), DARK, n=20, nr=8, rot=(R(90), 0, 0))
+        mb.torus(0.03, 0.004, (0, 0, ph + 0.082), DARK, n=20, nr=8, rot=(0, R(90), 0))
 
 
 # ================================================================== hand tools / small props (lying on the ground)
 def hammer(mb, L=0.33):
     """Claw hammer lying flat, handle along -X, head at +X. Wood (BODY) handle, steel (DARK) head."""
-    hw = 0.03                                   # handle thickness
-    z = hw / 2 + 0.004
-    # handle: tapered oval-ish prism with rounded corners
-    mb.prism_yz(rrect(0.028, 0.028, 0.01, 3), -L + 0.11, 0.02, BODY)
-    mb.prism_yz(rrect(0.034, 0.034, 0.012, 3), -L + 0.11, -L, BODY)   # grip end slightly thicker
-    # head block (eye) across the handle
-    mb.box((0.03, 0.032, 0.03), (0.035, 0, z), DARK)
-    # face: cylinder toward +X
-    mb.cyl(0.015, 0.045, (0.05, 0, z), DARK, n=20, rot=(0, R(90), 0))
-    mb.cyl(0.017, 0.012, (0.095, 0, z), DARK, n=20, rot=(0, R(90), 0))
-    # claw: two curved prongs toward -X, curving down toward the ground
-    for sy in (1, -1):
-        path = [(0.02, 0.008 * sy, z), (-0.01, 0.014 * sy, z), (-0.045, 0.02 * sy, z - 0.006),
-                (-0.07, 0.024 * sy, z - 0.014)]
-        prof = [(-0.005, -0.006), (0.005, -0.006), (0.005, 0.006), (-0.005, 0.006)]
+    z = 0.017                                   # head centre height (head rests on the ground)
+    x0, x1 = -L + 0.065, L * 0.0 - 0.03         # handle span along X; head centred at x = -0.015
+    xh = -0.015
+    # handle: oval-ish prism with rounded corners, lying just above the ground, grip end slightly thicker
+    mb.prism_yz(rrect(0.027, 0.025, 0.01, 3, 0.0, z), x0, xh, BODY)
+    mb.prism_yz(rrect(0.031, 0.029, 0.011, 3, 0.0, z), x0 + 0.1, x0 + 0.004, BODY)
+    # head: eye block over the handle end, face toward +Y, claw toward -Y
+    mb.box((0.034, 0.036, 0.034), (xh, 0.0, z), DARK)
+    mb.cyl(0.0155, 0.03, (xh, 0.018, z), DARK, n=20, rot=(R(-90), 0, 0))           # neck of the face
+    mb.cyl(0.018, 0.012, (xh, 0.048, z), DARK, n=20, rot=(R(-90), 0, 0))           # striking face
+    # claw: two flat prongs toward -Y that curve back toward the handle (-X), with a narrow V gap between them
+    for sx in (1, -1):
+        path = [(xh + 0.006 * sx, -0.014, z), (xh + 0.008 * sx - 0.012, -0.036, z), (xh + 0.010 * sx - 0.03, -0.052, z),
+                (xh + 0.012 * sx - 0.046, -0.06, z)]
+        prof = [(-0.0035, -0.012), (0.0035, -0.012), (0.0035, 0.012), (-0.0035, 0.012)]
         mb.sweep(path, prof, DARK, scales=[1.0, 0.95, 0.8, 0.5])
-    # the whole head sits on the handle's z; handle lies on the ground
-    mb_shift(mb, (0, 0, 0))
-
-
-def mb_shift(mb, d):
-    d = Vector(d)
-    mb.v = [p + d for p in mb.v]
+    mb.box((0.028, 0.012, 0.03), (xh, -0.016, z), DARK)   # claw root wedge
 
 
 def kitchen_knife(mb, L=0.33):
@@ -360,10 +352,12 @@ def book(mb, h=0.24, w=0.16, t=0.035, title="LIBERTY"):
     mb.prism_yz([(-w / 2 - 0.004, 0.0), (-w / 2 - 0.004, t), (-w / 2 - 0.012, t * 0.75), (-w / 2 - 0.012, t * 0.25)],
                 -h / 2 - 0.002, h / 2 + 0.002, ACCENT)
     # title on the front cover (readable from +Z, head toward +X) and spine bands
-    mb.text(title, fit_size(title, w * 0.7, 0.03, FONT_BLACK), (0.02, 0.0, t), DARK, rot=(0, 0, R(-90)),
+    mb.text(title, fit_size(title, w * 0.7, 0.03, FONT_BLACK), (0.02, 0.0, t + 0.0024), DARK, rot=(0, 0, R(90)),
             depth=0.0015, font=FONT_BLACK)
-    mb.box((0.06, 0.002, 0.0015), (0.02, -0.04, t), DARK)
-    mb.box((0.06, 0.002, 0.0015), (0.02, 0.04, t), DARK)
+    # thin embossed frame line around the cover
+    fr = rrect(h - 0.03, w - 0.03, 0.006, 3, 0.0, 0.003)
+    mb.prism(fr, t, t + 0.0012, DARK)
+    mb.prism(rrect(h - 0.036, w - 0.036, 0.005, 3, 0.0, 0.003), t + 0.0012, t + 0.0024, ACCENT)
     for x in (h * 0.38, -h * 0.38):
         mb.box((0.004, 0.009, t * 0.5), (x, -w / 2 - 0.011, t / 2), DARK)
 
@@ -456,7 +450,7 @@ def gun_safe(mb, w=0.6, d=0.55, h=1.5, open_deg=0.0):
     # door: slab + raised panel, dial, handle, hinges, embossed brand strip.  Built hinge-local then rotated.
     hinge = Vector((x_front, w / 2 - 0.02, 0))
     with mb.at(hinge, rz=R(open_deg)):
-        dw = w - 0.01
+        dw = w - 0.03
         mb.bb(0, -dw + 0.005, 0.06, door_t, -0.005 + 0.0, h - 0.0, BODY)     # door spans y: -dw .. 0 (hinge at y=0)
         # recessed panel line (dark groove rectangle) and outer bevel ridge
         g = 0.006
@@ -473,7 +467,7 @@ def gun_safe(mb, w=0.6, d=0.55, h=1.5, open_deg=0.0):
         for k in range(12):
             a = TAU * k / 12
             mb.box((0.003, 0.003, 0.012), (door_t + 0.031, cy + 0.062 * math.cos(a), cz + 0.062 * math.sin(a)), BODY,
-                   rot=(a, 0, 0))
+                   rot=(a - R(90), 0, 0))
         # 3-spoke handle below the dial
         hc = (door_t + 0.035, cy, cz - 0.18)
         mb.cyl(0.03, 0.055, (door_t, cy, cz - 0.18), DARK, n=24, rot=(0, R(90), 0))

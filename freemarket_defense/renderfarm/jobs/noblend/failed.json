@@ -1,0 +1,7 @@
+{
+  "attempts": 1,
+  "error": "FileNotFoundError: blend not found: 'nope.blend' and no blend_url (job noblend)",
+  "failed_at": "2026-10-15T02:01:54Z",
+  "job": "noblend",
+  "worker": "minipc1"
+}

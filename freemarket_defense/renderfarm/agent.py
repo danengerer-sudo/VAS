@@ -9,6 +9,7 @@ Linux (used for --dry-run testing).
     python agent.py --once          # one poll cycle, then exit
     python agent.py --bench         # benchmark frames 1-48 of bench/bench.blend, push bench_result.json
     python agent.py --dry-run ...   # run `blender --version` instead of rendering, never commit/push
+    python agent.py --no-git ...    # render for real, but never pull/commit/push (local testing)
     python agent.py --job <id>      # only consider this job
 
 Layout (relative to this file):
@@ -169,9 +170,9 @@ class Config:
 class Git:
     """Thin wrapper around the git CLI. All methods swallow errors and return success flags."""
 
-    def __init__(self, cfg: Config, dry_run: bool):
+    def __init__(self, cfg: Config, offline: bool):
         self.cfg = cfg
-        self.dry_run = dry_run
+        self.dry_run = offline  # True: never pull/commit/push (--dry-run or --no-git)
         self.lock = threading.Lock()
 
     def run(self, *args: str, check: bool = False, quiet: bool = False) -> subprocess.CompletedProcess:
@@ -194,7 +195,7 @@ class Git:
         """Fetch + rebase onto origin/<branch>. Never raises. On conflict: abort and hard reset
         to the remote (our own committed-but-unpushed state is regenerated from disk anyway)."""
         if self.dry_run:
-            log.info("[dry-run] skip git pull")
+            log.info("[no-git] skip git pull")
             return True
         with self.lock:
             cp = self.run("pull", "--rebase", "--autostash", "origin", self.cfg.branch)
@@ -216,7 +217,7 @@ class Git:
         """Stage `paths`, commit if there is anything to commit, push; on rejection pull --rebase
         and retry. Never raises."""
         if self.dry_run:
-            log.info("[dry-run] skip commit/push: %s (%d paths)", message, len(paths))
+            log.info("[no-git] skip commit/push: %s (%d paths)", message, len(paths))
             return True
         with self.lock:
             rels = [self.rel(p) for p in paths if Path(p).exists()]
@@ -597,11 +598,11 @@ class Job:
 
 # ----------------------------------------------------------------------------- agent
 class Agent:
-    def __init__(self, cfg: Config, dry_run: bool, only_job: Optional[str] = None):
+    def __init__(self, cfg: Config, dry_run: bool, only_job: Optional[str] = None, no_git: bool = False):
         self.cfg = cfg
         self.dry_run = dry_run
         self.only_job = only_job
-        self.git = Git(cfg, dry_run)
+        self.git = Git(cfg, dry_run or no_git)
         self.runner = BlenderRun(cfg, dry_run)
         self.stop = False
         self.uploader = UPLOADERS.get(cfg.uploader) or upload_zip
@@ -1027,6 +1028,7 @@ def main(argv=None) -> int:
     ap.add_argument("--once", action="store_true", help="one poll cycle then exit")
     ap.add_argument("--bench", action="store_true", help="run the benchmark and push bench_result.json")
     ap.add_argument("--dry-run", action="store_true", help="run `blender --version` instead of rendering; no git commit/push")
+    ap.add_argument("--no-git", action="store_true", help="render for real but never pull/commit/push (local testing)")
     ap.add_argument("--job", help="only consider this job id")
     ap.add_argument("--worker", help="override worker name from config")
     ap.add_argument("--blender", help="override blender path from config")
@@ -1037,7 +1039,7 @@ def main(argv=None) -> int:
     setup_logging(args.verbose)
     overrides = {k: v for k, v in (("worker", args.worker), ("blender", args.blender), ("branch", args.branch)) if v}
     cfg = Config(Path(args.config), overrides)
-    agent = Agent(cfg, dry_run=args.dry_run, only_job=args.job)
+    agent = Agent(cfg, dry_run=args.dry_run, only_job=args.job, no_git=args.no_git)
     signal.signal(signal.SIGINT, agent.request_stop)
     try:
         signal.signal(signal.SIGTERM, agent.request_stop)

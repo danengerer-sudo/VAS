@@ -1,0 +1,511 @@
+[
+ {
+  "name": "donkey",
+  "category": "household",
+  "collection": "household/donkey",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.782,
+   0.858,
+   1.691
+  ],
+  "tags": [
+   "household",
+   "donkey",
+   "animal",
+   "ass",
+   "mule",
+   "farm"
+  ],
+  "notes": "Stylised donkey, 1.1 m at the withers, facing +X, head turned ~60 deg toward -Y (over its shoulder at the viewer). Voxel-remeshed sculpt. household_lib.donkey(mb, pose='standing') | ~74288 tris",
+  "thumb": "thumbs/household/donkey.jpg"
+ },
+ {
+  "name": "donkey_grazing",
+  "category": "household",
+  "collection": "household/donkey_grazing",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   2.007,
+   0.494,
+   1.136
+  ],
+  "tags": [
+   "household",
+   "donkey",
+   "animal",
+   "ass",
+   "grazing",
+   "farm"
+  ],
+  "notes": "Same donkey with its head down grazing. household_lib.donkey(mb, pose='grazing') | ~73780 tris",
+  "thumb": "thumbs/household/donkey_grazing.jpg"
+ },
+ {
+  "name": "tv_flatscreen",
+  "category": "household",
+  "collection": "household/tv_flatscreen",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.241,
+   1.234,
+   0.803
+  ],
+  "tags": [
+   "household",
+   "tv",
+   "television",
+   "screen",
+   "living room",
+   "electronics"
+  ],
+  "notes": "55-inch flat screen (1.23 m wide) on a pedestal stand, screen = LIB_Glass (dark, glossy), facing +X. household_lib.tv(mb) | ~1256 tris",
+  "thumb": "thumbs/household/tv_flatscreen.jpg"
+ },
+ {
+  "name": "tv_wall",
+  "category": "household",
+  "collection": "household/tv_wall",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.092,
+   1.234,
+   0.713
+  ],
+  "tags": [
+   "household",
+   "tv",
+   "television",
+   "screen",
+   "wall mount",
+   "electronics"
+  ],
+  "notes": "55-inch TV wall-mounted: back of the set at x=0 (wall contact), screen centre 1.5 m up, facing +X. household_lib.tv(mb, wall=True) | ~700 tris",
+  "thumb": "thumbs/household/tv_wall.jpg"
+ },
+ {
+  "name": "tv_boxed",
+  "category": "household",
+  "collection": "household/tv_boxed",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.207,
+   1.356,
+   0.803
+  ],
+  "tags": [
+   "household",
+   "tv",
+   "box",
+   "carton",
+   "cardboard",
+   "delivery",
+   "purchase"
+  ],
+  "notes": "Cardboard carton for the TV, 1.35 x 0.2 x 0.8 m standing, accent stripe + printed face toward +X. household_lib.tv_boxed(mb) | ~4104 tris",
+  "thumb": "thumbs/household/tv_boxed.jpg"
+ },
+ {
+  "name": "hall_pass",
+  "category": "household",
+  "collection": "household/hall_pass",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.022,
+   0.126,
+   0.269
+  ],
+  "tags": [
+   "household",
+   "hall pass",
+   "school",
+   "permission",
+   "lanyard",
+   "gag"
+  ],
+  "notes": "Chunky laminated HALL PASS (accent, dark embossed text) on a lanyard, ~0.26 m tall, facing +X. household_lib.hall_pass(mb) | ~7456 tris",
+  "thumb": "thumbs/household/hall_pass.jpg"
+ },
+ {
+  "name": "hall_pass_giant",
+  "category": "household",
+  "collection": "household/hall_pass_giant",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.102,
+   0.582,
+   1.242
+  ],
+  "tags": [
+   "household",
+   "hall pass",
+   "school",
+   "permission",
+   "giant",
+   "gag"
+  ],
+  "notes": "The hall pass scaled to 1.2 m for a gag. household_lib.hall_pass(mb, scale=4.6) | ~7456 tris",
+  "thumb": "thumbs/household/hall_pass_giant.jpg"
+ },
+ {
+  "name": "hammer",
+  "category": "household",
+  "collection": "household/hammer",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.268,
+   0.123,
+   0.036
+  ],
+  "tags": [
+   "household",
+   "hammer",
+   "tool",
+   "claw hammer",
+   "weapon"
+  ],
+  "notes": "Claw hammer 0.33 m lying flat, head at +X (dark steel, body-colour handle). household_lib.hammer(mb) | ~1376 tris",
+  "thumb": "thumbs/household/hammer.jpg"
+ },
+ {
+  "name": "kitchen_knife",
+  "category": "household",
+  "collection": "household/kitchen_knife",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.34,
+   0.047,
+   0.019
+  ],
+  "tags": [
+   "household",
+   "knife",
+   "chef's knife",
+   "kitchen",
+   "tool",
+   "weapon"
+  ],
+  "notes": "Chef's knife 0.33 m lying flat, tip at +X, dark handle with rivets. household_lib.kitchen_knife(mb) | ~972 tris",
+  "thumb": "thumbs/household/kitchen_knife.jpg"
+ },
+ {
+  "name": "car_keys",
+  "category": "household",
+  "collection": "household/car_keys",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.153,
+   0.064,
+   0.013
+  ],
+  "tags": [
+   "household",
+   "keys",
+   "car keys",
+   "fob",
+   "key ring",
+   "weapon"
+  ],
+  "notes": "Key fob (dark, accent button) + two keys on a split ring, lying flat. household_lib.car_keys(mb) | ~4608 tris",
+  "thumb": "thumbs/household/car_keys.jpg"
+ },
+ {
+  "name": "book",
+  "category": "household",
+  "collection": "household/book",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.244,
+   0.182,
+   0.037
+  ],
+  "tags": [
+   "household",
+   "book",
+   "hardback",
+   "reading",
+   "shelf"
+  ],
+  "notes": "Hardback 0.24 x 0.16 x 0.035 m lying flat, accent cover with dark title 'LIBERTY', spine toward -Y, head toward -X. household_lib.book(mb, title=...) | ~3568 tris",
+  "thumb": "thumbs/household/book.jpg"
+ },
+ {
+  "name": "rifle_prop",
+  "category": "household",
+  "collection": "household/rifle_prop",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.87,
+   0.29,
+   0.055
+  ],
+  "tags": [
+   "household",
+   "rifle",
+   "carbine",
+   "gun",
+   "weapon",
+   "prop"
+  ],
+  "notes": "figure.py carbine laid flat on its side on the ground, muzzle +X, all dark. household_lib.rifle_prop(mb) | ~1420 tris",
+  "thumb": "thumbs/household/rifle_prop.jpg"
+ },
+ {
+  "name": "jail_cell_tiny",
+  "category": "household",
+  "collection": "household/jail_cell_tiny",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.524,
+   0.501,
+   0.501
+  ],
+  "tags": [
+   "household",
+   "jail",
+   "cell",
+   "cage",
+   "bars",
+   "not guilty",
+   "gag"
+  ],
+  "notes": "0.5 m cage of dark bars (0.06 m spacing), interior empty (for the hammer), 'NOT GUILTY' accent placard on the front. household_lib.jail_cell_tiny(mb) | ~6064 tris",
+  "thumb": "thumbs/household/jail_cell_tiny.jpg"
+ },
+ {
+  "name": "gun_safe",
+  "category": "household",
+  "collection": "household/gun_safe",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.605,
+   0.615,
+   1.5
+  ],
+  "tags": [
+   "household",
+   "safe",
+   "gun safe",
+   "steel",
+   "storage",
+   "security"
+  ],
+  "notes": "1.5 m steel gun safe, door closed (+X), dial, 3-spoke handle, hinges. household_lib.gun_safe(mb) | ~8368 tris",
+  "thumb": "thumbs/household/gun_safe.jpg"
+ },
+ {
+  "name": "gun_safe_open",
+  "category": "household",
+  "collection": "household/gun_safe_open",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   1.084,
+   0.747,
+   1.5
+  ],
+  "tags": [
+   "household",
+   "safe",
+   "gun safe",
+   "steel",
+   "storage",
+   "open",
+   "empty"
+  ],
+  "notes": "Gun safe with the door swung 100 deg open, empty interior with shelves and rack bar. household_lib.gun_safe(mb, open_deg=100) | ~9324 tris",
+  "thumb": "thumbs/household/gun_safe_open.jpg"
+ },
+ {
+  "name": "front_door",
+  "category": "household",
+  "collection": "household/front_door",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.9,
+   3.0,
+   3.0
+  ],
+  "tags": [
+   "household",
+   "door",
+   "front door",
+   "house",
+   "wall",
+   "knocker",
+   "doormat"
+  ],
+  "notes": "3 x 3 m wall section with a framed 2.1 m front door, knocker, letter slot, knob, porch light, '1776', WELCOME doormat. Faces +X. household_lib.front_door(mb) | ~10076 tris",
+  "thumb": "thumbs/household/front_door.jpg"
+ },
+ {
+  "name": "living_room_set",
+  "category": "household",
+  "collection": "household/living_room_set",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   3.77,
+   3.42,
+   1.64
+  ],
+  "tags": [
+   "household",
+   "living room",
+   "sofa",
+   "furniture",
+   "rug",
+   "lamp",
+   "interior"
+  ],
+  "notes": "3-seat sofa, coffee table, side table (plant), floor lamp, accent rug, laid out around a TV stand at the origin. TV NOT included: put tv_flatscreen on the stand top (z=0.5) at x=0 rotated 180 (facing -X toward the sofa). household_lib.living_room_set(mb, with_stand=True) | ~11704 tris",
+  "thumb": "thumbs/household/living_room_set.jpg"
+ },
+ {
+  "name": "label_rifle",
+  "category": "household",
+  "collection": "household/label_rifle",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.038,
+   0.5,
+   0.18
+  ],
+  "tags": [
+   "household",
+   "label",
+   "tag",
+   "caption",
+   "text",
+   "rifle"
+  ],
+  "notes": "Floating label plate 0.5 x 0.18 m (body) with dark text 'RIFLE', facing +X, bottom at z=0. household_lib.label(mb, text) | ~2216 tris",
+  "thumb": "thumbs/household/label_rifle.jpg"
+ },
+ {
+  "name": "label_hammer",
+  "category": "household",
+  "collection": "household/label_hammer",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.038,
+   0.5,
+   0.18
+  ],
+  "tags": [
+   "household",
+   "label",
+   "tag",
+   "caption",
+   "text",
+   "hammer"
+  ],
+  "notes": "Floating label plate 0.5 x 0.18 m (body) with dark text 'HAMMER', facing +X, bottom at z=0. household_lib.label(mb, text) | ~3676 tris",
+  "thumb": "thumbs/household/label_hammer.jpg"
+ },
+ {
+  "name": "label_knife",
+  "category": "household",
+  "collection": "household/label_knife",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.038,
+   0.5,
+   0.18
+  ],
+  "tags": [
+   "household",
+   "label",
+   "tag",
+   "caption",
+   "text",
+   "knife"
+  ],
+  "notes": "Floating label plate 0.5 x 0.18 m (body) with dark text 'KNIFE', facing +X, bottom at z=0. household_lib.label(mb, text) | ~2428 tris",
+  "thumb": "thumbs/household/label_knife.jpg"
+ },
+ {
+  "name": "label_keys",
+  "category": "household",
+  "collection": "household/label_keys",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.038,
+   0.5,
+   0.18
+  ],
+  "tags": [
+   "household",
+   "label",
+   "tag",
+   "caption",
+   "text",
+   "keys"
+  ],
+  "notes": "Floating label plate 0.5 x 0.18 m (body) with dark text 'CAR KEYS', facing +X, bottom at z=0. household_lib.label(mb, text) | ~3904 tris",
+  "thumb": "thumbs/household/label_keys.jpg"
+ },
+ {
+  "name": "label_2a",
+  "category": "household",
+  "collection": "household/label_2a",
+  "file": "build/household.blend",
+  "source": "procedural",
+  "license": "original",
+  "dims_m": [
+   0.038,
+   0.5,
+   0.18
+  ],
+  "tags": [
+   "household",
+   "label",
+   "tag",
+   "caption",
+   "text",
+   "2a"
+  ],
+  "notes": "Floating label plate 0.5 x 0.18 m (body) with dark text '2ND AMENDMENT', facing +X, bottom at z=0. household_lib.label(mb, text) | ~6004 tris",
+  "thumb": "thumbs/household/label_2a.jpg"
+ }
+]

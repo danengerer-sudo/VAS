@@ -1,0 +1,19 @@
+{
+  "blend": "S06.blend",
+  "blend_sha256": "b006e5914bc052462e2e4e959c4b5d6792cf343bde79cf0959d1d98e645af8b3",
+  "blend_size": 13916343,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 3300,
+  "frame_start": 2210,
+  "note": "Where Do Gun Rights Come From? shot S06 (town)",
+  "output": "frames/f_####",
+  "priority": 6,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-15T03:37:19Z"
+}

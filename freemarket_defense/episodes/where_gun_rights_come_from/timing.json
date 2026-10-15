@@ -1,106 +1,2267 @@
 {
- "source": "placeholder TTS (piper lessac)",
- "duration": 136.1,
+ "source": "narration.wav",
+ "duration": 142.35,
  "paragraphs": [
   {
    "text": "Ask most people where gun rights come from, and you'll get the same answer: the Second Amendment.",
-   "start": 1.0,
-   "end": 6.236
+   "start": 0.88,
+   "end": 5.96,
+   "words": [
+    {
+     "w": "Ask",
+     "start": 0.98,
+     "end": 1.12
+    },
+    {
+     "w": "most",
+     "start": 1.12,
+     "end": 1.44
+    },
+    {
+     "w": "people",
+     "start": 1.44,
+     "end": 1.88
+    },
+    {
+     "w": "where",
+     "start": 1.88,
+     "end": 2.26
+    },
+    {
+     "w": "gun",
+     "start": 2.26,
+     "end": 2.52
+    },
+    {
+     "w": "rights",
+     "start": 2.52,
+     "end": 2.74
+    },
+    {
+     "w": "come",
+     "start": 2.74,
+     "end": 2.94
+    },
+    {
+     "w": "from,",
+     "start": 2.94,
+     "end": 3.28
+    },
+    {
+     "w": "and",
+     "start": 3.28,
+     "end": 3.64
+    },
+    {
+     "w": "you'll",
+     "start": 3.64,
+     "end": 3.86
+    },
+    {
+     "w": "get",
+     "start": 3.86,
+     "end": 4.0
+    },
+    {
+     "w": "the",
+     "start": 4.0,
+     "end": 4.2
+    },
+    {
+     "w": "same",
+     "start": 4.2,
+     "end": 4.4
+    },
+    {
+     "w": "answer:",
+     "start": 4.4,
+     "end": 4.8
+    },
+    {
+     "w": "the",
+     "start": 5.1,
+     "end": 5.18
+    },
+    {
+     "w": "Second",
+     "start": 5.18,
+     "end": 5.4
+    },
+    {
+     "w": "Amendment.",
+     "start": 5.4,
+     "end": 5.68
+    }
+   ]
   },
   {
    "text": "It's the wrong answer.",
-   "start": 7.136,
-   "end": 8.367
+   "start": 6.55,
+   "end": 7.78,
+   "words": [
+    {
+     "w": "It's",
+     "start": 6.55,
+     "end": 6.72
+    },
+    {
+     "w": "the",
+     "start": 6.72,
+     "end": 6.84
+    },
+    {
+     "w": "wrong",
+     "start": 6.84,
+     "end": 7.02
+    },
+    {
+     "w": "answer.",
+     "start": 7.02,
+     "end": 7.42
+    }
+   ]
   },
   {
    "text": "If your right to own a gun comes from a document, then it can be taken away by a document.\nAmend it, reinterpret it, repeal it... and the \"right\" is gone.",
-   "start": 9.267,
-   "end": 17.614
+   "start": 8.23,
+   "end": 17.61,
+   "words": [
+    {
+     "w": "If",
+     "start": 8.23,
+     "end": 8.34
+    },
+    {
+     "w": "your",
+     "start": 8.34,
+     "end": 8.5
+    },
+    {
+     "w": "right",
+     "start": 8.5,
+     "end": 8.78
+    },
+    {
+     "w": "to",
+     "start": 8.78,
+     "end": 9.14
+    },
+    {
+     "w": "own",
+     "start": 9.14,
+     "end": 9.34
+    },
+    {
+     "w": "a",
+     "start": 9.34,
+     "end": 9.54
+    },
+    {
+     "w": "gun",
+     "start": 9.54,
+     "end": 9.74
+    },
+    {
+     "w": "comes",
+     "start": 9.74,
+     "end": 10.04
+    },
+    {
+     "w": "from",
+     "start": 10.04,
+     "end": 10.24
+    },
+    {
+     "w": "a",
+     "start": 10.24,
+     "end": 10.4
+    },
+    {
+     "w": "document,",
+     "start": 10.4,
+     "end": 10.8
+    },
+    {
+     "w": "then",
+     "start": 11.32,
+     "end": 11.44
+    },
+    {
+     "w": "it",
+     "start": 11.44,
+     "end": 11.56
+    },
+    {
+     "w": "can",
+     "start": 11.56,
+     "end": 11.66
+    },
+    {
+     "w": "be",
+     "start": 11.66,
+     "end": 11.76
+    },
+    {
+     "w": "taken",
+     "start": 11.76,
+     "end": 12.0
+    },
+    {
+     "w": "away",
+     "start": 12.0,
+     "end": 12.34
+    },
+    {
+     "w": "by",
+     "start": 12.34,
+     "end": 12.82
+    },
+    {
+     "w": "a",
+     "start": 12.82,
+     "end": 13.0
+    },
+    {
+     "w": "document.",
+     "start": 13.0,
+     "end": 13.38
+    },
+    {
+     "w": "Amend",
+     "start": 14.24,
+     "end": 14.3
+    },
+    {
+     "w": "it,",
+     "start": 14.3,
+     "end": 14.58
+    },
+    {
+     "w": "reinterpret",
+     "start": 14.92,
+     "end": 15.24
+    },
+    {
+     "w": "it,",
+     "start": 15.24,
+     "end": 15.58
+    },
+    {
+     "w": "repeal",
+     "start": 15.68,
+     "end": 15.86
+    },
+    {
+     "w": "it...",
+     "start": 15.86,
+     "end": 16.2
+    },
+    {
+     "w": "and",
+     "start": 16.24,
+     "end": 16.44
+    },
+    {
+     "w": "the",
+     "start": 16.44,
+     "end": 16.54
+    },
+    {
+     "w": "\"right\"",
+     "start": 16.54,
+     "end": 16.8
+    },
+    {
+     "w": "is",
+     "start": 16.8,
+     "end": 17.28
+    },
+    {
+     "w": "gone.",
+     "start": 17.28,
+     "end": 17.54
+    }
+   ]
   },
   {
-   "text": "But a right that only exists because someone wrote it down \u2014 and only for as long as they let it stand \u2014 isn't a right at all.\nIt's a permission slip. Like a hall pass, but for owning things.",
-   "start": 18.514,
-   "end": 28.627
+   "text": "But a right that only exists because someone wrote it down — and only for as long as they let it stand — isn't a right at all.\nIt's a permission slip. Like a hall pass, but for owning things.",
+   "start": 18.35,
+   "end": 30.19,
+   "words": [
+    {
+     "w": "But",
+     "start": 18.35,
+     "end": 18.44
+    },
+    {
+     "w": "a",
+     "start": 18.44,
+     "end": 18.58
+    },
+    {
+     "w": "right",
+     "start": 18.58,
+     "end": 18.72
+    },
+    {
+     "w": "that",
+     "start": 18.72,
+     "end": 19.02
+    },
+    {
+     "w": "only",
+     "start": 19.02,
+     "end": 19.2
+    },
+    {
+     "w": "exists",
+     "start": 19.2,
+     "end": 19.64
+    },
+    {
+     "w": "because",
+     "start": 19.64,
+     "end": 20.06
+    },
+    {
+     "w": "someone",
+     "start": 20.06,
+     "end": 20.6
+    },
+    {
+     "w": "wrote",
+     "start": 20.6,
+     "end": 20.92
+    },
+    {
+     "w": "it",
+     "start": 20.92,
+     "end": 21.08
+    },
+    {
+     "w": "down",
+     "start": 21.08,
+     "end": 21.36
+    },
+    {
+     "w": "and",
+     "start": 21.36,
+     "end": 22.06
+    },
+    {
+     "w": "only",
+     "start": 22.06,
+     "end": 22.3
+    },
+    {
+     "w": "for",
+     "start": 22.3,
+     "end": 22.52
+    },
+    {
+     "w": "as",
+     "start": 22.52,
+     "end": 22.64
+    },
+    {
+     "w": "long",
+     "start": 22.64,
+     "end": 22.82
+    },
+    {
+     "w": "as",
+     "start": 22.82,
+     "end": 22.96
+    },
+    {
+     "w": "they",
+     "start": 22.96,
+     "end": 23.08
+    },
+    {
+     "w": "let",
+     "start": 23.08,
+     "end": 23.22
+    },
+    {
+     "w": "it",
+     "start": 23.22,
+     "end": 23.34
+    },
+    {
+     "w": "stand",
+     "start": 23.34,
+     "end": 23.66
+    },
+    {
+     "w": "isn't",
+     "start": 23.66,
+     "end": 24.26
+    },
+    {
+     "w": "a",
+     "start": 24.26,
+     "end": 24.44
+    },
+    {
+     "w": "right",
+     "start": 24.44,
+     "end": 24.68
+    },
+    {
+     "w": "at",
+     "start": 24.68,
+     "end": 24.96
+    },
+    {
+     "w": "all.",
+     "start": 24.96,
+     "end": 25.22
+    },
+    {
+     "w": "It's",
+     "start": 25.58,
+     "end": 25.64
+    },
+    {
+     "w": "a",
+     "start": 25.64,
+     "end": 25.72
+    },
+    {
+     "w": "permission",
+     "start": 25.72,
+     "end": 26.02
+    },
+    {
+     "w": "slip.",
+     "start": 26.02,
+     "end": 26.4
+    },
+    {
+     "w": "Like",
+     "start": 28.04,
+     "end": 28.2
+    },
+    {
+     "w": "a",
+     "start": 28.2,
+     "end": 28.32
+    },
+    {
+     "w": "hall",
+     "start": 28.32,
+     "end": 28.44
+    },
+    {
+     "w": "pass,",
+     "start": 28.44,
+     "end": 28.72
+    },
+    {
+     "w": "but",
+     "start": 28.96,
+     "end": 29.1
+    },
+    {
+     "w": "for",
+     "start": 29.1,
+     "end": 29.52
+    },
+    {
+     "w": "owning",
+     "start": 29.52,
+     "end": 29.72
+    },
+    {
+     "w": "things.",
+     "start": 29.72,
+     "end": 30.1
+    }
+   ]
   },
   {
    "text": "So try a different question.\nWhere does your right to own a television come from?",
-   "start": 29.527,
-   "end": 34.194
+   "start": 30.84,
+   "end": 35.56,
+   "words": [
+    {
+     "w": "So",
+     "start": 30.86,
+     "end": 31.02
+    },
+    {
+     "w": "try",
+     "start": 31.02,
+     "end": 31.42
+    },
+    {
+     "w": "a",
+     "start": 31.42,
+     "end": 31.64
+    },
+    {
+     "w": "different",
+     "start": 31.64,
+     "end": 31.94
+    },
+    {
+     "w": "question.",
+     "start": 31.94,
+     "end": 32.3
+    },
+    {
+     "w": "Where",
+     "start": 32.92,
+     "end": 33.02
+    },
+    {
+     "w": "does",
+     "start": 33.02,
+     "end": 33.16
+    },
+    {
+     "w": "your",
+     "start": 33.16,
+     "end": 33.36
+    },
+    {
+     "w": "right",
+     "start": 33.36,
+     "end": 33.64
+    },
+    {
+     "w": "to",
+     "start": 33.64,
+     "end": 34.1
+    },
+    {
+     "w": "own",
+     "start": 34.1,
+     "end": 34.34
+    },
+    {
+     "w": "a",
+     "start": 34.34,
+     "end": 34.5
+    },
+    {
+     "w": "television",
+     "start": 34.5,
+     "end": 34.9
+    },
+    {
+     "w": "come",
+     "start": 34.9,
+     "end": 35.24
+    },
+    {
+     "w": "from?",
+     "start": 35.24,
+     "end": 35.56
+    }
+   ]
   },
   {
-   "text": "There's no amendment for it. No one has ever asked.\nNot even your mother-in-law \u2014 and she has opinions about everything.",
-   "start": 35.094,
-   "end": 41.561
+   "text": "There's no amendment for it. No one has ever asked.\nNot even your mother-in-law — and she has opinions about everything.",
+   "start": 36.08,
+   "end": 42.47,
+   "words": [
+    {
+     "w": "There's",
+     "start": 36.08,
+     "end": 36.22
+    },
+    {
+     "w": "no",
+     "start": 36.22,
+     "end": 36.34
+    },
+    {
+     "w": "amendment",
+     "start": 36.34,
+     "end": 36.58
+    },
+    {
+     "w": "for",
+     "start": 36.58,
+     "end": 36.9
+    },
+    {
+     "w": "it.",
+     "start": 36.9,
+     "end": 37.62
+    },
+    {
+     "w": "No",
+     "start": 37.62,
+     "end": 37.64
+    },
+    {
+     "w": "one",
+     "start": 37.64,
+     "end": 37.72
+    },
+    {
+     "w": "has",
+     "start": 37.72,
+     "end": 37.86
+    },
+    {
+     "w": "ever",
+     "start": 37.86,
+     "end": 38.1
+    },
+    {
+     "w": "asked.",
+     "start": 38.1,
+     "end": 38.52
+    },
+    {
+     "w": "Not",
+     "start": 39.16,
+     "end": 39.46
+    },
+    {
+     "w": "even",
+     "start": 39.46,
+     "end": 39.64
+    },
+    {
+     "w": "your",
+     "start": 39.64,
+     "end": 39.78
+    },
+    {
+     "w": "mother-in-law",
+     "start": 39.78,
+     "end": 40.26
+    },
+    {
+     "w": "and",
+     "start": 40.54,
+     "end": 40.8
+    },
+    {
+     "w": "she",
+     "start": 40.8,
+     "end": 41.26
+    },
+    {
+     "w": "has",
+     "start": 41.26,
+     "end": 41.44
+    },
+    {
+     "w": "opinions",
+     "start": 41.44,
+     "end": 41.72
+    },
+    {
+     "w": "about",
+     "start": 41.72,
+     "end": 41.96
+    },
+    {
+     "w": "everything.",
+     "start": 41.96,
+     "end": 42.38
+    }
+   ]
   },
   {
    "text": "You earned the money, you traded it for the TV, and now it's yours.\nYou don't need a document to own it, because owning it doesn't hurt anyone.",
-   "start": 42.461,
-   "end": 49.786
+   "start": 43.2,
+   "end": 49.97,
+   "words": [
+    {
+     "w": "You",
+     "start": 43.2,
+     "end": 43.34
+    },
+    {
+     "w": "earned",
+     "start": 43.34,
+     "end": 43.52
+    },
+    {
+     "w": "the",
+     "start": 43.52,
+     "end": 43.68
+    },
+    {
+     "w": "money,",
+     "start": 43.68,
+     "end": 43.88
+    },
+    {
+     "w": "you",
+     "start": 44.2,
+     "end": 44.34
+    },
+    {
+     "w": "traded",
+     "start": 44.34,
+     "end": 44.62
+    },
+    {
+     "w": "it",
+     "start": 44.62,
+     "end": 44.78
+    },
+    {
+     "w": "for",
+     "start": 44.78,
+     "end": 44.9
+    },
+    {
+     "w": "the",
+     "start": 44.9,
+     "end": 45.02
+    },
+    {
+     "w": "TV,",
+     "start": 45.02,
+     "end": 45.28
+    },
+    {
+     "w": "and",
+     "start": 45.52,
+     "end": 45.78
+    },
+    {
+     "w": "now",
+     "start": 45.78,
+     "end": 45.96
+    },
+    {
+     "w": "it's",
+     "start": 45.96,
+     "end": 46.16
+    },
+    {
+     "w": "yours.",
+     "start": 46.16,
+     "end": 46.32
+    },
+    {
+     "w": "You",
+     "start": 46.9,
+     "end": 47.1
+    },
+    {
+     "w": "don't",
+     "start": 47.1,
+     "end": 47.22
+    },
+    {
+     "w": "need",
+     "start": 47.22,
+     "end": 47.36
+    },
+    {
+     "w": "a",
+     "start": 47.36,
+     "end": 47.52
+    },
+    {
+     "w": "document",
+     "start": 47.52,
+     "end": 47.84
+    },
+    {
+     "w": "to",
+     "start": 47.84,
+     "end": 48.04
+    },
+    {
+     "w": "own",
+     "start": 48.04,
+     "end": 48.14
+    },
+    {
+     "w": "it,",
+     "start": 48.14,
+     "end": 48.28
+    },
+    {
+     "w": "because",
+     "start": 48.28,
+     "end": 48.74
+    },
+    {
+     "w": "owning",
+     "start": 48.74,
+     "end": 49.2
+    },
+    {
+     "w": "it",
+     "start": 49.2,
+     "end": 49.52
+    },
+    {
+     "w": "doesn't",
+     "start": 49.52,
+     "end": 49.67
+    },
+    {
+     "w": "hurt",
+     "start": 49.67,
+     "end": 49.82
+    },
+    {
+     "w": "anyone.",
+     "start": 49.82,
+     "end": 49.97
+    }
+   ]
   },
   {
    "text": "That's the whole idea.\nYou own yourself, and you own what you peacefully acquire.",
-   "start": 50.686,
-   "end": 55.539
+   "start": 50.85,
+   "end": 55.75,
+   "words": [
+    {
+     "w": "That's",
+     "start": 51.01,
+     "end": 51.35
+    },
+    {
+     "w": "the",
+     "start": 51.35,
+     "end": 51.45
+    },
+    {
+     "w": "whole",
+     "start": 51.45,
+     "end": 51.59
+    },
+    {
+     "w": "idea.",
+     "start": 51.59,
+     "end": 51.91
+    },
+    {
+     "w": "You",
+     "start": 52.63,
+     "end": 52.63
+    },
+    {
+     "w": "own",
+     "start": 52.63,
+     "end": 52.77
+    },
+    {
+     "w": "yourself,",
+     "start": 52.77,
+     "end": 53.21
+    },
+    {
+     "w": "and",
+     "start": 53.21,
+     "end": 53.65
+    },
+    {
+     "w": "you",
+     "start": 53.65,
+     "end": 53.79
+    },
+    {
+     "w": "own",
+     "start": 53.79,
+     "end": 54.07
+    },
+    {
+     "w": "what",
+     "start": 54.07,
+     "end": 54.47
+    },
+    {
+     "w": "you",
+     "start": 54.47,
+     "end": 54.65
+    },
+    {
+     "w": "peacefully",
+     "start": 54.65,
+     "end": 55.03
+    },
+    {
+     "w": "acquire.",
+     "start": 55.03,
+     "end": 55.65
+    }
+   ]
   },
   {
-   "text": "A rifle locked in a safe hurts no one \u2014 any more than a TV on a wall does.",
-   "start": 56.439,
-   "end": 61.141
+   "text": "A rifle locked in a safe hurts no one — any more than a TV on a wall does.",
+   "start": 56.36,
+   "end": 60.8,
+   "words": [
+    {
+     "w": "A",
+     "start": 56.51,
+     "end": 56.51
+    },
+    {
+     "w": "rifle",
+     "start": 56.51,
+     "end": 56.75
+    },
+    {
+     "w": "locked",
+     "start": 56.75,
+     "end": 57.09
+    },
+    {
+     "w": "in",
+     "start": 57.09,
+     "end": 57.25
+    },
+    {
+     "w": "a",
+     "start": 57.25,
+     "end": 57.37
+    },
+    {
+     "w": "safe",
+     "start": 57.37,
+     "end": 57.65
+    },
+    {
+     "w": "hurts",
+     "start": 57.65,
+     "end": 57.87
+    },
+    {
+     "w": "no",
+     "start": 57.87,
+     "end": 58.19
+    },
+    {
+     "w": "one",
+     "start": 58.19,
+     "end": 58.39
+    },
+    {
+     "w": "any",
+     "start": 58.39,
+     "end": 58.69
+    },
+    {
+     "w": "more",
+     "start": 58.69,
+     "end": 58.93
+    },
+    {
+     "w": "than",
+     "start": 58.93,
+     "end": 59.17
+    },
+    {
+     "w": "a",
+     "start": 59.17,
+     "end": 59.35
+    },
+    {
+     "w": "TV",
+     "start": 59.35,
+     "end": 59.63
+    },
+    {
+     "w": "on",
+     "start": 59.63,
+     "end": 59.97
+    },
+    {
+     "w": "a",
+     "start": 59.97,
+     "end": 60.15
+    },
+    {
+     "w": "wall",
+     "start": 60.15,
+     "end": 60.37
+    },
+    {
+     "w": "does.",
+     "start": 60.37,
+     "end": 60.8
+    }
+   ]
   },
   {
-   "text": "Now picture actually banning one.\nSomeone has to come to your door.\nSomeone has to take it \u2014 by force if you refuse \u2014 and cage you if you resist.",
-   "start": 62.041,
-   "end": 70.273
+   "text": "Now picture actually banning one.\nSomeone has to come to your door.\nSomeone has to take it — by force if you refuse — and cage you if you resist.",
+   "start": 61.65,
+   "end": 71.58,
+   "words": [
+    {
+     "w": "Now",
+     "start": 61.79,
+     "end": 61.83
+    },
+    {
+     "w": "picture",
+     "start": 61.83,
+     "end": 62.19
+    },
+    {
+     "w": "actually",
+     "start": 62.19,
+     "end": 62.87
+    },
+    {
+     "w": "banning",
+     "start": 62.87,
+     "end": 63.21
+    },
+    {
+     "w": "one.",
+     "start": 63.21,
+     "end": 64.57
+    },
+    {
+     "w": "Someone",
+     "start": 64.57,
+     "end": 64.95
+    },
+    {
+     "w": "has",
+     "start": 64.95,
+     "end": 65.41
+    },
+    {
+     "w": "to",
+     "start": 65.41,
+     "end": 65.61
+    },
+    {
+     "w": "come",
+     "start": 65.61,
+     "end": 65.85
+    },
+    {
+     "w": "to",
+     "start": 65.85,
+     "end": 66.03
+    },
+    {
+     "w": "your",
+     "start": 67.44,
+     "end": 67.68
+    },
+    {
+     "w": "door.",
+     "start": 66.03,
+     "end": 66.24
+    },
+    {
+     "w": "Someone",
+     "start": 66.58,
+     "end": 66.76
+    },
+    {
+     "w": "has",
+     "start": 66.76,
+     "end": 66.98
+    },
+    {
+     "w": "to",
+     "start": 66.98,
+     "end": 67.2
+    },
+    {
+     "w": "take",
+     "start": 67.2,
+     "end": 67.44
+    },
+    {
+     "w": "it",
+     "start": 67.44,
+     "end": 67.96
+    },
+    {
+     "w": "by",
+     "start": 67.96,
+     "end": 68.28
+    },
+    {
+     "w": "force",
+     "start": 68.28,
+     "end": 68.66
+    },
+    {
+     "w": "if",
+     "start": 68.66,
+     "end": 68.88
+    },
+    {
+     "w": "you",
+     "start": 68.88,
+     "end": 69.0
+    },
+    {
+     "w": "refuse",
+     "start": 69.0,
+     "end": 69.36
+    },
+    {
+     "w": "and",
+     "start": 69.36,
+     "end": 70.08
+    },
+    {
+     "w": "cage",
+     "start": 70.08,
+     "end": 70.34
+    },
+    {
+     "w": "you",
+     "start": 70.34,
+     "end": 70.62
+    },
+    {
+     "w": "if",
+     "start": 70.62,
+     "end": 70.8
+    },
+    {
+     "w": "you",
+     "start": 70.8,
+     "end": 70.98
+    },
+    {
+     "w": "resist.",
+     "start": 70.98,
+     "end": 71.36
+    }
+   ]
   },
   {
    "text": "Notice the TV never kicks anyone's door in.",
-   "start": 71.173,
-   "end": 73.692
+   "start": 72.46,
+   "end": 76.59,
+   "words": [
+    {
+     "w": "Notice",
+     "start": 72.71,
+     "end": 72.71
+    },
+    {
+     "w": "the",
+     "start": 72.71,
+     "end": 74.63
+    },
+    {
+     "w": "TV",
+     "start": 74.63,
+     "end": 74.91
+    },
+    {
+     "w": "never",
+     "start": 74.91,
+     "end": 75.23
+    },
+    {
+     "w": "kicks",
+     "start": 75.23,
+     "end": 75.77
+    },
+    {
+     "w": "anyone's",
+     "start": 75.77,
+     "end": 76.29
+    },
+    {
+     "w": "door",
+     "start": 76.29,
+     "end": 76.53
+    },
+    {
+     "w": "in.",
+     "start": 76.53,
+     "end": 76.59
+    }
+   ],
+   "confidence": "medium"
   },
   {
    "text": "Owning the object harmed no one.\nThe ban is the part that requires aggression.",
-   "start": 74.592,
-   "end": 78.853
+   "start": 77.29,
+   "end": 82.21,
+   "words": [
+    {
+     "w": "Owning",
+     "start": 77.39,
+     "end": 77.53
+    },
+    {
+     "w": "the",
+     "start": 77.53,
+     "end": 77.65
+    },
+    {
+     "w": "object",
+     "start": 77.65,
+     "end": 78.05
+    },
+    {
+     "w": "harmed",
+     "start": 78.05,
+     "end": 78.61
+    },
+    {
+     "w": "no",
+     "start": 78.61,
+     "end": 78.97
+    },
+    {
+     "w": "one.",
+     "start": 78.97,
+     "end": 79.17
+    },
+    {
+     "w": "The",
+     "start": 79.63,
+     "end": 79.79
+    },
+    {
+     "w": "ban",
+     "start": 79.79,
+     "end": 80.09
+    },
+    {
+     "w": "is",
+     "start": 80.09,
+     "end": 80.41
+    },
+    {
+     "w": "the",
+     "start": 80.41,
+     "end": 80.55
+    },
+    {
+     "w": "part",
+     "start": 80.55,
+     "end": 80.75
+    },
+    {
+     "w": "that",
+     "start": 80.75,
+     "end": 81.11
+    },
+    {
+     "w": "requires",
+     "start": 81.11,
+     "end": 81.49
+    },
+    {
+     "w": "aggression.",
+     "start": 81.49,
+     "end": 82.13
+    }
+   ]
   },
   {
    "text": "None of this means anything goes.\nUsing a gun to rob or threaten someone is aggression, and the victim has every right to defend themselves and seek justice.",
-   "start": 79.753,
-   "end": 88.414
+   "start": 83.12,
+   "end": 92.06,
+   "words": [
+    {
+     "w": "None",
+     "start": 83.12,
+     "end": 83.245
+    },
+    {
+     "w": "of",
+     "start": 83.245,
+     "end": 83.37
+    },
+    {
+     "w": "this",
+     "start": 83.37,
+     "end": 83.53
+    },
+    {
+     "w": "means",
+     "start": 83.77,
+     "end": 83.95
+    },
+    {
+     "w": "anything",
+     "start": 84.13,
+     "end": 84.45
+    },
+    {
+     "w": "goes.",
+     "start": 84.45,
+     "end": 84.85
+    },
+    {
+     "w": "Using",
+     "start": 85.87,
+     "end": 86.05
+    },
+    {
+     "w": "a",
+     "start": 86.05,
+     "end": 86.27
+    },
+    {
+     "w": "gun",
+     "start": 86.27,
+     "end": 86.39
+    },
+    {
+     "w": "to",
+     "start": 86.39,
+     "end": 86.59
+    },
+    {
+     "w": "rob",
+     "start": 86.59,
+     "end": 86.83
+    },
+    {
+     "w": "or",
+     "start": 86.83,
+     "end": 86.99
+    },
+    {
+     "w": "threaten",
+     "start": 86.99,
+     "end": 87.21
+    },
+    {
+     "w": "someone",
+     "start": 87.21,
+     "end": 87.57
+    },
+    {
+     "w": "is",
+     "start": 87.57,
+     "end": 87.85
+    },
+    {
+     "w": "aggression,",
+     "start": 87.85,
+     "end": 88.27
+    },
+    {
+     "w": "and",
+     "start": 88.69,
+     "end": 88.99
+    },
+    {
+     "w": "the",
+     "start": 88.99,
+     "end": 89.09
+    },
+    {
+     "w": "victim",
+     "start": 89.09,
+     "end": 89.29
+    },
+    {
+     "w": "has",
+     "start": 89.29,
+     "end": 89.59
+    },
+    {
+     "w": "every",
+     "start": 89.59,
+     "end": 89.93
+    },
+    {
+     "w": "right",
+     "start": 89.93,
+     "end": 90.19
+    },
+    {
+     "w": "to",
+     "start": 90.19,
+     "end": 90.59
+    },
+    {
+     "w": "defend",
+     "start": 90.59,
+     "end": 90.79
+    },
+    {
+     "w": "themselves",
+     "start": 90.79,
+     "end": 91.15
+    },
+    {
+     "w": "and",
+     "start": 91.15,
+     "end": 91.61
+    },
+    {
+     "w": "seek",
+     "start": 91.61,
+     "end": 91.835
+    },
+    {
+     "w": "justice.",
+     "start": 91.835,
+     "end": 92.06
+    }
+   ]
   },
   {
-   "text": "But the wrong is the robbery \u2014 not the ownership.\nThe same is true of a car, a kitchen knife, or a hammer.",
-   "start": 89.314,
-   "end": 94.643
+   "text": "But the wrong is the robbery — not the ownership.\nThe same is true of a car, a kitchen knife, or a hammer.",
+   "start": 92.94,
+   "end": 99.59,
+   "words": [
+    {
+     "w": "But",
+     "start": 92.94,
+     "end": 93.1
+    },
+    {
+     "w": "the",
+     "start": 93.1,
+     "end": 93.46
+    },
+    {
+     "w": "wrong",
+     "start": 93.46,
+     "end": 93.72
+    },
+    {
+     "w": "is",
+     "start": 93.72,
+     "end": 93.92
+    },
+    {
+     "w": "the",
+     "start": 93.92,
+     "end": 94.08
+    },
+    {
+     "w": "robbery",
+     "start": 94.08,
+     "end": 94.48
+    },
+    {
+     "w": "not",
+     "start": 94.76,
+     "end": 94.98
+    },
+    {
+     "w": "the",
+     "start": 94.98,
+     "end": 95.34
+    },
+    {
+     "w": "ownership.",
+     "start": 95.34,
+     "end": 95.76
+    },
+    {
+     "w": "The",
+     "start": 96.68,
+     "end": 96.86
+    },
+    {
+     "w": "same",
+     "start": 96.86,
+     "end": 97.0
+    },
+    {
+     "w": "is",
+     "start": 97.0,
+     "end": 97.14
+    },
+    {
+     "w": "true",
+     "start": 97.14,
+     "end": 97.32
+    },
+    {
+     "w": "of",
+     "start": 97.32,
+     "end": 97.48
+    },
+    {
+     "w": "a",
+     "start": 97.48,
+     "end": 97.6
+    },
+    {
+     "w": "car,",
+     "start": 97.6,
+     "end": 97.84
+    },
+    {
+     "w": "a",
+     "start": 97.84,
+     "end": 98.2
+    },
+    {
+     "w": "kitchen",
+     "start": 98.2,
+     "end": 98.46
+    },
+    {
+     "w": "knife,",
+     "start": 98.46,
+     "end": 98.72
+    },
+    {
+     "w": "or",
+     "start": 99.0,
+     "end": 99.12
+    },
+    {
+     "w": "a",
+     "start": 99.12,
+     "end": 99.26
+    },
+    {
+     "w": "hammer.",
+     "start": 99.26,
+     "end": 99.5
+    }
+   ]
   },
   {
    "text": "You punish the act, not the object.\nNobody's arresting the hammer.",
-   "start": 95.543,
-   "end": 99.491
+   "start": 100.15,
+   "end": 104.38,
+   "words": [
+    {
+     "w": "You",
+     "start": 100.15,
+     "end": 100.24
+    },
+    {
+     "w": "punish",
+     "start": 100.24,
+     "end": 100.48
+    },
+    {
+     "w": "the",
+     "start": 100.48,
+     "end": 100.66
+    },
+    {
+     "w": "act,",
+     "start": 100.66,
+     "end": 101.04
+    },
+    {
+     "w": "not",
+     "start": 101.36,
+     "end": 101.52
+    },
+    {
+     "w": "the",
+     "start": 101.52,
+     "end": 101.76
+    },
+    {
+     "w": "object.",
+     "start": 101.76,
+     "end": 102.22
+    },
+    {
+     "w": "Nobody's",
+     "start": 102.86,
+     "end": 103.24
+    },
+    {
+     "w": "arresting",
+     "start": 103.24,
+     "end": 103.68
+    },
+    {
+     "w": "the",
+     "start": 103.68,
+     "end": 104.02
+    },
+    {
+     "w": "hammer.",
+     "start": 104.02,
+     "end": 104.32
+    }
+   ]
   },
   {
    "text": "So where do gun rights come from?\nNot from the Second Amendment.",
-   "start": 100.391,
-   "end": 103.978
+   "start": 105.26,
+   "end": 108.7,
+   "words": [
+    {
+     "w": "So",
+     "start": 105.27,
+     "end": 105.43
+    },
+    {
+     "w": "where",
+     "start": 105.43,
+     "end": 105.73
+    },
+    {
+     "w": "do",
+     "start": 105.73,
+     "end": 105.87
+    },
+    {
+     "w": "gun",
+     "start": 105.87,
+     "end": 106.11
+    },
+    {
+     "w": "rights",
+     "start": 106.11,
+     "end": 106.35
+    },
+    {
+     "w": "come",
+     "start": 106.35,
+     "end": 106.69
+    },
+    {
+     "w": "from?",
+     "start": 106.69,
+     "end": 107.01
+    },
+    {
+     "w": "Not",
+     "start": 107.39,
+     "end": 107.71
+    },
+    {
+     "w": "from",
+     "start": 107.71,
+     "end": 107.93
+    },
+    {
+     "w": "the",
+     "start": 107.93,
+     "end": 108.05
+    },
+    {
+     "w": "Second",
+     "start": 108.05,
+     "end": 108.23
+    },
+    {
+     "w": "Amendment.",
+     "start": 108.23,
+     "end": 108.49
+    }
+   ]
   },
   {
    "text": "They come from the same place as your right to own a TV, a book, or a hammer:\nfrom the simple fact that peacefully owning something violates no one.",
-   "start": 104.878,
-   "end": 112.738
+   "start": 109.2,
+   "end": 117.37,
+   "words": [
+    {
+     "w": "They",
+     "start": 109.2,
+     "end": 109.31
+    },
+    {
+     "w": "come",
+     "start": 109.31,
+     "end": 109.47
+    },
+    {
+     "w": "from",
+     "start": 109.47,
+     "end": 109.63
+    },
+    {
+     "w": "the",
+     "start": 109.63,
+     "end": 109.75
+    },
+    {
+     "w": "same",
+     "start": 109.75,
+     "end": 109.93
+    },
+    {
+     "w": "place",
+     "start": 109.93,
+     "end": 110.19
+    },
+    {
+     "w": "as",
+     "start": 110.19,
+     "end": 110.45
+    },
+    {
+     "w": "your",
+     "start": 110.45,
+     "end": 110.59
+    },
+    {
+     "w": "right",
+     "start": 110.59,
+     "end": 110.79
+    },
+    {
+     "w": "to",
+     "start": 110.79,
+     "end": 110.93
+    },
+    {
+     "w": "own",
+     "start": 110.93,
+     "end": 111.07
+    },
+    {
+     "w": "a",
+     "start": 111.07,
+     "end": 111.21
+    },
+    {
+     "w": "TV,",
+     "start": 111.21,
+     "end": 111.83
+    },
+    {
+     "w": "a",
+     "start": 111.83,
+     "end": 111.87
+    },
+    {
+     "w": "book,",
+     "start": 111.87,
+     "end": 112.29
+    },
+    {
+     "w": "or",
+     "start": 112.29,
+     "end": 112.65
+    },
+    {
+     "w": "a",
+     "start": 112.65,
+     "end": 112.81
+    },
+    {
+     "w": "hammer:",
+     "start": 112.81,
+     "end": 113.05
+    },
+    {
+     "w": "from",
+     "start": 113.57,
+     "end": 113.77
+    },
+    {
+     "w": "the",
+     "start": 113.77,
+     "end": 113.91
+    },
+    {
+     "w": "simple",
+     "start": 113.91,
+     "end": 114.13
+    },
+    {
+     "w": "fact",
+     "start": 114.13,
+     "end": 114.41
+    },
+    {
+     "w": "that",
+     "start": 114.41,
+     "end": 114.75
+    },
+    {
+     "w": "peacefully",
+     "start": 114.75,
+     "end": 115.15
+    },
+    {
+     "w": "owning",
+     "start": 115.15,
+     "end": 115.49
+    },
+    {
+     "w": "something",
+     "start": 115.49,
+     "end": 115.89
+    },
+    {
+     "w": "violates",
+     "start": 115.89,
+     "end": 116.49
+    },
+    {
+     "w": "no",
+     "start": 116.49,
+     "end": 117.05
+    },
+    {
+     "w": "one.",
+     "start": 117.05,
+     "end": 117.29
+    }
+   ]
   },
   {
    "text": "And the document people point to? It's the same piece of paper politicians wave around to excuse taking your money by force.\nPaper can't give anyone the right to rob you. And it can't give you your rights, either.",
-   "start": 113.638,
-   "end": 124.691
+   "start": 118.03,
+   "end": 130.05,
+   "words": [
+    {
+     "w": "And",
+     "start": 118.03,
+     "end": 118.13
+    },
+    {
+     "w": "the",
+     "start": 118.13,
+     "end": 118.23
+    },
+    {
+     "w": "document",
+     "start": 118.23,
+     "end": 118.53
+    },
+    {
+     "w": "people",
+     "start": 118.53,
+     "end": 118.81
+    },
+    {
+     "w": "point",
+     "start": 118.81,
+     "end": 119.09
+    },
+    {
+     "w": "to?",
+     "start": 119.09,
+     "end": 119.39
+    },
+    {
+     "w": "It's",
+     "start": 120.13,
+     "end": 120.25
+    },
+    {
+     "w": "the",
+     "start": 120.25,
+     "end": 120.37
+    },
+    {
+     "w": "same",
+     "start": 120.37,
+     "end": 120.55
+    },
+    {
+     "w": "piece",
+     "start": 120.55,
+     "end": 120.71
+    },
+    {
+     "w": "of",
+     "start": 120.71,
+     "end": 120.87
+    },
+    {
+     "w": "paper",
+     "start": 120.87,
+     "end": 121.07
+    },
+    {
+     "w": "politicians",
+     "start": 121.29,
+     "end": 121.69
+    },
+    {
+     "w": "wave",
+     "start": 121.69,
+     "end": 122.01
+    },
+    {
+     "w": "around",
+     "start": 122.01,
+     "end": 122.37
+    },
+    {
+     "w": "to",
+     "start": 122.37,
+     "end": 123.11
+    },
+    {
+     "w": "excuse",
+     "start": 123.11,
+     "end": 123.59
+    },
+    {
+     "w": "taking",
+     "start": 123.59,
+     "end": 124.11
+    },
+    {
+     "w": "your",
+     "start": 124.11,
+     "end": 124.37
+    },
+    {
+     "w": "money",
+     "start": 124.37,
+     "end": 124.37
+    },
+    {
+     "w": "by",
+     "start": 124.37,
+     "end": 124.57
+    },
+    {
+     "w": "force.",
+     "start": 124.57,
+     "end": 124.93
+    },
+    {
+     "w": "Paper",
+     "start": 125.71,
+     "end": 125.95
+    },
+    {
+     "w": "can't",
+     "start": 125.95,
+     "end": 126.39
+    },
+    {
+     "w": "give",
+     "start": 126.39,
+     "end": 126.51
+    },
+    {
+     "w": "anyone",
+     "start": 126.51,
+     "end": 126.83
+    },
+    {
+     "w": "the",
+     "start": 126.83,
+     "end": 127.01
+    },
+    {
+     "w": "right",
+     "start": 127.01,
+     "end": 127.15
+    },
+    {
+     "w": "to",
+     "start": 127.15,
+     "end": 127.33
+    },
+    {
+     "w": "rob",
+     "start": 127.33,
+     "end": 127.49
+    },
+    {
+     "w": "you.",
+     "start": 127.49,
+     "end": 127.77
+    },
+    {
+     "w": "And",
+     "start": 128.03,
+     "end": 128.09
+    },
+    {
+     "w": "it",
+     "start": 128.09,
+     "end": 128.15
+    },
+    {
+     "w": "can't",
+     "start": 128.15,
+     "end": 128.45
+    },
+    {
+     "w": "give",
+     "start": 128.45,
+     "end": 128.61
+    },
+    {
+     "w": "you",
+     "start": 128.61,
+     "end": 128.85
+    },
+    {
+     "w": "your",
+     "start": 128.85,
+     "end": 129.15
+    },
+    {
+     "w": "rights,",
+     "start": 129.15,
+     "end": 129.55
+    },
+    {
+     "w": "either.",
+     "start": 129.75,
+     "end": 129.97
+    }
+   ]
   },
   {
    "text": "And the real question was never \"Why should you be allowed to own a gun?\"\nIt's this:\nWho would have to use force to stop you?",
-   "start": 125.591,
-   "end": 131.86
+   "start": 130.63,
+   "end": 137.53,
+   "words": [
+    {
+     "w": "And",
+     "start": 130.63,
+     "end": 130.73
+    },
+    {
+     "w": "the",
+     "start": 130.73,
+     "end": 130.81
+    },
+    {
+     "w": "real",
+     "start": 130.81,
+     "end": 130.97
+    },
+    {
+     "w": "question",
+     "start": 130.97,
+     "end": 131.27
+    },
+    {
+     "w": "was",
+     "start": 131.27,
+     "end": 131.49
+    },
+    {
+     "w": "never",
+     "start": 131.49,
+     "end": 131.73
+    },
+    {
+     "w": "\"Why",
+     "start": 131.99,
+     "end": 132.09
+    },
+    {
+     "w": "should",
+     "start": 132.09,
+     "end": 132.25
+    },
+    {
+     "w": "you",
+     "start": 132.25,
+     "end": 132.41
+    },
+    {
+     "w": "be",
+     "start": 132.41,
+     "end": 132.55
+    },
+    {
+     "w": "allowed",
+     "start": 132.55,
+     "end": 132.73
+    },
+    {
+     "w": "to",
+     "start": 132.73,
+     "end": 132.95
+    },
+    {
+     "w": "own",
+     "start": 132.95,
+     "end": 133.11
+    },
+    {
+     "w": "a",
+     "start": 133.11,
+     "end": 133.25
+    },
+    {
+     "w": "gun?\"",
+     "start": 133.25,
+     "end": 133.37
+    },
+    {
+     "w": "It's",
+     "start": 133.83,
+     "end": 134.01
+    },
+    {
+     "w": "this:",
+     "start": 134.01,
+     "end": 134.23
+    },
+    {
+     "w": "Who",
+     "start": 135.19,
+     "end": 135.43
+    },
+    {
+     "w": "would",
+     "start": 135.43,
+     "end": 135.97
+    },
+    {
+     "w": "have",
+     "start": 135.97,
+     "end": 136.19
+    },
+    {
+     "w": "to",
+     "start": 136.19,
+     "end": 136.37
+    },
+    {
+     "w": "use",
+     "start": 136.37,
+     "end": 136.53
+    },
+    {
+     "w": "force",
+     "start": 136.53,
+     "end": 136.77
+    },
+    {
+     "w": "to",
+     "start": 136.77,
+     "end": 137.03
+    },
+    {
+     "w": "stop",
+     "start": 137.03,
+     "end": 137.27
+    },
+    {
+     "w": "you?",
+     "start": 137.27,
+     "end": 137.53
+    }
+   ]
   },
   {
    "text": "And if you don't like it... you can kiss my ass.",
-   "start": 132.76,
-   "end": 135.198
+   "start": 138.41,
+   "end": 141.45,
+   "words": [
+    {
+     "w": "And",
+     "start": 138.51,
+     "end": 138.67
+    },
+    {
+     "w": "if",
+     "start": 138.67,
+     "end": 138.75
+    },
+    {
+     "w": "you",
+     "start": 138.75,
+     "end": 138.83
+    },
+    {
+     "w": "don't",
+     "start": 138.83,
+     "end": 139.01
+    },
+    {
+     "w": "like",
+     "start": 139.01,
+     "end": 139.15
+    },
+    {
+     "w": "it...",
+     "start": 139.15,
+     "end": 140.37
+    },
+    {
+     "w": "you",
+     "start": 140.37,
+     "end": 140.47
+    },
+    {
+     "w": "can",
+     "start": 140.47,
+     "end": 140.65
+    },
+    {
+     "w": "kiss",
+     "start": 140.65,
+     "end": 140.83
+    },
+    {
+     "w": "my",
+     "start": 140.83,
+     "end": 141.07
+    },
+    {
+     "w": "ass.",
+     "start": 141.07,
+     "end": 141.33
+    }
+   ]
+  }
+ ],
+ "inputs": [
+  {
+   "file": "episodes/where_gun_rights_come_from/narration_take1.m4a",
+   "offset": 0.0,
+   "duration": 153.023
+  }
+ ],
+ "original_duration": 153.023,
+ "removed": [
+  {
+   "start": 0.0,
+   "end": 1.24,
+   "why": "lead-in: pause 2.14s -> 0.90s"
+  },
+  {
+   "start": 2.12,
+   "end": 4.92,
+   "why": "retake: where do gun rights come from — earlier take of script tokens 3-8 (match 0.91)"
+  },
+  {
+   "start": 54.48,
+   "end": 55.67,
+   "why": "gap 6->7: pause 2.09s -> 0.90s"
+  },
+  {
+   "start": 71.32,
+   "end": 71.47,
+   "why": "retake: your — earlier take of script tokens 197-198, re-aligned to later take (match 0.67)"
+  },
+  {
+   "start": 77.47,
+   "end": 79.96,
+   "why": "gap 9->10: pause 3.39s -> 0.90s"
+  },
+  {
+   "start": 100.46,
+   "end": 101.43,
+   "why": "gap 12->13: pause 1.87s -> 0.90s"
+  },
+  {
+   "start": 113.77,
+   "end": 113.84,
+   "why": "gap 14->15: pause 0.97s -> 0.90s"
+  },
+  {
+   "start": 147.01,
+   "end": 147.07,
+   "why": "gap 18->19: pause 0.96s -> 0.90s"
+  },
+  {
+   "start": 151.46,
+   "end": 153.023,
+   "why": "tail: pause 2.46s -> 0.90s"
   }
  ]
 }

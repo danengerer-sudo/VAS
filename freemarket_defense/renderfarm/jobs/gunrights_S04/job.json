@@ -1,0 +1,19 @@
+{
+  "blend": "S04.blend",
+  "blend_sha256": "01a0bf91a74efb9bf51b64c53281bd413c8afe3faa111a2cf626f83f16df21b3",
+  "blend_size": 4136871,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 1717,
+  "frame_start": 1199,
+  "note": "Where Do Gun Rights Come From? shot S04 (door)",
+  "output": "frames/f_####",
+  "priority": 4,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-15T03:37:19Z"
+}

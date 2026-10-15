@@ -1,0 +1,19 @@
+{
+  "blend": "S05.blend",
+  "blend_sha256": "76c350b18f997c7417a7c152d789e5072630b2d36474b7ba097b11953b96cb57",
+  "blend_size": 464236,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 2209,
+  "frame_start": 1718,
+  "note": "Where Do Gun Rights Come From? shot S05 (table)",
+  "output": "frames/f_####",
+  "priority": 5,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-15T03:37:19Z"
+}

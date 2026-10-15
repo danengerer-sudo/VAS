@@ -1,0 +1,19 @@
+{
+  "blend": "TAG.blend",
+  "blend_sha256": "be685a06f87b4fc3465d4415ffc99296a52c8b86010ab559086960f49420d013",
+  "blend_size": 2822382,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 3393,
+  "frame_start": 3301,
+  "note": "Where Do Gun Rights Come From? shot TAG (donkey)",
+  "output": "frames/f_####",
+  "priority": 7,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-15T03:37:19Z"
+}

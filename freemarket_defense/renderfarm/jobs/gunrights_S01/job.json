@@ -1,0 +1,19 @@
+{
+  "blend": "S01.blend",
+  "blend_sha256": "66c7956f32650b66fdf366895cf51a6c97033124d8250f4ece2f630eef460a44",
+  "blend_size": 6407123,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 181,
+  "frame_start": 1,
+  "note": "Where Do Gun Rights Come From? shot S01 (hook)",
+  "output": "frames/f_####",
+  "priority": 1,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-15T03:37:18Z"
+}

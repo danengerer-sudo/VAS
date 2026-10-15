@@ -1,0 +1,19 @@
+{
+  "blend": "S03.blend",
+  "blend_sha256": "e93410e0d499fb21c200dcb0e2d5396ca0b9cd43fcce21b663de95436f5f7142",
+  "blend_size": 5047453,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 1198,
+  "frame_start": 722,
+  "note": "Where Do Gun Rights Come From? shot S03 (tv_shop)",
+  "output": "frames/f_####",
+  "priority": 3,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-15T03:37:19Z"
+}

@@ -1,0 +1,27 @@
+{
+  "chunks": 3,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "finished_at": "2026-10-15T05:36:53Z",
+  "frame_end": 1198,
+  "frame_start": 722,
+  "frames": 477,
+  "job": "gunrights_S03",
+  "per_worker": {
+    "minipc1": {
+      "chunks": 3,
+      "frames": 477,
+      "sec_per_frame": 1.95,
+      "seconds": 931.4
+    }
+  },
+  "sec_per_frame": 1.95,
+  "total_seconds": 931.4,
+  "total_time": "0:15:31",
+  "uploaded": true,
+  "uploaders": [
+    "rclone"
+  ],
+  "workers": [
+    "minipc1"
+  ]
+}

@@ -367,4 +367,19 @@ def make_person(name, sex=None, age="adult", build=None, mode="casual", weapon=N
         p.use_smooth = p.material_index not in gi
     fig["clip"] = f"{clip}@{t:.2f}"
     fig["desc"] = f"{sex}/{age}/{build}"
+    purge_mpfb_data()
     return fig
+
+
+def purge_mpfb_data():
+    """Drop the MakeHuman materials/images the baked people no longer use (they otherwise pack ~100 MB into every file)."""
+    for _ in range(3):
+        bpy.data.orphans_purge(do_local_ids=True, do_linked_ids=True, do_recursive=True)
+    used = {m for o in bpy.data.objects if o.type == "MESH" for m in o.data.materials if m}
+    for m in list(bpy.data.materials):
+        if m not in used and m.users <= 1 and not m.name.startswith(("LIB_", "Fig")):
+            bpy.data.materials.remove(m)
+    for im in list(bpy.data.images):
+        if im.users == 0 or im.name.endswith((".png", ".jpg")) and not any(
+                n.type == "TEX_IMAGE" and n.image == im for m in used if m.use_nodes for n in m.node_tree.nodes):
+            bpy.data.images.remove(im)

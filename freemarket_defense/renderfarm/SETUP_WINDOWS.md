@@ -79,7 +79,7 @@ Close and reopen PowerShell (as Administrator) so PATH changes apply.
 
 ```powershell
 Set-ExecutionPolicy -Scope Process Bypass -Force
-irm https://raw.githubusercontent.com/danengerer-sudo/VAS/main/freemarket_defense/renderfarm/install.ps1 -OutFile $env:TEMP\install.ps1
+irm https://raw.githubusercontent.com/danengerer-sudo/VAS/claude/low-poly-helicopter-glb-d0l1zs/freemarket_defense/renderfarm/install.ps1 -OutFile $env:TEMP\install.ps1
 & $env:TEMP\install.ps1
 ```
 (if the repo is private, `irm` cannot fetch the script; clone first with
@@ -91,7 +91,7 @@ The installer asks for:
 
 | prompt | what to enter |
 |---|---|
-| git branch | branch the cloud side pushes jobs to (`main` unless told otherwise) |
+| git branch | branch the cloud side pushes jobs to (`claude/low-poly-helicopter-glb-d0l1zs` for now) |
 | worker name | unique per PC, e.g. `minipc1`, `minipc2` |
 | blender.exe path | accept the detected `C:\Program Files\Blender Foundation\Blender 4.2\blender.exe` |
 | rclone remote:path | `gdrive:renderfarm`, or empty to zip into outbox |

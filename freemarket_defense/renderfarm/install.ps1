@@ -4,7 +4,7 @@ install.ps1 -- one-shot setup of the render agent on a Windows 11 mini PC.
 Run in an *elevated* PowerShell (right-click > Run as administrator):
 
     Set-ExecutionPolicy -Scope Process Bypass -Force
-    irm https://raw.githubusercontent.com/danengerer-sudo/VAS/main/freemarket_defense/renderfarm/install.ps1 -OutFile install.ps1
+    irm https://raw.githubusercontent.com/danengerer-sudo/VAS/claude/low-poly-helicopter-glb-d0l1zs/freemarket_defense/renderfarm/install.ps1 -OutFile install.ps1
     .\install.ps1
 
 or, if the repo is already cloned:   powershell -ExecutionPolicy Bypass -File install.ps1
@@ -70,7 +70,7 @@ if (-not $BlenderExe) {
 # --- 1. clone ---------------------------------------------------------------------------------
 New-Item -ItemType Directory -Force -Path $Root | Out-Null
 $RepoDir = Join-Path $Root "VAS"
-if (-not $Branch) { $Branch = Ask "git branch the jobs are pushed to" "main" }
+if (-not $Branch) { $Branch = Ask "git branch the jobs are pushed to" "claude/low-poly-helicopter-glb-d0l1zs" }
 if (-not (Test-Path (Join-Path $RepoDir ".git"))) {
     Write-Host "cloning $RepoUrl ($Branch) -> $RepoDir (shallow, blobless)" -ForegroundColor Cyan
     & git clone --depth 1 --filter=blob:none --branch $Branch $RepoUrl $RepoDir

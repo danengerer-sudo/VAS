@@ -171,9 +171,10 @@ def tv_shop():
     place("city", "tree_small", (8, -3.5, 0.15), 2.0)
     place("city", "street_lamp", (4, -4, 0.15), D)
     hd = math.radians(-110)
-    buyer = person("Buyer", 0.6, -2.0, hd, "walk")
+    bx, by = 1.6, -7.4  # just outside the shop front (the footprint reaches y = -4.9)
+    buyer = person("Buyer", bx, by, hd, "walk")
     if has("household", "tv_boxed"):  # carried in front of the chest, long side across the body
-        b = place("household", "tv_boxed", (0.6 + 0.4 * math.cos(hd), -2.0 + 0.4 * math.sin(hd), 0.62), hd)
+        b = place("household", "tv_boxed", (bx + 0.4 * math.cos(hd), by + 0.4 * math.sin(hd), 0.62), hd)
         b.rotation_euler = (math.radians(6), 0, hd)
     else:
         place("commerce", "cardboard_box", (1.2, -2.4, 0.5), math.radians(30))
@@ -237,9 +238,8 @@ def donkey():
     ground((0.5, 0.52, 0.42))
     for i in range(-4, 5):
         place("city", "fence_picket", (i * 4, 4, 0), 0) if has("city", "fence_picket") else None
-    place("city", "tree_wide", (-14, 13, 0), 0.5)
-    place("city", "tree_round", (11, 10, 0), 2.0)
-    place("buildings", "farm_barn_silo", (18, 14, 0), math.radians(-110))
+    place("city", "tree_round", (16, 9, 0), 2.0)
+    place("buildings", "farm_barn_silo", (24, 18, 0), math.radians(-110))
     if has("household", "donkey_grazing"):
         place("household", "donkey_grazing", (5, 6, 0), math.radians(150))
     if has("household", "donkey"):

@@ -72,7 +72,7 @@ def parse_utc(s: str) -> float:
 
 def read_json(path: Path, default=None):
     try:
-        with open(path, "r", encoding="utf-8") as fh:
+        with open(path, "r", encoding="utf-8-sig") as fh:
             return json.load(fh)
     except FileNotFoundError:
         return default

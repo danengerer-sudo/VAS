@@ -123,7 +123,7 @@ $cfg = [ordered]@{
     bench_url         = $BenchUrl
     blender_extra_args = @()
 }
-($cfg | ConvertTo-Json -Depth 3) | Set-Content -Encoding UTF8 $cfgPath
+[System.IO.File]::WriteAllText($cfgPath, (($cfg | ConvertTo-Json -Depth 3) -replace "`r`n", "`n") + "`n", (New-Object System.Text.UTF8Encoding $false))
 Write-Host "wrote $cfgPath" -ForegroundColor Green
 New-Item -ItemType Directory -Force -Path (Join-Path $Root "outbox") | Out-Null
 

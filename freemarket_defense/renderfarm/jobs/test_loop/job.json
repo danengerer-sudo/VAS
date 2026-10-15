@@ -1,0 +1,18 @@
+{
+  "blend": "bench.blend",
+  "blend_url": "https://raw.githubusercontent.com/danengerer-sudo/VAS/claude/low-poly-helicopter-glb-d0l1zs/freemarket_defense/bench/bench.blend",
+  "chunk": 12,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 12,
+  "frame_start": 1,
+  "note": "end-to-end test: should upload 12 frames to Drive",
+  "output": "frames/f_####",
+  "priority": 1,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 16,
+  "submitted_at": "2026-10-15T02:59:39Z"
+}

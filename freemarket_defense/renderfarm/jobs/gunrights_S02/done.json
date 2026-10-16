@@ -21,6 +21,13 @@
   "uploaders": [
     "rclone"
   ],
+  "video_file": "gunrights_S02.mp4",
+  "video_fps": 24,
+  "video_frames": 540,
+  "video_published_at": "2026-10-16T12:32:35Z",
+  "video_sha256": "5a45f0861f2d9749e832cf452083133cf6cd1751582fa36301d16b78f744a199",
+  "video_size": 12711923,
+  "video_url": "https://drive.google.com/open?id=1OqMiojIyDBsflqxafuKLFPmmvCsnKLao",
   "workers": [
     "minipc1"
   ]

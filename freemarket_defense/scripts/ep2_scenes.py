@@ -235,7 +235,7 @@ def street():
         put("fx", "fire_patch", (2.3, 7.3, 2.2), 1.0, 1.0, key="fire2")
     if has("fx", "smoke_column"):
         put("fx", "smoke_column", (0, 11, 9.0), 0, 0.3, key="smoke")
-    person("Shooter", 2.0, -17.0, math.radians(90), "tactical", "held", pick=1)
+    person("Shooter", 2.0, -17.0, math.radians(90), "tactical", "held", pick=1, soldier=False)
     lying("Victim", 2.6, -13.5, math.radians(20))
     if has("fx", "muzzle_flash"):
         put("fx", "muzzle_flash", (2.0, -16.1, 1.3), math.radians(90), 0.8, key="flash")
@@ -246,9 +246,9 @@ def defense():
     """Homeowner at the door with a rifle; intruder on the path backing off; child beside the owner."""
     house_lot(0, 0, car=False)
     put("household", "front_door", (0, 7.3, 0), -D, key="door")
-    person("Home", 0.0, 5.4, math.radians(-90), "tactical", "held", pick=0)
+    person("Home", 0.0, 5.4, math.radians(-90), "tactical", "held", pick=0, soldier=False)
     person("Kid", -1.0, 5.9, math.radians(-80), "casual", age="child")
-    person("Intruder", 0.3, 2.6, math.radians(90), "tactical", "one_hand", pick=3)
+    person("Intruder", 0.3, 2.6, math.radians(90), "tactical", "one_hand", pick=3, soldier=False)
     person("Runner", -6, -4.5, math.radians(190), "walk", pick=2)
 
 
@@ -263,7 +263,11 @@ def basement():
     rifle_in("safe_rifle", (-3.55, 2.0, 0.55), (0, math.radians(-82), 0), key="rifle")
     if has("furniture_interior", "stairs"):
         put("furniture_interior", "stairs", (3.2, 3.0, 0), math.radians(180), 1.0, key="stairs")
-    for n, (x, y, r) in [("wooden_crate", (2.5, -2.8, 20)), ("wooden_crate_02", (1.6, -3.3, -10)), ("cardboard_box", (-2.0, -3.4, 15))]:
+    if has("furniture_interior", "bookcase_open"):
+        put("furniture_interior", "bookcase_open", (-3.8, -2.0, 0), math.radians(90))
+    if has("everyday_objects_ph", "metal_office_desk"):
+        put("everyday_objects_ph", "metal_office_desk", (1.5, 3.6, 0), math.radians(0))
+    for n, (x, y, r) in [("wooden_crate", (0.4, -2.6, 20)), ("wooden_crate_02", (-0.6, -3.2, -10)), ("cardboard_box", (-2.0, -3.4, 15))]:
         if has("everyday_objects_ph", n):
             put("everyday_objects_ph", n, (x, y, 0), math.radians(r))
     put("commerce", "cardboard_box", (-1.2, -3.6, 0.5), math.radians(35))

@@ -21,6 +21,13 @@
   "uploaders": [
     "rclone"
   ],
+  "video_file": "test_loop.mp4",
+  "video_fps": 24,
+  "video_frames": 12,
+  "video_published_at": "2026-10-16T12:31:46Z",
+  "video_sha256": "cf748327f9c0314afc46cc7fc31035329581c77818c203835ebc86c933a890e4",
+  "video_size": 525043,
+  "video_url": "https://drive.google.com/open?id=1iMPvqzGY6RCvlFUnPXW4HsWKoCWbJTAt",
   "workers": [
     "minipc1"
   ]

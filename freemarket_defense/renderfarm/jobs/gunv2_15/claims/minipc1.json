@@ -1,0 +1,12 @@
+{
+  "chunks": {
+    "1750-1830": {
+      "claimed_at": "2026-10-16T23:08:36Z",
+      "end": 1830,
+      "start": 1750
+    }
+  },
+  "host": "M6_Ultra",
+  "updated": "2026-10-16T23:08:36Z",
+  "worker": "minipc1"
+}

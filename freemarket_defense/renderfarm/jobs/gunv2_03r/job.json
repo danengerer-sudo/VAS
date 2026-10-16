@@ -1,0 +1,19 @@
+{
+  "blend": "nap.blend",
+  "blend_sha256": "c16a5325d64b18fc877ec92088b8beb94b806e9d503bb9a226e08fa65e61ede0",
+  "blend_size": 2877913,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 692,
+  "frame_start": 506,
+  "note": "beat 03 re-aimed (car out of foreground)",
+  "output": "frames/f_####",
+  "priority": 0,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T22:01:53Z"
+}

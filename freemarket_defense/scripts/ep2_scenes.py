@@ -187,7 +187,7 @@ def dome():
     put("buildings", "parliament_dome", (0, 0, 0), -D, key="dome")
     for x, y in [(-30, -40), (30, -42), (-44, -20), (44, -24), (-20, -46), (18, -48)]:
         put("city", "tree_round", (x, y, 0), rng.uniform(0, 6))
-    doc = put("commerce", "contract", (-10, -50, 4.2), 0, 28.0, key="doc")
+    doc = put("commerce", "contract", (-10, -50, 2.0), 0, 12.0, key="doc")
     doc.rotation_euler = (math.radians(80), 0, math.radians(-170))
     plate("2ND AMENDMENT", (-10, -52.6, 1.1), math.radians(-170), 0.5, key="doclabel")
     person("D1", -13.5, -55, math.radians(70), "talk")
@@ -221,7 +221,7 @@ def street():
         b.rotation_euler = (math.radians(6), 0, hd)
     person("OwnerDoor", -0.9, 6.8, math.radians(-60), "talk")
     person("CarThief", 4.3, -3.0, math.radians(10), "tactical", pick=2)
-    person("CarOwner", 4.0, -5.2, math.radians(0), "talk")
+    person("CarOwner", 5.0, -5.0, math.radians(0), "talk")
     if has("everyday_objects_ph", "vintage_suitcase"):
         put("everyday_objects_ph", "vintage_suitcase", (-5.3, 4.0, 0), math.radians(20), 0.9)
     put("commerce", "cardboard_box", (-3.2, 4.6, 0.45), math.radians(35))
@@ -246,9 +246,9 @@ def defense():
     """Homeowner at the door with a rifle; intruder on the path backing off; child beside the owner."""
     house_lot(0, 0, car=False)
     put("household", "front_door", (0, 7.3, 0), -D, key="door")
-    person("Home", 0.0, 6.4, math.radians(-90), "tactical", "held", pick=0)
-    person("Kid", -0.9, 6.7, math.radians(-80), "casual", age="child")
-    person("Intruder", 0.3, 2.6, math.radians(90), "tactical", pick=3)
+    person("Home", 0.0, 5.4, math.radians(-90), "tactical", "held", pick=0)
+    person("Kid", -1.0, 5.9, math.radians(-80), "casual", age="child")
+    person("Intruder", 0.3, 2.6, math.radians(90), "tactical", "one_hand", pick=3)
     person("Runner", -6, -4.5, math.radians(190), "walk", pick=2)
 
 
@@ -297,7 +297,7 @@ def hall():
         put("furniture_interior", "lamp_round_table", (-1.2, 0.5, 0.75), 0)
     if has("furniture_interior", "coat_rack_standing"):
         put("furniture_interior", "coat_rack_standing", (1.2, 2.3, 0), 0)
-    plate("NOTICE: SURRENDER YOUR FIREARM", (0.0, 3.3, 1.55), -D, 0.07, key="notice")
+    plate("NOTICE: SURRENDER YOUR FIREARM", (0.0, 3.3, 1.55), -D, 0.05, key="notice")
     # enforcers coming through the (open) door: we hide the door leaf by placing them in front of the wall
     person("E1", 0.1, 2.3, math.radians(-90), "tactical", "held", pick=0, accent=ACCENT)
     person("E2", -0.7, 3.2, math.radians(-80), "tactical", "held", pick=1, accent=ACCENT)
@@ -308,6 +308,7 @@ def hall():
     sun_in.data.size = 2.2
     sun_in.location = (0, 3.2, 1.6)
     sun_in.rotation_euler = (math.radians(90), 0, 0)
+    sun_in.visible_camera = False
     sc.collection.objects.link(sun_in)
 
 
@@ -340,6 +341,7 @@ def table():
     """A long table; objects appear one by one; an accent hand reaches for the TV."""
     slab("floor", (10, 10, 0.02), (0, 0, -0.01), (0.5, 0.47, 0.43), 0.5)
     slab("wall", (0.2, 10, 3.2), (3.5, 0, 1.6))
+    slab("wallback", (10, 0.2, 3.2), (0, 4.5, 1.6))
     slab("table", (1.2, 3.6, 0.06), (0, 0, 0.78), (0.74, 0.73, 0.7), 0.4)
     for y in (-1.6, 1.6):
         slab(f"leg{y}", (0.08, 0.08, 0.75), (0, y, 0.375), (0.3, 0.3, 0.3))
@@ -362,8 +364,9 @@ def kid():
     put("everyday_objects_ph", "schooldesk", (0, 0, 0), math.radians(180), key="desk")
     put("everyday_objects_ph", "schoolchair", (-0.7, 0, 0), math.radians(180))
     person("Pupil", -0.55, 0.0, math.radians(180), "casual", age="child", pick=2)
-    put("commerce", "chalkboard_sign", (2.6, 0.2, 0), math.radians(180), 2.4, key="board")
-    plate("DON'T HIT.  DON'T STEAL.", (2.45, 0.2, 1.75), math.radians(180), 0.09, key="rule")
+    slab("board", (0.08, 2.2, 1.4), (2.6, 0.2, 1.55), (0.13, 0.18, 0.15), 0.8, key="board")
+    slab("boardframe", (0.06, 2.4, 1.6), (2.66, 0.2, 1.55), (0.45, 0.33, 0.22), 0.6)
+    plate("DON'T HIT.  DON'T STEAL.", (2.5, 0.2, 1.7), math.radians(180), 0.09, key="rule")
     put("household", "book", (0.0, 0.1, 0.78), math.radians(5), 1.0)
 
 

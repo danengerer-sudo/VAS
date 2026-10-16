@@ -5,3 +5,5 @@ episodes/*/video/
 renderfarm/jobs/*/*.mp4
 episodes/*/narration.wav
 episodes/*/*.mp4
+episodes/*/shots/storyboard/
+episodes/*/storyboard*.jpg

@@ -255,7 +255,11 @@ def make_person(name, sex=None, age="adult", build=None, mode="casual", weapon=N
     rig.rotation_euler = (0, 0, math.radians(90))
     bpy.context.view_layer.update()
 
-    lib_ = {"casual": CASUAL, "walk": WALK, "talk": TALK, "tactical": TACTICAL}[mode]
+    lib_ = {"casual": CASUAL, "walk": WALK, "talk": TALK, "tactical": TACTICAL,
+            "punch": [("76_04", 0.9), ("76_04", 0.8), ("76_04", 0.95)],
+            "reach": [("77_01", 0.35), ("77_01", 0.2), ("76_04", 0.65)]}[mode]
+    if isinstance(pick, int):
+        pick = lib_[pick % len(lib_)]
     clip, t = pick or lib_[rng.randrange(len(lib_))]
     t = min(0.95, max(0.05, t + rng.uniform(-0.03, 0.03)))
     hz = (rig.matrix_world @ rig.data.bones["Head"].tail_local).z

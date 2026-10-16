@@ -1,0 +1,19 @@
+{
+  "blend": "dome.blend",
+  "blend_sha256": "079c842a99a1fd046fdba93b0c767a6a9636e1880cae7847e2ed24d2e07df138",
+  "blend_size": 10119765,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 505,
+  "frame_start": 328,
+  "note": "gun rights v2 beat 02 (dome)",
+  "output": "frames/f_####",
+  "priority": 3,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:48Z"
+}

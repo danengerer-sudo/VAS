@@ -1,0 +1,19 @@
+{
+  "blend": "hall.blend",
+  "blend_sha256": "a47bf7312071c38cb152d70a000d0c3f6bc31869ca2ad1b04ad1548de0b07d81",
+  "blend_size": 3939201,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 2417,
+  "frame_start": 2259,
+  "note": "gun rights v2 beat 19 (hall)",
+  "output": "frames/f_####",
+  "priority": 20,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:49Z"
+}

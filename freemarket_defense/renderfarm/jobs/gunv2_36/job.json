@@ -1,0 +1,18 @@
+{
+  "blend": "crowd.blend",
+  "blend_url": "https://raw.githubusercontent.com/danengerer-sudo/VAS/claude/low-poly-helicopter-glb-d0l1zs/freemarket_defense/renderfarm/jobs/gunv2_00/crowd.blend",
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 4888,
+  "frame_start": 4660,
+  "note": "gun rights v2 beat 36 (crowd)",
+  "output": "frames/f_####",
+  "priority": 37,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:51Z"
+}

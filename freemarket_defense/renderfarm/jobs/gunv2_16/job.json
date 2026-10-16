@@ -1,0 +1,19 @@
+{
+  "blend": "basement.blend",
+  "blend_sha256": "5bc786ea4dce8eb67948b1880d61faf857385b62b00df06159b355aa8a8e06d4",
+  "blend_size": 3134980,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 2057,
+  "frame_start": 1831,
+  "note": "gun rights v2 beat 16 (basement)",
+  "output": "frames/f_####",
+  "priority": 17,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:49Z"
+}

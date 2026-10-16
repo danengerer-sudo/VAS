@@ -1,0 +1,19 @@
+{
+  "blend": "defense.blend",
+  "blend_sha256": "348ce9e57b7a0b8a478ef7eec589c42ec311f75a7540950dc34f820d9749f166",
+  "blend_size": 3970517,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 1624,
+  "frame_start": 1489,
+  "note": "gun rights v2 beat 13 (defense)",
+  "output": "frames/f_####",
+  "priority": 14,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:49Z"
+}

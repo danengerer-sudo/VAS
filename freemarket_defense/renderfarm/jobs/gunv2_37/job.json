@@ -1,0 +1,19 @@
+{
+  "blend": "dome_dusk.blend",
+  "blend_sha256": "6d024259a6e9b4ad5d4626925629aa1c1d8f0f1d45b558cc5b90440b8a8d6931",
+  "blend_size": 10121099,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 5041,
+  "frame_start": 4889,
+  "note": "gun rights v2 beat 37 (dome_dusk)",
+  "output": "frames/f_####",
+  "priority": 38,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:51Z"
+}

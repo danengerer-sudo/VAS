@@ -1,0 +1,18 @@
+{
+  "blend": "street.blend",
+  "blend_url": "https://raw.githubusercontent.com/danengerer-sudo/VAS/claude/low-poly-helicopter-glb-d0l1zs/freemarket_defense/renderfarm/jobs/gunv2_08/street.blend",
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 1393,
+  "frame_start": 1331,
+  "note": "gun rights v2 beat 11 (street)",
+  "output": "frames/f_####",
+  "priority": 12,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:49Z"
+}

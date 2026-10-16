@@ -1,0 +1,19 @@
+{
+  "blend": "lawn.blend",
+  "blend_sha256": "aab4c983a511648c12974e1ccd6ae53b7c24000ed00ce71198e12d3b82b35fe9",
+  "blend_size": 4343209,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 3528,
+  "frame_start": 3376,
+  "note": "gun rights v2 beat 28 (lawn)",
+  "output": "frames/f_####",
+  "priority": 29,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:50Z"
+}

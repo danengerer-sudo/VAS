@@ -1,0 +1,19 @@
+{
+  "blend": "crowd.blend",
+  "blend_sha256": "bef86a9cb75a6e43d8d9acaaf3f6afd0d555f70620336e51cee4246687317f13",
+  "blend_size": 62834743,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 78,
+  "frame_start": 1,
+  "note": "gun rights v2 beat 00 (crowd)",
+  "output": "frames/f_####",
+  "priority": 1,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:47Z"
+}

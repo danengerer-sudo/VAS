@@ -1,0 +1,18 @@
+{
+  "blend": "jail.blend",
+  "blend_url": "https://raw.githubusercontent.com/danengerer-sudo/VAS/claude/low-poly-helicopter-glb-d0l1zs/freemarket_defense/renderfarm/jobs/gunv2_21/jail.blend",
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 3567,
+  "frame_start": 3529,
+  "note": "gun rights v2 beat 29 (jail)",
+  "output": "frames/f_####",
+  "priority": 30,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:50Z"
+}

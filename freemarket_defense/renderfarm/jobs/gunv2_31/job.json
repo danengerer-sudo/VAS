@@ -1,0 +1,19 @@
+{
+  "blend": "table.blend",
+  "blend_sha256": "4fab88fe6d187ddd742e9e7c90601ab78f381a8324b10c8d56d5d262697edbc6",
+  "blend_size": 2471294,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 3854,
+  "frame_start": 3735,
+  "note": "gun rights v2 beat 31 (table)",
+  "output": "frames/f_####",
+  "priority": 32,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:50Z"
+}

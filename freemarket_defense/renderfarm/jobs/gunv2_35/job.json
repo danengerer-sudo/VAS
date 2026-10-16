@@ -1,0 +1,19 @@
+{
+  "blend": "kid.blend",
+  "blend_sha256": "87ef1d11b6b0360977eb97e4885b46d637794f3bc7c550d7e338e9a9951b0271",
+  "blend_size": 1549327,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 4659,
+  "frame_start": 4498,
+  "note": "gun rights v2 beat 35 (kid)",
+  "output": "frames/f_####",
+  "priority": 36,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:51Z"
+}

@@ -1,0 +1,19 @@
+{
+  "blend": "own.blend",
+  "blend_sha256": "0c8495bba2dfc0e9da2f03d2e23c200a06274c962aaf5bf1bfa2dd86fadd8961",
+  "blend_size": 4977250,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 5291,
+  "frame_start": 5042,
+  "note": "gun rights v2 beat 38 (own)",
+  "output": "frames/f_####",
+  "priority": 39,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:51Z"
+}

@@ -1,0 +1,19 @@
+{
+  "blend": "street.blend",
+  "blend_sha256": "294f9e38aa15b238d4cd260a4cd308970a3f0b548649d44a5801ce550f8672dd",
+  "blend_size": 11636976,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 1211,
+  "frame_start": 1140,
+  "note": "gun rights v2 beat 08 (street)",
+  "output": "frames/f_####",
+  "priority": 9,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:48Z"
+}

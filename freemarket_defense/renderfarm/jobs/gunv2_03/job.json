@@ -1,0 +1,19 @@
+{
+  "blend": "nap.blend",
+  "blend_sha256": "194f921eb1b7ffe3f774b2103500b431a15b093c53e7d229ae0bfae439505e24",
+  "blend_size": 2879580,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 692,
+  "frame_start": 506,
+  "note": "gun rights v2 beat 03 (nap)",
+  "output": "frames/f_####",
+  "priority": 4,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:48Z"
+}

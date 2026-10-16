@@ -1,0 +1,19 @@
+{
+  "blend": "jail.blend",
+  "blend_sha256": "1b6bef96afe963d80f0373ae8da05593e217d9df7cd9c145ab696e6d51a46db4",
+  "blend_size": 4113811,
+  "chunk": 200,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "format": "PNG",
+  "frame_end": 2663,
+  "frame_start": 2616,
+  "note": "gun rights v2 beat 21 (jail)",
+  "output": "frames/f_####",
+  "priority": 22,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "samples": 32,
+  "submitted_at": "2026-10-16T20:08:50Z"
+}

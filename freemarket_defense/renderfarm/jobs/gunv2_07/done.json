@@ -21,6 +21,13 @@
   "uploaders": [
     "rclone"
   ],
+  "video_file": "gunv2_07.mp4",
+  "video_fps": 24,
+  "video_frames": 241,
+  "video_published_at": "2026-10-16T22:21:31Z",
+  "video_sha256": "a2cdba41f9bc37bec78621d94c58e39ac9335522730814be1f0bb5e951e55a44",
+  "video_size": 8221701,
+  "video_url": "https://drive.google.com/open?id=1W1P7aIqAJJn3R7IsRo5FOUUBgCN1zNaG",
   "workers": [
     "minipc1"
   ]

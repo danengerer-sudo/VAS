@@ -14,12 +14,23 @@
       "updated": "2026-10-17T02:19:59Z",
       "uploaded": true,
       "uploader": "rclone"
+    },
+    "4055-4158": {
+      "end": 4158,
+      "frames_done": 0,
+      "frames_total": 104,
+      "sec_per_frame": null,
+      "seconds": 0.0,
+      "start": 4055,
+      "started_at": "2026-10-17T02:20:07Z",
+      "status": "rendering",
+      "updated": "2026-10-17T02:20:07Z"
     }
   },
   "engine": "BLENDER_EEVEE_NEXT",
   "frames_done_total": 200,
   "host": "M6_Ultra",
   "sec_per_frame": 2.4,
-  "updated": "2026-10-17T02:19:59Z",
+  "updated": "2026-10-17T02:20:07Z",
   "worker": "minipc1"
 }

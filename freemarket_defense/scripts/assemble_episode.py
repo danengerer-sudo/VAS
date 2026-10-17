@@ -104,27 +104,29 @@ def main():
         n += 1
     intro_len = len(intro_frames) / FPS
 
-    # shots with 12-frame cross-dissolves at every cut (the plan butts shots together)
-    XF = 12
+    # shots butt together on the narration timeline; every frame is kept (no drift), and each cut is
+    # softened over SOFT frames by blending toward a held frame of the other side.
+    SOFT = int(arg("--soft", 3))
     last_img = None
-    total = sl["shots"][-1]["frame_end"]
     hold = first_shot_frame
-    prev_tail = []
-    for s in sl["shots"]:
+    prev_last = None
+    for si, s in enumerate(sl["shots"]):
         imgs = []
         for g in range(s["frame_start"], s["frame_end"] + 1):
             if g in idx:
                 hold = load(idx[g])
             imgs.append(hold)
-        # dissolve from the previous shot's tail into this head
+        nxt = sl["shots"][si + 1] if si + 1 < len(sl["shots"]) else None
+        next_first = load(idx[nxt["frame_start"]]) if nxt and nxt["frame_start"] in idx else None
+        L = len(imgs)
         for k, im in enumerate(imgs):
-            if prev_tail and k < XF:
-                a = (k + 1) / (XF + 1)
-                im = Image.blend(prev_tail[k], im, a)
-            if s is sl["shots"][-1] or k < len(imgs) - XF:
-                im.save(os.path.join(comp, f"c_{n:05d}.jpg"), quality=94)
-                n += 1
-        prev_tail = imgs[-XF:]
+            if prev_last is not None and k < SOFT:
+                im = Image.blend(prev_last, im, (k + 1) / (SOFT + 1))
+            elif next_first is not None and k >= L - SOFT:
+                im = Image.blend(im, next_first, (k - (L - SOFT) + 1) / (SOFT + 1) * 0.5)
+            im.save(os.path.join(comp, f"c_{n:05d}.jpg"), quality=94)
+            n += 1
+        prev_last = imgs[-1]
         last_img = imgs[-1]
     # end card
     END = 4.0

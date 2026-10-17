@@ -1,0 +1,27 @@
+{
+  "chunks": 1,
+  "engine": "BLENDER_EEVEE_NEXT",
+  "finished_at": "2026-10-17T04:14:56Z",
+  "frame_end": 5326,
+  "frame_start": 5292,
+  "frames": 35,
+  "job": "gunv2_39",
+  "per_worker": {
+    "minipc1": {
+      "chunks": 1,
+      "frames": 35,
+      "sec_per_frame": 2.14,
+      "seconds": 75.0
+    }
+  },
+  "sec_per_frame": 2.14,
+  "total_seconds": 75.0,
+  "total_time": "0:01:15",
+  "uploaded": true,
+  "uploaders": [
+    "rclone"
+  ],
+  "workers": [
+    "minipc1"
+  ]
+}

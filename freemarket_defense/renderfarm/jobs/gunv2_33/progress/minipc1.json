@@ -3,20 +3,23 @@
   "chunks": {
     "4159-4295": {
       "end": 4295,
-      "frames_done": 0,
+      "finished_at": "2026-10-17T02:38:29Z",
+      "frames_done": 137,
       "frames_total": 137,
-      "sec_per_frame": null,
-      "seconds": 0.0,
+      "sec_per_frame": 2.44,
+      "seconds": 334.67,
       "start": 4159,
       "started_at": "2026-10-17T02:28:48Z",
-      "status": "rendering",
-      "updated": "2026-10-17T02:28:48Z"
+      "status": "done",
+      "updated": "2026-10-17T02:38:29Z",
+      "uploaded": true,
+      "uploader": "rclone"
     }
   },
   "engine": "BLENDER_EEVEE_NEXT",
-  "frames_done_total": 0,
+  "frames_done_total": 137,
   "host": "M6_Ultra",
-  "sec_per_frame": null,
-  "updated": "2026-10-17T02:28:48Z",
+  "sec_per_frame": 2.44,
+  "updated": "2026-10-17T02:38:29Z",
   "worker": "minipc1"
 }
